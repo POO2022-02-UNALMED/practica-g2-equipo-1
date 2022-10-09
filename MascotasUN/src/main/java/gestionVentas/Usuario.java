@@ -58,4 +58,12 @@ public class Usuario extends Persona {
 	public void setMascotas(List<Mascota> mascotas) {
 		this.mascotas = mascotas;
 	}
+	
+	//metodos
+	
+	public void registrarMascota(Mascota mascota) {
+		mascotas.add(mascota);
+	}
+	
+	public void eliminarMascota {}
 }
