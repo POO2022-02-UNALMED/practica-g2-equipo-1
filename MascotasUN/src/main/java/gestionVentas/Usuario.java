@@ -1,4 +1,7 @@
+package gestionVentas;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Usuario extends Persona {
@@ -8,9 +11,18 @@ public class Usuario extends Persona {
 	private int saldoCliente;
 	private boolean esPremium;
 	private List<Mascota> mascotas = new ArrayList<Mascota>();
-	
+
 	//constructor
-	
+	public Usuario(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, String formaPago, String direccion, String envioCompra, int saldoCliente, boolean esPremium, List<Mascota> mascotas) {
+		super(personaId, nombre, email, documento, fechaDeNacimiento, telefono, nroCuentaBancaria);
+		this.formaPago = formaPago;
+		this.direccion = direccion;
+		this.envioCompra = envioCompra;
+		this.saldoCliente = saldoCliente;
+		this.esPremium = esPremium;
+		this.mascotas = mascotas;
+	}
+
 	public String getFormaPago() {
 		return formaPago;
 	}
