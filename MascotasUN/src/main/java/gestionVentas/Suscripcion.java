@@ -1,12 +1,12 @@
 package gestionVentas;
-import java.time.*;
+import java.util.Date;
 public class Suscripcion {
     private long suscripcionID;
-    private LocalDate fechaInicio; //revisar formato de la fecha
+    private Date fechaInicio; //revisar formato de la fecha
     private int tiempoSuscripcion;
     private int precioSus;
 
-    public Suscripcion(long suscripcionID, LocalDate fechaInicio, int tiempoSuscripcion,int  precioSus){
+    public Suscripcion(long suscripcionID, Date fechaInicio, int tiempoSuscripcion,int  precioSus){
         this.suscripcionID=suscripcionID;
         this.fechaInicio=fechaInicio;
         this.tiempoSuscripcion=tiempoSuscripcion;
@@ -23,7 +23,7 @@ public class Suscripcion {
 
     }
 
-    public LocalDate getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
@@ -39,7 +39,7 @@ public class Suscripcion {
         return tiempoSuscripcion;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
