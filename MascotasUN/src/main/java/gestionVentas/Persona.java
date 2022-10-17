@@ -3,7 +3,7 @@ import java.util.Date;
 
 public abstract class Persona {
    //Atributos
-    private int personaId;
+    private long personaId;
     private String nombre;
     private String email;
     private int documento;
@@ -11,7 +11,7 @@ public abstract class Persona {
     private int telefono;
     private int nroCuentaBancaria;
     //Constructor
-    public Persona(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria){
+    public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria){
         this.personaId=personaId;
         this.nombre=nombre;
         this.email=email;
@@ -21,7 +21,7 @@ public abstract class Persona {
         this.nroCuentaBancaria=nroCuentaBancaria;
     }
     //getters y setters
-    public void setPersonaId(int personaId) {
+    public void setPersonaId(long personaId) {
         this.personaId = personaId;
     }
 
