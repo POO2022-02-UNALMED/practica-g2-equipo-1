@@ -1,5 +1,5 @@
 package gestionVentas;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Mascota {
     private long mascotaID;
@@ -20,10 +20,10 @@ public class Mascota {
     }
     
     // Métodos
-    public Producto[] tipoAlimento() {
+    //public Producto[] tipoAlimento() {
         //ArrayList<Producto> productos
         //ArrayList<Producto> productos=new ArrayList<Producto>()
-    }
+    //}
     
     // Setters y Getters
 
