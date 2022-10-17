@@ -50,10 +50,10 @@ public abstract class Persona {
     }
 
     //metodos
-    public void agregarCuentaBancaria(){
+    public abstract void agregarCuentaBancaria(){
         //
     }
-    public void eliminarCuentaBancaria(){
+    public abstract eliminarCuentaBancaria(){
         //
     }
 }
