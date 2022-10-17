@@ -1,13 +1,13 @@
 package gestionVentas;
 
-public class Envios {
+public class Envio{
     private long envioID;
     private String destino;;
     private String estadoEnvio;
     private int periodicidad;
 
     
-    public Envios(long envioID, String destino, String estadoEnvio, int periodicidad) {
+    public Envio(long envioID, String destino, String estadoEnvio, int periodicidad) {
         this.envioID = envioID;
         this.destino = destino;
         this.estadoEnvio = estadoEnvio;
