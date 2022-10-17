@@ -6,12 +6,15 @@ public class Suscripcion {
     private int tiempoSuscripcion;
     private int precioSus;
 
+    // Constructor
     public Suscripcion(long suscripcionID, Date fechaInicio, int tiempoSuscripcion,int  precioSus){
         this.suscripcionID=suscripcionID;
         this.fechaInicio=fechaInicio;
         this.tiempoSuscripcion=tiempoSuscripcion;
         this.precioSus=precioSus;
     }
+    
+    // Métodos
 
     public void suscribirse(){
 
@@ -22,6 +25,8 @@ public class Suscripcion {
     public void generarBeneficio(){
 
     }
+    
+    // Getters y Setters
 
     public Date getFechaInicio() {
         return fechaInicio;
