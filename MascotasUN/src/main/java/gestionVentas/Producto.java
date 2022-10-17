@@ -6,20 +6,20 @@ public class Producto {
     private String nombre;
     private Date fechaVencimiento;
     private String descripcion;
-    private float precioCompra;
+    private float precioCompra; //¿Se conecta con Proveedor?
     private float precioVenta;
     private int cantidadComprada; // Revisar diagrama de clase
 
     // Constructor
 
-    public Producto(long facturaID, Cliente cliente, Date fechaFactura, int cantidadProductos, ArrayList<Producto> productos, String metodoPago, float total) {
-    this.facturaID=facturaID;
-    this.cliente=cliente;
-    this.fechaFactura= fechaFactura;
-    this.cantidadProductos= cantidadProductos;
-    this.productos=productos;
-    this.metodoPago=metodoPago;
-    this.total=total;
+    public Producto(long productoID, String nombre, Date fechaVencimiento, String descripcion, float precioCompra, float precioVenta, int cantidadComprada) {
+    this.productoID = productoID;
+    this.nombre = nombre;
+    this.fechaVencimiento = fechaVencimiento;
+    this.descripcion = descripcion;
+    this.precioCompra = precioCompra;
+    this.precioVenta = precioVenta;
+    this.cantidadComprada = cantidadComprada;
     }
 
     // Métodos
@@ -34,7 +34,7 @@ public class Producto {
         // ¿Sería como un setter? Revisar
     }
 
-    // Setters y Getters (me falta el resto)
+    // Setters y Getters
 
     public long getProductoID() {
         return productoID;
@@ -43,4 +43,50 @@ public class Producto {
     public void setProductoID(long productoID) {
         this.productoID = productoID;
     }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public Date getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(Date fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+    
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    public float getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public float getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public void setPrecioVenta(float precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+    
+    public int getCantidadComprada() {
+        return cantidadComprada;
+    }
+
+    public void setCantidadComprada(int cantidadComprada) {
+        this.cantidadComprada = cantidadComprada;
+    }
+    
+    
 }
