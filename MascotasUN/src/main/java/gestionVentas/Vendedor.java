@@ -9,12 +9,12 @@ public class Vendedor extends Persona{
     private String usuario;
     private long contrasena;
     private boolean esAdmin;
-    Hashtable<String, Integer> usuarios = new Hashtable<String, Integer>();
+    Hashtable<String, String> usuarios = new Hashtable<String, String>();
  
     public void dict(){
-        usuarios.put("Juan", 25);
-        usuarios.put("Roberto", 12);
-        usuarios.put("Laura", 29);
+        usuarios.put("Juan", "holi12");
+        usuarios.put("Roberto", "adios13");
+        usuarios.put("Laura", "lau1245");
     }
 
 
@@ -51,19 +51,14 @@ public class Vendedor extends Persona{
         this.esAdmin = esAdmin;
     }
 
-    public boolean validarCredenciales(String usuario, long contrasena){
+    public boolean validarCredenciales(String usuario, String contrasena){
         dict();
-        for (Entry<String, Integer> entry : usuarios.entrySet()) {
+        for (Entry<String, String> entry : usuarios.entrySet()) {
             if (usuario==entry.getKey() & contrasena==entry.getValue()){
-                System.out.println("Ingreso válido");
                 return true;
             }
-            else{
-                return false;
-            }
         }
-        return esAdmin;
+        return false;
     }
-
     
 }
