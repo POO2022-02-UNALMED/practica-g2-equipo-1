@@ -23,13 +23,6 @@ public class Producto {
     }
 
     // Métodos
-    public void realizarCompra(){ // Revisar porque está también en Factura
-
-    }
-    public void eliminarCompra(){ // Revisar porque está también en Factura
-
-    }
-
     public void editarProducto(Producto p){
         // ¿Sería como un setter? Revisar
     }
