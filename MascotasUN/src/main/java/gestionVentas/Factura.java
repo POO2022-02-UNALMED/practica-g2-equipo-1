@@ -1,17 +1,18 @@
 package gestionVentas;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 
 public class Factura {
     private long facturaID;
-    private cliente;
-    private fechaFactura;
+    private Usuario cliente;
+    private Date fechaFactura;
     private int cantidadProductos;
-    private ArrayList<Producto> productos=new ArrayList<Producto>();
+    private List<Producto> productos=new ArrayList<Producto>();
     private String metodoPago;
     private  float total;
 
-    public Factura(long facturaID, Cliente cliente, Date fechaFactura, int cantidadProductos, ArrayList<Producto> productos, String metodoPago, float total) {
+    public Factura(long facturaID, Usuario cliente, Date fechaFactura, int cantidadProductos, ArrayList<Producto> productos, String metodoPago, float total) {
     this.facturaID=facturaID;
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
@@ -43,11 +44,11 @@ public class Factura {
         this.facturaID = facturaID;
     }
 
-    public Cliente getCliente() {
+    public Usuario getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Usuario cliente) {
         this.cliente = cliente;
     }
 
@@ -67,11 +68,11 @@ public class Factura {
         this.cantidadProductos = cantidadProductos;
     }
 
-    public Producto[] getProductos() {
+    public List<Producto> getProductos() {
         return productos;
     }
 
-    public void setProductos(Producto[] productos) {
+    public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
 
