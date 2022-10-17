@@ -77,5 +77,5 @@ public class Usuario extends Persona {
 		mascotas.add(mascota);
 	}
 	
-	public void eliminarMascota {}
+	public void eliminarMascota(){}
 }
