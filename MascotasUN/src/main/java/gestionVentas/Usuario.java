@@ -8,7 +8,7 @@ public class Usuario extends Persona {
 	private String formaPago;
 	private String direccion;
 	private String envioCompra;
-	private int saldoCliente;
+	private float saldoCliente;
 	private boolean esPremium;
 	private List<Mascota> mascotas = new ArrayList<Mascota>();
 
@@ -47,11 +47,11 @@ public class Usuario extends Persona {
 		this.envioCompra = envioCompra;
 	}
 	
-	public int getSaldoCliente() {
+	public float getSaldoCliente() {
 		return saldoCliente;
 	}
 	
-	public void setSaldoCliente(int saldoCliente) {
+	public void setSaldoCliente(float saldoCliente) {
 		this.saldoCliente = saldoCliente;
 	}
 	

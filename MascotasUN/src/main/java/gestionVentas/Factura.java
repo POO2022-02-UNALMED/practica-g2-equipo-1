@@ -1,45 +1,59 @@
 package gestionVentas;
-import java.util.ArrayList;
-import java.util.List;
+//Librerías
+import java.util.HashMap;
 import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Factura {
+    //Atributos
     private long facturaID;
-<<<<<<< Updated upstream
     private Usuario cliente;
-=======
-    private Cliente cliente;
->>>>>>> Stashed changes
     private Date fechaFactura;
     private int cantidadProductos;
-    private List<Producto> productos=new ArrayList<Producto>();
+    private static HashMap<Producto, Integer> productos = new HashMap<>();
     private String metodoPago;
     private  float total;
-
-    public Factura(long facturaID, Usuario cliente, Date fechaFactura, int cantidadProductos, ArrayList<Producto> productos, String metodoPago, float total) {
+    //Constructor
+    public Factura(long facturaID, Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total) {
     this.facturaID=facturaID;
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
     this.cantidadProductos= cantidadProductos;
-    this.productos=productos;
+
     this.metodoPago=metodoPago;
     this.total=total;
     }
-    public void realizarCompra(){
+    //En este metodo falta pensar la forma en que se deben descontar del inventario los productos vendidos
+    public float realizarCompra(Usuario cliente){
+        float tot= 0.0f;
+        for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
+            Producto k = entry.getKey();
+            Integer v = entry.getValue();
+            tot=+ k.getPrecioCompra()*v;
+
+            //metodo que hace el total del precio de la compra tomando el precio del producto por
+            //la cantidad y los suma
+        }
+        cliente.setSaldoCliente((int) (cliente.getSaldoCliente()-tot)) ;
+        productos=new HashMap<Producto, Integer>();
+        return tot;
+        //Ademas se descuenta al cliente el valor de la compra
+    }
+    public void eliminarCompra(Usuario cliente, float precioCompra){
+        cliente.setSaldoCliente(cliente.getSaldoCliente()+precioCompra);
+        //Aqui también hay que pensar la manera de reintegrar los productos al inventario
 
     }
-    public void eliminarCompra(){
-
-    }
-    public void agregarProducto(Producto p){
-        productos.add(p);
-        return;
+    //se añade un producto al hashmap de la compra con su respectiva cantidad
+    public static void agregarProducto(Producto producto, int cantidad){
+        productos.put(producto, cantidad);
     }
     public void eliminarProducto(Producto p){
-        int ind =productos.indexOf(p);
-        productos.remove(ind);
-    }
+        productos.remove(p);
 
+    }
+    //Inicio getters y setters
     public long getFacturaID() {
         return facturaID;
     }
@@ -72,11 +86,11 @@ public class Factura {
         this.cantidadProductos = cantidadProductos;
     }
 
-    public List<Producto> getProductos() {
+    public HashMap<Producto, Integer> getProductos() {
         return productos;
     }
 
-    public void setProductos(List<Producto> productos) {
+    public void setProductos(HashMap<Producto, Integer> productos) {
         this.productos = productos;
     }
 
@@ -95,4 +109,5 @@ public class Factura {
     public void setTotal(float total) {
         this.total = total;
     }
+    //Final getters y setters
 }
