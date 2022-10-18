@@ -5,7 +5,11 @@ import java.util.Date;
 
 public class Factura {
     private long facturaID;
+<<<<<<< Updated upstream
     private Usuario cliente;
+=======
+    private Cliente cliente;
+>>>>>>> Stashed changes
     private Date fechaFactura;
     private int cantidadProductos;
     private List<Producto> productos=new ArrayList<Producto>();
