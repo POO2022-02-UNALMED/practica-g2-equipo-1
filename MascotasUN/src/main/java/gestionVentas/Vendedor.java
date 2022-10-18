@@ -1,15 +1,16 @@
 package gestionVentas;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class Vendedor extends Persona{
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
+    private long cuentaBancaria;
     private long contrasena;
     private boolean esAdmin;
-    Hashtable<String, String> usuarios = new Hashtable<String, String>();
+    HashMap<String, String> usuarios = new HashMap<String, String>();
  
     public void dict(){
         usuarios.put("Juan", "holi12");

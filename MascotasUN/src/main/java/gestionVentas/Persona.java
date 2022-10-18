@@ -53,7 +53,7 @@ public abstract class Persona {
     public abstract void agregarCuentaBancaria(){
         //
     }
-    public abstract eliminarCuentaBancaria(){
+    public abstract void eliminarCuentaBancaria(){
         //
     }
 }
