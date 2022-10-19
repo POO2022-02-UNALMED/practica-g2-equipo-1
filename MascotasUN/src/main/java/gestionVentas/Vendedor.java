@@ -61,5 +61,5 @@ public class Vendedor extends Persona{
         }
         return false;
     }
-    
+
 }
