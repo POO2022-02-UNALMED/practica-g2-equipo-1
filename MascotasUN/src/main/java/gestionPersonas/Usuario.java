@@ -1,8 +1,11 @@
-package gestionVentas;
+package gestionPersonas;
+
+import gestionPersonas.Persona;
+import gestionVentas.Mascota;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+
 
 public class Usuario extends Persona {
 	private String formaPago;
@@ -10,10 +13,10 @@ public class Usuario extends Persona {
 	private String envioCompra;
 	private float saldoCliente;
 	private boolean esPremium;
-	private List<Mascota> mascotas = new ArrayList<Mascota>();
+	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
 	//constructor
-	public Usuario(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, String formaPago, String direccion, String envioCompra, int saldoCliente, boolean esPremium, List<Mascota> mascotas) {
+	public Usuario(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, String formaPago, String direccion, String envioCompra, int saldoCliente, boolean esPremium, ArrayList<Mascota> mascotas) {
 		super(personaId, nombre, email, documento, fechaDeNacimiento, telefono, nroCuentaBancaria);
 		this.formaPago = formaPago;
 		this.direccion = direccion;
@@ -63,11 +66,11 @@ public class Usuario extends Persona {
 		this.esPremium = esPremium;
 	}
 	
-	public List<Mascota> getMascotas() {
+	public ArrayList<Mascota> getMascotas() {
 		return mascotas;
 	}
 	
-	public void setMascotas(List<Mascota> mascotas) {
+	public void setMascotas(ArrayList<Mascota> mascotas) {
 		this.mascotas = mascotas;
 	}
 	

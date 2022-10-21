@@ -1,15 +1,15 @@
-package gestionVentas;
+package gestionPersonas;
 import java.util.Date;
 
 public abstract class Persona {
    //Atributos
-    private long personaId;
-    private String nombre;
-    private String email;
-    private int documento;
-    private Date fechaDeNacimiento;
-    private int telefono;
-    private int nroCuentaBancaria;
+    protected long personaId;
+    protected String nombre;
+    protected String email;
+    protected int documento;
+    protected Date fechaDeNacimiento;
+    protected int telefono;
+    protected int nroCuentaBancaria;
     //Constructor
     public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria){
         this.personaId=personaId;
@@ -50,10 +50,6 @@ public abstract class Persona {
     }
 
     //metodos
-    public abstract void agregarCuentaBancaria(){
-        //
-    }
-    public abstract void eliminarCuentaBancaria(){
-        //
-    }
+    public abstract void agregarCuentaBancaria();
+    public abstract void eliminarCuentaBancaria();
 }

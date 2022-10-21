@@ -1,9 +1,12 @@
-package gestionVentas;
+package gestionPersonas;
+
+import gestionPersonas.Persona;
+import gestionVentas.Producto;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Proveedor extends Persona{
+public class Proveedor extends Persona {
     //Atributos
     private ArrayList<Producto> producto=new ArrayList<Producto>();
     private boolean stock;

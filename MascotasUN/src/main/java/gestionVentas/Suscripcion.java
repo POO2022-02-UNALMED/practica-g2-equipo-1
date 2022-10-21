@@ -1,5 +1,6 @@
 package gestionVentas;
 import java.util.Date;
+import gestionPersonas.*;
 public class Suscripcion {
     private long suscripcionID;
     private Date fechaInicio; //revisar formato de la fecha
@@ -20,7 +21,7 @@ public class Suscripcion {
 
     }
     public Boolean estadoSuscripcion(){
-
+        return false;
     }
     public void generarBeneficio(){
 

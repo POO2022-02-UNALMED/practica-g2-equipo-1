@@ -1,9 +1,9 @@
 package gestionVentas;
 //Librerías
+import gestionPersonas.*;
 import java.util.HashMap;
 import java.util.Date;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Factura {
     //Atributos
