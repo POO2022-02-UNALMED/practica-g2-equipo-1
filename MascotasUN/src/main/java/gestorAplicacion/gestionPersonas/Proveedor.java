@@ -32,4 +32,14 @@ public class Proveedor extends Persona {
     public void setStock(boolean stock) {
         this.stock = stock;
     }
+
+    @Override
+    public void agregarCuentaBancaria() {
+
+    }
+
+    @Override
+    public void eliminarCuentaBancaria() {
+
+    }
 }

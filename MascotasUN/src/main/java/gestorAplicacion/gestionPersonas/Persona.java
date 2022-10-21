@@ -1,8 +1,13 @@
 package gestorAplicacion.gestionPersonas;
+import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Persona {
-   //Atributos
+    /* Esta clase se encarga de darle atributos y metodos basicos a las diferentes personas
+    que interactuan con nuestra interfas */
+    //Para la serializacion
+    private static ArrayList<Persona> personas= new Arraylist<Persona>();
+   //Atributos (protected para utilizarlos dentron del paquete)
     protected long personaId;
     protected String nombre;
     protected String email;

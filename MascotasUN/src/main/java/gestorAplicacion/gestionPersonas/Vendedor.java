@@ -64,4 +64,13 @@ public class Vendedor extends Persona {
         return false;
     }
 
+    @Override
+    public void agregarCuentaBancaria() {
+
+    }
+
+    @Override
+    public void eliminarCuentaBancaria() {
+
+    }
 }
