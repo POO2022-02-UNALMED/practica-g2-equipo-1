@@ -1,6 +1,6 @@
-package gestionVentas;
+package gestorAplicacion.gestionVentas;
 //Librerías
-import gestionPersonas.*;
+import gestorAplicacion.gestionPersonas.*;
 import java.util.HashMap;
 import java.util.Date;
 import java.util.Map;

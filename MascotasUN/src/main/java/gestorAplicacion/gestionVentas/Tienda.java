@@ -1,4 +1,4 @@
-package gestionVentas;
+package gestorAplicacion.gestionVentas;
 
 import java.util.ArrayList;
 import java.util.HashMap;

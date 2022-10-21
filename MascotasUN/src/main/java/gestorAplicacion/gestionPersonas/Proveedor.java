@@ -1,7 +1,6 @@
-package gestionPersonas;
+package gestorAplicacion.gestionPersonas;
 
-import gestionPersonas.Persona;
-import gestionVentas.Producto;
+import gestorAplicacion.gestionVentas.Producto;
 
 import java.util.ArrayList;
 import java.util.Date;

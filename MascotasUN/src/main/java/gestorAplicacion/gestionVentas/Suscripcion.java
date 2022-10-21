@@ -1,6 +1,6 @@
-package gestionVentas;
+package gestorAplicacion.gestionVentas;
 import java.util.Date;
-import gestionPersonas.*;
+
 public class Suscripcion {
     private long suscripcionID;
     private Date fechaInicio; //revisar formato de la fecha

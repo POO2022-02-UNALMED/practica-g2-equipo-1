@@ -1,4 +1,4 @@
-package gestionPersonas;
+package gestorAplicacion.gestionPersonas;
 import java.util.Date;
 
 public abstract class Persona {
