@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Proveedor extends Persona {
+    //Serializador Proveedores
+    private static ArrayList<Proveedor> proveedores = new ArrayList<>();
     //Atributos
     private ArrayList<Producto> producto=new ArrayList<Producto>();
     private boolean stock;
@@ -16,6 +18,10 @@ public class Proveedor extends Persona {
         this.stock = stock;
     }
     //Getters y setters
+    public static ArrayList<Proveedor> getProveedores() {
+        return proveedores;
+    }
+
 
     public ArrayList<Producto> getProducto() {
         return producto;
