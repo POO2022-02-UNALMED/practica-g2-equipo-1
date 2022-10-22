@@ -22,7 +22,7 @@ public class Vendedor extends Persona {
         usuarios.put("Laura", "lau1245");
     }
 
-
+    //Constructor
     public Vendedor(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono,
             int nroCuentaBancaria, ArrayList<Factura> ventas, String usuario, long contrasena, boolean esAdmin) {
         super(personaId, nombre, email, documento, fechaDeNacimiento, telefono, nroCuentaBancaria);
@@ -30,6 +30,11 @@ public class Vendedor extends Persona {
         this.usuario = usuario;
         this.contrasena = contrasena;
         this.esAdmin = esAdmin;
+    }
+
+    //Getters y setters
+    public static ArrayList<Vendedor> getVendedores() {
+        return vendedores;
     }
     public ArrayList<Factura> getVentas() {
         return ventas;

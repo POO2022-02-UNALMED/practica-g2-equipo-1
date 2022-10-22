@@ -1,6 +1,7 @@
 package gestorAplicacion.gestionVentas;
 
 public class Envio{
+    //Serializador vend
     private long envioID;
     private String destino;;
     private String estadoEnvio;

@@ -2,6 +2,7 @@ package baseDatos;
 
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
+import gestorAplicacion.gestionPersonas.Vendedor;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -48,5 +49,18 @@ public class Serializador {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //serializador envio
+        try {
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\envios.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            salida.writeObject(Envio.getEnvios());
+            salida.close();
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
