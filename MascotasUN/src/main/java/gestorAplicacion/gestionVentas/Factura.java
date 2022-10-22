@@ -12,8 +12,9 @@ public class Factura implements Serializable {
     //Serializador factura
     private static ArrayList<Factura> facturas = new ArrayList<>();
 
+
     //Atributos
-    private long facturaID;
+    private static long facturaID = 38040000;
     private Usuario cliente;
     private Date fechaFactura;
     private int cantidadProductos;
@@ -25,8 +26,13 @@ public class Factura implements Serializable {
 
     private Tienda tienda;
     //Constructor
+<<<<<<< Updated upstream
     public Factura(long facturaID, Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total, Tienda tienda) {
     this.facturaID=facturaID;
+=======
+    public Factura(long facturaID, Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total) {
+    this.facturaID=+1;
+>>>>>>> Stashed changes
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
     this.cantidadProductos= cantidadProductos;
@@ -46,8 +52,7 @@ public class Factura implements Serializable {
             //metodo que hace el total del precio de la compra tomando el precio del producto por
             //la cantidad y los suma
         }
-        cliente.setSaldoCliente((int) (cliente.getSaldoCliente()-tot)) ;
-        productos=new HashMap<Producto, Integer>();
+        cliente.setSaldoCliente((int) (cliente.getSaldoCliente()-tot));
         return tot;
         //Ademas se descuenta al cliente el valor de la compra
     }
