@@ -18,9 +18,9 @@ public class Vendedor extends Persona implements Serializable {
     HashMap<String, String> usuarios = new HashMap<String, String>();
  
     public void dict(){
-        usuarios.put("Juan", "holi12");
-        usuarios.put("Roberto", "adios13");
-        usuarios.put("Laura", "lau1245");
+        usuarios.put("Juan Pablo Arcila", "holi12");
+        usuarios.put("Roberto Barrientos", "adios13");
+        usuarios.put("Laura Vanegas", "lau1245");
     }
 
     //Constructor
