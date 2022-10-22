@@ -1,8 +1,12 @@
 package baseDatos;
-
+//Importamos del paquete gestion personas
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
+//Importamos del paquete gestion ventas
+import gestorAplicacion.gestionVentas.Envio;
+import gestorAplicacion.gestionVentas.Factura;
+import gestorAplicacion.gestionVentas.Mascota;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -61,6 +65,31 @@ public class Serializador {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //serializador factura
+        try {
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\facturas.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            salida.writeObject(Factura.getFacturas());
+            salida.close();
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //serializador mascotas
+        try {
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\mascotas.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            salida.writeObject(Mascota.getMascotas());
+            salida.close();
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
 
     }
 }

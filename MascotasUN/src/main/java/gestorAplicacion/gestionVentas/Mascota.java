@@ -1,7 +1,9 @@
 package gestorAplicacion.gestionVentas;
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class Mascota {
+    //Serializador Mascota
+    private static ArrayList<Mascota> mascotas = new ArrayList<>();
     private long mascotaID;
     private String nombre;
     private int edad;
@@ -26,7 +28,9 @@ public class Mascota {
     //}
     
     // Setters y Getters
-
+    public static ArrayList<Mascota> getMascotas() {
+        return mascotas;
+    }
     public long getMascotaID() {
         return mascotaID;
     }

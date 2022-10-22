@@ -1,11 +1,16 @@
 package gestorAplicacion.gestionVentas;
 //Librerías
 import gestorAplicacion.gestionPersonas.*;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Date;
 import java.util.Map;
 
 public class Factura {
+    //Serializador factura
+    private static ArrayList<Factura> facturas = new ArrayList<>();
+
     //Atributos
     private long facturaID;
     private Usuario cliente;
@@ -54,6 +59,9 @@ public class Factura {
 
     }
     //Inicio getters y setters
+    public static ArrayList<Factura> getFacturas() {
+        return facturas;
+    }
     public long getFacturaID() {
         return facturaID;
     }
