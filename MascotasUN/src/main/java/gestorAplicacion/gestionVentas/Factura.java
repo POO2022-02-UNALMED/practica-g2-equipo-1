@@ -38,26 +38,19 @@ public class Factura implements Serializable {
     this.total=total;
     }
     //En este metodo falta pensar la forma en que se deben descontar del inventario los productos vendidos
-    public float realizarCompra(Usuario cliente){
+    public float realizarCompra(Usuario cliente, short pswd){
         float tot= 0.0f;
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
             tot=+ k.getPrecioCompra()*v;
-            tienda.reducirStock(this);
-
             //metodo que hace el total del precio de la compra tomando el precio del producto por
             //la cantidad y los suma
         }
-        cliente.setSaldoCliente((int) (cliente.getSaldoCliente()-tot));
+        tienda.reducirStock(this);
+        cliente.cuenta.retirar(tot, pswd);
         return tot;
         //Ademas se descuenta al cliente el valor de la compra
-    }
-    public void eliminarCompra(Usuario cliente, float precioCompra){
-        cliente.setSaldoCliente(cliente.getSaldoCliente()+precioCompra);
-        //Aqui también hay que pensar la manera de reintegrar los productos al inventario
-        tienda.aumentarStock(this);
-
     }
     //se añade un producto al hashmap de la compra con su respectiva cantidad
     public static void agregarProducto(Producto producto, int cantidad){

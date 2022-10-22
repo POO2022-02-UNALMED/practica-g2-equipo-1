@@ -15,6 +15,7 @@ public class Usuario extends Persona implements Serializable {
 	private String envioCompra;
 	private float saldoCliente;
 	private boolean esPremium;
+	public CuentaBancaria cuenta;
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
 	//constructor

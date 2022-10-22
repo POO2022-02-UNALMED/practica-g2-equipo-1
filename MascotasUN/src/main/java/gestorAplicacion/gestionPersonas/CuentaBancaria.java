@@ -14,7 +14,7 @@ public class CuentaBancaria {
 	//Atributos
 	private Persona titular;
 	private long nroCuenta;
-	private double saldo;
+	private float saldo;
 	private short pin;
 	static private HashMap<CuentaBancaria, Integer> credenciales = new HashMap<>();
 	
@@ -23,7 +23,7 @@ public class CuentaBancaria {
 	}
 
 	//Constructor
-	public CuentaBancaria(Persona titular, int nroCuenta, double saldo) {
+	public CuentaBancaria(Persona titular, int nroCuenta, float saldo) {
 		super();
 		this.titular = titular;
 		this.nroCuenta = nroCuenta;
@@ -53,11 +53,11 @@ public class CuentaBancaria {
 		this.nroCuenta = nroCuenta;
 	}
 
-	public double getSaldo() {
+	public float getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
+	public void setSaldo(float saldo) {
 		this.saldo = saldo;
 	}
 	
@@ -66,25 +66,26 @@ public class CuentaBancaria {
 	}
 
 	public void setPin(short contrasena) {
+
 		this.pin = contrasena;
 	}
 	//Final getters y setters
 	
 	//Metodo para retirar dinero de la cuenta
-	public void retirar(double monto, short pin) {
+	public void retirar(float monto, short pin) {
 		if (monto <= saldo & validarCredenciales(pin)==true ) {
 			setSaldo(getSaldo() - monto);
 		}
 	}
 	
 	//Metodo para depositar dinero en la cuenta propia
-	public void depositar(double monto) {
+	public void depositar(float monto) {
 		setSaldo(monto + getSaldo());
 	}
 	
 
 	//Metodo para tranferirle dinero a otra cuenta. Requiere ingresar la cuenta a la que se depositar� el dinero, el monto a depositar, y el pin de la cuenta
-	public void tranferir(CuentaBancaria cuenta, double monto, short pin) {
+	public void tranferir(CuentaBancaria cuenta, float monto, short pin) {
 		if ( monto <= this.getSaldo() & validarCredenciales(pin)== true ) {
 			this.retirar(monto, pin);
 			cuenta.depositar(monto);
