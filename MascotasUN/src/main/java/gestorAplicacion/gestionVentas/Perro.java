@@ -10,19 +10,19 @@ public class Perro implements Mascota, Serializable {
     private long mascotaID;
     private String nombre;
     private int edad;
-    private String tipo;
     private String raza;
-    private String tamano;
+    private String tipo;
+    
     // Constructor
-    public Perro(long mascotaID, String nombre, int edad, String tipo, String raza, String tamano) {
+    public Perro(long mascotaID, String nombre, int edad, String tipo, String raza) {
         this.mascotaID = mascotaID;
         this.nombre = nombre;
         this.edad = edad;
         this.tipo = tipo;
         this.raza = raza;
-        this.tamano = tamano;
     }
-    //Metodos
+    
+    
     // Setters y Getters
     public static ArrayList<Perro> getPerros() {
         return perros;
@@ -76,5 +76,39 @@ public class Perro implements Mascota, Serializable {
     public void setTamano(String tamano) {
         this.tamano = tamano;
     }
+    
+    //Métodos
+    @Override
+    public ArrayList tipoAlimento(String tipo, String raza){
+    	if tipo== "Gato":
+    		if raza=="Grande":
+    			if calcularEdad() == "Cachorro":
+    				return ArrayList;
+    			else if calcularEdad() == "Adulto":
+    				return ArrayList;
+    		else if raza=="Pequeño":
+    			if calcularEdad() == "Cachorro":
+    				return ArrayList;
+    			else if calcularEdad() == "Adulto":
+    				return ArrayList;
+    		else if raza=="Mediano":
+    			if calcularEdad() == "Cachorro":
+    				return ArrayList;
+    			else if calcularEdad() == "Adulto":
+    				return ArrayList;	
+    }
+    
+    @Override
+    public String calcularEdad(int edad) {
+    	if edad<1:
+    		return "Cachorro";
+    	else:
+    		return "Adulto";
+    }
+    
+    @Override
+    public void anadirProductos();
+    public void eliminarProductos();
+    
 
 }
