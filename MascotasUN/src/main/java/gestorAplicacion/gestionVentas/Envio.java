@@ -56,7 +56,7 @@ public class Envio implements Serializable {
         this.periodicidad = periodicidad;
     }
     
-    //Este metodo cancela el envío
+    //Este método cancela el envío
     public void cancelarEnvio(String estadoEnvio) {
     	this.estadoEnvio = estadoEnvio;
     }
