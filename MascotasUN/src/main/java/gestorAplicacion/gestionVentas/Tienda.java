@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Tienda {
+	//Serializador clase tienda
+	private static ArrayList<Tienda> tienda = new ArrayList<>();
 	private ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
@@ -16,6 +18,10 @@ public class Tienda {
 		this.inventario = inventario;
 	}
 
+	//Getters y Setters
+	public static ArrayList<Tienda> getTienda() {
+		return tienda;
+	}
 	public ArrayList<Factura> getCantidadDeVentas() {
 		return cantidadDeVentas;
 	}

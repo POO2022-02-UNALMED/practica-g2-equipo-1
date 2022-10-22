@@ -4,9 +4,7 @@ import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
 //Importamos del paquete gestion ventas
-import gestorAplicacion.gestionVentas.Envio;
-import gestorAplicacion.gestionVentas.Factura;
-import gestorAplicacion.gestionVentas.Mascota;
+import gestorAplicacion.gestionVentas.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -89,7 +87,29 @@ public class Serializador {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
-
+        //serializador productos
+        try {
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\productos.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            salida.writeObject(Producto.getProductos());
+            salida.close();
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //serializador tienda
+        try {
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\tienda.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            salida.writeObject(Tienda.getTienda());
+            salida.close();
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

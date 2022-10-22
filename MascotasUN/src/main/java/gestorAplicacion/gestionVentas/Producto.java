@@ -1,7 +1,10 @@
 package gestorAplicacion.gestionVentas;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Producto {
+    //Serializador Productos
+    private static ArrayList<Producto> productos = new ArrayList<>();
     private long productoID;
     private String nombre;
     private Date fechaVencimiento;
@@ -28,7 +31,9 @@ public class Producto {
     }
 
     // Setters y Getters
-
+    public static ArrayList<Producto> getProductos() {
+        return productos;
+    }
     public long getProductoID() {
         return productoID;
     }
