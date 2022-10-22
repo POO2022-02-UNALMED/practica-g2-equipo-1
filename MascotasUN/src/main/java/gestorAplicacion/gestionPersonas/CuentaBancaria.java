@@ -67,8 +67,8 @@ public class CuentaBancaria {
 		return pin;
 	}
 
-	public void setPin(short contrase�a) {
-		this.pin = contrase�a;
+	public void setPin(short contrasena) {
+		this.pin = contrasena;
 	}
 	//Final getters y setters
 	

@@ -1,5 +1,6 @@
 package baseDatos;
 //Importamos del paquete gestion personas
+import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
@@ -20,6 +21,18 @@ public class Serializador {
             fileOut = new FileOutputStream("src\\baseDatos\\temp\\proveedores.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Proveedor.getProveedores());
+            salida.close();
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //serializador CuentaBancaria
+        try {
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\cuentasBancarias.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            salida.writeObject(CuentaBancaria.getCuentasBancarias());
             salida.close();
             fileOut.close();
         } catch (FileNotFoundException e) {
