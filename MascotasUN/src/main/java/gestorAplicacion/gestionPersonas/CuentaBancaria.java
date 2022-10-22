@@ -3,15 +3,13 @@ package gestorAplicacion.gestionPersonas;
 import gestorAplicacion.gestionVentas.Tienda;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CuentaBancaria {
+	//Clase para la gestion de las cuentas bancarias de las personas.
+
 	//Serializador clase tienda
 	private static ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<>();
-	private Persona titular;
-	private int nroCuenta;
-	private double saldo;
-	
-	//Clase para la gesti�n de las cuentas bancarias de las personas.
 	
 	//Atributos
 	private Persona titular;
