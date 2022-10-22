@@ -22,6 +22,9 @@ public class Proveedor extends Persona implements Serializable {
     public static ArrayList<Proveedor> getProveedores() {
         return proveedores;
     }
+    public static void setProveedores(ArrayList<Proveedor> proveedores) {
+        Proveedor.proveedores = proveedores;
+    }
     public ArrayList<Producto> getProducto() {
         return producto;
     }

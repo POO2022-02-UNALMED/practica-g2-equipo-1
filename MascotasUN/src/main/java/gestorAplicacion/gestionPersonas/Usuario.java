@@ -32,6 +32,10 @@ public class Usuario extends Persona implements Serializable {
 	public static ArrayList<Usuario> getUsuarios() {
 		return usuarios;
 	}
+
+	public static void setUsuarios(ArrayList<Usuario> usuarios) {
+		Usuario.usuarios=usuarios;
+	}
 	public String getFormaPago() {
 		return formaPago;
 	}
