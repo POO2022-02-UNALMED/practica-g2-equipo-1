@@ -63,6 +63,9 @@ public class Factura implements Serializable {
     public static ArrayList<Factura> getFacturas() {
         return facturas;
     }
+    public static void setFacturas(ArrayList<Factura> facturas) {
+        Factura.facturas=facturas;
+    }
     public long getFacturaID() {
         return facturaID;
     }
