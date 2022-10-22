@@ -4,6 +4,7 @@ package baseDatos;
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
+import gestorAplicacion.gestionVentas.Envio;
 //Gestion ventas
 
 import java.io.*;
@@ -47,7 +48,7 @@ public class Deserializador {
         }
         //Deserializacion vendedor
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\vendedor.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\vendedores.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Vendedor> vendedores;
             vendedores = (ArrayList<Vendedor>) in.readObject();
@@ -61,5 +62,22 @@ public class Deserializador {
         } catch (ClassNotFoundException e){
             e.printStackTrace();
         }
+        //Deserializacion envio
+        try {
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\envios.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            ArrayList<Envio> envios;
+            envios = (ArrayList<Envio>) in.readObject();
+            Envio.setEnvios(envios);
+            in.close();
+            fileIn.close();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+
     }
 }

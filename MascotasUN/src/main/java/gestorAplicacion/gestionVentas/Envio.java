@@ -23,6 +23,9 @@ public class Envio implements Serializable {
     public static ArrayList<Envio> getEnvios() {
         return envios;
     }
+    public static void setEnvios(ArrayList<Envio> envios) {
+        Envio.envios=envios;
+    }
     public long getEnvioID() {
         return envioID;
     }
