@@ -65,7 +65,8 @@ public class Vendedor extends Persona implements Serializable {
     public void setEsAdmin(boolean esAdmin) {
         this.esAdmin = esAdmin;
     }
-
+    
+    //Métodos
     public boolean validarCredenciales(String usuario, String contrasena){
         dict();
         for (Entry<String, String> entry : usuarios.entrySet()) {
@@ -76,13 +77,4 @@ public class Vendedor extends Persona implements Serializable {
         return false;
     }
 
-    @Override
-    public void agregarCuentaBancaria() {
-
-    }
-
-    @Override
-    public void eliminarCuentaBancaria() {
-
-    }
 }
