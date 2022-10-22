@@ -23,6 +23,9 @@ public class Tienda implements Serializable {
 	public static ArrayList<Tienda> getTienda() {
 		return tienda;
 	}
+	public static void setTienda(ArrayList<Tienda> tienda) {
+		Tienda.tienda=tienda;
+	}
 	public ArrayList<Factura> getCantidadDeVentas() {
 		return cantidadDeVentas;
 	}

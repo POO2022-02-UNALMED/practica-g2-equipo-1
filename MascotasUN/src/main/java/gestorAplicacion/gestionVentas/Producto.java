@@ -38,6 +38,9 @@ public class Producto implements Serializable {
     public static ArrayList<Producto> getProductos() {
         return productos;
     }
+    public static void setProductos(ArrayList<Producto> productos) {
+        Producto.productos=productos;
+    }
     public long getProductoID() {
         return productoID;
     }

@@ -4,9 +4,7 @@ package baseDatos;
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
-import gestorAplicacion.gestionVentas.Envio;
-import gestorAplicacion.gestionVentas.Factura;
-import gestorAplicacion.gestionVentas.Mascota;
+import gestorAplicacion.gestionVentas.*;
 //Gestion ventas
 
 import java.io.*;
@@ -112,6 +110,37 @@ public class Deserializador {
         } catch (ClassNotFoundException e){
             e.printStackTrace();
         }
-
+        //Deserializacion productos
+        try {
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\productos.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            ArrayList<Producto> productos;
+            productos = (ArrayList<Producto>) in.readObject();
+            Producto.setProductos(productos);
+            in.close();
+            fileIn.close();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        //Deserializar tienda
+        try {
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\tienda.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            ArrayList<Tienda> tienda;
+            tienda = (ArrayList<Tienda>) in.readObject();
+            Tienda.setTienda(tienda);
+            in.close();
+            fileIn.close();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
     }
 }
