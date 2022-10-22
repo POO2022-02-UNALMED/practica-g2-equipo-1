@@ -29,7 +29,8 @@ public class Factura implements Serializable {
 
     public Factura(Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total, Tienda tienda) {
 
-    this.facturaID=+1;
+    facturaID=+1;
+    // El id de la factura se va incrementando a medida que se va creando, con numero base 38040000
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
     this.cantidadProductos= cantidadProductos;
@@ -37,16 +38,16 @@ public class Factura implements Serializable {
     this.metodoPago=metodoPago;
     this.total=total;
     }
-    //En este metodo falta pensar la forma en que se deben descontar del inventario los productos vendidos
+   //Metodo que realiza la compra
     public float realizarCompra(Usuario cliente, short pswd){
         float tot= 0.0f;
+        //Primero se calcula el total de la compra con este for
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
             tot=+ k.getPrecioCompra()*v;
-            //metodo que hace el total del precio de la compra tomando el precio del producto por
-            //la cantidad y los suma
         }
+        // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         tienda.reducirStock(this);
         cliente.cuenta.retirar(tot, pswd);
         tienda.cuenta.depositar(tot);
@@ -63,56 +64,70 @@ public class Factura implements Serializable {
     }
     //Inicio getters y setters
     public static ArrayList<Factura> getFacturas() {
+
         return facturas;
     }
+    //
     public static void setFacturas(ArrayList<Factura> facturas) {
         Factura.facturas=facturas;
     }
+    //
     public long getFacturaID() {
         return facturaID;
     }
-
+    //
     public void setFacturaID(long facturaID) {
+
         this.facturaID = facturaID;
     }
-
+    //
     public Usuario getCliente() {
+
         return cliente;
     }
-
+    //
     public void setCliente(Usuario cliente) {
+
         this.cliente = cliente;
     }
-
+    //
     public Date getFechaFactura() {
+
         return fechaFactura;
     }
 
     public void setFechaFactura(Date fechaFactura) {
+
         this.fechaFactura = fechaFactura;
     }
 
     public int getCantidadProductos() {
+
         return cantidadProductos;
     }
 
     public void setCantidadProductos(int cantidadProductos) {
+
         this.cantidadProductos = cantidadProductos;
     }
 
     public HashMap<Producto, Integer> getProductos() {
+
         return productos;
     }
 
     public void setProductos(HashMap<Producto, Integer> productos) {
+
         this.productos = productos;
     }
 
     public String getMetodoPago() {
+
         return metodoPago;
     }
 
     public void setMetodoPago(String metodoPago) {
+
         this.metodoPago = metodoPago;
     }
 
@@ -121,6 +136,7 @@ public class Factura implements Serializable {
     }
 
     public void setTotal(float total) {
+        
         this.total = total;
     }
     //Final getters y setters
