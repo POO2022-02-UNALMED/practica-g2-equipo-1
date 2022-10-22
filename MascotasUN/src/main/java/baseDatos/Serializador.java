@@ -88,7 +88,7 @@ public class Serializador {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //serializador mascotas
+       /* //serializador mascotas
         try {
             fileOut = new FileOutputStream("src\\baseDatos\\temp\\mascotas.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
@@ -99,7 +99,7 @@ public class Serializador {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         //serializador productos
         try {
             fileOut = new FileOutputStream("src\\baseDatos\\temp\\productos.txt");

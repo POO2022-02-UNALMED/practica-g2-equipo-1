@@ -111,7 +111,7 @@ public class Deserializador {
         } catch (ClassNotFoundException e){
             e.printStackTrace();
         }
-        //Deserializacion mascotas
+       /* //Deserializacion mascotas
         try {
             fileIn = new FileInputStream("src\\baseDatos\\temp\\mascotas.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
@@ -126,7 +126,7 @@ public class Deserializador {
             e.printStackTrace();
         } catch (ClassNotFoundException e){
             e.printStackTrace();
-        }
+        } */
         //Deserializacion productos
         try {
             fileIn = new FileInputStream("src\\baseDatos\\temp\\productos.txt");
