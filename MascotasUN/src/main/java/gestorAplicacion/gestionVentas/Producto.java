@@ -27,8 +27,11 @@ public class Producto implements Serializable {
     }
 
     // Métodos
-    public void editarProducto(Producto p){
-        // ¿Sería como un setter? Revisar
+    //Este método se encarga de editar los atributos de un producto
+    public void editarProducto(float precioCompra, float precioVenta, int cantidadComprada){
+        this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
+        this.cantidadComprada = cantidadComprada;
     }
 
     // Setters y Getters
