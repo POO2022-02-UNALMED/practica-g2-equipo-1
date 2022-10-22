@@ -14,7 +14,7 @@ public class Tienda implements Serializable {
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
 
-	private CuentaBancaria cuenta;
+	public CuentaBancaria cuenta;
 	
 
 	public Tienda() {}

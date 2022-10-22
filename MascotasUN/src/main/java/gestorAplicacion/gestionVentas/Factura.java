@@ -49,6 +49,7 @@ public class Factura implements Serializable {
         }
         tienda.reducirStock(this);
         cliente.cuenta.retirar(tot, pswd);
+        tienda.cuenta.depositar(tot);
         return tot;
         //Ademas se descuenta al cliente el valor de la compra
     }
