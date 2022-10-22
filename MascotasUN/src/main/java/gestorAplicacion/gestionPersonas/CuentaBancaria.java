@@ -38,4 +38,11 @@ public class CuentaBancaria {
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
+	
+	public void tranferir(CuentaBancaria cuenta, double monto) {
+		if (monto <= this.getSaldo()) {
+			cuenta.setSaldo(monto + cuenta.getSaldo());
+			cuenta.setSaldo(this.getSaldo() - monto);
+		}
+	}
 }
