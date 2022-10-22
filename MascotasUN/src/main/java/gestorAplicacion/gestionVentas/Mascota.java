@@ -1,13 +1,19 @@
+//Importando paquete
 package gestorAplicacion.gestionVentas;
+
+//Importando librerías
 import java.io.Serializable;
 import java.util.ArrayList;
 
+//Creando la interfaz
 public interface Mascota {
     
+	
     // Métodos
-    //public Producto[] tipoAlimento() {
-        //ArrayList<Producto> productos
-        //ArrayList<Producto> productos=new ArrayList<Producto>()
-    //}
-
+    ArrayList tipoAlimento(String raza, String tamano, String calcularEdad));
+    String calcularEdad(edad);
+    void anadirProductos();
+    void eliminarProductos();
+    
+    
 }
