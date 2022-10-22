@@ -136,7 +136,7 @@ public class Factura implements Serializable {
     }
 
     public void setTotal(float total) {
-        
+
         this.total = total;
     }
     //Final getters y setters

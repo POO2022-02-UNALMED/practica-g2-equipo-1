@@ -13,7 +13,6 @@ public class Tienda implements Serializable {
 	private ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
-
 	public CuentaBancaria cuenta;
 	
 

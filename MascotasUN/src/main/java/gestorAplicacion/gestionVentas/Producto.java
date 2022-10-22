@@ -6,13 +6,13 @@ import java.util.Date;
 public class Producto implements Serializable {
     //Serializador Productos
     private static ArrayList<Producto> productos = new ArrayList<>();
+    //Atributos
     private long productoID;
     private String nombre;
     private Date fechaVencimiento;
     private String descripcion;
-    private float precioCompra; //¿Se conecta con Proveedor?
-    private float precioVenta;
-    private int cantidadComprada; // Revisar diagrama de clase
+    private float precio;
+    private int cantidadComprada;
 
     // Constructor
 
@@ -21,17 +21,24 @@ public class Producto implements Serializable {
     this.nombre = nombre;
     this.fechaVencimiento = fechaVencimiento;
     this.descripcion = descripcion;
-    this.precioCompra = precioCompra;
-    this.precioVenta = precioVenta;
+    this.precio = precioCompra;
     this.cantidadComprada = cantidadComprada;
     }
 
     // Métodos
     //Este método se encarga de editar los atributos de un producto
-    public void editarProducto(float precioCompra, float precioVenta, int cantidadComprada){
-        this.precioCompra = precioCompra;
-        this.precioVenta = precioVenta;
+    public void editarProducto(float precio,  int cantidadComprada){
+        this.precio = precio;
         this.cantidadComprada = cantidadComprada;
+    }
+    //Metodo para generar el string que se imprimira al implementar la UI
+    @Override
+    public String toString() {
+        return "~ codigo= " + productoID +"\n"+
+                "~ Producto= " + nombre + '\n' +
+                "~ fechaDeVencimiento=" + fechaVencimiento +"\n"+
+                "~ Descripcion= " + descripcion+ "\n"+
+                "~ Precio=" + precio;
     }
 
     // Setters y Getters
@@ -72,17 +79,14 @@ public class Producto implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    public float getPrecioCompra() {
-        return precioCompra;
+
+
+    public float getPrecio() {
+        return precio;
     }
 
-    public float getPrecioVenta() {
-        return precioVenta;
-    }
-
-    public void setPrecioVenta(float precioVenta) {
-        this.precioVenta = precioVenta;
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
     
     public int getCantidadComprada() {
@@ -92,6 +96,6 @@ public class Producto implements Serializable {
     public void setCantidadComprada(int cantidadComprada) {
         this.cantidadComprada = cantidadComprada;
     }
-    
+    //Fin getters y setters
     
 }
