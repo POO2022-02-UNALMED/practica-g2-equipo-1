@@ -63,8 +63,8 @@ public class CuentaBancaria {
 	//Final getters y setters
 	
 	//Metodo para retirar dinero de la cuenta
-	public void retirar(double monto) {
-		if (monto <= saldo) {
+	public void retirar(double monto, short pin) {
+		if (monto <= saldo & validarCredenciales(pin)==true ) {
 			setSaldo(getSaldo() - monto);
 		}
 	}
@@ -78,7 +78,7 @@ public class CuentaBancaria {
 	//Metodo para tranferirle dinero a otra cuenta. Requiere ingresar la cuenta a la que se depositará el dinero, el monto a depositar, y el pin de la cuenta
 	public void tranferir(CuentaBancaria cuenta, double monto, short pin) {
 		if ( monto <= this.getSaldo() & validarCredenciales(pin)== true ) {
-			this.retirar(monto);
+			this.retirar(monto, pin);
 			cuenta.depositar(monto);
 		}
 	}
