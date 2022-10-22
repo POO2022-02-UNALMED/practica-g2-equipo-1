@@ -26,13 +26,10 @@ public class Factura implements Serializable {
 
     private Tienda tienda;
     //Constructor
-<<<<<<< Updated upstream
-    public Factura(long facturaID, Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total, Tienda tienda) {
-    this.facturaID=facturaID;
-=======
-    public Factura(long facturaID, Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total) {
+
+    public Factura(Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total, Tienda tienda) {
+
     this.facturaID=+1;
->>>>>>> Stashed changes
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
     this.cantidadProductos= cantidadProductos;
@@ -47,7 +44,7 @@ public class Factura implements Serializable {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
             tot=+ k.getPrecioCompra()*v;
-            tienda.reducirstock(this);
+            tienda.reducirStock(this);
 
             //metodo que hace el total del precio de la compra tomando el precio del producto por
             //la cantidad y los suma
@@ -59,6 +56,7 @@ public class Factura implements Serializable {
     public void eliminarCompra(Usuario cliente, float precioCompra){
         cliente.setSaldoCliente(cliente.getSaldoCliente()+precioCompra);
         //Aqui también hay que pensar la manera de reintegrar los productos al inventario
+        tienda.aumentarStock(this);
 
     }
     //se añade un producto al hashmap de la compra con su respectiva cantidad
