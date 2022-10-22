@@ -5,9 +5,8 @@ import java.util.Date;
 public abstract class Persona {
     /* Esta clase se encarga de darle atributos y metodos basicos a las diferentes personas
     que interactuan con nuestra interfas */
-    //Para la serializacion
-    private static ArrayList<Persona> personas= new Arraylist<Persona>();
-   //Atributos (protected para utilizarlos dentron del paquete)
+
+   //Atributos (protected para utilizarlos dentro del paquete)
     protected long personaId;
     protected String nombre;
     protected String email;

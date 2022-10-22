@@ -21,8 +21,6 @@ public class Proveedor extends Persona {
     public static ArrayList<Proveedor> getProveedores() {
         return proveedores;
     }
-
-
     public ArrayList<Producto> getProducto() {
         return producto;
     }

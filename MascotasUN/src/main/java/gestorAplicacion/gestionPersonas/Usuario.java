@@ -7,6 +7,8 @@ import java.util.Date;
 
 
 public class Usuario extends Persona {
+	//Serializador Usuarios
+	private static ArrayList<Usuario> usuarios = new ArrayList<>();
 	private String formaPago;
 	private String direccion;
 	private String envioCompra;
@@ -25,6 +27,10 @@ public class Usuario extends Persona {
 		this.mascotas = mascotas;
 	}
 
+	//getters y setters
+	public static ArrayList<Usuario> getUsuarios() {
+		return usuarios;
+	}
 	public String getFormaPago() {
 		return formaPago;
 	}
@@ -80,4 +86,14 @@ public class Usuario extends Persona {
 	}
 	
 	public void eliminarMascota(){}
+
+	@Override
+	public void agregarCuentaBancaria() {
+
+	}
+
+	@Override
+	public void eliminarCuentaBancaria() {
+
+	}
 }

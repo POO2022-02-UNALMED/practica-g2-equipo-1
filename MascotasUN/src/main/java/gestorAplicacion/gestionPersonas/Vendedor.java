@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class Vendedor extends Persona {
+    //Serializador vendedor
+    private static ArrayList<Vendedor> vendedores = new ArrayList<>();
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
     private long cuentaBancaria;
