@@ -24,9 +24,9 @@ public class Principal {
             break;
         default:
             System.out.println("Por favor seleccione una respuesta correcta");
-    }
-}while (response != 0);
-}
+		   }
+	}while (response != 0);
+	}
 	
 	static void inicioSesion(){
 		Scanner sc = new Scanner(System.in);
