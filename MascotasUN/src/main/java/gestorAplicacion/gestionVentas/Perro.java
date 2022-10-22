@@ -80,7 +80,7 @@ public class Perro implements Mascota, Serializable {
     //Métodos
     @Override
     public ArrayList tipoAlimento(String tipo, String raza){
-    	if tipo== "Gato":
+    	if tipo== "Perro":
     		if raza=="Grande":
     			if calcularEdad() == "Cachorro":
     				return ArrayList;

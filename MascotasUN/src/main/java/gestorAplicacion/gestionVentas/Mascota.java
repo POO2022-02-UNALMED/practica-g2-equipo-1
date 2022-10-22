@@ -10,10 +10,11 @@ public interface Mascota {
     
 	
     // Métodos
-    ArrayList tipoAlimento(String raza, String tamano, String calcularEdad));
-    String calcularEdad(edad);
+    ArrayList tipoAlimento(String tipo, String raza);
+    String calcularEdad(int edad);
     void anadirProductos();
     void eliminarProductos();
     
     
 }
+

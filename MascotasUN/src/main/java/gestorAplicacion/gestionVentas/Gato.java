@@ -12,15 +12,13 @@ public class Gato implements Mascota, Serializable {
     private int edad;
     private String tipo;
     private String raza;
-    private String tamano;
     // Constructor
-    public Gato(long mascotaID, String nombre, int edad, String tipo, String raza, String tamano) {
+    public Gato(long mascotaID, String nombre, int edad, String tipo, String raza) {
         this.mascotaID = mascotaID;
         this.nombre = nombre;
         this.edad = edad;
         this.tipo = tipo;
         this.raza = raza;
-        this.tamano = tamano;
     }
     //Metodos
 
@@ -70,12 +68,5 @@ public class Gato implements Mascota, Serializable {
         this.raza = raza;
     }
 
-    public String getTamano() {
-        return tamano;
-    }
-
-    public void setTamano(String tamano) {
-        this.tamano = tamano;
-    }
 
 }
