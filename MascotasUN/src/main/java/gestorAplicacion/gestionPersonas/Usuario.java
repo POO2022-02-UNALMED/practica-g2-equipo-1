@@ -2,11 +2,12 @@ package gestorAplicacion.gestionPersonas;
 
 import gestorAplicacion.gestionVentas.Mascota;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 
-public class Usuario extends Persona {
+public class Usuario extends Persona implements Serializable {
 	//Serializador Usuarios
 	private static ArrayList<Usuario> usuarios = new ArrayList<>();
 	private String formaPago;

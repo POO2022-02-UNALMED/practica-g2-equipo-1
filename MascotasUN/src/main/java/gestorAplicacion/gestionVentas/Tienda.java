@@ -1,9 +1,10 @@
 package gestorAplicacion.gestionVentas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Tienda {
+public class Tienda implements Serializable {
 	//Serializador clase tienda
 	private static ArrayList<Tienda> tienda = new ArrayList<>();
 	private ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();

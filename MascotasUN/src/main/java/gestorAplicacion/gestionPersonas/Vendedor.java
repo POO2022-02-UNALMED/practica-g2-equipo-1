@@ -1,12 +1,13 @@
 package gestorAplicacion.gestionPersonas;
 import gestorAplicacion.gestionVentas.Factura;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-public class Vendedor extends Persona {
+public class Vendedor extends Persona implements Serializable {
     //Serializador vendedor
     private static ArrayList<Vendedor> vendedores = new ArrayList<>();
     private ArrayList<Factura> ventas=new ArrayList<Factura>();

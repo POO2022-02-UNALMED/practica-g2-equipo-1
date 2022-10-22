@@ -1,7 +1,8 @@
 package gestorAplicacion.gestionVentas;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Suscripcion {
+public class Suscripcion implements Serializable {
     private long suscripcionID;
     private Date fechaInicio; //revisar formato de la fecha
     private int tiempoSuscripcion;

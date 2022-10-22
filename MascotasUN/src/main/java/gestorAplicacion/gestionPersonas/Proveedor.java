@@ -2,10 +2,11 @@ package gestorAplicacion.gestionPersonas;
 
 import gestorAplicacion.gestionVentas.Producto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Proveedor extends Persona {
+public class Proveedor extends Persona implements Serializable {
     //Serializador Proveedores
     private static ArrayList<Proveedor> proveedores = new ArrayList<>();
     //Atributos

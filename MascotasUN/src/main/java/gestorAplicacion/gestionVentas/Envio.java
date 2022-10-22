@@ -1,8 +1,9 @@
 package gestorAplicacion.gestionVentas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Envio{
+public class Envio implements Serializable {
     //Serializador vendedor
     private static ArrayList<Envio> envios = new ArrayList<>();
     private long envioID;

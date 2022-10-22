@@ -1,7 +1,8 @@
 package gestorAplicacion.gestionVentas;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Mascota {
+public class Mascota implements Serializable {
     //Serializador Mascota
     private static ArrayList<Mascota> mascotas = new ArrayList<>();
     private long mascotaID;

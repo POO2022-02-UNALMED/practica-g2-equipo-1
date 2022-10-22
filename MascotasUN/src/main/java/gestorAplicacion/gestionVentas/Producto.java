@@ -1,8 +1,9 @@
 package gestorAplicacion.gestionVentas;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Producto {
+public class Producto implements Serializable {
     //Serializador Productos
     private static ArrayList<Producto> productos = new ArrayList<>();
     private long productoID;

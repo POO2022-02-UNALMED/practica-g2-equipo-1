@@ -2,12 +2,13 @@ package gestorAplicacion.gestionVentas;
 //Librerías
 import gestorAplicacion.gestionPersonas.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Date;
 import java.util.Map;
 
-public class Factura {
+public class Factura implements Serializable {
     //Serializador factura
     private static ArrayList<Factura> facturas = new ArrayList<>();
 
