@@ -38,6 +38,15 @@ public class Factura implements Serializable {
     this.metodoPago=metodoPago;
     this.total=total;
     }
+
+    public String toString() {
+        return  "~ Factura#"+ facturaID + "\n"+
+                "~ Fecha= " + fechaFactura +"\n"+
+                "~ Cliente= " + cliente + '\n' +
+                "~ Productos=" + productos +"\n"+
+                "~ Cantidad a pagar= " +total+ "\n"+
+                "~ Metodo de Pago=" + metodoPago;
+    }
    //Metodo que realiza la compra
     public float realizarCompra(Usuario cliente, short pswd){
         float tot= 0.0f;
@@ -45,7 +54,7 @@ public class Factura implements Serializable {
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
-            tot=+ k.getPrecioCompra()*v;
+            tot=+ k.getPrecio()*v;
         }
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         tienda.reducirStock(this);
