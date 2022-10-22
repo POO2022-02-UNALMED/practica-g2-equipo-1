@@ -32,6 +32,9 @@ public class Mascota implements Serializable {
     public static ArrayList<Mascota> getMascotas() {
         return mascotas;
     }
+    public static void setMascotas(ArrayList<Mascota> mascotas) {
+        Mascota.mascotas=mascotas;
+    }
     public long getMascotaID() {
         return mascotaID;
     }

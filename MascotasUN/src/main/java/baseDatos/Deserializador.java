@@ -6,6 +6,7 @@ import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
 import gestorAplicacion.gestionVentas.Envio;
 import gestorAplicacion.gestionVentas.Factura;
+import gestorAplicacion.gestionVentas.Mascota;
 //Gestion ventas
 
 import java.io.*;
@@ -86,6 +87,22 @@ public class Deserializador {
             ArrayList<Factura> facturas;
             facturas = (ArrayList<Factura>) in.readObject();
             Factura.setFacturas(facturas);
+            in.close();
+            fileIn.close();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        //Deserializacion mascotas
+        try {
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\mascotas.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            ArrayList<Mascota> mascotas;
+            mascotas = (ArrayList<Mascota>) in.readObject();
+            Mascota.setMascotas(mascotas);
             in.close();
             fileIn.close();
         } catch (FileNotFoundException e){
