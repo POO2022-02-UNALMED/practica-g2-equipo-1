@@ -1,4 +1,5 @@
 package gestorAplicacion.gestionVentas;
+//Librerías
 import java.io.Serializable;
 import java.util.ArrayList;
 
