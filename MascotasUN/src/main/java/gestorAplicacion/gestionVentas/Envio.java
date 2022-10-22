@@ -48,5 +48,16 @@ public class Envio implements Serializable {
         this.periodicidad = periodicidad;
     }
     
+    //Métodos
+    //Este método edita los atributos del envío
+    public void editarEnvio(String destino, String estadoEnvio, int periodicidad) {
+    	this.destino = destino;
+        this.estadoEnvio = estadoEnvio;
+        this.periodicidad = periodicidad;
+    }
     
+    //Este metodo cancela el envío
+    public void cancelarEnvio(String estadoEnvio) {
+    	this.estadoEnvio = estadoEnvio;
+    }
 }
