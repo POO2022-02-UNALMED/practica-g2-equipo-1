@@ -1,6 +1,7 @@
 package baseDatos;
 
 //Gestion personas
+import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
@@ -53,6 +54,22 @@ public class Deserializador {
             ArrayList<Vendedor> vendedores;
             vendedores = (ArrayList<Vendedor>) in.readObject();
             Vendedor.setVendedores(vendedores);
+            in.close();
+            fileIn.close();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        //Deserializacion Cuentas Bancarias
+        try {
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\cuentasBancarias.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            ArrayList<CuentaBancaria> cuentasBancarias;
+            cuentasBancarias = (ArrayList<CuentaBancaria>) in.readObject();
+            CuentaBancaria.setCuentasBancarias(cuentasBancarias);
             in.close();
             fileIn.close();
         } catch (FileNotFoundException e){

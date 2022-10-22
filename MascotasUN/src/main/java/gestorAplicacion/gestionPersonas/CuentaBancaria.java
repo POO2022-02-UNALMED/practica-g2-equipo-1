@@ -1,6 +1,12 @@
 package gestorAplicacion.gestionPersonas;
 
+import gestorAplicacion.gestionVentas.Tienda;
+
+import java.util.ArrayList;
+
 public class CuentaBancaria {
+	//Serializador clase tienda
+	private static ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<>();
 	private Persona titular;
 	private int nroCuenta;
 	private double saldo;
@@ -8,6 +14,7 @@ public class CuentaBancaria {
 	public CuentaBancaria () {
 	}
 
+	//Constructor
 	public CuentaBancaria(Persona titular, int nroCuenta, double saldo) {
 		super();
 		this.titular = titular;
@@ -15,6 +22,13 @@ public class CuentaBancaria {
 		this.saldo = saldo;
 	}
 
+	//Getters y setters
+	public static ArrayList<CuentaBancaria> getCuentasBancarias() {
+		return cuentasBancarias;
+	}
+	public static void setCuentasBancarias(ArrayList<CuentaBancaria> cuentasBancarias) {
+		CuentaBancaria.cuentasBancarias=cuentasBancarias;
+	}
 	public Persona getTitular() {
 		return titular;
 	}
