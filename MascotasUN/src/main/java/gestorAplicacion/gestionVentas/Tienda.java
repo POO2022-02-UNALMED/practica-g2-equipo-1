@@ -1,8 +1,11 @@
 package gestorAplicacion.gestionVentas;
 
+import gestorAplicacion.gestionPersonas.CuentaBancaria;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Tienda implements Serializable {
 	//Serializador clase tienda
@@ -10,7 +13,13 @@ public class Tienda implements Serializable {
 	private ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
+<<<<<<< Updated upstream
+	private CuentaBancaria cuenta;
+=======
+
+	Private CuentaBancaria cuenta;
 	
+>>>>>>> Stashed changes
 	public Tienda() {}
 
 	public Tienda(ArrayList<Factura> cantidadDeVentas, ArrayList<Producto> catalogo, HashMap<Producto, Integer> inventario) {
@@ -23,8 +32,44 @@ public class Tienda implements Serializable {
 	public static ArrayList<Tienda> getTienda() {
 		return tienda;
 	}
+<<<<<<< Updated upstream
 	public static void setTienda(ArrayList<Tienda> tienda) {
 		Tienda.tienda=tienda;
+	}
+
+
+	public  void aumentarstock(Factura factura) {
+=======
+
+	public void AumentarStock(Factura factura){
+>>>>>>> Stashed changes
+		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
+			Producto k = fact.getKey();
+			Integer v = fact.getValue();
+			Integer ch = inventario.get(k);
+			inventario.put(k, ch + v);
+		}
+<<<<<<< Updated upstream
+	}
+	public void reducirstock(Factura factura) {
+=======
+
+	}
+	public void ReducirStock(Factura factura){
+>>>>>>> Stashed changes
+		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
+			Producto k = fact.getKey();
+			Integer v = fact.getValue();
+			Integer ch = inventario.get(k);
+<<<<<<< Updated upstream
+			inventario.put(k, ch - v);
+=======
+			inventario.put(k, ch-v);
+
+			//metodo que hace el total del precio de la compra tomando el precio del producto por
+			//la cantidad y los suma
+>>>>>>> Stashed changes
+		}
 	}
 	public ArrayList<Factura> getCantidadDeVentas() {
 		return cantidadDeVentas;
