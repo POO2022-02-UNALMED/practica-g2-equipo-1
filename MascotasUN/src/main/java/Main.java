@@ -1,7 +1,7 @@
-import static ui.UIMenu.*;
+import uiMain.Principal;
 
 public class Main {
     public static void main(String[] args) {
-        showMenu();
+    	Principal.showMenu();
     }
 }
