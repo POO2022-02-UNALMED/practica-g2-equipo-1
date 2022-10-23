@@ -87,7 +87,7 @@ public class Vendedor extends Persona implements Serializable {
 	}
 
 	//Métodos
-    public boolean validarCredenciales(String usuario, String contrasena){
+    public static boolean validarCredenciales(String usuario, String contrasena){
         for (Entry<String, String> entry : usuarios.entrySet()) {
             if (usuario==entry.getKey() & contrasena==entry.getValue()){
                 return true;

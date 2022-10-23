@@ -113,6 +113,7 @@ public class Principal {
 	
 	static void menuPrincipal() {
 		System.out.println("¿Qué quieres hacer?");
+		
 		System.exit(0);
 	}
 }

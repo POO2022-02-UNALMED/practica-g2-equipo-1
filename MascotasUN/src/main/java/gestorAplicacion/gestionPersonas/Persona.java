@@ -12,17 +12,15 @@ public abstract class Persona {
     protected long personaId;
     protected String nombre;
     protected String email;
-    protected int documento;
     protected Date fechaDeNacimiento;
     protected int telefono;
     protected int nroCuentaBancaria;
 
     //Constructor
-    public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria){
+    public Persona(long personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria){
         this.personaId=personaId;
         this.nombre=nombre;
         this.email=email;
-        this.documento=documento;
         this.fechaDeNacimiento=fechaDeNacimiento;
         this.telefono=telefono;
         this.nroCuentaBancaria=nroCuentaBancaria;
@@ -30,7 +28,7 @@ public abstract class Persona {
     
     //Sobrecarga de Constructores
     public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono){
-        this(personaId,nombre,email,documento,fechaDeNacimiento,telefono,0); 	
+        this(personaId,nombre,email,fechaDeNacimiento,telefono,0); 	
     }
     
     
@@ -45,10 +43,6 @@ public abstract class Persona {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setDocumento(int documento) {
-        this.documento = documento;
     }
 
     public void setFechaDeNacimiento(Date fechaDeNacimiento) {
