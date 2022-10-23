@@ -23,7 +23,7 @@ public class Proveedor extends Persona implements Serializable {
     
     
     //Constructor
-    public Proveedor(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
+    public Proveedor(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
         super(personaId, nombre, email, telefono, cuenta);
         this.producto = producto;
         this.stock = stock;

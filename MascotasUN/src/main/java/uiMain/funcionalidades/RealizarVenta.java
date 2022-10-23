@@ -170,8 +170,7 @@ public class RealizarVenta {
             System.out.println("~ " + k.toString() + "\n" + "Tiene " + v + " unidades disponibles\n");
 
         }
-
-
     }
+
 }
 
