@@ -54,7 +54,23 @@ public class Factura implements Serializable {
         }
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         Tienda.reducirStock(this);
-        cliente.cuenta.retirar(total, pswd);
+        Tienda.getCuenta().tranferir(cliente.cuenta,total,pswd);
+        cliente.agregarFactura(this);
+        vendedor.agregarFactura(this);
+        Tienda.agregarVenta(this);
+        return total;
+        //Ademas se descuenta al cliente el valor de la compra
+    }
+    public float realizarCompra(Usuario cliente){
+
+        //Primero se calcula el total de la compra con este for
+        for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
+            Producto k = entry.getKey();
+            Integer v = entry.getValue();
+            total=+ k.getPrecio()*v;
+        }
+        // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
+        Tienda.reducirStock(this);
         Tienda.getCuenta().depositar(total);
         cliente.agregarFactura(this);
         vendedor.agregarFactura(this);
