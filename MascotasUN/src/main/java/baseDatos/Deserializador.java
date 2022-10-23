@@ -111,13 +111,13 @@ public class Deserializador {
         } catch (ClassNotFoundException e){
             e.printStackTrace();
         }
-       /* //Deserializacion mascotas
+      //Deserializacion gatos
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\mascotas.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\gatos.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            ArrayList<Mascota> mascotas;
-            mascotas = (ArrayList<Mascota>) in.readObject();
-            Mascota.setMascotas(mascotas);
+            ArrayList<Gato> gatos;
+            gatos = (ArrayList<Gato>) in.readObject();
+            Gato.setGatos(gatos);
             in.close();
             fileIn.close();
         } catch (FileNotFoundException e){
@@ -126,7 +126,23 @@ public class Deserializador {
             e.printStackTrace();
         } catch (ClassNotFoundException e){
             e.printStackTrace();
-        } */
+        }
+        //Deserializacion perros
+        try {
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\perros.txt");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            ArrayList<Perro> perros;
+            perros = (ArrayList<Perro>) in.readObject();
+            Perro.setPerros(perros);
+            in.close();
+            fileIn.close();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
         //Deserializacion productos
         try {
             fileIn = new FileInputStream("src\\baseDatos\\temp\\productos.txt");
