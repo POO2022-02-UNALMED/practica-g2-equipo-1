@@ -1,17 +1,19 @@
 package gestorAplicacion.gestionVentas;
 
+// Importando librerías
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Perro implements Mascota, Serializable {
-    //Serializador Perro
+    // Serializador Perro
     private static ArrayList<Perro> perros = new ArrayList<>();
-
+    
+    // Atributos
     private long mascotaID;
     private String nombre;
     private int edad;
     private String raza;
-    private String tipo;
+    
     
     
     // Constructor
@@ -28,12 +30,15 @@ public class Perro implements Mascota, Serializable {
     public static ArrayList<Perro> getPerros() {
         return perros;
     }
+    
     public static void setPerros(ArrayList<Perro> perros) {
         Perro.perros=perros;
     }
+    
     public long getMascotaID() {
         return mascotaID;
     }
+    
     public void setMascotaID(long mascotaID) {
         this.mascotaID = mascotaID;
     }
@@ -83,23 +88,31 @@ public class Perro implements Mascota, Serializable {
     //Métodos
     @Override
     public ArrayList tipoAlimento(String tipo, String raza){
-    	if tipo== "Perro":
-    		if raza=="Grande":
-    			if calcularEdad() == "Cachorro":
-    				return ArrayList;
-    			else if calcularEdad() == "Adulto":
-    				return ArrayList;
-    		else if raza=="Pequeño":
-    			if calcularEdad() == "Cachorro":
-    				return ArrayList;
-    			else if calcularEdad() == "Adulto":
-    				return ArrayList;
-    		else if raza=="Mediano":
-    			if calcularEdad() == "Cachorro":
-    				return ArrayList;
-    			else if calcularEdad() == "Adulto":
-    				return ArrayList;	
-    }
+		if raza==Raza.GRANDE{
+			if calcularEdad() == "Cachorro"{
+				return ArrayList;
+			}
+			else if calcularEdad() == "Adulto"{
+				return ArrayList;
+			}
+		}
+		else if raza==Raza.PEQUENA{
+			if calcularEdad() == "Cachorro"{
+				return ArrayList;
+			}
+			else if calcularEdad() == "Adulto"{
+				return ArrayList;
+			}
+		}
+		else if raza==Raza.MEDIANA{
+			if calcularEdad() == "Cachorro"{
+				return ArrayList;
+			}
+			else if calcularEdad() == "Adulto" {
+				return ArrayList;	
+			}
+		}
+}
     
     
     
@@ -107,6 +120,7 @@ public class Perro implements Mascota, Serializable {
     public String calcularEdad(int edad) {
     	if edad<1:
     		return "Cachorro";
+    	
     	else:
     		return "Adulto";
     }

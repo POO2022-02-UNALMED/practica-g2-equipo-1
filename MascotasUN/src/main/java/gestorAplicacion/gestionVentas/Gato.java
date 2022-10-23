@@ -1,25 +1,28 @@
 package gestorAplicacion.gestionVentas;
 
+// Importando librerías
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Gato implements Mascota, Serializable {
-    //Serializador Gato
+    
+	// Serializador Gato
     private static ArrayList<Gato> gatos = new ArrayList<>();
+    
 
+    // Atributos
     private long mascotaID;
     private String nombre;
     private int edad;
-    private String tipo;
     private String raza;
     
     
+    
     // Constructor
-    public Gato(long mascotaID, String nombre, int edad, String tipo, String raza) {
+    public Gato(long mascotaID, String nombre, int edad, String raza) {
         this.mascotaID = mascotaID;
         this.nombre = nombre;
         this.edad = edad;
-        this.tipo = tipo;
         this.raza = raza;
     }
     //Metodos
@@ -55,13 +58,7 @@ public class Gato implements Mascota, Serializable {
         this.edad = edad;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
 
     public String getRaza() {
         return raza;
@@ -74,33 +71,43 @@ public class Gato implements Mascota, Serializable {
     
     //Métodos
     @Override
-    public ArrayList tipoAlimento(String tipo, String raza){
-    	if tipo== "Gato":
-    		if raza=="Grande":
-    			if calcularEdad() == "Cachorro":
+    public ArrayList tipoAlimento(String raza){
+    		if raza==Raza.GRANDE{
+    			if calcularEdad() == "Cachorro"{
     				return ArrayList;
-    			else if calcularEdad() == "Adulto":
+    			}
+    			else if calcularEdad() == "Adulto"{
     				return ArrayList;
-    		else if raza=="Pequeño":
-    			if calcularEdad() == "Cachorro":
+    			}
+    		}
+    		else if raza==Raza.PEQUENA{
+    			if calcularEdad() == "Cachorro"{
     				return ArrayList;
-    			else if calcularEdad() == "Adulto":
+    			}
+    			else if calcularEdad() == "Adulto"{
     				return ArrayList;
-    		else if raza=="Mediano":
-    			if calcularEdad() == "Cachorro":
+    			}
+    		}
+    		else if raza==Raza.MEDIANA{
+    			if calcularEdad() == "Cachorro"{
     				return ArrayList;
-    			else if calcularEdad() == "Adulto":
+    			}
+    			else if calcularEdad() == "Adulto" {
     				return ArrayList;	
+    			}
+    		}
     }
     
     
     
     @Override
     public String calcularEdad(int edad) {
-    	if edad<1:
-    		return "Cachorro";
-    	else:
+    	if edad<1{
+    		return "Cachorro"
+    	}
+    	else {
     		return "Adulto";
+    	}
     }
     
     

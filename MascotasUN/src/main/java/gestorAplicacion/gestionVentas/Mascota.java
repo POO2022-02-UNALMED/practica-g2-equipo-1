@@ -1,4 +1,3 @@
-//Importando paquete
 package gestorAplicacion.gestionVentas;
 
 //Importando librerías
@@ -11,9 +10,16 @@ public interface Mascota {
 	
     // Métodos
     ArrayList tipoAlimento(String tipo, String raza);
+    
     String calcularEdad(int edad);
+    
     void anadirProductos();
+    
     void eliminarProductos();
+    
+    public enum Raza{
+    	PEQUENA, GRANDE, MEDIANA
+    }
     
     
 }
