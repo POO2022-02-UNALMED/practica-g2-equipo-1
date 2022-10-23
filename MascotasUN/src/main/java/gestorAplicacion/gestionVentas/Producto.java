@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Producto implements Serializable {
-    //Serializador Productos
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//Serializador Productos
     private static ArrayList<Producto> productos = new ArrayList<>();
     //Atributos
     private long productoID;

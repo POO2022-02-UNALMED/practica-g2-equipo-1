@@ -5,12 +5,15 @@ import gestorAplicacion.gestionVentas.Mascota;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class Usuario extends Persona implements Serializable {
 	/*Esta clase hereda de la clase abstracta persona y se encarga de manejar a los usuarios de la tienda*/
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//Serializador Usuarios
 	private static ArrayList<Usuario> usuarios = new ArrayList<>();
 	private String formaPago;

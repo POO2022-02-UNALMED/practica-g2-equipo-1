@@ -89,7 +89,7 @@ public class CuentaBancaria {
 	
 	//Metodo para la seguridad al acceso del dinero
 	public boolean validarCredenciales(int pin){
-        if (credenciales.get(this) == pin){
+        if (getPin() == pin){
             return true;
         } else {
         	return false;

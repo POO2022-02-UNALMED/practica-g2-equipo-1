@@ -8,6 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Tienda implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//Serializador clase tienda
 	private static ArrayList<Tienda> tienda = new ArrayList<>();
 	private static ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();

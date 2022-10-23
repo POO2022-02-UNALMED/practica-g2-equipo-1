@@ -3,14 +3,19 @@ import gestorAplicacion.gestionVentas.Factura;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class Vendedor extends Persona implements Serializable {
 
-    //Serializador vendedor
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	//Serializador vendedor
     private static ArrayList<Vendedor> vendedores = new ArrayList<>();
+    
     // Atributos
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;

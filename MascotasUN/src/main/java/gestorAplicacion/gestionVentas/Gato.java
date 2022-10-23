@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 public class Gato implements Mascota, Serializable {
     
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	// Serializador Gato
     private static ArrayList<Gato> gatos = new ArrayList<>();
 
@@ -64,7 +69,7 @@ public class Gato implements Mascota, Serializable {
     }
     
     //Métodos
-    @Override
+    /*@Override
     public ArrayList tipoAlimento(String raza){
     		if raza==Raza.GRANDE{
     			if calcularEdad() == "Cachorro"{
@@ -90,7 +95,7 @@ public class Gato implements Mascota, Serializable {
     				return ArrayList;	
     			}
     		}
-    }
+    }*/
 
     @Override
     public String calcularEdad(int edad) {

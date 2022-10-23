@@ -2,7 +2,7 @@ package gestorAplicacion.gestionPersonas;
 import gestorAplicacion.gestionVentas.Factura;
 
 //import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;
 
 public abstract class Persona {
     /* Esta clase se encarga de darle atributos y metodos basicos a las diferentes personas
