@@ -23,8 +23,8 @@ public class Usuario extends Persona implements Serializable {
 
 
 	//constructor
-	public Usuario(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, String formaPago, String direccion, String envioCompra, int saldoCliente, boolean esPremium, ArrayList<Mascota> mascotas) {
-		super(personaId, nombre, email, fechaDeNacimiento, telefono, nroCuentaBancaria);
+	public Usuario(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, String envioCompra, int saldoCliente, boolean esPremium, ArrayList<Mascota> mascotas) {
+		super(personaId, nombre, email, fechaDeNacimiento, telefono, cuenta);
 		this.formaPago = formaPago;
 		this.direccion = direccion;
 		this.envioCompra = envioCompra;
