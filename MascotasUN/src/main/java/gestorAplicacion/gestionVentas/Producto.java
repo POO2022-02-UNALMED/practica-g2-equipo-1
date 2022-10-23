@@ -13,6 +13,7 @@ public class Producto implements Serializable {
     private String descripcion;
     private float precio;
     private int cantidadComprada;
+    //Lista para la recomendacion de concentrado, añadir tipo. y Sobrecarga de constructores.
 
     // Constructor
 
