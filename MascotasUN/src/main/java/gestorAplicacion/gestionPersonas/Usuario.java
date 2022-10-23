@@ -14,8 +14,7 @@ public class Usuario extends Persona implements Serializable {
 	private String formaPago;
 	private String direccion;
 	private String envioCompra;
-	private float saldoCliente;
-	private CuentaBancaria cuenta;
+	//private float saldoCliente;
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
 	private ArrayList<Factura> compras = new ArrayList<Factura>();
@@ -27,7 +26,7 @@ public class Usuario extends Persona implements Serializable {
 		this.formaPago = formaPago;
 		this.direccion = direccion;
 		this.envioCompra = envioCompra;
-		this.saldoCliente = saldoCliente;
+		//this.saldoCliente = saldoCliente;
 		this.mascotas = mascotas;
 	}
 	@Override
@@ -66,13 +65,13 @@ public class Usuario extends Persona implements Serializable {
 		this.envioCompra = envioCompra;
 	}
 	
-	public float getSaldoCliente() {
+	/*public float getSaldoCliente() {
 		return saldoCliente;
 	}
 	
 	public void setSaldoCliente(float saldoCliente) {
 		this.saldoCliente = saldoCliente;
-	}
+	}*/
 	
 	public ArrayList<Mascota> getMascotas() {
 		return mascotas;
@@ -103,15 +102,15 @@ public class Usuario extends Persona implements Serializable {
 		mascotas.add(mascota);
 	}
 	
-	public void eliminarMascota(){}
+	//public void eliminarMascota(){}
 
 
-	public void agregarCuentaBancaria() {
-
+	public void agregarCuentaBancaria(CuentaBancaria cuenta ) {
+		setCuenta(cuenta);
 	}
 
 
-	public void eliminarCuentaBancaria() {
+	//public void eliminarCuentaBancaria() {
 
-	}
+	//}
 }
