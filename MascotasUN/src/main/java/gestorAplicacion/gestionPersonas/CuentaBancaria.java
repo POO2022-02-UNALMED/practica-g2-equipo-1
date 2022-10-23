@@ -1,7 +1,5 @@
 package gestorAplicacion.gestionPersonas;
 
-import gestorAplicacion.gestionVentas.Tienda;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,10 +15,6 @@ public class CuentaBancaria {
 	private float saldo;
 	private short pin;
 	static private HashMap<CuentaBancaria, Integer> credenciales = new HashMap<>();
-	
-	//Contructor por defecto
-	public CuentaBancaria () {
-	}
 
 	//Constructor
 	public CuentaBancaria(Persona titular, int nroCuenta, float saldo) {
