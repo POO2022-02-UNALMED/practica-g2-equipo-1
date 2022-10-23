@@ -109,7 +109,7 @@ public class Principal {
         }
 	}
 	
-	/* Acceso al menú de funcionalidades */
+	/* Acceso al menú de uiMain.funcionalidades */
 	
 	static void menuPrincipal() {
 		System.out.println("¿Qué quieres hacer?");
