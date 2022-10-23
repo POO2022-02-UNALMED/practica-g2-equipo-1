@@ -13,6 +13,7 @@ public class Perro implements Mascota, Serializable {
     private String raza;
     private String tipo;
     
+    
     // Constructor
     public Perro(long mascotaID, String nombre, int edad, String tipo, String raza) {
         this.mascotaID = mascotaID;
@@ -77,6 +78,8 @@ public class Perro implements Mascota, Serializable {
         this.tamano = tamano;
     }
     
+    
+    
     //Métodos
     @Override
     public ArrayList tipoAlimento(String tipo, String raza){
@@ -98,6 +101,8 @@ public class Perro implements Mascota, Serializable {
     				return ArrayList;	
     }
     
+    
+    
     @Override
     public String calcularEdad(int edad) {
     	if edad<1:
@@ -105,6 +110,8 @@ public class Perro implements Mascota, Serializable {
     	else:
     		return "Adulto";
     }
+    
+    
     
     @Override
     public void anadirProductos();

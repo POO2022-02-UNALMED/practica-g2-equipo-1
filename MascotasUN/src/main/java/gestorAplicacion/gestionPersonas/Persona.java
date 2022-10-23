@@ -27,6 +27,13 @@ public abstract class Persona {
         this.telefono=telefono;
         this.nroCuentaBancaria=nroCuentaBancaria;
     }
+    
+    //Sobrecarga de Constructores
+    public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono){
+        this(personaId,nombre,email,documento,fechaDeNacimiento,telefono,0); 	
+    }
+    
+    
     //getters y setters
     public void setPersonaId(long personaId) {
         this.personaId = personaId;

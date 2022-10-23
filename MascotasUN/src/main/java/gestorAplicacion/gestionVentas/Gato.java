@@ -12,6 +12,8 @@ public class Gato implements Mascota, Serializable {
     private int edad;
     private String tipo;
     private String raza;
+    
+    
     // Constructor
     public Gato(long mascotaID, String nombre, int edad, String tipo, String raza) {
         this.mascotaID = mascotaID;
@@ -21,6 +23,7 @@ public class Gato implements Mascota, Serializable {
         this.raza = raza;
     }
     //Metodos
+    
 
     // Setters y Getters
     public static ArrayList<Gato> getGatos() {
@@ -67,6 +70,44 @@ public class Gato implements Mascota, Serializable {
     public void setRaza(String raza) {
         this.raza = raza;
     }
-
+    
+    
+    //Métodos
+    @Override
+    public ArrayList tipoAlimento(String tipo, String raza){
+    	if tipo== "Gato":
+    		if raza=="Grande":
+    			if calcularEdad() == "Cachorro":
+    				return ArrayList;
+    			else if calcularEdad() == "Adulto":
+    				return ArrayList;
+    		else if raza=="Pequeño":
+    			if calcularEdad() == "Cachorro":
+    				return ArrayList;
+    			else if calcularEdad() == "Adulto":
+    				return ArrayList;
+    		else if raza=="Mediano":
+    			if calcularEdad() == "Cachorro":
+    				return ArrayList;
+    			else if calcularEdad() == "Adulto":
+    				return ArrayList;	
+    }
+    
+    
+    
+    @Override
+    public String calcularEdad(int edad) {
+    	if edad<1:
+    		return "Cachorro";
+    	else:
+    		return "Adulto";
+    }
+    
+    
+    
+    
+    @Override
+    public void anadirProductos() {
+    public void eliminarProductos() {
 
 }

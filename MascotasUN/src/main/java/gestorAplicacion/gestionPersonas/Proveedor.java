@@ -15,13 +15,26 @@ public class Proveedor extends Persona implements Serializable {
 
     private ArrayList<Factura> facturas= new ArrayList<Factura>();
     private boolean stock;
+    
+    
     //Constructor
+    
     public Proveedor(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, ArrayList<Producto> producto, boolean stock) {
         super(personaId, nombre, email, documento, fechaDeNacimiento, telefono, nroCuentaBancaria);
         this.producto = producto;
         this.stock = stock;
     }
+    
+    //Sobrecarga Constructor
+    public Proveedor(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, ArrayList<Producto> producto, boolean stock) {
+    	this(personaId,nombre,email,documento,fechaDeNacimiento,telefono,0,producto,stock);
+    }
+    
+    
+    
     //Getters y setters
+    
+    //Métodos
     @Override
     public void agregarFactura(Factura f){
         return;
