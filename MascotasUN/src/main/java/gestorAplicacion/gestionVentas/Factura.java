@@ -5,7 +5,6 @@ import gestorAplicacion.gestionPersonas.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Date;
 import java.util.Map;
 
 public class Factura implements Serializable {
@@ -28,11 +27,10 @@ public class Factura implements Serializable {
     //Constructor
     public Factura(){};
     
-    public Factura(Usuario cliente, String fechaFactura, HashMap<Producto, Integer> productos) {
+    public Factura(Usuario cliente, String fechaFactura) {
     facturaID=+1; // El ID de la factura se va incrementando a medida que se va creando, con numero base 38040000
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
-    this.productos = productos;
     }
     @Override
 	public String toString() {
