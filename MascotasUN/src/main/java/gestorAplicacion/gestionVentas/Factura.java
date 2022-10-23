@@ -26,13 +26,14 @@ public class Factura implements Serializable {
     private static float total = 0.0f;
     
     //Constructor
-    public Factura(Usuario cliente, String fechaFactura) {
+    public Factura(Usuario cliente, String fechaFactura, HashMap<Producto, Integer> productos) {
     facturaID=+1; // El ID de la factura se va incrementando a medida que se va creando, con numero base 38040000
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
+    this.productos = productos;
     }
 
-    public String toString() {
+	public String toString() {
         return  "~ Factura #"+ facturaID + "\n"+
                 "~ Fecha = " + fechaFactura +"\n"+
                 "~ Cliente = " + cliente + '\n' +
@@ -122,7 +123,6 @@ public class Factura implements Serializable {
     public float getTotal() {
         return total;
     }
-
 
     public static void setFacturaID(long facturaID) {
         Factura.facturaID = facturaID;

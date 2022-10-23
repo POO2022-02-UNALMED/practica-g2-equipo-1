@@ -1,6 +1,6 @@
 package uiMain;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.HashMap;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Persona;
@@ -14,7 +14,6 @@ import gestorAplicacion.gestionVentas.Gato;
 import gestorAplicacion.gestionVentas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
-
 
 public class CasosPrueba {
 	
@@ -73,17 +72,17 @@ public class CasosPrueba {
 	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", new ArrayList<Mascota>());
 	
 	// Facturas
-	Factura factura1 = new Factura(usuario1, "23/10/2022");
-	Factura factura2 = new Factura(usuario1, "15/10/2022");
+	Factura factura1 = new Factura(usuario1, "23/10/2022", new HashMap<Producto, Integer>());
+	Factura factura2 = new Factura(usuario1, "15/10/2022", new HashMap<Producto, Integer>());
 	
-	Factura factura3 = new Factura(usuario2, "22/10/2022");
-	Factura factura4 = new Factura(usuario2, "21/10/2022");
+	Factura factura3 = new Factura(usuario2, "22/10/2022", new HashMap<Producto, Integer>());
+	Factura factura4 = new Factura(usuario2, "21/10/2022", new HashMap<Producto, Integer>());
 	
-	Factura factura5 = new Factura(usuario3, "19/10/2022");
-	Factura factura6 = new Factura(usuario3, "18/10/2022");
+	Factura factura5 = new Factura(usuario3, "19/10/2022", new HashMap<Producto, Integer>());
+	Factura factura6 = new Factura(usuario3, "18/10/2022", new HashMap<Producto, Integer>());
 	
-	Factura factura7 = new Factura(usuario4, "17/10/2022");
-	Factura factura8 = new Factura(usuario4, "16/10/2022");
+	Factura factura7 = new Factura(usuario4, "17/10/2022", new HashMap<Producto, Integer>());
+	Factura factura8 = new Factura(usuario4, "16/10/2022", new HashMap<Producto, Integer>());
 	
 	// Vendedores
 	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, new ArrayList<Factura>(), "Juan Pablo Arcila", "holi12");
@@ -93,8 +92,12 @@ public class CasosPrueba {
 	// Mascotas
 		// Perros
 	Perro perro1 = new Perro(100, "Dante", 1, "Grande");
+	Perro perro2 = new Perro(101, "Tony", 5, "Grande");
+	Perro perro3 = new Perro(102, "Apolo", 8, "Pequeño");
+	Perro perro4 = new Perro(103, "Lupita", 0, "Pequeño");
 	
 		// Gatos
-	Gato gato1 = new Gato(123, "Jackie", 4, "Hogare�o");
+	Gato gato1 = new Gato(123, "Jackie", 1);
+	Gato gato2 = new Gato(124, "Manchita", 4);
 	}
 }

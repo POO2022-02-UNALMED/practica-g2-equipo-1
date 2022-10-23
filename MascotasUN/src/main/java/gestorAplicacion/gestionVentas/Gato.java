@@ -18,26 +18,27 @@ public class Gato implements Mascota, Serializable {
     private long mascotaID;
     private String nombre;
     private int edad;
-    private String raza;
 
     // Constructor
-    public Gato(long mascotaID, String nombre, int edad, String raza) {
+    public Gato(long mascotaID, String nombre, int edad) {
         this.mascotaID = mascotaID;
     	this.nombre = nombre;
         this.edad = edad;
-        this.raza = raza;
     }
 
     // Setters y Getters
     public static ArrayList<Gato> getGatos() {
         return gatos;
     }
+    
     public static void setGatos(ArrayList<Gato> gatos) {
         Gato.gatos=gatos;
     }
+    
     public long getMascotaID() {
         return mascotaID;
     }
+    
     public void setMascotaID(long mascotaID) {
         this.mascotaID = mascotaID;
     }
@@ -56,16 +57,6 @@ public class Gato implements Mascota, Serializable {
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-
-
-
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
-        this.raza = raza;
     }
     
     //Métodos
