@@ -1,7 +1,7 @@
 package gestorAplicacion.gestionVentas;
 
 //Importando librerías
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.ArrayList;
 
 //Creando la interfaz
@@ -9,13 +9,10 @@ public interface Mascota {
     
 	
     // Métodos
-    ArrayList tipoAlimento(String tipo, String raza);
+    //ArrayList tipoAlimento(String raza);
     
     String calcularEdad(int edad);
     
-    void anadirProductos();
-    
-    void eliminarProductos();
     
     public enum Raza{
     	PEQUENA, GRANDE, MEDIANA

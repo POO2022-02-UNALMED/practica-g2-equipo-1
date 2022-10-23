@@ -70,8 +70,8 @@ public class Gato implements Mascota, Serializable {
     
     
     //Métodos
-    @Override
-    public ArrayList tipoAlimento(String raza){
+    //@Override
+    /*public ArrayList tipoAlimento(String raza){
     		if raza==Raza.GRANDE{
     			if calcularEdad() == "Cachorro"{
     				return ArrayList;
@@ -96,14 +96,14 @@ public class Gato implements Mascota, Serializable {
     				return ArrayList;	
     			}
     		}
-    }
+    }*/
     
     
     
     @Override
     public String calcularEdad(int edad) {
-    	if edad<1{
-    		return "Cachorro"
+    	if (edad<=1 ){
+    		return "Cachorro";
     	}
     	else {
     		return "Adulto";
@@ -113,8 +113,5 @@ public class Gato implements Mascota, Serializable {
     
     
     
-    @Override
-    public void anadirProductos() {
-    public void eliminarProductos() {
 
 }
