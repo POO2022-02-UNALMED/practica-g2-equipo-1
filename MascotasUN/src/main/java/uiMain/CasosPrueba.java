@@ -15,6 +15,7 @@ import gestorAplicacion.gestionVentas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 
+// Falta llenar los ArrayList y HashMap de Proveedor, Usuario, Factura y Vendedor. Se crean a parte.
 public class CasosPrueba {
 	
 	public static void crearCasosDePrueba() {
