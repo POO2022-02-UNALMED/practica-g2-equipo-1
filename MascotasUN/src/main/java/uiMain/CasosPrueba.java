@@ -128,6 +128,8 @@ public class CasosPrueba {
 	listavendedores.put(vendedor2.getUsuario(), vendedor2.getContrasena());
 	listavendedores.put(vendedor3.getUsuario(), vendedor3.getContrasena());
 	
+	Vendedor.setUsuarios(listavendedores);
+	
 	// Facturas
 		Factura factura1 = new Factura(usuario1, "23/10/2022", vendedor1);
 		factura1.setProductos(compra1);

@@ -20,7 +20,7 @@ public class Vendedor extends Persona implements Serializable {
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
     private String contrasena;
-    static HashMap<String, String> usuarios = new HashMap<String, String>(); // Diccionario vendedores
+    public static HashMap<String, String> usuarios = new HashMap<String, String>(); // Diccionario vendedores
 
     //Constructor
     public Vendedor(long personaId, String nombre, String email, int telefono, ArrayList<Factura> ventas,
@@ -69,7 +69,7 @@ public class Vendedor extends Persona implements Serializable {
 
     public static boolean validarCredenciales(String usuario, String contrasena){
         for (Entry<String, String> entry : usuarios.entrySet()) {
-            if (usuario==entry.getKey() & contrasena==entry.getValue()){
+            if (usuario.equals(entry.getKey()) & contrasena.equals(entry.getValue())){
                 return true;
             }
         }

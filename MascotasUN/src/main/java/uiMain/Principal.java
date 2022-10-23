@@ -2,6 +2,7 @@ package uiMain;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Map.Entry;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Persona;
@@ -69,43 +70,14 @@ public class Principal {
         System.out.println("Ingresa la contraseña: ");
         Scanner sc_contra = new Scanner(System.in);
         Contrasena=sc_contra.nextLine();
-
-        switch(Usuario) {
         
-        case "Juan Pablo Arcila":
-            if("holi12".equals(Contrasena)) {
-                System.out.println("Bienvenido, Juan Pablo Arcila");
-                menuPrincipal();
-                break;
-            }
-            else {
-                System.err.println("Acceso denegado");
-                inicioSesion();
-            }
-        case "Roberto Barrientos":
-            if("adios13".equals(Contrasena)) {
-                System.out.println("Bienvenido, Roberto Barrientos");
-                menuPrincipal();
-                break;
-            }
-            else {
-                System.err.println("Acceso denegado");
-                inicioSesion();
-            }
-        case "Laura Vanegas":
-            if("lau1245".equals(Contrasena)) {
-                System.out.println("Bienvenido, Laura Vanegas");
-                menuPrincipal();
-                break;
-            }
-            else {
-                System.err.println("Acceso denegado");
-                inicioSesion();
-            }
-        default: {
-            System.err.println("No se reconoce el usuario"); //Devolver
+        if(Vendedor.validarCredenciales(Usuario,Contrasena)==true) {
+            System.out.println("Bienvenido, "+ Usuario);
+            menuPrincipal();
+        }
+        else {
+            System.err.println("Acceso denegado");
             inicioSesion();
-        	}
         }
 	}
 	
@@ -126,7 +98,7 @@ public class Principal {
             opcion = input.nextInt();
 
             switch (opcion) {
-                //case 1: GestionEmpleados.GestionarEmpleados() ; break;
+                case 1: funcionalidades.RealizarVenta() ; break;
                 //case 2: GestionProductos.GestionarProductos() ; break;
                 //case 3: GestionServicios.GestionarServicios() ; break;
                 //case 4: GestionCompras.GestionarCompra() ; break;
@@ -144,6 +116,7 @@ public class Principal {
 	// Entrada al programa
 	public static void main(String[] args) {
 		//Deserializador.deserializar();
+		CasosPrueba.crearCasosDePrueba();
     	Principal.showMenu();
     }
 }
