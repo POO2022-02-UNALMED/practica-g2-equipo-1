@@ -1,5 +1,6 @@
 package uiMain;
 import java.util.ArrayList;
+import java.util.Date;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Persona;
@@ -19,9 +20,14 @@ public class CasosPrueba {
 	
 	public static void crearCasosDePrueba() {
 		
-	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, "Juan Pablo Arcila", "holi12");
-	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, "Roberto Barrientos", "adios13");
-	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, "Laura Vanegas", "lau1245");
+	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, new ArrayList<Factura>(), "Juan Pablo Arcila", "holi12");
+	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, new ArrayList<Factura>(), "Roberto Barrientos", "adios13");
+	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, new ArrayList<Factura>(), "Laura Vanegas", "lau1245");
+	
+		// Cuentas de clientes
+	CuentaBancaria cuenta1 = new CuentaBancaria((long)108952347, (float)2023456.1, 1852);
+	CuentaBancaria cuenta2 = new CuentaBancaria((long)278782778, (float)800.5, 8728);
+	CuentaBancaria cuenta3 = new CuentaBancaria((long)387787222, (float)500456.7, 7885);
 	
 		// Cuenta bancaria del proveedor
 	CuentaBancaria cuentaProveedor = new CuentaBancaria((long)1089523479, (float)20858967.8, 5782);
@@ -30,8 +36,14 @@ public class CasosPrueba {
 	CuentaBancaria cuentaTienda = new CuentaBancaria((long)1077774562, (float)10889456.6, 1023);
 	
 	// Productos
+		// Perro grande adulto
+	Producto producto1 = new Producto(1, "Croquetas Adulto Plus", Date fechaVencimiento, String descripcion, float precioCompra, float precioVenta, int cantidadComprada);
+		// Perro grande cachorro
+		// Perro pequeño adulto
+		// Perro pequeño cachorro
 	
-	Producto producto1 = new 
+		// Gato cachorro
+		// Gato adulto
 	
 	// Proveedor
 	
@@ -39,10 +51,10 @@ public class CasosPrueba {
 	
 	// Clientes
 		
-	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Tarjeta", "Cra 170 # 2-103", new ArrayList<Mascota>());
-	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Tarjeta", "Cra 58 # 78-29", new ArrayList<Mascota>());
-	Usuario usuario3 = new Usuario(25787278, "Jorge Sierra", "jsierra@email.com", 7895589, cuenta3, "Tarjeta", "Cll 66 # 43-47", new ArrayList<Mascota>());
-	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Efectivo", "Cll 48 # 63-102", new ArrayList<Mascota>());
+	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", new ArrayList<Mascota>());
+	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Cra 58 # 78-29", new ArrayList<Mascota>());
+	Usuario usuario3 = new Usuario(25787278, "Jorge Sierra", "jsierra@email.com", 7895589, cuenta3, "Cll 66 # 43-47", new ArrayList<Mascota>());
+	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", new ArrayList<Mascota>());
 	
 	// Facturas
 		
