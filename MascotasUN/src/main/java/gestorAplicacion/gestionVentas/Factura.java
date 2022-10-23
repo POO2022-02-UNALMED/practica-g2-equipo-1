@@ -43,7 +43,6 @@ public class Factura implements Serializable {
         return  "~ Factura#"+ facturaID + "\n"+
                 "~ Fecha= " + fechaFactura +"\n"+
                 "~ Cliente= " + cliente + '\n' +
-                "~ Productos=" + productos +"\n"+
                 "~ Cantidad a pagar= " +total+ "\n"+
                 "~ Metodo de Pago=" + metodoPago;
     }
