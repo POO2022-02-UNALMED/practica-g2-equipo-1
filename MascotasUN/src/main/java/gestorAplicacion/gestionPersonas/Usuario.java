@@ -16,7 +16,6 @@ public class Usuario extends Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
 	//Serializador Usuarios
 	private static ArrayList<Usuario> usuarios = new ArrayList<>();
-	private String formaPago;
 	private String direccion;
 	private String envioCompra = "";
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
@@ -26,7 +25,6 @@ public class Usuario extends Persona implements Serializable {
 	// Constructor
 	public Usuario(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, ArrayList<Mascota> mascotas) {
 		super(personaId, nombre, email, telefono, cuenta);
-		this.formaPago = formaPago;
 		this.direccion = direccion;
 		this.mascotas = mascotas;
 	}
@@ -47,13 +45,6 @@ public class Usuario extends Persona implements Serializable {
 
 	public static void setUsuarios(ArrayList<Usuario> usuarios) {
 		Usuario.usuarios=usuarios;
-	}
-	public String getFormaPago() {
-		return formaPago;
-	}
-
-	public void setFormaPago(String formaPago) {
-		this.formaPago = formaPago;
 	}
 	
 	public String getDireccion() {

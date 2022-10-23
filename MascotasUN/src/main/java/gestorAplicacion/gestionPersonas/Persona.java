@@ -9,18 +9,21 @@ public abstract class Persona {
     que interactuan con nuestra interfaz */
 
    //Atributos (protected para utilizarlos dentro del paquete)
-    protected long personaId;
+    protected int personaId;
     protected String nombre;
     protected String email;
     protected int telefono;
     protected CuentaBancaria cuenta;
 
     //Constructor
-    public Persona(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
+    public Persona(int personaId, String nombre, String email, int telefono){
         this.personaId=personaId;
         this.nombre=nombre;
         this.email=email;
         this.telefono=telefono;
+    }
+    public Persona(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
+        this(personaId,nombre,email,telefono);
         this.cuenta = cuenta;
     }
     
@@ -31,7 +34,7 @@ public abstract class Persona {
     
     
     //getters y setters
-    public void setPersonaId(long personaId) {
+    public void setPersonaId(int personaId) {
         this.personaId = personaId;
     }
 

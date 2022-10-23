@@ -19,24 +19,21 @@ public class Factura implements Serializable {
     private Date fechaFactura;
     private Vendedor vendedor;
     private HashMap<Producto, Integer> productos = new HashMap<>();
-    private String metodoPago;
     private static float total = 0.0f;
     
     //Constructor
-    public Factura(Usuario cliente, Date fechaFactura, String metodoPago, Vendedor vendedor) {
+    public Factura(Usuario cliente, Date fechaFactura, Vendedor vendedor) {
     facturaID=+1; // El ID de la factura se va incrementando a medida que se va creando, con numero base 38040000
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
     this.vendedor=vendedor;
-    this.metodoPago=metodoPago;
     }
 
     public String toString() {
         return  "~ Factura #"+ facturaID + "\n"+
                 "~ Fecha = " + fechaFactura +"\n"+
                 "~ Cliente = " + cliente + '\n' +
-                "~ Cantidad a pagar = " +total+ "\n"+
-                "~ Metodo de Pago = " + metodoPago;
+                "~ Cantidad a pagar = " +total+ "\n";
     }
     
    //Metodo que realiza la compra
@@ -127,16 +124,6 @@ public class Factura implements Serializable {
     public void setProductos(HashMap<Producto, Integer> productos) {
 
         this.productos = productos;
-    }
-
-    public String getMetodoPago() {
-
-        return metodoPago;
-    }
-
-    public void setMetodoPago(String metodoPago) {
-
-        this.metodoPago = metodoPago;
     }
 
     public float getTotal() {
