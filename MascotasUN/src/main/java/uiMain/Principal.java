@@ -58,8 +58,7 @@ public class Principal {
 	/* Menú que muestra el inicio de sesión*/
 	
 	static void inicioSesion(){
-		int error = 0; // Se inicializa la variable response
-		do {
+		//do {
 		Scanner sc = new Scanner(System.in);
         String Usuario;
         System.out.println("Ingrese el usuario:" );
@@ -67,12 +66,12 @@ public class Principal {
         String Contrasena;
         System.out.println("Ingresa la contraseña: ");
         Contrasena=sc.nextLine();
+        Usuario = "";
 
         switch(Usuario) {
         case "Juan Pablo Arcila":
             if("holi12".equals(Contrasena)) {
                 System.out.println("Bienvenido, Juan Pablo Arcila");
-                error = 1;
                 menuPrincipal();
                 break;
             }
@@ -83,7 +82,6 @@ public class Principal {
         case "Roberto Barrientos":
             if("adios13".equals(Contrasena)) {
                 System.out.println("Bienvenido, Roberto Barrientos");
-                error = 1;
                 menuPrincipal();
                 break;
             }
@@ -94,7 +92,6 @@ public class Principal {
         case "Laura Vanegas":
             if("lau1245".equals(Contrasena)) {
                 System.out.println("Bienvenido, Laura Vanegas");
-                error = 1;
                 menuPrincipal();
                 break;
             }
@@ -107,7 +104,7 @@ public class Principal {
             System.exit(0);
         	}
         }
-		} while(error != 1);
+		//} while(Usuario != "");
     }
 	
 	/* Acceso al menú de funcionalidades */
