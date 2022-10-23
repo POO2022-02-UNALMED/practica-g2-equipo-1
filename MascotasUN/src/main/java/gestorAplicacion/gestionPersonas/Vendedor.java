@@ -12,9 +12,8 @@ public class Vendedor extends Persona implements Serializable {
     private static ArrayList<Vendedor> vendedores = new ArrayList<>();
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
-    private long cuentaBancaria;
     private long contrasena;
-    private boolean esAdmin;
+    //private boolean esAdmin;
     static HashMap<String, String> usuarios = new HashMap<String, String>();
  
     /*public static void dict(){
@@ -30,7 +29,7 @@ public class Vendedor extends Persona implements Serializable {
         this.ventas = ventas;
         this.usuario = usuario;
         this.contrasena = contrasena;
-        this.esAdmin = esAdmin;
+        //this.esAdmin = esAdmin;
     }
 
     //Getters y setters
@@ -63,20 +62,12 @@ public class Vendedor extends Persona implements Serializable {
     public void setContrasena(long contrasena) {
         this.contrasena = contrasena;
     }
-    public boolean getEsAdmin() {
+    /*public boolean getEsAdmin() {
         return esAdmin;
     }
     public void setEsAdmin(boolean esAdmin) {
         this.esAdmin = esAdmin;
-    }
-    
-    public long getCuentaBancaria() {
-		return cuentaBancaria;
-	}
-
-	public void setCuentaBancaria(long cuentaBancaria) {
-		this.cuentaBancaria = cuentaBancaria;
-	}
+    }*/
 
 	public static HashMap<String, String> getUsuarios() {
 		return usuarios;
