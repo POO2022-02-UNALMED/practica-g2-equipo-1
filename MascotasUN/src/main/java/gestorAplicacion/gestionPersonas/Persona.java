@@ -22,14 +22,11 @@ public abstract class Persona {
         this.email=email;
         this.telefono=telefono;
     }
+    
+    // Sobrecarga de constructor
     public Persona(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
         this(personaId,nombre,email,telefono);
         this.cuenta = cuenta;
-    }
-    
-    //Sobrecarga de Constructores
-    public Persona(long personaId, String nombre, String email, int telefono){
-        this(personaId,nombre,email,telefono, null);
     }
     
     

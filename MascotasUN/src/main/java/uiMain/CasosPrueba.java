@@ -35,7 +35,7 @@ public class CasosPrueba {
 	
 	// Productos
 	
-	
+	Producto producto1 = new 
 	
 	// Proveedor
 	
