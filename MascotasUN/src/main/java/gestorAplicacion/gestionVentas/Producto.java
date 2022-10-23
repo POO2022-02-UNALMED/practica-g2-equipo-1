@@ -1,7 +1,6 @@
 package gestorAplicacion.gestionVentas;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Producto implements Serializable {
     /**
@@ -13,14 +12,14 @@ public class Producto implements Serializable {
     //Atributos
     private long productoID;
     private String nombre;
-    private Date fechaVencimiento;
+    private String fechaVencimiento;
     private String descripcion;
     private float precio;
     private int cantidadComprada;
     //Lista para la recomendacion de concentrado, anadir tipo. y Sobrecarga de constructores.
 
     // Constructor
-    public Producto(long productoID, String nombre, Date fechaVencimiento, String descripcion, float precioCompra, float precioVenta, int cantidadComprada) {
+    public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra, float precioVenta, int cantidadComprada) {
     this.productoID = productoID;
     this.nombre = nombre;
     this.fechaVencimiento = fechaVencimiento;
@@ -69,11 +68,11 @@ public class Producto implements Serializable {
         this.nombre = nombre;
     }
     
-    public Date getFechaVencimiento() {
+    public String getFechaVencimiento() {
         return fechaVencimiento;
     }
 
-    public void setFechaVencimiento(Date fechaVencimiento) {
+    public void setFechaVencimiento(String fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
     
