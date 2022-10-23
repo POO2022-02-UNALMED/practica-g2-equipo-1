@@ -195,20 +195,6 @@ public class RealizarVenta {
 
 
     }
-    public static Usuario encontrarPersona(ArrayList<Usuario> lista, long id){
 
-        for(Usuario cliente: lista){
-            if (id == cliente.getPersonaId()){
-                return cliente;
-            }
-        }
-    }
-    public static Producto encontrarProducto(long idProducto){
-        for(Producto prod: t.getCatalogo()){
-            if (prod.getProductoID()==idProducto){
-                return prod;
-            }
-        }
-    }
 }
 

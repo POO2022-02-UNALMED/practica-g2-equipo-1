@@ -23,7 +23,7 @@ public class Vendedor extends Persona implements Serializable {
     static HashMap<String, String> usuarios = new HashMap<String, String>(); // Diccionario vendedores
 
     //Constructor
-    public Vendedor(int personaId, String nombre, String email, int telefono, ArrayList<Factura> ventas, 
+    public Vendedor(long personaId, String nombre, String email, int telefono, ArrayList<Factura> ventas,
     		String usuario, String contrasena) {
         super(personaId, nombre, email, telefono);
         this.ventas = ventas;

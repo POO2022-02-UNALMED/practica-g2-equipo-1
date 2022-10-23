@@ -9,14 +9,14 @@ public abstract class Persona {
     que interactuan con nuestra interfaz */
 
    //Atributos (protected para utilizarlos dentro del paquete)
-    protected int personaId;
+    protected long personaId;
     protected String nombre;
     protected String email;
     protected int telefono;
     protected CuentaBancaria cuenta;
 
     //Constructor
-    public Persona(int personaId, String nombre, String email, int telefono){
+    public Persona(long personaId, String nombre, String email, int telefono){
         this.personaId=personaId;
         this.nombre=nombre;
         this.email=email;
@@ -24,14 +24,14 @@ public abstract class Persona {
     }
     
     // Sobrecarga de constructor
-    public Persona(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
+    public Persona(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
         this(personaId,nombre,email,telefono);
         this.cuenta = cuenta;
     }
     
     
     //getters y setters
-    public void setPersonaId(int personaId) {
+    public void setPersonaId(long personaId) {
         this.personaId = personaId;
     }
 

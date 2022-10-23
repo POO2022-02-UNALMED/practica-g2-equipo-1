@@ -23,13 +23,13 @@ public class Usuario extends Persona implements Serializable {
 	private ArrayList<Factura> compras = new ArrayList<Factura>();
 
 	// Constructor
-	public Usuario(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, String direccion, ArrayList<Mascota> mascotas) {
+	public Usuario(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, String direccion, ArrayList<Mascota> mascotas) {
 		super(personaId, nombre, email, telefono, cuenta);
 		this.direccion = direccion;
 		this.mascotas = mascotas;
 	}
 	// Sobrecarga de constructor
-	public Usuario(int personaId, String nombre, String email, int telefono, String direccion, ArrayList<Mascota> mascotas) {
+	public Usuario(long personaId, String nombre, String email, int telefono, String direccion, ArrayList<Mascota> mascotas) {
 		this(personaId, nombre, email, telefono, null, direccion, mascotas);
 	}
 	
