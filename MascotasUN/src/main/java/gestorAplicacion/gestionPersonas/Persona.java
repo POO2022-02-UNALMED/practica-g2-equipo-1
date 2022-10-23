@@ -25,8 +25,8 @@ public abstract class Persona {
     }
     
     //Sobrecarga de Constructores
-    public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono){
-        this(personaId,nombre,email,telefono, null); 	
+    public Persona(long personaId, String nombre, String email, int telefono){
+        this(personaId,nombre,email,telefono, null);
     }
     
     
