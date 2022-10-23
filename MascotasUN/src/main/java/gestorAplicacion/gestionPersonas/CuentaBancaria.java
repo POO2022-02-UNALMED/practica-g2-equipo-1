@@ -10,16 +10,14 @@ public class CuentaBancaria {
 	private static ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<>();
 	
 	//Atributos
-	private Persona titular;
+
 	private long nroCuenta;
 	private float saldo;
 	private int pin;
 	static private HashMap<Long,Integer> credenciales = new HashMap<>();
 
 	//Constructor
-	public CuentaBancaria(Persona titular, long nroCuenta, float saldo, int pin) {
-		super();
-		this.titular = titular;
+	public CuentaBancaria(long nroCuenta, float saldo, int pin) {
 		this.nroCuenta = nroCuenta;
 		this.saldo = saldo;
 		this.pin = pin;
@@ -33,14 +31,9 @@ public class CuentaBancaria {
 	public static void setCuentasBancarias(ArrayList<CuentaBancaria> cuentasBancarias) {
 		CuentaBancaria.cuentasBancarias=cuentasBancarias;
 	}
-	public Persona getTitular() {
-		return titular;
-	}
 
-	public void setTitular(Persona titular) {
-		this.titular = titular;
-	}
 
+	
 	public long getNroCuenta() {
 		return nroCuenta;
 	}

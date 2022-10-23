@@ -30,6 +30,12 @@ public class Usuario extends Persona implements Serializable {
 		this.direccion = direccion;
 		this.mascotas = mascotas;
 	}
+	public Usuario(int personaId, String nombre, String email, int telefono, String formaPago, String direccion, ArrayList<Mascota> mascotas) {
+		super(personaId, nombre, email, telefono);
+		this.formaPago = formaPago;
+		this.direccion = direccion;
+		this.mascotas = mascotas;
+	}
 	@Override
 	public void agregarFactura(Factura f){
 		compras.add(f);
