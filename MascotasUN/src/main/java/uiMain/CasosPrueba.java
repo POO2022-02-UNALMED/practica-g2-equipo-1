@@ -62,43 +62,85 @@ public class CasosPrueba {
 	Producto producto16 = new Producto(16, "Purina catchow adulto", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2);
 	Producto producto17 = new Producto(17, "Comida enlatada felino adulto", "28/05/2024", "Comida húmeda para gato adulto", 5000, 9000, 3);
 	Producto producto18 = new Producto(18, "Whiskas para felino adulto", "01/09/2024", "Alimento balanceado para gato adulto", 11000, 15000, 4);
+	
+	//ArrayList de productos
+	ArrayList<Producto> listaProductos = new ArrayList<Producto>(); listaProductos.add(producto1); listaProductos.add(producto2);listaProductos.add(producto3); listaProductos.add(producto4);
+	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto8); listaProductos.add(producto9); listaProductos.add(producto10);
+	listaProductos.add(producto11); listaProductos.add(producto12); listaProductos.add(producto13); listaProductos.add(producto14); listaProductos.add(producto15); listaProductos.add(producto16);
+	listaProductos.add(producto17); listaProductos.add(producto18);
+	
+	//HashMap de productos
+		//Compras usuario1
+	HashMap<Producto, Integer> compra1 =new HashMap<Producto, Integer>(); compra1.put(producto4, 2); compra1.put(producto5, 2); compra1.put(producto6, 3); compra1.put(producto13, 4); 
+	compra1.put(producto14, 2); compra1.put(producto15, 1);	
+	HashMap<Producto, Integer> compra2 =new HashMap<Producto, Integer>(); compra2.put(producto4, 2); compra2.put(producto13, 3);
+	
+		//Compra usuario2
+	HashMap<Producto, Integer> compra3 =new HashMap<Producto, Integer>(); compra3.put(producto16, 2); compra3.put(producto17, 2); compra3.put(producto18, 3);
+	HashMap<Producto, Integer> compra4 =new HashMap<Producto, Integer>(); compra4.put(producto17, 1);
+	
+		//Compra usuario3
+	HashMap<Producto, Integer> compra5 =new HashMap<Producto, Integer>(); compra5.put(producto1, 2); compra5.put(producto2, 3); compra5.put(producto3, 3);
+	HashMap<Producto, Integer> compra6 =new HashMap<Producto, Integer>(); compra6.put(producto3, 1);
+	
+		//Compra usuario4
+	HashMap<Producto, Integer> compra7 =new HashMap<Producto, Integer>(); compra7.put(producto7, 2); compra7.put(producto8, 2); compra7.put(producto9, 3); compra7.put(producto10, 3); 
+	compra7.put(producto11, 2); compra7.put(producto12, 1);
+	HashMap<Producto, Integer> compra8 =new HashMap<Producto, Integer>(); compra8.put(producto8, 1); compra8.put(producto9, 1); compra8.put(producto10, 2); compra8.put(producto11, 1); 
+	compra8.put(producto12, 1);
+
+	// Mascotas
+			// Perros
+		Perro perro1 = new Perro(100, "Dante", 1, "Grande"); //Perro Cachorro Grande
+		Perro perro2 = new Perro(101, "Tony", 5, "Grande"); //Perro Adulto Grande
+		Perro perro3 = new Perro(102, "Apolo", 8, "Pequeño"); //Perro Adulto Pequeño
+		Perro perro4 = new Perro(103, "Lupita", 0, "Pequeño"); //Perro Cachorro pequeño
 		
+			// Gatos
+		Gato gato1 = new Gato(123, "Jackie", 1); //Gato Cachorro
+		Gato gato2 = new Gato(124, "Manchita", 4); //Gato Adulto 
+		
+		// ArrayList de mascotas
+		ArrayList<Mascota> listaMascotas1 = new ArrayList<Mascota>(); listaMascotas1.add(perro1); listaMascotas1.add(gato1);
+		ArrayList<Mascota> listaMascotas2 = new ArrayList<Mascota>(); listaMascotas2.add(gato2);
+		ArrayList<Mascota> listaMascotas3 = new ArrayList<Mascota>(); listaMascotas3.add(perro2);
+		ArrayList<Mascota> listaMascotas4 = new ArrayList<Mascota>(); listaMascotas4.add(perro3); listaMascotas1.add(perro4);
+		
+	
 	// Proveedor
-	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, new ArrayList<Producto>(), true) ;
+	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, listaProductos, true) ;
 	
 	// Clientes
-	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", new ArrayList<Mascota>());
-	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Cra 58 # 78-29", new ArrayList<Mascota>());
-	Usuario usuario3 = new Usuario(25787278, "Jorge Sierra", "jsierra@email.com", 7895589, cuenta3, "Cll 66 # 43-47", new ArrayList<Mascota>());
-	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", new ArrayList<Mascota>());
+	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", listaMascotas1); //Usuario 1 tiene Perro Cachorro Grande y Gato Cachorro
+	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Cra 58 # 78-29", listaMascotas2); //Usuario 2 tiene Gato Adulto
+	Usuario usuario3 = new Usuario(25787278, "Jorge Sierra", "jsierra@email.com", 7895589, cuenta3, "Cll 66 # 43-47", listaMascotas3); //Usuario 3 tiene Perro Adulto Grande
+	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", listaMascotas4); // Usuario 4 tiene Perro Adulto Pequeño y Perro Cachorro Pequeño
 	
 	// Facturas
-	Factura factura1 = new Factura(usuario1, "23/10/2022", new HashMap<Producto, Integer>());
-	Factura factura2 = new Factura(usuario1, "15/10/2022", new HashMap<Producto, Integer>());
+	Factura factura1 = new Factura(usuario1, "23/10/2022", compra1);
+	Factura factura2 = new Factura(usuario1, "15/10/2022", compra2);
 	
-	Factura factura3 = new Factura(usuario2, "22/10/2022", new HashMap<Producto, Integer>());
-	Factura factura4 = new Factura(usuario2, "21/10/2022", new HashMap<Producto, Integer>());
+	Factura factura3 = new Factura(usuario2, "22/10/2022", compra3);
+	Factura factura4 = new Factura(usuario2, "21/10/2022", compra4);
 	
-	Factura factura5 = new Factura(usuario3, "19/10/2022", new HashMap<Producto, Integer>());
-	Factura factura6 = new Factura(usuario3, "18/10/2022", new HashMap<Producto, Integer>());
+	Factura factura5 = new Factura(usuario3, "19/10/2022", compra5);
+	Factura factura6 = new Factura(usuario3, "18/10/2022", compra6);
 	
-	Factura factura7 = new Factura(usuario4, "17/10/2022", new HashMap<Producto, Integer>());
-	Factura factura8 = new Factura(usuario4, "16/10/2022", new HashMap<Producto, Integer>());
+	Factura factura7 = new Factura(usuario4, "17/10/2022", compra7);
+	Factura factura8 = new Factura(usuario4, "16/10/2022", compra8);
+	
+	//ArrayList de facturas
+	ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
+	ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura1.add(factura3); listaFactura1.add(factura4);
+	ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura1.add(factura5); listaFactura1.add(factura6); listaFactura1.add(factura7); listaFactura1.add(factura8);
+	
 	
 	// Vendedores
-	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, new ArrayList<Factura>(), "Juan Pablo Arcila", "holi12");
-	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, new ArrayList<Factura>(), "Roberto Barrientos", "adios13");
-	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, new ArrayList<Factura>(), "Laura Vanegas", "lau1245");
+	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, listaFactura1, "Juan Pablo Arcila", "holi12");
+	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, listaFactura2, "Roberto Barrientos", "adios13");
+	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, listaFactura3, "Laura Vanegas", "lau1245");
 	
-	// Mascotas
-		// Perros
-	Perro perro1 = new Perro(100, "Dante", 1, "Grande");
-	Perro perro2 = new Perro(101, "Tony", 5, "Grande");
-	Perro perro3 = new Perro(102, "Apolo", 8, "Pequeño");
-	Perro perro4 = new Perro(103, "Lupita", 0, "Pequeño");
 	
-		// Gatos
-	Gato gato1 = new Gato(123, "Jackie", 1);
-	Gato gato2 = new Gato(124, "Manchita", 4);
 	}
+	
 }
