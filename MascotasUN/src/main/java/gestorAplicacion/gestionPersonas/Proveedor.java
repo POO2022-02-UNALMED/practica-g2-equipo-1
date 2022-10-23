@@ -60,3 +60,4 @@ public class Proveedor extends Persona implements Serializable {
     public void setStock(boolean stock) {
         this.stock = stock;
     }
+}
