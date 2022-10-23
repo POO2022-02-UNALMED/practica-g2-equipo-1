@@ -88,18 +88,30 @@ public class Serializador {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       /* //serializador mascotas
+        //serializador perro
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\mascotas.txt");
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\perros.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
-            salida.writeObject(Mascota.getMascotas());
+            salida.writeObject(Perro.getPerros());
             salida.close();
             fileOut.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
+      //serializador gato
+        try {
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\gatos.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            salida.writeObject(Gato.getGatos());
+            salida.close();
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //serializador productos
         try {
             fileOut = new FileOutputStream("src\\baseDatos\\temp\\productos.txt");
