@@ -1,7 +1,7 @@
 package gestorAplicacion.gestionPersonas;
 import gestorAplicacion.gestionVentas.Factura;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Persona {
