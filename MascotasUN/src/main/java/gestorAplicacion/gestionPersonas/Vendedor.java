@@ -15,9 +15,9 @@ public class Vendedor extends Persona implements Serializable {
     private long cuentaBancaria;
     private long contrasena;
     private boolean esAdmin;
-    HashMap<String, String> usuarios = new HashMap<String, String>();
+    static HashMap<String, String> usuarios = new HashMap<String, String>();
  
-    public void dict(){
+    public static void dict(){
         usuarios.put("Juan Pablo Arcila", "holi12");
         usuarios.put("Roberto Barrientos", "adios13");
         usuarios.put("Laura Vanegas", "lau1245");
@@ -70,7 +70,23 @@ public class Vendedor extends Persona implements Serializable {
         this.esAdmin = esAdmin;
     }
     
-    //Métodos
+    public long getCuentaBancaria() {
+		return cuentaBancaria;
+	}
+
+	public void setCuentaBancaria(long cuentaBancaria) {
+		this.cuentaBancaria = cuentaBancaria;
+	}
+
+	public static HashMap<String, String> getUsuarios() {
+		return usuarios;
+	}
+
+	public static void setUsuarios(HashMap<String, String> usuarios) {
+		Vendedor.usuarios = usuarios;
+	}
+
+	//Métodos
     public boolean validarCredenciales(String usuario, String contrasena){
         dict();
         for (Entry<String, String> entry : usuarios.entrySet()) {

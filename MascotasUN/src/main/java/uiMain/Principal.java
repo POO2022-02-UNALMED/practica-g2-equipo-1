@@ -37,6 +37,7 @@ public class Principal {
 	 del programa */
 	
     int response = 0; // Se inicializa la variable response
+    do {
         System.out.println("1. Iniciar sesión");
         System.out.println("0. Salir");
 
@@ -49,65 +50,68 @@ public class Principal {
             break;
         case 0:
             System.out.println("¡Vuelva pronto!");
+            System.exit(0);
             break;
         default:
             System.out.println("Por favor seleccione una respuesta correcta");
 		   }
+    	} while(response != 0);
 	}
 	
 	/* Menú que muestra el inicio de sesión*/
 	
 	static void inicioSesion(){
-		int error = 0;
-		do {
-		Scanner sc = new Scanner(System.in);
-        String Usuario;
+		//boolean x = false;
+		String Usuario;
+		String Contrasena;
+		//int error = 0; // Se crea variable para el do-while
+		Scanner sc_usuario = new Scanner(System.in);
         System.out.println("Ingrese el usuario:" );
-        Usuario = sc.nextLine();
-        String Contrasena;
+        Usuario = sc_usuario.nextLine();
         System.out.println("Ingresa la contraseña: ");
-        Contrasena=sc.nextLine();
+        Scanner sc_contra = new Scanner(System.in);
+        Contrasena=sc_contra.nextLine();
 
         switch(Usuario) {
+        
         case "Juan Pablo Arcila":
             if("holi12".equals(Contrasena)) {
                 System.out.println("Bienvenido, Juan Pablo Arcila");
-                error = 1;
+                //x = true;
                 menuPrincipal();
                 break;
             }
             else {
                 System.err.println("Acceso denegado");
-                System.exit(0);
+                inicioSesion();
             }
         case "Roberto Barrientos":
             if("adios13".equals(Contrasena)) {
                 System.out.println("Bienvenido, Roberto Barrientos");
-                error = 1;
+                //x = true;
                 menuPrincipal();
                 break;
             }
             else {
                 System.err.println("Acceso denegado");
-                System.exit(0);
+                inicioSesion();
             }
         case "Laura Vanegas":
             if("lau1245".equals(Contrasena)) {
                 System.out.println("Bienvenido, Laura Vanegas");
-                error = 1;
+                //x = true;
                 menuPrincipal();
                 break;
             }
             else {
                 System.err.println("Acceso denegado");
-                System.exit(0);
+                inicioSesion();
             }
         default: {
             System.err.println("No se reconoce el usuario"); //Devolver
-            System.exit(0);
+            inicioSesion();
         	}
         }
-		} while(error != 0);
 	}
 	
 	/* Acceso al menú de funcionalidades */
