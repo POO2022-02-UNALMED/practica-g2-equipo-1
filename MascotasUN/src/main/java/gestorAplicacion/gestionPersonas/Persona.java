@@ -53,9 +53,33 @@ public abstract class Persona {
         this.telefono = telefono;
     }
 
-    public void setNroCuentaBancaria(int nroCuentaBancaria) {
-        this.nroCuentaBancaria = nroCuentaBancaria;
+    public void setNroCuentaBancaria(CuentaBancaria cuenta) {
+        this.cuenta = cuenta;
     }
 
-    abstract void agregarFactura(Factura f);
+    public long getPersonaId() {
+		return personaId;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public Date getFechaDeNacimiento() {
+		return fechaDeNacimiento;
+	}
+
+	public int getTelefono() {
+		return telefono;
+	}
+
+	public CuentaBancaria getCuenta() {
+		return cuenta;
+	}
+
+	abstract void agregarFactura(Factura f);
 }
