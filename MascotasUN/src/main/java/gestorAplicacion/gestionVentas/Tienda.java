@@ -34,7 +34,7 @@ public class Tienda implements Serializable {
 			for (Map.Entry<Producto, Integer> entry : fact.getProductos().entrySet()) {
 				Producto k = entry.getKey();
 				Integer v = entry.getValue();
-				f = +k.getPrecio() * v;
+				f =+ k.getPrecio() * v;
 			}
 		}
 		return f*PGANANCIAS;
