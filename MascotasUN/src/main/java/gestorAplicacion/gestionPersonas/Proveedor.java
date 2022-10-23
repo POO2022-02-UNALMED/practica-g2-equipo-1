@@ -28,11 +28,6 @@ public class Proveedor extends Persona implements Serializable {
         this.producto = producto;
         this.stock = stock;
     }
-    
-    //Sobrecarga Constructor
-    public Proveedor(int personaId, String nombre, String email, int telefono, ArrayList<Producto> producto, boolean stock) {
-    	this(personaId,nombre,email,telefono,null,producto,stock);
-    }
 
     //Métodos
     @Override

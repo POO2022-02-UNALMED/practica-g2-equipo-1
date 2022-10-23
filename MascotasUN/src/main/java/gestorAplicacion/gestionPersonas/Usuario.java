@@ -23,19 +23,18 @@ public class Usuario extends Persona implements Serializable {
 
 	private ArrayList<Factura> compras = new ArrayList<Factura>();
 
-	//constructor
+	// Constructor
 	public Usuario(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, ArrayList<Mascota> mascotas) {
 		super(personaId, nombre, email, telefono, cuenta);
 		this.formaPago = formaPago;
 		this.direccion = direccion;
 		this.mascotas = mascotas;
 	}
+	// Sobrecarga de constructor
 	public Usuario(int personaId, String nombre, String email, int telefono, String formaPago, String direccion, ArrayList<Mascota> mascotas) {
-		super(personaId, nombre, email, telefono);
-		this.formaPago = formaPago;
-		this.direccion = direccion;
-		this.mascotas = mascotas;
+		this(personaId, nombre, email, telefono, null, formaPago, direccion, mascotas);
 	}
+	
 	@Override
 	public void agregarFactura(Factura f){
 		compras.add(f);
