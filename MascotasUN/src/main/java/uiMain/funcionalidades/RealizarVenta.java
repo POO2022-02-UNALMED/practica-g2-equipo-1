@@ -52,9 +52,7 @@ public class RealizarVenta {
                                         long clienteID= input.nextLong();
                                         Usuario cliente= encontrarPersona(Usuario.getUsuarios(),clienteID);
                                         System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
-                                        String f=input.next();
-                                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                                        Date fecha = sdf.parse(f);
+                                        String fecha=input.next();
                                         System.out.println("Ingrese el metodo de pago: \n 1 en caso de efectivo 0 en caso de tarjeta");
                                         facturita= new Factura(cliente, fecha, Vendedor.getVendedores().get(0));
                                         break;
@@ -85,20 +83,22 @@ public class RealizarVenta {
                                                 for(int i=0;i<=mas;i++){
                                                     System.out.println("1 en caso de perro, 0 en caso de gato");
                                                     int n=input.nextInt();
+                                                    System.out.println("Ingrese el Id de la mascota");
+                                                    long mId= input.nextLong();
                                                     System.out.println("Ingrese el nombre de la mascota: ");
                                                     String na= input.next();
                                                     System.out.println("Ingrese la edad en años de la mascota: ");
                                                     int edad= input.nextInt();
-                                                    System.out.println("Ingrese la raza de la mascota: ");
+                                                    System.out.println("Ingrese la raza de la mascota(para gato ingrese n): ");
                                                     String raza= input.next();
 
                                                     switch (n){
                                                         case 1:
-                                                            Perro p =new Perro(na, edad, raza);
+                                                            Perro p =new Perro(mId,na, edad, raza);
                                                             pets.add(p);
                                                             break;
                                                         case 0:
-                                                            Gato g =new Gato(na, edad, raza);
+                                                            Gato g =new Gato(mId,na, edad);
                                                             pets.add(g);
                                                             break;
                                                     }
@@ -106,9 +106,7 @@ public class RealizarVenta {
                                                 }
                                                Usuario user1 = new Usuario(id,nombre,email,telefono,new CuentaBancaria(nro,saldo,pin),dir,pets);
                                                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
-                                                String f1=input.next();
-                                                SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
-                                                Date fecha1 = sdf1.parse(f1);
+                                                String fecha1=input.next();
                                                 facturita= new Factura(user1,fecha1,Vendedor.getVendedores().get(0));
                                                 break;
                                             case 0:
@@ -126,22 +124,25 @@ public class RealizarVenta {
                                                 int mas1 = input.nextInt();
                                                 ArrayList<Mascota> pets1 = new ArrayList<>();
                                                 for(int i=0;i<=mas;i++){
+
                                                     System.out.println("1 en caso de perro, 0 en caso de gato");
                                                     int n=input.nextInt();
+                                                    System.out.println("Ingrese el ID de la mascota: ");
+                                                    long mId = input.nextLong();
                                                     System.out.println("Ingrese el nombre de la mascota: ");
                                                     String na= input.next();
                                                     System.out.println("Ingrese la edad en años de la mascota: ");
                                                     int edad= input.nextInt();
-                                                    System.out.println("Ingrese la raza de la mascota: ");
+                                                    System.out.println("Ingrese la raza de la mascota (si es gato no aplica (ingrese n)): ");
                                                     String raza= input.next();
 
                                                     switch (n){
                                                         case 1:
-                                                            Perro p =new Perro(na, edad, raza);
+                                                            Perro p =new Perro(mId,na, edad, raza);
                                                             pets.add(p);
                                                             break;
                                                         case 0:
-                                                            Gato g =new Gato(na, edad, raza);
+                                                            Gato g =new Gato(mId,na, edad);
                                                             pets.add(g);
                                                             break;
                                                     }
@@ -149,9 +150,7 @@ public class RealizarVenta {
                                                 }
                                                 Usuario user2 = new Usuario(id1,nombre1,email1,telefono1,dir1,pets1);
                                                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
-                                                String f2=input.next();
-                                                SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
-                                                Date fecha2 = sdf2.parse(f2);
+                                                String fecha2=input.next();
                                                 facturita= new Factura(user2,fecha2,Vendedor.getVendedores().get(0));
                                                 break;
 
@@ -214,7 +213,7 @@ public class RealizarVenta {
 
                                 }else {
                                     System.out.println("Resumen de compra");
-                                    System.out.println(facturita.toString())
+                                    System.out.println(facturita.toString());
                                     System.out.println("El usuario desea pagar en efectivo?");
                                     System.out.println("ingrese 1 si el pago es en efectivo y 0 si es con tarjeta");
                                     int z=input.nextInt();
