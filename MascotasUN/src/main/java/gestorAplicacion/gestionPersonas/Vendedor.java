@@ -11,15 +11,16 @@ public class Vendedor extends Persona implements Serializable {
 
     //Serializador vendedor
     private static ArrayList<Vendedor> vendedores = new ArrayList<>();
+    // Atributos
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
     private String contrasena;
     static HashMap<String, String> usuarios = new HashMap<String, String>();
 
     //Constructor
-    public Vendedor(int personaId, String nombre, String email, int telefono,
-            CuentaBancaria cuenta , ArrayList<Factura> ventas, String usuario, String contrasena) {
-        super(personaId, nombre, email, telefono, cuenta);
+    public Vendedor(int personaId, String nombre, String email, int telefono, ArrayList<Factura> ventas, 
+    		String usuario, String contrasena) {
+        super(personaId, nombre, email, telefono);
         this.ventas = ventas;
         this.usuario = usuario;
         this.contrasena = contrasena;
