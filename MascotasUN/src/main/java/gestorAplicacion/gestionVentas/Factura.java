@@ -22,7 +22,6 @@ public class Factura implements Serializable {
     private String metodoPago;
     private float total = 0.0f;
     
-    
     //Constructor
     public Factura(Usuario cliente, Date fechaFactura, String metodoPago, float total, Vendedor vendedor) {
     facturaID=+1; // El ID de la factura se va incrementando a medida que se va creando, con numero base 38040000
@@ -149,5 +148,18 @@ public class Factura implements Serializable {
 
         this.total = total;
     }
+
+    public static void setFacturaID(long facturaID) {
+        Factura.facturaID = facturaID;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
     //Final getters y setters
 }
