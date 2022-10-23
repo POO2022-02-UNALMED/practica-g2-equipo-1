@@ -117,6 +117,7 @@ public class Principal {
 	public static void main(String[] args) {
 		//Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
-    	Principal.showMenu();
+    	//Principal.showMenu();
+		System.out.println(Tienda.getCatalogo());
     }
 }

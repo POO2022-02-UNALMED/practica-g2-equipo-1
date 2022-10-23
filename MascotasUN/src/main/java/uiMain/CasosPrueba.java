@@ -64,11 +64,13 @@ public class CasosPrueba {
 	Producto producto17 = new Producto(17, "Comida enlatada felino adulto", "28/05/2024", "Comida húmeda para gato adulto", 5000, 9000, 3);
 	Producto producto18 = new Producto(18, "Whiskas para felino adulto", "01/09/2024", "Alimento balanceado para gato adulto", 11000, 15000, 4);
 	
-	//ArrayList de productos
+	//ArrayList de productos que tiene la tienda
 	ArrayList<Producto> listaProductos = new ArrayList<Producto>(); listaProductos.add(producto1); listaProductos.add(producto2);listaProductos.add(producto3); listaProductos.add(producto4);
 	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto8); listaProductos.add(producto9); listaProductos.add(producto10);
 	listaProductos.add(producto11); listaProductos.add(producto12); listaProductos.add(producto13); listaProductos.add(producto14); listaProductos.add(producto15); listaProductos.add(producto16);
 	listaProductos.add(producto17); listaProductos.add(producto18);
+	
+	Tienda.setCatalogo(listaProductos); // Creamos el catalogo de la tienda
 	
 	//HashMap de productos
 		//Compras usuario1

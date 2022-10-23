@@ -65,23 +65,42 @@ public class Tienda implements Serializable {
 	public static void agregarVenta(Factura f){
 		cantidadDeVentas.add(f);
 	}
+	
+	// Getters y Setters
+
 	public static int getCantidadDeVentas() {
 		return cantidadDeVentas.size();
 	}
-
-	public ArrayList<Producto> getCatalogo() {
-		return catalogo;
-	}
-
-	public HashMap<Producto, Integer> getInventario() {
-		return inventario;
-	}
-
+	
 	public static void setCantidadDeVentas(ArrayList<Factura> cantidadDeVentas) {
 		Tienda.cantidadDeVentas = cantidadDeVentas;
 	}
 
+	public static ArrayList<Producto> getCatalogo() {
+		return catalogo;
+	}
+	
+	public static void setCatalogo(ArrayList<Producto> catalogo) {
+		Tienda.catalogo = catalogo;
+	}
+
+	public static HashMap<Producto, Integer> getInventario() {
+		return inventario;
+	}
+
+	public static void setInventario(HashMap<Producto, Integer> inventario) {
+		Tienda.inventario = inventario;
+	}
+
 	public static CuentaBancaria getCuenta() {
 		return cuenta;
+	}
+	
+	public static void setCuenta(CuentaBancaria cuenta) {
+		Tienda.cuenta = cuenta;
+	}
+
+	public float getPGANANCIAS() {
+		return PGANANCIAS;
 	}
 }
