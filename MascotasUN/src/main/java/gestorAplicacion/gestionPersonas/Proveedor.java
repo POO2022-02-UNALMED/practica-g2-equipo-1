@@ -13,7 +13,7 @@ public class Proveedor extends Persona implements Serializable {
     //Atributos
     private ArrayList<Producto> producto=new ArrayList<Producto>();
 
-    private ArrayList<Factura> facturas= new ArrayList<Factura>();
+    private ArrayList<Factura> pedidos= new ArrayList<Factura>();
     private boolean stock;
     
     
@@ -37,7 +37,7 @@ public class Proveedor extends Persona implements Serializable {
     //Métodos
     @Override
     public void agregarFactura(Factura f){
-        return;
+        pedidos.add(f);
     }
     public static ArrayList<Proveedor> getProveedores() {
         return proveedores;

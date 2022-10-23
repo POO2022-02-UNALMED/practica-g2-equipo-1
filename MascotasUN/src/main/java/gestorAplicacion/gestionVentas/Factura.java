@@ -58,7 +58,7 @@ public class Factura implements Serializable {
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         tienda.reducirStock(this);
         cliente.cuenta.retirar(total, pswd);
-        tienda.cuenta.depositar(total);
+        tienda.getCuenta().depositar(total);
         cliente.agregarFactura(this);
         vendedor.agregarFactura(this);
         tienda.agregarVenta(this);

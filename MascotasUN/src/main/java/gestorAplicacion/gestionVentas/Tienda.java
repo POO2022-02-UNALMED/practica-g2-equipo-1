@@ -13,8 +13,9 @@ public class Tienda implements Serializable {
 	private static ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
-	public CuentaBancaria cuenta;
-	
+	private CuentaBancaria cuenta;
+
+
 
 	public Tienda() {}
 
@@ -78,7 +79,16 @@ public class Tienda implements Serializable {
 	public void setInventario(HashMap<Producto, Integer> inventario) {
 		this.inventario = inventario;
 	}
-	
-	
-	
+
+	public static void setCantidadDeVentas(ArrayList<Factura> cantidadDeVentas) {
+		Tienda.cantidadDeVentas = cantidadDeVentas;
+	}
+
+	public CuentaBancaria getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(CuentaBancaria cuenta) {
+		this.cuenta = cuenta;
+	}
 }
