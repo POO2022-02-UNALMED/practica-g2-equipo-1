@@ -13,9 +13,8 @@ public class Tienda implements Serializable {
 	private static ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
-	private CuentaBancaria cuenta;
+	private static CuentaBancaria cuenta;
 	private final float PGANANCIAS = 0.12f;
-
 
 	public Tienda() {}
 
@@ -25,6 +24,7 @@ public class Tienda implements Serializable {
 	}
 
 	//Getters y Setters
+		// Creamos el getter y setter de Tienda para el serializador
 	public static ArrayList<Tienda> getTienda() {
 		return tienda;
 	}
@@ -32,6 +32,8 @@ public class Tienda implements Serializable {
 	public static void setTienda(ArrayList<Tienda> tienda) {
 		Tienda.tienda=tienda;
 	}
+	
+	// Métodos
 
 	public float obtenerGanancias(){
 		float f = 0.0f;
@@ -45,7 +47,7 @@ public class Tienda implements Serializable {
 		return f*PGANANCIAS;
 	}
 
-	public void aumentarStock(Factura factura){
+	public static void aumentarStock(Factura factura){
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
 			Producto k = fact.getKey();
 			Integer v = fact.getValue();
@@ -54,7 +56,7 @@ public class Tienda implements Serializable {
 		}
 
 	}
-	public void reducirStock(Factura factura){
+	public static void reducirStock(Factura factura){
 
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
 			Producto k = fact.getKey();
@@ -67,7 +69,7 @@ public class Tienda implements Serializable {
 			//la cantidad y los suma
 		}
 	}
-	public void agregarVenta(Factura f){
+	public static void agregarVenta(Factura f){
 		cantidadDeVentas.add(f);
 	}
 	public static int getCantidadDeVentas() {
@@ -94,7 +96,7 @@ public class Tienda implements Serializable {
 		Tienda.cantidadDeVentas = cantidadDeVentas;
 	}
 
-	public CuentaBancaria getCuenta() {
+	public static CuentaBancaria getCuenta() {
 		return cuenta;
 	}
 
