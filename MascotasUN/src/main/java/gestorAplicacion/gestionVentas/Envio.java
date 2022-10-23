@@ -10,9 +10,9 @@ public class Envio implements Serializable {
 	private static final long serialVersionUID = 1L;
 	//Serializador vendedor
     private static ArrayList<Envio> envios = new ArrayList<>();
-    private long envioID;
     private String destino;
     private Factura factura;
+    private long idEnvio;
     private String estadoEnvio = "";
     private int periodicidad;
     public enum estadoEnvio{
@@ -20,8 +20,8 @@ public class Envio implements Serializable {
     }
 
     //Constructor
-    public Envio(long envioID, String destino, int periodicidad) {
-        this.envioID = envioID;
+    public Envio(long idEnvio, String destino, int periodicidad) {
+        this.idEnvio= factura.getFacturaID();
         this.destino = destino;
         this.periodicidad = periodicidad;
     }
@@ -32,12 +32,6 @@ public class Envio implements Serializable {
     }
     public static void setEnvios(ArrayList<Envio> envios) {
         Envio.envios=envios;
-    }
-    public long getEnvioID() {
-        return envioID;
-    }
-    public void setEnvioID(long envioID) {
-        this.envioID = envioID;
     }
     public String getDestino() {
         return destino;

@@ -36,7 +36,8 @@ public class RealizarVenta {
                         System.out.println(" 2. Eliminar un producto");
                         System.out.println(" 3. Mostrar resumen de factura");
                         System.out.println(" 4. Finalizar compra");
-                        System.out.println(" 5. volver al menu compra");
+                        System.out.println(" 5. Configurar envio de compra");
+                        System.out.println(" 6. volver al menu compra");
                         System.out.print("Indique su eleccion : ");
                         opcion2 = input.nextInt();
 
@@ -210,7 +211,6 @@ public class RealizarVenta {
                                 int y = input.nextInt();
                                 if(y==0){
                                     break;
-
                                 }else {
                                     System.out.println("Resumen de compra");
                                     System.out.println(facturita.toString());
@@ -221,6 +221,7 @@ public class RealizarVenta {
                                         case 1:
                                             float fina= facturita.realizarCompra(facturita.getCliente());
                                             System.out.println("el total de la compra fue: "+ fina);
+                                            break;
                                         case 0:
                                             System.out.println("Solicite al cliente la contraseña de su cuenta bancaria");
                                             short contra= input.nextShort();
@@ -228,15 +229,40 @@ public class RealizarVenta {
                                                 float fina2= facturita.realizarCompra(facturita.getCliente(),contra);
                                                 System.out.println("el total de la compra fue: "+ fina2);
                                             }
+                                            break;
                                     }
                                 }
+                                break;
 
+                            case 5:
+                                System.out.println("La compra con id "+facturita.getFacturaID()+" fue generada \n");
+                                System.out.println("Desea que se realice un envio de esta?\n");
+                                System.out.println("Digite 1 si el cliente lo requiere o 0 si no");
+                                int g=input.nextInt();
+                                switch (g){
+                                    case 1:
+                                        System.out.println("Ingrese el destino de su compra: ");
+                                        String destino= input.next();
+                                        Envio envio = new Envio(facturita.getFacturaID(),destino,0);
+                                        System.out.println("Su envio fue creado exitosamente");
+                                        break;
+                                    case 0:
+                                        System.out.println("");
+                                        break;
+                                }
+                                System.out.println("Gracias por preferirnos");
+                                break;
+
+                            case 6:
+                                break;
                         }
-                    }
-                    }
+                    } while (opcion2 != 6);
+                case 3: break;
             }
 
-        }
+        }while (opcion != 3);
+
+    }
 
     public static void obtenerProductos(Tienda tienda) {
         for (Map.Entry<Producto, Integer> fact : tienda.getInventario().entrySet()) {
