@@ -23,10 +23,7 @@ public abstract class Persona {
         this.telefono=telefono;
     }
     public Persona(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
-        this.personaId=personaId;
-        this.nombre=nombre;
-        this.email=email;
-        this.telefono=telefono;
+        this(personaId,nombre,email,telefono);
         this.cuenta = cuenta;
     }
 
