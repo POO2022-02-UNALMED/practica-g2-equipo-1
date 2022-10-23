@@ -14,7 +14,7 @@ public class Tienda implements Serializable {
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
 	private CuentaBancaria cuenta;
-
+	private final float PGANANCIAS = 0.12f;
 
 
 	public Tienda() {}
@@ -33,7 +33,17 @@ public class Tienda implements Serializable {
 		Tienda.tienda=tienda;
 	}
 
-
+	public float obtenerGanancias(){
+		float f = 0.0f;
+		for (Factura fact : cantidadDeVentas) {
+			for (Map.Entry<Producto, Integer> entry : fact.getProductos().entrySet()) {
+				Producto k = entry.getKey();
+				Integer v = entry.getValue();
+				f = +k.getPrecio() * v;
+			}
+		}
+		return f*PGANANCIAS;
+	}
 
 	public void aumentarStock(Factura factura){
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
