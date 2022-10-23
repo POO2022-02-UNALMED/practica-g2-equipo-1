@@ -117,17 +117,18 @@ public class CasosPrueba {
 	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", listaMascotas4); // Usuario 4 tiene Perro Adulto Pequeño y Perro Cachorro Pequeño
 	
 	// Facturas
-	Factura factura1 = new Factura(usuario1, "23/10/2022", compra1);
-	Factura factura2 = new Factura(usuario1, "15/10/2022", compra2);
+	Factura factura1 = new Factura(usuario1, "23/10/2022");
+	factura1.setProductos(compra1);
+	Factura factura2 = new Factura(usuario1, "15/10/2022");
 	
-	Factura factura3 = new Factura(usuario2, "22/10/2022", compra3);
-	Factura factura4 = new Factura(usuario2, "21/10/2022", compra4);
+	Factura factura3 = new Factura(usuario2, "22/10/2022");
+	Factura factura4 = new Factura(usuario2, "21/10/2022");
 	
-	Factura factura5 = new Factura(usuario3, "19/10/2022", compra5);
-	Factura factura6 = new Factura(usuario3, "18/10/2022", compra6);
+	Factura factura5 = new Factura(usuario3, "19/10/2022");
+	Factura factura6 = new Factura(usuario3, "18/10/2022");
 	
-	Factura factura7 = new Factura(usuario4, "17/10/2022", compra7);
-	Factura factura8 = new Factura(usuario4, "16/10/2022", compra8);
+	Factura factura7 = new Factura(usuario4, "17/10/2022");
+	Factura factura8 = new Factura(usuario4, "16/10/2022");
 	
 	//ArrayList de facturas
 	ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
