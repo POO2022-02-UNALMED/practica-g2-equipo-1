@@ -73,17 +73,17 @@ public class CasosPrueba {
 	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", new ArrayList<Mascota>());
 	
 	// Facturas
-	Factura factura1 = new Factura();
-	Factura factura2 = new Factura();
-	Factura factura3 = new Factura();
+	Factura factura1 = new Factura(usuario1, "23/10/2022");
+	Factura factura2 = new Factura(usuario1, "15/10/2022");
 	
-	Factura factura4 = new Factura();
-	Factura factura5 = new Factura();
-	Factura factura6 = new Factura();
+	Factura factura3 = new Factura(usuario2, "22/10/2022");
+	Factura factura4 = new Factura(usuario2, "21/10/2022");
 	
-	Factura factura7 = new Factura();
-	Factura factura8 = new Factura();
-	Factura factura9 = new Factura();
+	Factura factura5 = new Factura(usuario3, "19/10/2022");
+	Factura factura6 = new Factura(usuario3, "18/10/2022");
+	
+	Factura factura7 = new Factura(usuario4, "17/10/2022");
+	Factura factura8 = new Factura(usuario4, "16/10/2022");
 	
 	// Vendedores
 	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, new ArrayList<Factura>(), "Juan Pablo Arcila", "holi12");

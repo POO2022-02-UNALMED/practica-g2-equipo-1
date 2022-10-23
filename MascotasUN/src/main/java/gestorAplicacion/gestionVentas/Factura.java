@@ -21,17 +21,15 @@ public class Factura implements Serializable {
     //Atributos
     private static long facturaID = 38040000;
     private Usuario cliente;
-    private Date fechaFactura;
-    private Vendedor vendedor;
+    private String fechaFactura;
     private HashMap<Producto, Integer> productos = new HashMap<>();
     private static float total = 0.0f;
     
     //Constructor
-    public Factura(Usuario cliente, Date fechaFactura, Vendedor vendedor) {
+    public Factura(Usuario cliente, String fechaFactura) {
     facturaID=+1; // El ID de la factura se va incrementando a medida que se va creando, con numero base 38040000
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
-    this.vendedor=vendedor;
     }
 
     public String toString() {
@@ -54,7 +52,6 @@ public class Factura implements Serializable {
         Tienda.reducirStock(this);
         Tienda.getCuenta().tranferir(cliente.getCuenta(),total,pswd);
         cliente.agregarFactura(this);
-        vendedor.agregarFactura(this);
         Tienda.agregarVenta(this);
         return total;
         //Ademas se descuenta al cliente el valor de la compra
@@ -71,13 +68,10 @@ public class Factura implements Serializable {
         Tienda.reducirStock(this);
         Tienda.getCuenta().depositar(total);
         cliente.agregarFactura(this);
-        vendedor.agregarFactura(this);
         Tienda.agregarVenta(this);
         return total;
         //Ademas se descuenta al cliente el valor de la compra
     }
-    
-    
     
     //se añade un producto al hashmap de la compra con su respectiva cantidad
     public void agregarProducto(Producto producto, int cantidad){
@@ -92,42 +86,36 @@ public class Factura implements Serializable {
     public static ArrayList<Factura> getFacturas() {
         return facturas;
     }
-    //
+    
     public static void setFacturas(ArrayList<Factura> facturas) {
         Factura.facturas=facturas;
     }
-    //
+    
     public long getFacturaID() {
         return facturaID;
     }
-    //
+    
     public Usuario getCliente() {
-
         return cliente;
     }
-    //
+ 
     public void setCliente(Usuario cliente) {
-
         this.cliente = cliente;
     }
-    //
-    public Date getFechaFactura() {
 
+    public String getFechaFactura() {
         return fechaFactura;
     }
 
-    public void setFechaFactura(Date fechaFactura) {
-
+    public void setFechaFactura(String fechaFactura) {
         this.fechaFactura = fechaFactura;
     }
 
     public HashMap<Producto, Integer> getProductos() {
-
         return productos;
     }
 
     public void setProductos(HashMap<Producto, Integer> productos) {
-
         this.productos = productos;
     }
 
@@ -139,14 +127,4 @@ public class Factura implements Serializable {
     public static void setFacturaID(long facturaID) {
         Factura.facturaID = facturaID;
     }
-
-    public Vendedor getVendedor() {
-        return vendedor;
-    }
-
-    public void setVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
-    }
-
-    //Final getters y setters
 }
