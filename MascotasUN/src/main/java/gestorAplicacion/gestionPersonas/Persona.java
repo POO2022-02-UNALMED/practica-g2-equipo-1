@@ -6,7 +6,7 @@ import java.util.Date;
 
 public abstract class Persona {
     /* Esta clase se encarga de darle atributos y metodos basicos a las diferentes personas
-    que interactuan con nuestra interfas */
+    que interactuan con nuestra interfaz */
 
    //Atributos (protected para utilizarlos dentro del paquete)
     protected long personaId;
@@ -71,5 +71,6 @@ public abstract class Persona {
 		return cuenta;
 	}
 
-	abstract void agregarFactura(Factura f);
+    //Metodos
+	protected abstract void agregarFactura(Factura f);
 }

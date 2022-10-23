@@ -8,18 +8,13 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class Vendedor extends Persona implements Serializable {
+
     //Serializador vendedor
     private static ArrayList<Vendedor> vendedores = new ArrayList<>();
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
     private String contrasena;
     static HashMap<String, String> usuarios = new HashMap<String, String>();
- 
-    /*public static void dict(){
-        usuarios.put("Juan Pablo Arcila", "holi12");
-        usuarios.put("Roberto Barrientos", "adios13");
-        usuarios.put("Laura Vanegas", "lau1245");
-    }*/
 
     //Constructor
     public Vendedor(int personaId, String nombre, String email, int telefono,
@@ -30,7 +25,6 @@ public class Vendedor extends Persona implements Serializable {
         this.contrasena = contrasena;
         
     }
-    
     public Vendedor(int personaId, String nombre, String email, int telefono,
             CuentaBancaria cuenta , String usuario, String contrasena) {
         super(personaId, nombre, email, telefono, cuenta);
@@ -42,11 +36,6 @@ public class Vendedor extends Persona implements Serializable {
     public static ArrayList<Vendedor> getVendedores() {
         return vendedores;
     }
-    @Override
-    public void agregarFactura(Factura f){
-        ventas.add(f);
-    }
-
     public static void setVendedores(ArrayList<Vendedor> vendedores) {
         Vendedor.vendedores=vendedores;
     }
@@ -78,6 +67,7 @@ public class Vendedor extends Persona implements Serializable {
 	}
 
 	//Métodos
+
     public static boolean validarCredenciales(String usuario, String contrasena){
         for (Entry<String, String> entry : usuarios.entrySet()) {
             if (usuario==entry.getKey() & contrasena==entry.getValue()){
@@ -87,4 +77,8 @@ public class Vendedor extends Persona implements Serializable {
         return false;
     }
 
+    @Override
+    public void agregarFactura(Factura f){
+        ventas.add(f);
+    }
 }

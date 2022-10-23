@@ -11,13 +11,13 @@ public class Perro implements Mascota, Serializable {
     // Atributos
     private long mascotaID;
     private String nombre;
-    private double edad;
+    private int edad;
     private String raza;
     
     
     
     // Constructor
-    public Perro(long mascotaID, String nombre, double edad, String raza) {
+    public Perro(long mascotaID, String nombre, int edad, String raza) {
         this.mascotaID = mascotaID;
         this.nombre = nombre;
         this.edad = edad;
@@ -50,7 +50,7 @@ public class Perro implements Mascota, Serializable {
         this.nombre = nombre;
     }
 
-    public double getEdad() {
+    public int getEdad() {
         return edad;
     }
 
@@ -66,11 +66,8 @@ public class Perro implements Mascota, Serializable {
         this.raza = raza;
     }
 
-    
-    
-    
     //Métodos
-    /*@Override
+    @Override
     public ArrayList<Producto> tipoAlimento(String raza){
 		if (raza==Raza.GRANDE){
 			if calcularEdad() == "Cachorro"{
@@ -87,18 +84,16 @@ public class Perro implements Mascota, Serializable {
 			else if calcularEdad() == "Adulto"{
 				return ArrayList;
 			}
-		}*/
-		/*else if raza==Raza.MEDIANA{
+		}
+		else if raza==Raza.MEDIANA{
 			if calcularEdad() == "Cachorro"{
 				return ArrayList;
 			}
 			else if calcularEdad() == "Adulto" {
 				return ArrayList;	
-			}*/
-		//}
-     //}
-    
-    
+			}
+		}
+     }
     
     @Override
     public String calcularEdad(int edad) {
@@ -110,9 +105,4 @@ public class Perro implements Mascota, Serializable {
     		return "Adulto";
     	}
     }
-    
-    
-    
-
-
 }

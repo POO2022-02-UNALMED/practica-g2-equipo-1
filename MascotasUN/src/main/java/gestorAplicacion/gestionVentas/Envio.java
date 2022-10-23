@@ -10,6 +10,9 @@ public class Envio implements Serializable {
     private String destino;
     private String estadoEnvio = "";
     private int periodicidad;
+    public enum estadoEnvio{
+        ENVIADO, CANCELADO, RECIBIDO;
+    }
 
     //Constructor
     public Envio(long envioID, String destino, int periodicidad) {
@@ -62,4 +65,5 @@ public class Envio implements Serializable {
     public void cancelarEnvio(String estadoEnvio) {
     	this.estadoEnvio = estadoEnvio;
     }
+
 }

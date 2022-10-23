@@ -17,7 +17,7 @@ public class Tienda implements Serializable {
 	private final float PGANANCIAS = 0.12f;
 
 	//Getters y Setters
-		// Creamos el getter y setter de Tienda para el serializador
+	// Creamos el getter y setter de Tienda para el serializador
 	public static ArrayList<Tienda> getTienda() {
 		return tienda;
 	}
@@ -27,7 +27,6 @@ public class Tienda implements Serializable {
 	}
 	
 	// Métodos
-
 	public float obtenerGanancias(){
 		float f = 0.0f;
 		for (Factura fact : cantidadDeVentas) {
@@ -50,7 +49,6 @@ public class Tienda implements Serializable {
 
 	}
 	public static void reducirStock(Factura factura){
-
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
 			Producto k = fact.getKey();
 			Integer v = fact.getValue();
@@ -76,7 +74,6 @@ public class Tienda implements Serializable {
 	public HashMap<Producto, Integer> getInventario() {
 		return inventario;
 	}
-
 
 	public static void setCantidadDeVentas(ArrayList<Factura> cantidadDeVentas) {
 		Tienda.cantidadDeVentas = cantidadDeVentas;

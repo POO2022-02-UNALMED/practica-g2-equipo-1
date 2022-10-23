@@ -9,6 +9,8 @@ import java.util.Date;
 
 
 public class Usuario extends Persona implements Serializable {
+	/*Esta clase hereda de la clase abstracta persona y se encarga de manejar a los usuarios de la tienda*/
+
 	//Serializador Usuarios
 	private static ArrayList<Usuario> usuarios = new ArrayList<>();
 	private String formaPago;
@@ -17,7 +19,6 @@ public class Usuario extends Persona implements Serializable {
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
 	private ArrayList<Factura> compras = new ArrayList<Factura>();
-
 
 	//constructor
 	public Usuario(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, ArrayList<Mascota> mascotas) {
@@ -30,6 +31,7 @@ public class Usuario extends Persona implements Serializable {
 	public void agregarFactura(Factura f){
 		compras.add(f);
 	}
+
 	//getters y setters
 	public static ArrayList<Usuario> getUsuarios() {
 		return usuarios;
@@ -61,15 +63,7 @@ public class Usuario extends Persona implements Serializable {
 	public void setEnvioCompra(String envioCompra) {
 		this.envioCompra = envioCompra;
 	}
-	
-	/*public float getSaldoCliente() {
-		return saldoCliente;
-	}
-	
-	public void setSaldoCliente(float saldoCliente) {
-		this.saldoCliente = saldoCliente;
-	}*/
-	
+
 	public ArrayList<Mascota> getMascotas() {
 		return mascotas;
 	}
@@ -93,21 +87,10 @@ public class Usuario extends Persona implements Serializable {
 	public void setCompras(ArrayList<Factura> compras) {
 		this.compras = compras;
 	}
+
 	//metodos
-	
 	public void registrarMascota(Mascota mascota) {
 		mascotas.add(mascota);
 	}
-	
-	//public void eliminarMascota(){}
 
-
-	public void agregarCuentaBancaria(CuentaBancaria cuenta ) {
-		setCuenta(cuenta);
-	}
-
-
-	//public void eliminarCuentaBancaria() {
-
-	//}
 }

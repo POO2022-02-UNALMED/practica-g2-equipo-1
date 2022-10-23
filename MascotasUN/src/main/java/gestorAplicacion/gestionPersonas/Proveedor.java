@@ -19,7 +19,6 @@ public class Proveedor extends Persona implements Serializable {
     
     
     //Constructor
-    
     public Proveedor(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
         super(personaId, nombre, email, telefono, cuenta);
         this.producto = producto;
@@ -30,17 +29,14 @@ public class Proveedor extends Persona implements Serializable {
     public Proveedor(int personaId, String nombre, String email, int telefono, ArrayList<Producto> producto, boolean stock) {
     	this(personaId,nombre,email,telefono,null,producto,stock);
     }
-    
-    
-    
-    //Getters y setters
-    
+
     //Métodos
     @Override
     public void agregarFactura(Factura f){
         pedidos.add(f);
     }
-    
+
+    //Getters y setters
     public static ArrayList<Proveedor> getProveedores() {
         return proveedores;
     }

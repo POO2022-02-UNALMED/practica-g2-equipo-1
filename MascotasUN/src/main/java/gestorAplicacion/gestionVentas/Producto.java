@@ -13,10 +13,9 @@ public class Producto implements Serializable {
     private String descripcion;
     private float precio;
     private int cantidadComprada;
-    //Lista para la recomendacion de concentrado, a�adir tipo. y Sobrecarga de constructores.
+    //Lista para la recomendacion de concentrado, anadir tipo. y Sobrecarga de constructores.
 
     // Constructor
-
     public Producto(long productoID, String nombre, Date fechaVencimiento, String descripcion, float precioCompra, float precioVenta, int cantidadComprada) {
     this.productoID = productoID;
     this.nombre = nombre;
@@ -28,7 +27,8 @@ public class Producto implements Serializable {
 
     // Métodos
     //Este método se encarga de editar los atributos de un producto
-    public void editarProducto(float precio,  int cantidadComprada){
+    public void editarProducto(long productoID, float precio,  int cantidadComprada){
+        this.productoID=productoID;
         this.precio = precio;
         this.cantidadComprada = cantidadComprada;
     }

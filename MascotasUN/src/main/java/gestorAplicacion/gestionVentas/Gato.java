@@ -8,16 +8,13 @@ public class Gato implements Mascota, Serializable {
     
 	// Serializador Gato
     private static ArrayList<Gato> gatos = new ArrayList<>();
-    
 
     // Atributos
     private long mascotaID;
     private String nombre;
     private int edad;
     private String raza;
-    
-    
-    
+
     // Constructor
     public Gato(long mascotaID, String nombre, int edad, String raza) {
         this.mascotaID = mascotaID;
@@ -25,8 +22,6 @@ public class Gato implements Mascota, Serializable {
         this.edad = edad;
         this.raza = raza;
     }
-    //Metodos
-    
 
     // Setters y Getters
     public static ArrayList<Gato> getGatos() {
@@ -68,10 +63,9 @@ public class Gato implements Mascota, Serializable {
         this.raza = raza;
     }
     
-    
     //Métodos
-    //@Override
-    /*public ArrayList tipoAlimento(String raza){
+    @Override
+    public ArrayList tipoAlimento(String raza){
     		if raza==Raza.GRANDE{
     			if calcularEdad() == "Cachorro"{
     				return ArrayList;
@@ -96,10 +90,8 @@ public class Gato implements Mascota, Serializable {
     				return ArrayList;	
     			}
     		}
-    }*/
-    
-    
-    
+    }
+
     @Override
     public String calcularEdad(int edad) {
     	if (edad<=1 ){
@@ -109,9 +101,4 @@ public class Gato implements Mascota, Serializable {
     		return "Adulto";
     	}
     }
-    
-    
-    
-    
-
 }
