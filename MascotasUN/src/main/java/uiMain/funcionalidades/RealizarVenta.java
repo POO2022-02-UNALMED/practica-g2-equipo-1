@@ -36,7 +36,7 @@ public class RealizarVenta {
                         opcion2 = input.nextInt();
                         switch (opcion2){
                             case 1:
-                                Factura factura=new Factura(Usuario.getUsuarios().get(0), fecha, metodoPago);
+                                Factura factura=new Factura(Usuario.getUsuarios().get(0), fecha, metodoPago,);
                         }
                     }
                     }
