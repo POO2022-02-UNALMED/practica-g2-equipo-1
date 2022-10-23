@@ -13,7 +13,6 @@ public class Vendedor extends Persona implements Serializable {
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
     private long contrasena;
-    //private boolean esAdmin;
     static HashMap<String, String> usuarios = new HashMap<String, String>();
  
     /*public static void dict(){
@@ -24,12 +23,11 @@ public class Vendedor extends Persona implements Serializable {
 
     //Constructor
     public Vendedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono,
-            CuentaBancaria cuenta , ArrayList<Factura> ventas, String usuario, long contrasena, boolean esAdmin) {
+            CuentaBancaria cuenta , ArrayList<Factura> ventas, String usuario, long contrasena) {
         super(personaId, nombre, email, fechaDeNacimiento, telefono, cuenta);
         this.ventas = ventas;
         this.usuario = usuario;
         this.contrasena = contrasena;
-        //this.esAdmin = esAdmin;
     }
 
     //Getters y setters
@@ -62,12 +60,6 @@ public class Vendedor extends Persona implements Serializable {
     public void setContrasena(long contrasena) {
         this.contrasena = contrasena;
     }
-    /*public boolean getEsAdmin() {
-        return esAdmin;
-    }
-    public void setEsAdmin(boolean esAdmin) {
-        this.esAdmin = esAdmin;
-    }*/
 
 	public static HashMap<String, String> getUsuarios() {
 		return usuarios;
