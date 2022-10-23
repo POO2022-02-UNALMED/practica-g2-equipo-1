@@ -14,21 +14,21 @@ public abstract class Persona {
     protected String email;
     protected Date fechaDeNacimiento;
     protected int telefono;
-    protected int nroCuentaBancaria;
+    protected CuentaBancaria cuenta;
 
     //Constructor
-    public Persona(long personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria){
+    public Persona(long personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta){
         this.personaId=personaId;
         this.nombre=nombre;
         this.email=email;
         this.fechaDeNacimiento=fechaDeNacimiento;
         this.telefono=telefono;
-        this.nroCuentaBancaria=nroCuentaBancaria;
+        this.cuenta = cuenta;
     }
     
     //Sobrecarga de Constructores
     public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono){
-        this(personaId,nombre,email,fechaDeNacimiento,telefono,0); 	
+        this(personaId,nombre,email,fechaDeNacimiento,telefono, null); 	
     }
     
     
