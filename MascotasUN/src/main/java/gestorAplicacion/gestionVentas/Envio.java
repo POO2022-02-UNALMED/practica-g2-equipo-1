@@ -7,15 +7,14 @@ public class Envio implements Serializable {
     //Serializador vendedor
     private static ArrayList<Envio> envios = new ArrayList<>();
     private long envioID;
-    private String destino;;
-    private String estadoEnvio;
+    private String destino;
+    private String estadoEnvio = "";
     private int periodicidad;
 
     //Constructor
-    public Envio(long envioID, String destino, String estadoEnvio, int periodicidad) {
+    public Envio(long envioID, String destino, int periodicidad) {
         this.envioID = envioID;
         this.destino = destino;
-        this.estadoEnvio = estadoEnvio;
         this.periodicidad = periodicidad;
     }
 

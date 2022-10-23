@@ -13,20 +13,17 @@ public class Usuario extends Persona implements Serializable {
 	private static ArrayList<Usuario> usuarios = new ArrayList<>();
 	private String formaPago;
 	private String direccion;
-	private String envioCompra;
-	//private float saldoCliente;
+	private String envioCompra = "";
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
 	private ArrayList<Factura> compras = new ArrayList<Factura>();
 
 
 	//constructor
-	public Usuario(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, String envioCompra, int saldoCliente, ArrayList<Mascota> mascotas) {
+	public Usuario(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, int saldoCliente, ArrayList<Mascota> mascotas) {
 		super(personaId, nombre, email, fechaDeNacimiento, telefono, cuenta);
 		this.formaPago = formaPago;
 		this.direccion = direccion;
-		this.envioCompra = envioCompra;
-		//this.saldoCliente = saldoCliente;
 		this.mascotas = mascotas;
 	}
 	@Override
