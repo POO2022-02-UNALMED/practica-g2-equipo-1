@@ -37,14 +37,35 @@ public class CasosPrueba {
 	
 	// Productos
 		// Perro grande adulto
-	Producto producto1 = new Producto(1, "Croquetas Adulto Plus", Date fechaVencimiento, String descripcion, float precioCompra, float precioVenta, int cantidadComprada);
+	Producto producto1 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 2);
+	Producto producto2 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 3);
+	Producto producto3 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 1);
+		
 		// Perro grande cachorro
+	Producto producto4 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 4);
+	Producto producto5 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 2);
+	Producto producto6 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 3);
+		
 		// Perro pequeño adulto
+	Producto producto7 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 2);
+	Producto producto8 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 2);
+	Producto producto9 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 4);
+		
 		// Perro pequeño cachorro
-	
+	Producto producto10 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 1);
+	Producto producto11 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 2);
+	Producto producto12 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 1);
+		
 		// Gato cachorro
+	Producto producto13 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 7);
+	Producto producto14 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 2);
+	Producto producto15 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 1);
+		
 		// Gato adulto
-	
+	Producto producto16 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 8);
+	Producto producto17 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 1);
+	Producto producto18 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida para perro adulto de raza grande", 5000, 12000, 2);
+		
 	// Proveedor
 	
 	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, new ArrayList<Producto>(), true) ;
