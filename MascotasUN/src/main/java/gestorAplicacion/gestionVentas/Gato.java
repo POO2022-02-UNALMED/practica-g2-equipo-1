@@ -15,14 +15,15 @@ public class Gato implements Mascota, Serializable {
     private static ArrayList<Gato> gatos = new ArrayList<>();
 
     // Atributos
-    private static long mascotaID=202;
+    private long mascotaID;
     private String nombre;
     private int edad;
     private String raza;
 
     // Constructor
-    public Gato(String nombre, int edad, String raza) {
-        this.nombre = nombre;
+    public Gato(long mascotaID, String nombre, int edad, String raza) {
+        this.mascotaID = mascotaID;
+    	this.nombre = nombre;
         this.edad = edad;
         this.raza = raza;
     }

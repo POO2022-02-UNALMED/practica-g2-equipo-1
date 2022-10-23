@@ -14,7 +14,7 @@ public class Perro implements Mascota, Serializable {
     private static ArrayList<Perro> perros = new ArrayList<>();
     
     // Atributos
-    private static long mascotaID=4074;
+    private long mascotaID;
     private String nombre;
     private int edad;
     private String raza;
@@ -22,8 +22,9 @@ public class Perro implements Mascota, Serializable {
     
     
     // Constructor
-    public Perro(String nombre, int edad, String raza) {
-        this.nombre = nombre;
+    public Perro(long mascotaID, String nombre, int edad, String raza) {
+        this.mascotaID = mascotaID;
+    	this.nombre = nombre;
         this.edad = edad;
         this.raza = raza;
     }
