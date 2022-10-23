@@ -28,6 +28,7 @@ public class Vendedor extends Persona implements Serializable {
         this.ventas = ventas;
         this.usuario = usuario;
         this.contrasena = contrasena;
+        
     }
     
     public Vendedor(int personaId, String nombre, String email, int telefono,
