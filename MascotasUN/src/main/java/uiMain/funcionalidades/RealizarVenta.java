@@ -11,6 +11,7 @@ import java.util.Scanner;
 import java.util.Date;
 public class RealizarVenta {
     static  Tienda t= new Tienda();
+     static Factura facturita = new Factura();
 
     //Mostrar productos disponibles
     public static Scanner input = new Scanner(System.in);
@@ -41,7 +42,7 @@ public class RealizarVenta {
 
                         switch (opcion2){
                             case 1:
-                                Factura facturita = null;
+
                                 System.out.println("Ingrese 1 para un usuario registrado y 0 para agregar uno nuevo");
                                 int us= input.nextInt();
                                 switch (us){
@@ -159,24 +160,77 @@ public class RealizarVenta {
 
 
                                 }
-                            while (true){
-                                System.out.println("Ingrese el ID del producto que desea agregar: ");
-                                long idP=input.nextLong();
-                                Producto aComp= encontrarProducto(idP);
-                                System.out.println("Ingrese la cantidad del producto que desea agregar");
-                                int cantidad= input.nextInt();
-                                if (t.getInventario().get(aComp)>=cantidad){
-                                    facturita.agregarProducto(aComp, cantidad);
-                                    System.out.println("El producto se ha agregado con exito a la compra");
-                                } else{
-                                    System.out.println("Lo sentimos no hay stock suficiente para esta venta");
-                                    continue;
-                                }
-                                System.out.println("Desea agregar mas productos? ");
-                                System.out.println("1 para sí, 0 en caso contrario");
-                                int x = input.nextInt();
-                                if (x==0){break;}
+                                while (true){
+                                    System.out.println("Ingrese el ID del producto que desea agregar: ");
+                                    long idP=input.nextLong();
+                                    Producto aComp= encontrarProducto(idP);
+                                    System.out.println("Ingrese la cantidad del producto que desea agregar");
+                                    int cantidad= input.nextInt();
+                                    if (t.getInventario().get(aComp)>=cantidad){
+                                        facturita.agregarProducto(aComp, cantidad);
+                                        System.out.println("El producto se ha agregado con exito a la compra");
+                                    } else{
+                                        System.out.println("Lo sentimos no hay stock suficiente para esta venta");
+                                        continue;
+                                    }
+                                    System.out.println("Desea agregar mas productos? ");
+                                    System.out.println("1 para sí, 0 en caso contrario");
+                                    int x = input.nextInt();
+                                    if (x==0){break;}
                             }
+                            case 2:
+                                while (true){
+                                    System.out.println("Ingrese el id del producto que desea eliminar");
+
+                                    long idE= input.nextLong();
+                                    Producto borrar= encontrarProducto(idE);
+                                    if(t.getInventario().containsKey(borrar)==true){
+                                        facturita.eliminarProducto(borrar);
+
+                                    }else{
+                                        System.out.println("Lo sentimos el producto no se encuentra en la factura");
+                                    }
+                                    System.out.println("Desea eliminar mas productos? ");
+                                    System.out.println("1 para si, 0 en caso contrario");
+                                    int x = input.nextInt();
+                                    if (x==0){break;}
+                                }
+                            case 3:
+                                System.out.println("Resumen de la factura: ");
+                                System.out.println(facturita.toString());
+                                int incrementa=1;
+                                for (Map.Entry<Producto, Integer> entry : facturita.getProductos().entrySet()) {
+                                    Producto k = entry.getKey();
+                                    Integer v = entry.getValue();
+                                    System.out.println(incrementa + ") " + k.getNombre()+" " + v + " unidades, y tiene un precio unitario de: " + k.getPrecio());
+                                    incrementa++;
+                                }
+                            case 4:
+                                System.out.println("Está a punto de finalizar la compra, está seguro que desea terminar la venta?");
+                                System.out.println("ingrese 1 para finalizar la compra y cero para continuar con la compra");
+                                int y = input.nextInt();
+                                if(y==0){
+                                    break;
+
+                                }else {
+                                    System.out.println("Resumen de compra");
+                                    System.out.println(facturita.toString())
+                                    System.out.println("El usuario desea pagar en efectivo?");
+                                    System.out.println("ingrese 1 si el pago es en efectivo y 0 si es con tarjeta");
+                                    int z=input.nextInt();
+                                    switch (z){
+                                        case 1:
+                                            float fina= facturita.realizarCompra(facturita.getCliente());
+                                            System.out.println("el total de la compra fue: "+ fina);
+                                        case 0:
+                                            System.out.println("Solicite al cliente la contraseña de su cuenta bancaria");
+                                            short contra= input.nextShort();
+                                            if(facturita.getCliente().getCuenta().validarCredenciales(contra)==true){
+                                                float fina2= facturita.realizarCompra(facturita.getCliente(),contra);
+                                                System.out.println("el total de la compra fue: "+ fina2);
+                                            }
+                                    }
+                                }
 
                         }
                     }
@@ -195,6 +249,23 @@ public class RealizarVenta {
 
 
     }
+    public static Usuario encontrarPersona(ArrayList<Usuario> clientes, long id){
 
+        for(Usuario cliente: clientes){
+            if(cliente.getPersonaId()==id){
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    public static Producto encontrarProducto(long id){
+        for(Producto p: t.getCatalogo()){
+            if(p.getProductoID()==id){
+                return p;
+            }
+        }
+        return null;
+    }
 }
 

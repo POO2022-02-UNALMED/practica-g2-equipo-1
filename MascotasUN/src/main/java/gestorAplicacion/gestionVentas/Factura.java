@@ -34,7 +34,7 @@ public class Factura implements Serializable {
     this.fechaFactura= fechaFactura;
     this.productos = productos;
     }
-
+    @Override
 	public String toString() {
         return  "~ Factura #"+ facturaID + "\n"+
                 "~ Fecha = " + fechaFactura +"\n"+
