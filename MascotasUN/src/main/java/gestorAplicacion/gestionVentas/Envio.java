@@ -8,6 +8,7 @@ public class Envio implements Serializable {
     private static ArrayList<Envio> envios = new ArrayList<>();
     private long envioID;
     private String destino;
+    private Factura factura;
     private String estadoEnvio = "";
     private int periodicidad;
     public enum estadoEnvio{
