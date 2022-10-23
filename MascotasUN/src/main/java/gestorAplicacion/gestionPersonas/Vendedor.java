@@ -24,9 +24,9 @@ public class Vendedor extends Persona implements Serializable {
     }*/
 
     //Constructor
-    public Vendedor(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono,
+    public Vendedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono,
             int nroCuentaBancaria, ArrayList<Factura> ventas, String usuario, long contrasena, boolean esAdmin) {
-        super(personaId, nombre, email, documento, fechaDeNacimiento, telefono, nroCuentaBancaria);
+        super(personaId, nombre, email, fechaDeNacimiento, telefono, nroCuentaBancaria);
         this.ventas = ventas;
         this.usuario = usuario;
         this.contrasena = contrasena;
