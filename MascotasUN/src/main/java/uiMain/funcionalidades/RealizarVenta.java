@@ -38,20 +38,24 @@ public class RealizarVenta {
                         System.out.println(" 5. volver al menu compra");
                         System.out.print("Indique su eleccion : ");
                         opcion2 = input.nextInt();
-                        Factura facturita;
+
                         switch (opcion2){
                             case 1:
+                                Factura facturita = null;
                                 System.out.println("Ingrese 1 para un usuario registrado y 0 para agregar uno nuevo");
                                 int us= input.nextInt();
                                 switch (us){
                                     case 1:
                                         //hacer condicional que busque el cliente que ya esté registrado
+                                        System.out.println("Ingrese el ID del cliente");
+                                        long clienteID= input.nextLong();
+                                        Usuario cliente= encontrarPersona(Usuario.getUsuarios(),clienteID);
                                         System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                         String f=input.next();
                                         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                                         Date fecha = sdf.parse(f);
                                         System.out.println("Ingrese el metodo de pago: \n 1 en caso de efectivo 0 en caso de tarjeta");
-                                        facturita= new Factura(Usuario.getUsuarios().get(0), fecha, Vendedor.getVendedores().get(0));
+                                        facturita= new Factura(cliente, fecha, Vendedor.getVendedores().get(0));
                                         break;
                                     case 0:
                                         System.out.println("Si el usuario se desea registrar con cuenta bancaria ingrese 1\n en caso contrario ingrese 0");
@@ -155,6 +159,24 @@ public class RealizarVenta {
 
 
                                 }
+                            while (true){
+                                System.out.println("Ingrese el ID del producto que desea agregar: ");
+                                long idP=input.nextLong();
+                                Producto aComp= encontrarProducto(idP);
+                                System.out.println("Ingrese la cantidad del producto que desea agregar");
+                                int cantidad= input.nextInt();
+                                if (t.getInventario().get(aComp)>=cantidad){
+                                    facturita.agregarProducto(aComp, cantidad);
+                                    System.out.println("El producto se ha agregado con exito a la compra");
+                                } else{
+                                    System.out.println("Lo sentimos no hay stock suficiente para esta venta");
+                                    continue;
+                                }
+                                System.out.println("Desea agregar mas productos? ");
+                                System.out.println("1 para sí, 0 en caso contrario");
+                                int x = input.nextInt();
+                                if (x==0){break;}
+                            }
 
                         }
                     }
@@ -170,6 +192,8 @@ public class RealizarVenta {
             System.out.println("~ " + k.toString() + "\n" + "Tiene " + v + " unidades disponibles\n");
 
         }
+
+
     }
 
 }
