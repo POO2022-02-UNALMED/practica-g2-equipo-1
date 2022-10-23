@@ -15,21 +15,19 @@ public class Usuario extends Persona implements Serializable {
 	private String direccion;
 	private String envioCompra;
 	private float saldoCliente;
-	private boolean esPremium;
-	public CuentaBancaria cuenta;
+	private CuentaBancaria cuenta;
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
 	private ArrayList<Factura> compras = new ArrayList<Factura>();
 
 
 	//constructor
-	public Usuario(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, String envioCompra, int saldoCliente, boolean esPremium, ArrayList<Mascota> mascotas) {
+	public Usuario(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta, String formaPago, String direccion, String envioCompra, int saldoCliente, ArrayList<Mascota> mascotas) {
 		super(personaId, nombre, email, fechaDeNacimiento, telefono, cuenta);
 		this.formaPago = formaPago;
 		this.direccion = direccion;
 		this.envioCompra = envioCompra;
 		this.saldoCliente = saldoCliente;
-		this.esPremium = esPremium;
 		this.mascotas = mascotas;
 	}
 	@Override
@@ -74,14 +72,6 @@ public class Usuario extends Persona implements Serializable {
 	
 	public void setSaldoCliente(float saldoCliente) {
 		this.saldoCliente = saldoCliente;
-	}
-	
-	public boolean isEsPremium() {
-		return esPremium;
-	}
-	
-	public void setEsPremium(boolean esPremium) {
-		this.esPremium = esPremium;
 	}
 	
 	public ArrayList<Mascota> getMascotas() {
