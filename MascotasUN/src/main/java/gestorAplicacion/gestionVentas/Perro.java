@@ -11,13 +11,13 @@ public class Perro implements Mascota, Serializable {
     // Atributos
     private long mascotaID;
     private String nombre;
-    private int edad;
+    private double edad;
     private String raza;
     
     
     
     // Constructor
-    public Perro(long mascotaID, String nombre, int edad, String raza) {
+    public Perro(long mascotaID, String nombre, double edad, String raza) {
         this.mascotaID = mascotaID;
         this.nombre = nombre;
         this.edad = edad;
@@ -50,7 +50,7 @@ public class Perro implements Mascota, Serializable {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public double getEdad() {
         return edad;
     }
 

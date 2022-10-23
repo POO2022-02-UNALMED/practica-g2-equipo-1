@@ -20,15 +20,15 @@ public class Proveedor extends Persona implements Serializable {
     
     //Constructor
     
-    public Proveedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
-        super(personaId, nombre, email, fechaDeNacimiento, telefono, cuenta);
+    public Proveedor(int personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
+        super(personaId, nombre, email, telefono, cuenta);
         this.producto = producto;
         this.stock = stock;
     }
     
     //Sobrecarga Constructor
-    public Proveedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, ArrayList<Producto> producto, boolean stock) {
-    	this(personaId,nombre,email,fechaDeNacimiento,telefono,null,producto,stock);
+    public Proveedor(int personaId, String nombre, String email, int telefono, ArrayList<Producto> producto, boolean stock) {
+    	this(personaId,nombre,email,telefono,null,producto,stock);
     }
     
     

@@ -12,12 +12,12 @@ public class CuentaBancaria {
 	//Atributos
 	private Persona titular;
 	private long nroCuenta;
-	private float saldo;
-	private short pin;
-	static private HashMap<CuentaBancaria, Short> credenciales = new HashMap<>();
+	private double saldo;
+	private int pin;
+	static private HashMap<CuentaBancaria, Integer> credenciales = new HashMap<>();
 
 	//Constructor
-	public CuentaBancaria(Persona titular, long nroCuenta, float saldo, short pin) {
+	public CuentaBancaria(Persona titular, long nroCuenta, double saldo, int pin) {
 		super();
 		this.titular = titular;
 		this.nroCuenta = nroCuenta;
@@ -49,15 +49,15 @@ public class CuentaBancaria {
 		this.nroCuenta = nroCuenta;
 	}
 
-	public float getSaldo() {
+	public double getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(float saldo) {
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 	
-	public short getPin() {
+	public int getPin() {
 		return pin;
 	}
 
@@ -67,14 +67,14 @@ public class CuentaBancaria {
 	//Final getters y setters
 	
 	//Metodo para retirar dinero de la cuenta
-	public void retirar(float monto, short pin) {
+	public void retirar(double monto, int pin) {
 		if (monto <= saldo & validarCredenciales(pin)==true ) {
 			setSaldo(getSaldo() - monto);
 		}
 	}
 	
 	//Metodo para depositar dinero en la cuenta propia
-	public void depositar(float monto) {
+	public void depositar(double monto) {
 		setSaldo(monto + getSaldo());
 	}
 	
@@ -88,7 +88,7 @@ public class CuentaBancaria {
 	}
 	
 	//Metodo para la seguridad al acceso del dinero
-	public boolean validarCredenciales(short pin){
+	public boolean validarCredenciales(int pin){
         if (credenciales.get(this) == pin){
             return true;
         } else {

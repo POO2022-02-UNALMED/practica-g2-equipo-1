@@ -12,7 +12,7 @@ public class Vendedor extends Persona implements Serializable {
     private static ArrayList<Vendedor> vendedores = new ArrayList<>();
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
-    private long contrasena;
+    private String contrasena;
     static HashMap<String, String> usuarios = new HashMap<String, String>();
  
     /*public static void dict(){
@@ -22,10 +22,17 @@ public class Vendedor extends Persona implements Serializable {
     }*/
 
     //Constructor
-    public Vendedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono,
-            CuentaBancaria cuenta , ArrayList<Factura> ventas, String usuario, long contrasena) {
-        super(personaId, nombre, email, fechaDeNacimiento, telefono, cuenta);
+    public Vendedor(int personaId, String nombre, String email, int telefono,
+            CuentaBancaria cuenta , ArrayList<Factura> ventas, String usuario, String contrasena) {
+        super(personaId, nombre, email, telefono, cuenta);
         this.ventas = ventas;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+    }
+    
+    public Vendedor(int personaId, String nombre, String email, int telefono,
+            CuentaBancaria cuenta , String usuario, String contrasena) {
+        super(personaId, nombre, email, telefono, cuenta);
         this.usuario = usuario;
         this.contrasena = contrasena;
     }
@@ -54,10 +61,10 @@ public class Vendedor extends Persona implements Serializable {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-    public long getContrasena() {
+    public String getContrasena() {
         return contrasena;
     }
-    public void setContrasena(long contrasena) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 
