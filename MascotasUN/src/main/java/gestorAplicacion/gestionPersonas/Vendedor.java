@@ -20,20 +20,13 @@ public class Vendedor extends Persona implements Serializable {
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
     private String contrasena;
-    static HashMap<String, String> usuarios = new HashMap<String, String>();
+    static HashMap<String, String> usuarios = new HashMap<String, String>(); // Diccionario vendedores
 
     //Constructor
     public Vendedor(int personaId, String nombre, String email, int telefono, ArrayList<Factura> ventas, 
     		String usuario, String contrasena) {
         super(personaId, nombre, email, telefono);
         this.ventas = ventas;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
-        
-    }
-    public Vendedor(int personaId, String nombre, String email, int telefono,
-            CuentaBancaria cuenta , String usuario, String contrasena) {
-        super(personaId, nombre, email, telefono, cuenta);
         this.usuario = usuario;
         this.contrasena = contrasena;
     }
