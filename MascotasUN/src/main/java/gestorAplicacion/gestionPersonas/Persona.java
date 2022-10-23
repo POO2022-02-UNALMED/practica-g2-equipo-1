@@ -26,7 +26,13 @@ public abstract class Persona {
         this(personaId,nombre,email,telefono);
         this.cuenta = cuenta;
     }
-
+    
+    //Sobrecarga de Constructores
+    public Persona(long personaId, String nombre, String email, int telefono){
+        this(personaId,nombre,email,telefono, null);
+    }
+    
+    
     //getters y setters
     public void setPersonaId(int personaId) {
         this.personaId = personaId;
