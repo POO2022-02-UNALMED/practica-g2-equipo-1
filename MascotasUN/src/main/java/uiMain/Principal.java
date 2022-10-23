@@ -61,10 +61,8 @@ public class Principal {
 	/* Menú que muestra el inicio de sesión*/
 	
 	static void inicioSesion(){
-		//boolean x = false;
 		String Usuario;
 		String Contrasena;
-		//int error = 0; // Se crea variable para el do-while
 		Scanner sc_usuario = new Scanner(System.in);
         System.out.println("Ingrese el usuario:" );
         Usuario = sc_usuario.nextLine();
@@ -77,7 +75,6 @@ public class Principal {
         case "Juan Pablo Arcila":
             if("holi12".equals(Contrasena)) {
                 System.out.println("Bienvenido, Juan Pablo Arcila");
-                //x = true;
                 menuPrincipal();
                 break;
             }
@@ -88,7 +85,6 @@ public class Principal {
         case "Roberto Barrientos":
             if("adios13".equals(Contrasena)) {
                 System.out.println("Bienvenido, Roberto Barrientos");
-                //x = true;
                 menuPrincipal();
                 break;
             }
@@ -99,7 +95,6 @@ public class Principal {
         case "Laura Vanegas":
             if("lau1245".equals(Contrasena)) {
                 System.out.println("Bienvenido, Laura Vanegas");
-                //x = true;
                 menuPrincipal();
                 break;
             }

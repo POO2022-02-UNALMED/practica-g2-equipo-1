@@ -17,11 +17,11 @@ public class Vendedor extends Persona implements Serializable {
     private boolean esAdmin;
     static HashMap<String, String> usuarios = new HashMap<String, String>();
  
-    public static void dict(){
+    /*public static void dict(){
         usuarios.put("Juan Pablo Arcila", "holi12");
         usuarios.put("Roberto Barrientos", "adios13");
         usuarios.put("Laura Vanegas", "lau1245");
-    }
+    }*/
 
     //Constructor
     public Vendedor(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono,
@@ -88,7 +88,6 @@ public class Vendedor extends Persona implements Serializable {
 
 	//Métodos
     public boolean validarCredenciales(String usuario, String contrasena){
-        dict();
         for (Entry<String, String> entry : usuarios.entrySet()) {
             if (usuario==entry.getKey() & contrasena==entry.getValue()){
                 return true;
