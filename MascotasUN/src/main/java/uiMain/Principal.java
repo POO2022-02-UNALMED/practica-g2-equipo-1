@@ -113,7 +113,37 @@ public class Principal {
 	
 	static void menuPrincipal() {
 		System.out.println("¿Qué quieres hacer?");
-		
+		Scanner input = new Scanner(System.in);
+        int opcion;
+        do {
+            System.out.println(" 1. Vender un producto");
+            System.out.println(" 2. Comprar productos para inventario");
+            System.out.println(" 3. Programar una venta periódica");
+            System.out.println(" 4. Mostrar recomendaciones personalizadas");
+            System.out.println(" 5. Mostrar estadísticas de ventas");
+            System.out.println(" 6. Salir");
+            System.out.print("Indique su eleccion : ");
+            opcion = input.nextInt();
+
+            switch (opcion) {
+                //case 1: GestionEmpleados.GestionarEmpleados() ; break;
+                //case 2: GestionProductos.GestionarProductos() ; break;
+                //case 3: GestionServicios.GestionarServicios() ; break;
+                //case 4: GestionCompras.GestionarCompra() ; break;
+                //case 5: GestionClientes.GestionarCliente(); break;
+                //case 6: salirDelSistema(); break;
+            }
+        } while (opcion != 6);
 		System.exit(0);
 	}
+	
+	public static void salirDelSistema() {
+        //Serializador.serializar();
+    }
+	
+	// Entrada al programa
+	public static void main(String[] args) {
+		//Deserializador.deserializar();
+    	Principal.showMenu();
+    }
 }
