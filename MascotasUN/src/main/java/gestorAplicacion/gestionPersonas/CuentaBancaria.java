@@ -14,14 +14,18 @@ public class CuentaBancaria {
 	private long nroCuenta;
 	private float saldo;
 	private short pin;
-	static private HashMap<CuentaBancaria, Integer> credenciales = new HashMap<>();
+	private static int cantidadcuentas = 100000;
+	static private HashMap<CuentaBancaria, Short> credenciales = new HashMap<>();
 
 	//Constructor
-	public CuentaBancaria(Persona titular, int nroCuenta, float saldo) {
+	public CuentaBancaria(Persona titular, float saldo, short pin) {
 		super();
 		this.titular = titular;
-		this.nroCuenta = nroCuenta;
+		this.nroCuenta = cantidadcuentas;
 		this.saldo = saldo;
+		this.pin = pin;
+		credenciales.put(this, pin);
+		CuentaBancaria.cantidadcuentas++;
 	}
 
 	//Getters y setters
