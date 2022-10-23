@@ -14,20 +14,21 @@ public class Proveedor extends Persona implements Serializable {
     private ArrayList<Producto> producto=new ArrayList<Producto>();
 
     private ArrayList<Factura> pedidos= new ArrayList<Factura>();
+    
     private boolean stock;
     
     
     //Constructor
     
-    public Proveedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, ArrayList<Producto> producto, boolean stock) {
-        super(personaId, nombre, email, fechaDeNacimiento, telefono, nroCuentaBancaria);
+    public Proveedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
+        super(personaId, nombre, email, fechaDeNacimiento, telefono, cuenta);
         this.producto = producto;
         this.stock = stock;
     }
     
     //Sobrecarga Constructor
     public Proveedor(int personaId, String nombre, String email, Date fechaDeNacimiento, int telefono, ArrayList<Producto> producto, boolean stock) {
-    	this(personaId,nombre,email,fechaDeNacimiento,telefono,0,producto,stock);
+    	this(personaId,nombre,email,fechaDeNacimiento,telefono,null,producto,stock);
     }
     
     
@@ -60,4 +61,9 @@ public class Proveedor extends Persona implements Serializable {
     public void setStock(boolean stock) {
         this.stock = stock;
     }
+
+	public ArrayList<Factura> getPedidos() {
+		return pedidos;
+	}
+    
 }
