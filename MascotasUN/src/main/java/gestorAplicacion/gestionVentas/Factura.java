@@ -62,6 +62,9 @@ public class Factura implements Serializable {
         return total;
         //Ademas se descuenta al cliente el valor de la compra
     }
+    
+    
+    
     //se añade un producto al hashmap de la compra con su respectiva cantidad
     public void agregarProducto(Producto producto, int cantidad){
         productos.put(producto, cantidad);
