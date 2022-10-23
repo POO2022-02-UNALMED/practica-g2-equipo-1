@@ -18,23 +18,23 @@ public class Factura implements Serializable {
     private Usuario cliente;
     private Date fechaFactura;
     private int cantidadProductos;
-
+    private Vendedor vendedor;
 
     private static HashMap<Producto, Integer> productos = new HashMap<>();
     private String metodoPago;
-    private  float total;
+    private  float total = 0.0f;
 
     private Tienda tienda;
     //Constructor
 
-    public Factura(Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total, Tienda tienda) {
+    public Factura(Usuario cliente, Date fechaFactura, int cantidadProductos, String metodoPago, float total, Tienda tienda, Vendedor vendedor) {
 
     facturaID=+1;
     // El id de la factura se va incrementando a medida que se va creando, con numero base 38040000
     this.cliente=cliente;
     this.fechaFactura= fechaFactura;
     this.cantidadProductos= cantidadProductos;
-
+    this.vendedor=vendedor;
     this.metodoPago=metodoPago;
     this.total=total;
     }
@@ -49,18 +49,21 @@ public class Factura implements Serializable {
     }
    //Metodo que realiza la compra
     public float realizarCompra(Usuario cliente, short pswd){
-        float tot= 0.0f;
+
         //Primero se calcula el total de la compra con este for
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
-            tot=+ k.getPrecio()*v;
+            total=+ k.getPrecio()*v;
         }
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         tienda.reducirStock(this);
-        cliente.cuenta.retirar(tot, pswd);
-        tienda.cuenta.depositar(tot);
-        return tot;
+        cliente.cuenta.retirar(total, pswd);
+        tienda.cuenta.depositar(total);
+        cliente.agregarFactura(this);
+        vendedor.agregarVenta(this);
+        tienda.agregarVenta(this);
+        return total;
         //Ademas se descuenta al cliente el valor de la compra
     }
     //se añade un producto al hashmap de la compra con su respectiva cantidad

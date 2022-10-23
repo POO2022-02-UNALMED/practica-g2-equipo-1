@@ -1,5 +1,6 @@
 package gestorAplicacion.gestionPersonas;
 
+import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionVentas.Mascota;
 
 import java.io.Serializable;
@@ -18,6 +19,9 @@ public class Usuario extends Persona implements Serializable {
 	public CuentaBancaria cuenta;
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
+	private ArrayList<Factura> compras = new ArrayList<Factura>();
+
+
 	//constructor
 	public Usuario(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, String formaPago, String direccion, String envioCompra, int saldoCliente, boolean esPremium, ArrayList<Mascota> mascotas) {
 		super(personaId, nombre, email, documento, fechaDeNacimiento, telefono, nroCuentaBancaria);
@@ -28,7 +32,9 @@ public class Usuario extends Persona implements Serializable {
 		this.esPremium = esPremium;
 		this.mascotas = mascotas;
 	}
-
+	public void agregarFactura(Factura f){
+		compras.add(f);
+	}
 	//getters y setters
 	public static ArrayList<Usuario> getUsuarios() {
 		return usuarios;
@@ -84,7 +90,22 @@ public class Usuario extends Persona implements Serializable {
 	public void setMascotas(ArrayList<Mascota> mascotas) {
 		this.mascotas = mascotas;
 	}
-	
+
+	public CuentaBancaria getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(CuentaBancaria cuenta) {
+		this.cuenta = cuenta;
+	}
+
+	public ArrayList<Factura> getCompras() {
+		return compras;
+	}
+
+	public void setCompras(ArrayList<Factura> compras) {
+		this.compras = compras;
+	}
 	//metodos
 	
 	public void registrarMascota(Mascota mascota) {
@@ -93,12 +114,12 @@ public class Usuario extends Persona implements Serializable {
 	
 	public void eliminarMascota(){}
 
-	@Override
+
 	public void agregarCuentaBancaria() {
 
 	}
 
-	@Override
+
 	public void eliminarCuentaBancaria() {
 
 	}

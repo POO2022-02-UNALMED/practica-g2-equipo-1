@@ -10,7 +10,7 @@ import java.util.Map;
 public class Tienda implements Serializable {
 	//Serializador clase tienda
 	private static ArrayList<Tienda> tienda = new ArrayList<>();
-	private ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
+	private static ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private HashMap<Producto, Integer> inventario = new HashMap<>();
 	public CuentaBancaria cuenta;
@@ -19,7 +19,6 @@ public class Tienda implements Serializable {
 	public Tienda() {}
 
 	public Tienda(ArrayList<Factura> cantidadDeVentas, ArrayList<Producto> catalogo, HashMap<Producto, Integer> inventario) {
-		this.cantidadDeVentas = cantidadDeVentas;
 		this.catalogo = catalogo;
 		this.inventario = inventario;
 	}
@@ -57,12 +56,11 @@ public class Tienda implements Serializable {
 			//la cantidad y los suma
 		}
 	}
-	public ArrayList<Factura> getCantidadDeVentas() {
-		return cantidadDeVentas;
+	public void agregarVenta(Factura f){
+		cantidadDeVentas.add(f);
 	}
-
-	public void setCantidadDeVentas(ArrayList<Factura> cantidadDeVentas) {
-		this.cantidadDeVentas = cantidadDeVentas;
+	public static int getCantidadDeVentas() {
+		return cantidadDeVentas.size();
 	}
 
 	public ArrayList<Producto> getCatalogo() {
