@@ -98,11 +98,11 @@ public class Principal {
             opcion = input.nextInt();
 
             switch (opcion) {
-                case 1: funcionalidades.RealizarVenta() ; break;
-                //case 2: GestionProductos.GestionarProductos() ; break;
-                //case 3: GestionServicios.GestionarServicios() ; break;
-                //case 4: GestionCompras.GestionarCompra() ; break;
-                //case 5: GestionClientes.GestionarCliente(); break;
+                //case 1: funcionalidades.RealizarVenta.funcionalidad() ; break;
+                //case 2: funcionalidades.CompraInventario.funcionalidad() ; break;
+                //case 3: funcionalidades.ProgramarVenta.funcionalidad() ; break;
+                //case 4: funcionalidades.RecomendacionPersonalizada.funcionalidad() ; break;
+                //case 5: funcionalidades.MostrarEstadisticas.funcionalidad(); break;
                 //case 6: salirDelSistema(); break;
             }
         } while (opcion != 6);
