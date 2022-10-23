@@ -15,7 +15,8 @@ import gestorAplicacion.gestionVentas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 
-// Falta llenar los ArrayList y HashMap de Proveedor, Usuario, Factura y Vendedor. Se crean a parte.
+//Pendiente: ¿Tienda lleva constructor?. Y revisar el cantidad_Comprada
+
 public class CasosPrueba {
 	
 	public static void crearCasosDePrueba() {
@@ -116,30 +117,37 @@ public class CasosPrueba {
 	Usuario usuario3 = new Usuario(25787278, "Jorge Sierra", "jsierra@email.com", 7895589, cuenta3, "Cll 66 # 43-47", listaMascotas3); //Usuario 3 tiene Perro Adulto Grande
 	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", listaMascotas4); // Usuario 4 tiene Perro Adulto Pequeño y Perro Cachorro Pequeño
 	
+	// Vendedores
+		Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, new ArrayList<Factura>(), "Juan Pablo Arcila", "holi12");
+		Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, new ArrayList<Factura>(), "Roberto Barrientos", "adios13");
+		Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, new ArrayList<Factura>(), "Laura Vanegas", "lau1245");
+	
 	// Facturas
-	Factura factura1 = new Factura(usuario1, "23/10/2022");
-	factura1.setProductos(compra1);
-	Factura factura2 = new Factura(usuario1, "15/10/2022");
+		Factura factura1 = new Factura(usuario1, "23/10/2022", vendedor1);
+		factura1.setProductos(compra1);
+		Factura factura2 = new Factura(usuario1, "15/10/2022", vendedor1);
+		factura2.setProductos(compra2);
+		
+		Factura factura3 = new Factura(usuario2, "22/10/2022", vendedor2);
+		factura3.setProductos(compra3);
+		Factura factura4 = new Factura(usuario2, "21/10/2022", vendedor2);
+		factura4.setProductos(compra4);
+		
+		Factura factura5 = new Factura(usuario3, "19/10/2022", vendedor3);
+		factura5.setProductos(compra5);
+		Factura factura6 = new Factura(usuario3, "18/10/2022", vendedor3);
+		factura6.setProductos(compra6);
+		
+		Factura factura7 = new Factura(usuario4, "17/10/2022", vendedor3);
+		factura7.setProductos(compra7);
+		Factura factura8 = new Factura(usuario4, "16/10/2022", vendedor3);
+		factura8.setProductos(compra8);
 	
-	Factura factura3 = new Factura(usuario2, "22/10/2022");
-	Factura factura4 = new Factura(usuario2, "21/10/2022");
-	
-	Factura factura5 = new Factura(usuario3, "19/10/2022");
-	Factura factura6 = new Factura(usuario3, "18/10/2022");
-	
-	Factura factura7 = new Factura(usuario4, "17/10/2022");
-	Factura factura8 = new Factura(usuario4, "16/10/2022");
 	
 	//ArrayList de facturas
-	ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
-	ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura1.add(factura3); listaFactura1.add(factura4);
-	ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura1.add(factura5); listaFactura1.add(factura6); listaFactura1.add(factura7); listaFactura1.add(factura8);
-	
-	
-	// Vendedores
-	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, listaFactura1, "Juan Pablo Arcila", "holi12");
-	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, listaFactura2, "Roberto Barrientos", "adios13");
-	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, listaFactura3, "Laura Vanegas", "lau1245");
+		ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
+		ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura1.add(factura3); listaFactura1.add(factura4);
+		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura1.add(factura5); listaFactura1.add(factura6); listaFactura1.add(factura7); listaFactura1.add(factura8);
 	
 	
 	}
