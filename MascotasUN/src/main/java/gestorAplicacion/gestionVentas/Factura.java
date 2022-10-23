@@ -10,6 +10,11 @@ import java.util.Map;
 
 public class Factura implements Serializable {
     
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	//Serializador factura
     private static ArrayList<Factura> facturas = new ArrayList<>();
 
@@ -130,10 +135,6 @@ public class Factura implements Serializable {
         return total;
     }
 
-    public void setTotal(float total) {
-
-        this.total = total;
-    }
 
     public static void setFacturaID(long facturaID) {
         Factura.facturaID = facturaID;

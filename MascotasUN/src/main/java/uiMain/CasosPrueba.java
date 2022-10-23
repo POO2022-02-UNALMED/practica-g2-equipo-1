@@ -19,11 +19,8 @@ import gestorAplicacion.gestionVentas.Tienda;
 public class CasosPrueba {
 	
 	public static void crearCasosDePrueba() {
-		
-	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, new ArrayList<Factura>(), "Juan Pablo Arcila", "holi12");
-	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, new ArrayList<Factura>(), "Roberto Barrientos", "adios13");
-	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, new ArrayList<Factura>(), "Laura Vanegas", "lau1245");
 	
+	// Cuentas bancarias
 		// Cuentas de clientes
 	CuentaBancaria cuenta1 = new CuentaBancaria((long)108952347, (float)2023456.1, 1852);
 	CuentaBancaria cuenta2 = new CuentaBancaria((long)278782778, (float)800.5, 8728);
@@ -67,18 +64,15 @@ public class CasosPrueba {
 	Producto producto18 = new Producto(18, "Whiskas para felino adulto", "01/09/2024", "Alimento balanceado para gato adulto", 11000, 15000, 4);
 		
 	// Proveedor
-	
 	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, new ArrayList<Producto>(), true) ;
 	
 	// Clientes
-		
 	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", new ArrayList<Mascota>());
 	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Cra 58 # 78-29", new ArrayList<Mascota>());
 	Usuario usuario3 = new Usuario(25787278, "Jorge Sierra", "jsierra@email.com", 7895589, cuenta3, "Cll 66 # 43-47", new ArrayList<Mascota>());
 	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", new ArrayList<Mascota>());
 	
 	// Facturas
-		
 	Factura factura1 = new Factura();
 	Factura factura2 = new Factura();
 	Factura factura3 = new Factura();
@@ -90,6 +84,11 @@ public class CasosPrueba {
 	Factura factura7 = new Factura();
 	Factura factura8 = new Factura();
 	Factura factura9 = new Factura();
+	
+	// Vendedores
+	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, new ArrayList<Factura>(), "Juan Pablo Arcila", "holi12");
+	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, new ArrayList<Factura>(), "Roberto Barrientos", "adios13");
+	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, new ArrayList<Factura>(), "Laura Vanegas", "lau1245");
 	
 	// Mascotas
 		// Perros
