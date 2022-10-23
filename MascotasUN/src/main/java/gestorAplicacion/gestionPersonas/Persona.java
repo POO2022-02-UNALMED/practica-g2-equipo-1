@@ -1,4 +1,6 @@
 package gestorAplicacion.gestionPersonas;
+import gestorAplicacion.gestionVentas.Factura;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,6 +16,7 @@ public abstract class Persona {
     protected Date fechaDeNacimiento;
     protected int telefono;
     protected int nroCuentaBancaria;
+
     //Constructor
     public Persona(long personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria){
         this.personaId=personaId;
@@ -53,7 +56,5 @@ public abstract class Persona {
         this.nroCuentaBancaria = nroCuentaBancaria;
     }
 
-    //metodos
-    public abstract void agregarCuentaBancaria();
-    public abstract void eliminarCuentaBancaria();
+    abstract void agregarFactura(Factura f);
 }

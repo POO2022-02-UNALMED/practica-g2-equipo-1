@@ -37,7 +37,8 @@ public class Vendedor extends Persona implements Serializable {
     public static ArrayList<Vendedor> getVendedores() {
         return vendedores;
     }
-    public void agregarVenta(Factura f){
+    @Override
+    public void agregarFactura(Factura f){
         ventas.add(f);
     }
 

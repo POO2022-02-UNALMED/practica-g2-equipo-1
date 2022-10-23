@@ -60,7 +60,7 @@ public class Factura implements Serializable {
         cliente.cuenta.retirar(total, pswd);
         tienda.cuenta.depositar(total);
         cliente.agregarFactura(this);
-        vendedor.agregarVenta(this);
+        vendedor.agregarFactura(this);
         tienda.agregarVenta(this);
         return total;
         //Ademas se descuenta al cliente el valor de la compra

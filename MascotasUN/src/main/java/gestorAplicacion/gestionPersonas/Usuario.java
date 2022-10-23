@@ -32,6 +32,7 @@ public class Usuario extends Persona implements Serializable {
 		this.esPremium = esPremium;
 		this.mascotas = mascotas;
 	}
+	@Override
 	public void agregarFactura(Factura f){
 		compras.add(f);
 	}

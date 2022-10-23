@@ -1,5 +1,6 @@
 package gestorAplicacion.gestionPersonas;
 
+import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionVentas.Producto;
 
 import java.io.Serializable;
@@ -11,6 +12,8 @@ public class Proveedor extends Persona implements Serializable {
     private static ArrayList<Proveedor> proveedores = new ArrayList<>();
     //Atributos
     private ArrayList<Producto> producto=new ArrayList<Producto>();
+
+    private ArrayList<Factura> facturas= new ArrayList<Factura>();
     private boolean stock;
     //Constructor
     public Proveedor(int personaId, String nombre, String email, int documento, Date fechaDeNacimiento, int telefono, int nroCuentaBancaria, ArrayList<Producto> producto, boolean stock) {
@@ -19,6 +22,10 @@ public class Proveedor extends Persona implements Serializable {
         this.stock = stock;
     }
     //Getters y setters
+    @Override
+    public void agregarFactura(Factura f){
+        return;
+    }
     public static ArrayList<Proveedor> getProveedores() {
         return proveedores;
     }
