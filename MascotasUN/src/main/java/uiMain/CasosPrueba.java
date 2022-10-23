@@ -19,13 +19,9 @@ public class CasosPrueba {
 	
 	public static void crearCasosDePrueba() {
 		
-	// Cuentas Bancarias
-		
-		// Cuentas bancarias de los usuarios
-		
-	CuentaBancaria cuenta1 = new CuentaBancaria((long)1023947811, (float)2259023.2, 0224);
-	CuentaBancaria cuenta2 = new CuentaBancaria((long)1028922878, (float)500.4, 2887); // Cliente pobre
-	CuentaBancaria cuenta3 = new CuentaBancaria((long)1000541527, (float)12728388.7, 7826);
+	Vendedor vendedor1 = new Vendedor(46785214, "Juan Pablo Arcila", "jpardilla@email.com", 4478514, "Juan Pablo Arcila", "holi12");
+	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, "Roberto Barrientos", "adios13");
+	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, "Laura Vanegas", "lau1245");
 	
 		// Cuenta bancaria del proveedor
 	CuentaBancaria cuentaProveedor = new CuentaBancaria((long)1089523479, (float)20858967.8, 5782);
