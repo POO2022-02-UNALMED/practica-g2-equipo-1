@@ -47,14 +47,3 @@ public class Proveedor extends Persona implements Serializable {
     public void setStock(boolean stock) {
         this.stock = stock;
     }
-
-    @Override
-    public void agregarCuentaBancaria() {
-
-    }
-
-    @Override
-    public void eliminarCuentaBancaria() {
-
-    }
-}
