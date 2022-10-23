@@ -24,4 +24,5 @@ public class CasosPrueba {
 	
 	Usuario usuario1 = new Usuario(1093186721, "Jose Noreña", "jnor@email.com", 4422879, new CuentaBancaria(null, 1023947811, 2259023.2, 0224), "Tarjeta", "Cra 170 # 2-103", new ArrayList<Mascota>());
 	Perro perro1 = new Perro(100, "Dante", 0.5, "Grande");
+	Gato gato1 = new Gato(123, "Jackie", 4, "Hogareño");
 }
