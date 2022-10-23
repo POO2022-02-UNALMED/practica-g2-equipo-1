@@ -23,6 +23,12 @@ public abstract class Persona {
         this.telefono=telefono;
         this.cuenta = cuenta;
     }
+    public Persona(long personaId, String nombre, String email, int telefono){
+        this.personaId=personaId;
+        this.nombre=nombre;
+        this.email=email;
+        this.telefono=telefono;
+    }
     
     //Sobrecarga de Constructores
     public Persona(long personaId, String nombre, String email, int telefono){
