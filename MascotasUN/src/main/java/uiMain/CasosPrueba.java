@@ -15,7 +15,14 @@ import gestorAplicacion.gestionVentas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 
-// Falta llenar los ArrayList y HashMap de Proveedor, Usuario, Factura y Vendedor. Se crean a parte.
+//Tienda no tiene constructor, como por????? como instanciamos esa cosa???
+//estaba pensando en crear un arralizt de todas las facturas para la tienda
+
+//EL CANTIDAD COMPRADA DE PRODUCTO ES PARA NOSOTROS O EL CLIENTE??? porque cuando instanciamos un producto le añadimos esa cantidad, hay algo mal con eso
+//aqui pensando creo que toca hacer 3 veces lo de arriba, una para proveedor, otra para nosotros y otra para el cliente, lo que cambia es la cantidad y el nombre de la var
+// otra opcion es crear un metodo que le modifique el atributo cantidad a producto porque lo que hay es quitar y añair productos que es muy diferente
+
+
 public class CasosPrueba {
 	
 	public static void crearCasosDePrueba() {
