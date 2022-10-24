@@ -82,14 +82,10 @@ public class Principal {
 	}
 	
 	/* Acceso al menú de uiMain.funcionalidades */
-	
-<<<<<<< Updated upstream
+
 	public static void menuPrincipal() {
 		System.out.println("¿Qué quieres hacer?");
-=======
-	static void menuPrincipal() {
-		System.out.println("¿Que deseas hacer?");
->>>>>>> Stashed changes
+
 		Scanner input = new Scanner(System.in);
         int opcion;
         do {
