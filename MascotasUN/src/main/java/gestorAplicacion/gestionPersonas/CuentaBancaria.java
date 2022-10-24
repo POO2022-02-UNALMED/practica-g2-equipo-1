@@ -1,4 +1,4 @@
-/*Clase utilizada para la gestion de las cuentas bancarias de los objetos de tipo Usuario y Proveedor,
+/*Clase utilizada para la gestión de las cuentas bancarias de los objetos de tipo Usuario y Proveedor,
  * y de la clase Tienda, donde cada objeto tipo CuentaBancaria se asociará a un objeto de las clases mencionadas*/
 
 package gestorAplicacion.gestionPersonas;

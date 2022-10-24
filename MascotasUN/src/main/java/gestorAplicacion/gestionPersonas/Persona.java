@@ -2,6 +2,7 @@
  * a los objetos creados a partir de estas clases*/
 
 package gestorAplicacion.gestionPersonas;
+
 import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método de agregarFactura()
 
 public abstract class Persona {
