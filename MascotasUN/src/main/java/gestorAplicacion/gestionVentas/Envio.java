@@ -17,7 +17,7 @@ public class Envio implements Serializable {
     private long idEnvio;
     private String estadoEnvio = "";
     private int periodicidad;
-    public enum estadoEnvio{
+    public enum EstadoEnvio{
         ENVIADO, CANCELADO, RECIBIDO;
     }
 
