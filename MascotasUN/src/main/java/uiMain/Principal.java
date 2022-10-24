@@ -111,7 +111,9 @@ public class Principal {
 	}
 	
 	public static void salirDelSistema() {
-        Serializador.serializar();
+		System.out.println("¡Vuelva pronto!");
+		System.exit(0);
+        //Serializador.serializar();
     }
 	
 	// Entrada al programa

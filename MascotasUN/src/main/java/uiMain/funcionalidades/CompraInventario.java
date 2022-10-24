@@ -3,6 +3,8 @@ package uiMain.funcionalidades;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.SortedSet;
+import java.util.Map.Entry;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Proveedor;
@@ -28,14 +30,14 @@ public class CompraInventario {
             // Se le muestra al vendedor el inventario completo, ordenado por cantidad
             case 1:
             	System.out.println("Este es su inventario actual");
-            	Tienda.imprimirOrdenado(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
+            	imprimirOrdenado(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
             	compraInventario(); // Va al menú para comprar el inventario
             	break;
             	
             // Se le muestra al vendedor los productos que están por agotarse, ordenado por cantidad
             case 2:
             	System.out.println("Estos son los productos en riesgo de agotarse");
-            	Tienda.imprimirRiesgo(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
+            	imprimirRiesgo(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
             	compraInventario(); // Va al menú para comprar el inventario
             	break;
             }
@@ -71,7 +73,7 @@ public class CompraInventario {
             	Proveedor proveedorcito = Proveedor.encontrarPersona(Proveedor.getProveedores(), opcionp);
             	
                 System.out.println("¿Qué producto desea comprar?");
-            	Tienda.imprimirCatalogo(Tienda.getCatalogo());
+            	imprimirCatalogo(Tienda.getCatalogo());
             	
             	HashMap<Producto, Integer> productos = new HashMap<>(); // Se crea el HashMap que guardará los productos a comprar
             	
@@ -136,15 +138,60 @@ public class CompraInventario {
                     	System.out.println("Saldo actual Tienda: " + Tienda.getCuenta().getSaldo() + "\n");
                     	System.out.println("Saldo actual Proveedor: " + proveedorcito.getCuenta().getSaldo() + "\n");
                     	// Llamar al menú principal
+                    	System.out.println("¿Qué desea hacer?");
+                    	Scanner num_menu = new Scanner(System.in);
+                		int seleccion_menu;
+                		do {
+                            System.out.println(" 1. Volver al menú principal");
+                            System.out.println(" 2. Salir del programa");
+                            System.out.print("Indique su eleccion : \n");
+                            seleccion_menu = num_menu.nextInt();
+
+                            switch (seleccion_menu) {
+                                case 1:
+                                	Principal.menuPrincipal();
+                                	break;
+                                case 2:
+                                	Principal.salirDelSistema();
+                                	break;
+                            }
+                        } while (seleccion_menu != 1 & seleccion_menu != 2);
                     	break;
                 }
             } while (seleccion != 1 & seleccion != 2);
     		
-    		//	print: Plata tienda, Plata proveedor, inventario
 
     	} else {
     		System.err.println("El producto no existe\n");
     		compraProducto(proveedorcito, productos, facturita);
     	}
 	}
+	
+	public static void imprimirOrdenado(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
+		for(Integer i : valores) {
+			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
+				if(j.getValue().equals(i)) {
+					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
+				}
+			}
+		}
+	}
+	
+	public static void imprimirCatalogo(ArrayList<Producto> catalogo) {
+		for(Producto i : catalogo) {
+			System.out.println("ID: "+ i.getProductoID() + ". Producto: " + i.getNombre());
+		}
+		
+	}
+	
+	public static void imprimirRiesgo(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
+		for(Integer i : valores) {
+			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
+				if(j.getValue().equals(i) & (i <= 2)) {
+					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
+				}
+			}
+		}
+	}
+	
 }

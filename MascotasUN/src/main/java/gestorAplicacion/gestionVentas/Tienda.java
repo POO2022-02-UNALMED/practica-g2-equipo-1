@@ -75,33 +75,6 @@ public class Tienda implements Serializable {
 		cantidadDeVentas.add(f);
 	}
 	
-	public static void imprimirOrdenado(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
-		for(Integer i : valores) {
-			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
-				if(j.getValue().equals(i)) {
-					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
-				}
-			}
-		}
-	}
-	
-	public static void imprimirCatalogo(ArrayList<Producto> catalogo) {
-		for(Producto i : catalogo) {
-			System.out.println("ID: "+ i.getProductoID() + ". Producto: " + i.getNombre());
-		}
-		
-	}
-	
-	public static void imprimirRiesgo(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
-		for(Integer i : valores) {
-			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
-				if(j.getValue().equals(i) & (i <= 2)) {
-					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
-				}
-			}
-		}
-	}
-	
 	public static Boolean validarID(Long opcion){
 		for (Producto i : getCatalogo()) {
     		if (opcion.equals((Long)i.getProductoID())) {
