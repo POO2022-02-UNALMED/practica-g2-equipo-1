@@ -1,5 +1,6 @@
 package uiMain.gestion.gestionProveedores;
 
+import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
 
 import java.util.Scanner;
@@ -10,14 +11,14 @@ public class EliminarProveedor {
         Scanner input = new Scanner(System.in);
 
         while(true){
-            System.out.println("Ingrese el codigo del usuario que se quiere eliminar: ");
+            System.out.println("Ingrese el codigo del proveedor que se quiere eliminar: ");
             id=input.nextInt();
 
-            boolean usuarioELiminado = Usuario.eliminarUsuario(Usuario.encontrarPersona(id));
-            if (usuarioELiminado ==false){
-                System.out.println("No se encontro el usuario, intente nuevamente");
+            boolean proveedorEliminado = Proveedor.eliminarProveedor(Proveedor.encontrarPersona(id));
+            if (proveedorEliminado ==false){
+                System.out.println("No se encontro el proveedor, intente nuevamente");
             } else {
-                System.out.println("Usuario Eliminado");
+                System.out.println("Proveedor Eliminado");
                 break;
             }
         }

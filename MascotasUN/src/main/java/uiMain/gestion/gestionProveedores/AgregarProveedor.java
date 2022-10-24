@@ -1,112 +1,59 @@
 package uiMain.gestion.gestionProveedores;
 
 import gestorAplicacion.gestionPersonas.*;
+import gestorAplicacion.gestionVentas.Factura;
+import gestorAplicacion.gestionVentas.Producto;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AgregarProveedor {
-    public static Usuario agregarProveedor() {
+    public static void agregarProveedor(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Estas a punto de agregar un nuevo proveedor al sistema");
-        System.out.println("Si el usuario se desea registrar con cuenta bancaria ingrese 1\n en caso contrario ingrese 0");
-        int cu = input.nextInt();
-        switch (cu) {
-            case 1:
-                System.out.println("Ingrese el ID del cliente: ");
-                int id = input.nextInt();
-                System.out.println("Ingrese el nombre del cliente: ");
-                String nombre = input.next();
-                System.out.println("Ingrese el email del cliente: ");
-                String email = input.next();
-                System.out.println("Ingrese el email del cliente: ");
-                int telefono = input.nextInt();
-                System.out.println("Ingrese el numero de la cuenta bancaria del cliente: ");
-                long nro = input.nextLong();
-                System.out.println("Ingrese el saldo de la cuenta bancaria del cliente: ");
-                float saldo = input.nextFloat();
-                System.out.println("Ingrese el pin de la cuenta bancaria cliente: ");
-                int pin = input.nextInt();
-                System.out.println("Ingrese la direccion del cliente");
-                String dir = input.next();
-                System.out.println("Ingrese el numero de mascotas del cliente :");
-                int mas = input.nextInt();
-                ArrayList<Mascota> pets = new ArrayList<>();
-                for (int i = 0; i <= mas; i++) {
-                    System.out.println("1 en caso de perro, 0 en caso de gato");
-                    int n = input.nextInt();
-                    System.out.println("Ingrese el Id de la mascota");
-                    long mId = input.nextLong();
-                    System.out.println("Ingrese el nombre de la mascota: ");
-                    String na = input.next();
-                    System.out.println("Ingrese la edad en años de la mascota: ");
-                    int edad = input.nextInt();
-                    System.out.println("Ingrese la raza de la mascota(para gato ingrese n): ");
-                    String raza = input.next();
-                    switch (n) {
-                        case 1:
-                            Perro p = new Perro(mId, na, edad, raza);
-                            pets.add(p);
-                            break;
-                        case 0:
-                            Gato g = new Gato(mId, na, edad);
-                            pets.add(g);
-                            break;
-                    }
-                }
-                Usuario user1 = new Usuario(id, nombre, email, telefono, new CuentaBancaria(nro, saldo, pin), dir, pets);
-                System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
-                System.out.println("El usuario se agrego de manera exitosa");
-                user1.toString();
-                System.out.println(user1);
-                return user1;
-
-            case 0:
-                System.out.println("Ingrese el ID del cliente: ");
-                int id1 = input.nextInt();
-                System.out.println("Ingrese el nombre del cliente: ");
-                String nombre1 = input.next();
-                System.out.println("Ingrese el email del cliente: ");
-                String email1 = input.next();
-                System.out.println("Ingrese el email del cliente: ");
-                int telefono1 = input.nextInt();
-                System.out.println("Ingrese la direccion del cliente");
-                String dir1 = input.next();
-                System.out.println("Ingrese el numero de mascotas del cliente :");
-                int mas1 = input.nextInt();
-                ArrayList<Mascota> pets1 = new ArrayList<>();
-                for (int i = 0; i <= mas1; i++) {
-                    System.out.println("1 en caso de perro, 0 en caso de gato");
-                    int n = input.nextInt();
-                    System.out.println("Ingrese el ID de la mascota: ");
-                    long mId = input.nextLong();
-                    System.out.println("Ingrese el nombre de la mascota: ");
-                    String na = input.next();
-                    System.out.println("Ingrese la edad en años de la mascota: ");
-                    int edad = input.nextInt();
-                    System.out.println("Ingrese la raza de la mascota (si es gato no aplica (ingrese n)): ");
-                    String raza = input.next();
-
-                    switch (n) {
-                        case 1:
-                            Perro p = new Perro(mId, na, edad, raza);
-                            pets1.add(p);
-                            break;
-                        case 0:
-                            Gato g = new Gato(mId, na, edad);
-                            pets1.add(g);
-                            break;
-                    }
-                }
-                Usuario user2 = new Usuario(id1, nombre1, email1, telefono1, dir1, pets1);
-                System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
-                System.out.println("El usuario se agrego de manera exitosa");
-                user2.toString();
-                System.out.println(user2);
-                return user2;
+        System.out.println("Estas a punto de agregar un nuevo proveedor \n");
+        System.out.println("Ingresa el nombre del proveedor");
+        String nombre = input.next();
+        System.out.println("Ingresa el ID del proveedor");
+        int proveedorID= input.nextInt();
+        System.out.println("Ingrese el email del proveedor");
+        String email= input.next();
+        System.out.println("Ingrese el telefono del proveedor");
+        int telefono= input.nextInt();
+        System.out.println("Ingrese el numero de la cuenta bancaria del proveedor: ");
+        long nro = input.nextLong();
+        System.out.println("Ingrese el saldo de la cuenta bancaria del proveedor: ");
+        float saldo = input.nextFloat();
+        System.out.println("Ingrese el stock del proveedor: ");
+        boolean stock= input.nextBoolean();
+        System.out.println("Ingrese el numero de productos que desea agregar :");
+        int mas = input.nextInt();
+        ArrayList<Producto> productos = new ArrayList<>();
+        for (int i = 0; i <= mas; i++) {
+            System.out.println("Ingrese el Id del producto");
+            long mId = input.nextLong();
+            System.out.println("Ingrese el nombre del producto: ");
+            String nombrep = input.next();
+            System.out.println("Ingrese la fecha de vencimiento del producto: ");
+            String fechav = input.next();
+            System.out.println("Ingrese la descripcion del producto: ");
+            String descripcion = input.next();
+            System.out.println("Ingrese el precio de compra: ");
+            float precioc = input.nextFloat();
+            System.out.println("Ingrese el precio de venta: ");
+            float preciov = input.nextFloat();
+            System.out.println("Ingrese la cantidad comprada: ");
+            int cantidad = input.nextInt();
+            System.out.println("Ingrese para que raza esta orientado el producto: ");
+            String raza = input.next();
+            System.out.println("Ingrese para que etapa esta orientado el producto: ");
+            String etapa = input.next();
+            Producto producto = new Producto(mId,nombrep,fechav,descripcion,precioc,preciov,cantidad,raza,etapa);
+            productos.add(producto);
         }
-    return null;
+        Proveedor proveedor= new Proveedor(proveedorID,nombre,email,telefono,new CuentaBancaria(nro,saldo),productos,stock);
+        System.out.println("El proveedor se agrego de manera exitosa");
+        proveedor.toString();
+        System.out.println(proveedor);
     }
-
 }
 

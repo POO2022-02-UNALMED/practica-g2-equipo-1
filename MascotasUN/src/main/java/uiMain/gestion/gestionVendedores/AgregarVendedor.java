@@ -1,5 +1,6 @@
 package uiMain.gestion.gestionVendedores;
 
+import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Vendedor;
 import gestorAplicacion.gestionVentas.Factura;
 
@@ -22,13 +23,11 @@ public class AgregarVendedor {
         long nro = input.nextLong();
         System.out.println("Ingrese el saldo de la cuenta bancaria del vendedor: ");
         float saldo = input.nextFloat();
-        System.out.println("Ingrese el pin de la cuenta bancaria del vendedor: ");
-        int pin = input.nextInt();
         System.out.println("Ingrese el usuario del vendedor");
         String usuario= input.next();
         System.out.println("Ingrese el contraseña del vendedor");
         String contrasena= input.next();
-        Vendedor vendedor= new Vendedor(vendedorID,nombre,email,telefono,new ArrayList<Factura>(),usuario,contrasena);
+        Vendedor vendedor= new Vendedor(vendedorID,nombre,email,telefono,new ArrayList<Factura>(),usuario,contrasena,new CuentaBancaria(nro,saldo));
         Vendedor.agregarVendedor(vendedor);
         System.out.println("El vendedor se registro de manera exitosa");
         vendedor.toString();

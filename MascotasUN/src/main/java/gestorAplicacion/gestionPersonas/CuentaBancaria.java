@@ -24,6 +24,10 @@ public class CuentaBancaria {
 		this.pin = pin;
 		credenciales.put(nroCuenta, pin);
 	}
+	public CuentaBancaria(long nroCuenta, float saldo){
+		this.nroCuenta= nroCuenta;
+		this.saldo=saldo;
+	}
 	
 	// Métodos
 	

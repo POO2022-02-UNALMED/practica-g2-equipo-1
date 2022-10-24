@@ -44,6 +44,11 @@ public class Proveedor extends Persona implements Serializable {
         }
         return null;
     }
+    // Metodo que elimina a un proveedor
+    public static boolean eliminarProveedor(Proveedor proveedor){
+        Proveedor.getProveedores().remove(proveedor);
+        return true;
+    }
 
     //Getters y setters
     
