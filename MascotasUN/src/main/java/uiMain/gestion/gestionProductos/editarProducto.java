@@ -39,7 +39,7 @@ public class editarProducto {
                             break;
                         case 2:
                             System.out.println("Ingrese el nuevo precio de venta");
-                            producto.setPrecio(input.nextInt());
+                            producto.setPrecioVenta(input.nextInt());
                             System.out.println(producto);
                             break;
                         case 3:

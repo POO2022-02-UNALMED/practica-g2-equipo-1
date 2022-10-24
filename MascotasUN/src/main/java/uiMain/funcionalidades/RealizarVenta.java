@@ -202,7 +202,7 @@ public class RealizarVenta {
                                 for (Map.Entry<Producto, Integer> entry : facturita.getProductos().entrySet()) {
                                     Producto k = entry.getKey();
                                     Integer v = entry.getValue();
-                                    System.out.println(incrementa + ") " + k.getNombre()+" " + v + " unidades, y tiene un precio unitario de: " + k.getPrecio());
+                                    System.out.println(incrementa + ") " + k.getNombre()+" " + v + " unidades, y tiene un precio unitario de: " + k.getPrecioVenta());
                                     incrementa++;
                                 }
                             case 4:
