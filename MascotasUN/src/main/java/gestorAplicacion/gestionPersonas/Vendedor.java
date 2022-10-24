@@ -22,7 +22,8 @@ public class Vendedor extends Persona implements Serializable {
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
     private String usuario;
     private String contrasena;
-    public static HashMap<String, String> usuarios = new HashMap<String, String>(); // Diccionario vendedores
+    public static HashMap<String, String> usuarios = new HashMap<String, String>(); // Diccionario vendedores usuario:contraseña
+    public static HashMap<String, Integer> cantidadVentas = new HashMap<String, Integer>(); // Diccionario vendedores usuario:ventas
 
     //Constructor
     public Vendedor(long personaId, String nombre, String email, int telefono, ArrayList<Factura> ventas,
@@ -108,5 +109,14 @@ public class Vendedor extends Persona implements Serializable {
 	public static void setUsuarios(HashMap<String, String> usuarios) {
 		Vendedor.usuarios = usuarios;
 	}
+
+	public static HashMap<String, Integer> getCantidadVentas() {
+		return cantidadVentas;
+	}
+
+	public static void setCantidadVentas(HashMap<String, Integer> cantidadVentas) {
+		Vendedor.cantidadVentas = cantidadVentas;
+	}
+	
 }
 

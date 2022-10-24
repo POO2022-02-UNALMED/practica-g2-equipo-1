@@ -157,6 +157,8 @@ public class CasosPrueba {
 	listavendedores.put(vendedor3.getUsuario(), vendedor3.getContrasena());
 	
 	Vendedor.setUsuarios(listavendedores);
+
+	
 	
 	// Facturas
 		Factura factura1 = new Factura(usuario1, "23/10/2022", vendedor1);
@@ -195,7 +197,15 @@ public class CasosPrueba {
 		vendedor2.setVentas(listaFactura2);
 		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura1.add(factura5); listaFactura1.add(factura6); listaFactura1.add(factura7); listaFactura1.add(factura8);
 		vendedor3.setVentas(listaFactura3);
-	
+		
+		
+	// Diccionario de vendedores (usuario,cantidadVentas)
+		
+		HashMap<String, Integer> ventasT = new HashMap<String, Integer>(); ventasT.put(vendedor1.getUsuario(), vendedor1.getVentas().size());
+		ventasT.put(vendedor2.getUsuario(), vendedor1.getVentas().size());
+		ventasT.put(vendedor3.getUsuario(), vendedor1.getVentas().size());
+		
 	}
+	
 	
 }
