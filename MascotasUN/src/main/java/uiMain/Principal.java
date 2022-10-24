@@ -16,6 +16,7 @@ import gestorAplicacion.gestionVentas.Gato;
 import gestorAplicacion.gestionVentas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
+import uiMain.funcionalidades.CompraInventario;
 
 public class Principal {
 	
@@ -83,7 +84,7 @@ public class Principal {
 	
 	/* Acceso al menú de uiMain.funcionalidades */
 	
-	static void menuPrincipal() {
+	public static void menuPrincipal() {
 		System.out.println("¿Qué quieres hacer?");
 		Scanner input = new Scanner(System.in);
         int opcion;
@@ -118,8 +119,8 @@ public class Principal {
 		//Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
-		////
-		Tienda.imprimirOrdenado(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
+		CompraInventario.funcionalidad();
+		//Tienda.imprimirRiesgo(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
 		//System.out.println(Tienda.getInventarioProductos());
     }
 }

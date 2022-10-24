@@ -71,6 +71,16 @@ public class Tienda implements Serializable {
 		}
 	}
 	
+	public static void imprimirRiesgo(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
+		for(Integer i : valores) {
+			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
+				if(j.getValue().equals(i) & (i <= 2)) {
+					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
+				}
+			}
+		}
+	}
+	
 	public static SortedSet<Integer> getValoresOrdenados() {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
         return valores; // [1, 2, 3, 4, 5, 7]
