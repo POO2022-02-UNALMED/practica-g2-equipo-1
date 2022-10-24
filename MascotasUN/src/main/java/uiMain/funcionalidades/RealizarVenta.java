@@ -15,13 +15,13 @@ public class RealizarVenta {
 
     //Mostrar productos disponibles
     public static Scanner input = new Scanner(System.in);
-    public static  void funcionalidad() throws ParseException {
+    public static void funcionalidad() {
         int opcion;
         int opcion2;
         do {
             System.out.println("Realizar una compra");
             System.out.println(" 1. Mostrar productos disponibles");
-            System.out.println(" 2. agregar productos a la compra");
+            System.out.println(" 2. Agregar productos a la compra");
             System.out.println(" 3. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();

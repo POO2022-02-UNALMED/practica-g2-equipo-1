@@ -30,7 +30,8 @@ public class Producto implements Serializable {
 
     // Métodos
     //Este método se encarga de editar los atributos de un producto
-    public void editarProducto(long productoID, float precio,  int cantidadComprada){
+    public void editarProducto(long productoID,String nombre,int precio, int cantidadComprada){
+        this.nombre=nombre;
         this.productoID=productoID;
         this.precio = precio;
         this.cantidadComprada = cantidadComprada;

@@ -3,7 +3,6 @@ package uiMain;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Map.Entry;
-
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Persona;
 import gestorAplicacion.gestionPersonas.Proveedor;
@@ -84,27 +83,26 @@ public class Principal {
 	
 	/* Acceso al menú de uiMain.funcionalidades */
 	
+<<<<<<< Updated upstream
 	public static void menuPrincipal() {
 		System.out.println("¿Qué quieres hacer?");
+=======
+	static void menuPrincipal() {
+		System.out.println("¿Que deseas hacer?");
+>>>>>>> Stashed changes
 		Scanner input = new Scanner(System.in);
         int opcion;
         do {
-            System.out.println(" 1. Vender un producto");
-            System.out.println(" 2. Comprar productos para inventario");
-            System.out.println(" 3. Programar una venta periódica");
-            System.out.println(" 4. Mostrar recomendaciones personalizadas");
-            System.out.println(" 5. Mostrar estadísticas de ventas");
-            System.out.println(" 6. Salir");
+            System.out.println(" 1. Gestionar la aplicación");
+            System.out.println(" 2. Aplicar funcionalidades");
+            System.out.println(" 3. Salir");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
 
             switch (opcion) {
-                //case 1: funcionalidades.RealizarVenta.funcionalidad() ; break;
-                //case 2: funcionalidades.CompraInventario.funcionalidad() ; break;
-                //case 3: funcionalidades.ProgramarVenta.funcionalidad() ; break;
-                //case 4: funcionalidades.RecomendacionPersonalizada.funcionalidad() ; break;
-                //case 5: funcionalidades.MostrarEstadisticas.funcionalidad(); break;
-                //case 6: salirDelSistema(); break;
+                case 1: uiMain.gestion.GestionClases.gestionClases(); break;
+                case 2: uiMain.funcionalidades.Funcionalidades.gestionFuncionalidades(); break;
+                case 3: salirDelSistema(); break;
             }
         } while (opcion != 6);
 		System.exit(0);
