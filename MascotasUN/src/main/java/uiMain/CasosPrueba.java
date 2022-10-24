@@ -9,9 +9,9 @@ import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
 import gestorAplicacion.gestionVentas.Envio;
 import gestorAplicacion.gestionVentas.Factura;
-import gestorAplicacion.gestionVentas.Mascota;
-import gestorAplicacion.gestionVentas.Gato;
-import gestorAplicacion.gestionVentas.Perro;
+import gestorAplicacion.gestionPersonas.Mascota;
+import gestorAplicacion.gestionPersonas.Gato;
+import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 
@@ -46,14 +46,14 @@ public class CasosPrueba {
 		Producto producto6 = new Producto(1006, "Cuido Cachorro Extra", "17/04/2023", "Comida diaria para perro cachorro de raza grande", 9000, 15000, 3, "Grande", "Cachorro");
 			
 			// Perro pequeño adulto
-		Producto producto7 = new Producto(1007, "Croquetas Adulto Mini", "30/08/2023", "Comida en croquetas para perro adulto de raza pequeña", 6000, 13000, 2, "Peque�a", "Adulto");
-		Producto producto8 = new Producto(1008, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 3, "Peque�a", "Adulto");
-		Producto producto9 = new Producto(1009, "Cuido Adulto Small", "14/01/2023", "Comida diaria para perro adulto de raza pequeña", 10000, 16000, 4, "Peque�a", "Adulto");
+		Producto producto7 = new Producto(1007, "Croquetas Adulto Mini", "30/08/2023", "Comida en croquetas para perro adulto de raza pequeña", 6000, 13000, 2, "Peque�a", "Adulto");
+		Producto producto8 = new Producto(1008, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 3, "Peque�a", "Adulto");
+		Producto producto9 = new Producto(1009, "Cuido Adulto Small", "14/01/2023", "Comida diaria para perro adulto de raza pequeña", 10000, 16000, 4, "Peque�a", "Adulto");
 			
 			// Perro pequeño cachorro
-		Producto producto10 = new Producto(1010, "Croquetas Cachorro Mini", "29/08/2023", "Comida en croquetas para perro cachorro de raza pequeña", 6000, 13000, 5, "Peque�a", "Cachorro");
-		Producto producto11 = new Producto(1011, "Comida húmeda Cachorro Junior", "17/12/2022", "Comida húmeda para perro cachorro de raza pequeña", 3000, 6000, 3, "Peque�a", "Cachorro");
-		Producto producto12 = new Producto(1012, "Cuido Cachorro Small", "13/01/2023", "Comida diaria para perro cachorro de raza pequeña", 10000, 16000, 2, "Peque�a", "Cachorro");
+		Producto producto10 = new Producto(1010, "Croquetas Cachorro Mini", "29/08/2023", "Comida en croquetas para perro cachorro de raza pequeña", 6000, 13000, 5, "Peque�a", "Cachorro");
+		Producto producto11 = new Producto(1011, "Comida húmeda Cachorro Junior", "17/12/2022", "Comida húmeda para perro cachorro de raza pequeña", 3000, 6000, 3, "Peque�a", "Cachorro");
+		Producto producto12 = new Producto(1012, "Cuido Cachorro Small", "13/01/2023", "Comida diaria para perro cachorro de raza pequeña", 10000, 16000, 2, "Peque�a", "Cachorro");
 			
 			// Gato cachorro
 		Producto producto13 = new Producto(1013, "Purina catchow cachorro", "19/01/2024", "Comida seca para gato cachorro", 7000, 10000, 7, "Cachorro");

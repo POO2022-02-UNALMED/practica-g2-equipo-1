@@ -6,9 +6,9 @@ import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
 import gestorAplicacion.gestionVentas.Envio;
 import gestorAplicacion.gestionVentas.Factura;
-import gestorAplicacion.gestionVentas.Mascota;
-import gestorAplicacion.gestionVentas.Gato;
-import gestorAplicacion.gestionVentas.Perro;
+import gestorAplicacion.gestionPersonas.Mascota;
+import gestorAplicacion.gestionPersonas.Gato;
+import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 
