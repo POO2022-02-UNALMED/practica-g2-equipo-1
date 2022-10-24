@@ -275,7 +275,6 @@ public class RealizarVenta {
 
     }
     public static Usuario encontrarPersona(ArrayList<Usuario> clientes, long id){
-
         for(Usuario cliente: clientes){
             if(cliente.getPersonaId()==id){
                 return cliente;

@@ -1,4 +1,6 @@
 package gestorAplicacion.gestionPersonas;
+import java.util.ArrayList;
+
 import gestorAplicacion.gestionVentas.Factura;
 
 //import java.util.ArrayList;

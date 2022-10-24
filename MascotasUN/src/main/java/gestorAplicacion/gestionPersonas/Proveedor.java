@@ -34,6 +34,15 @@ public class Proveedor extends Persona implements Serializable {
     public void agregarFactura(Factura f){
         pedidos.add(f);
     }
+    
+    public static Proveedor encontrarPersona(ArrayList<Proveedor> proveedores, long personaId){
+        for(Proveedor p: proveedores){
+            if(p.getPersonaId()== personaId){
+                return p;
+            }
+        }
+        return null;
+    }
 
     //Getters y setters
     public static ArrayList<Proveedor> getProveedores() {

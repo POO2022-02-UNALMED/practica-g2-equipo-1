@@ -1,10 +1,12 @@
 package uiMain.funcionalidades;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Proveedor;
+import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.Principal;
@@ -55,7 +57,7 @@ public class CompraInventario {
             
             // Funcionalidad como tal con método
             case 1:
-            	System.out.println("¿Qué producto desea comprar?");
+                System.out.println("¿Qué producto desea comprar?");
             	Tienda.imprimirCatalogo(Tienda.getCatalogo());
             	compraProducto();
             	// Pedir la cantidad del producto que se va a comprar
@@ -79,16 +81,9 @@ public class CompraInventario {
 	// Contiene el case donde se ingresan los ID y se realiza la compra
 	static void compraProducto() {
 		// Se pide el ID del producto a comprar
+		Factura facturita = new Factura();
 		Scanner ID = new Scanner(System.in);
         Long opcion;
-        System.out.print("¿A cuál proveedor desea comprar?");
-        int j = 0;
-        for (Proveedor i : Proveedor.getProveedores()) {
-        	++j;
-        	System.out.println(j + ". " + i.getNombre());
-        }
-        
-        
     	System.out.print("Indique el ID del producto a comprar: ");
     	opcion = ID.nextLong(); // En opcion se guarda el ID
     	HashMap<Producto, Integer> productos = new HashMap<>(); // Se crea el HashMap que guardará los productos a comprar
@@ -100,6 +95,17 @@ public class CompraInventario {
     		System.out.print("¿Cuántos desea comprar?");
     		cantidad = num.nextInt();
     		productos.put(Tienda.encontrarProducto(opcion), cantidad); // Se guarda en el HashMap
+    		// Se pregunta por el proveedor
+    		System.out.print("¿A cuál proveedor desea comprar?\n");
+            for (Proveedor i : Proveedor.getProveedores()) {
+            	System.out.println("ID: " + i.getPersonaId() + ". Nombre: " + i.getNombre());
+            }
+            Scanner p = new Scanner(System.in);
+            int opcionp;
+        	System.out.print("Indique el ID del proveedor a comprar: ");
+        	opcionp = p.nextInt(); // En opcionp se guarda el ID del proveedor
+        	Proveedor proveedorcito = Proveedor.encontrarPersona(Proveedor.getProveedores(), opcionp);
+            
     		// Se pregunta si desea comprar más productos
     		Scanner num_extra = new Scanner(System.in);
     		int seleccion;
@@ -112,9 +118,10 @@ public class CompraInventario {
 
                 switch (seleccion) {
                     case 1:
+                    	compraProducto();
                     	break;
                     case 2:
-                    	//////realizarCompra(proveedor, productos, Tienda.getCuenta().getPin());
+                    	facturita.realizarCompra(proveedorcito, productos, Tienda.getCuenta().getPin());
                     	break;
                 }
             } while (seleccion != 1 & seleccion != 2);
