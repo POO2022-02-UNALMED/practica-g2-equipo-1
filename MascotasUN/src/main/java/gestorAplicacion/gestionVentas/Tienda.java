@@ -23,6 +23,9 @@ public class Tienda implements Serializable {
 	private final float PGANANCIAS = 0.12f;
 	
 	// Métodos
+	public static void agregarProductoCatalogo(Producto producto){
+		catalogo.add(producto);
+	}
 	public static Producto encontrarProducto(long id) {
 		for (Producto p : getCatalogo()) {
 			if (p.getProductoID() == id) {

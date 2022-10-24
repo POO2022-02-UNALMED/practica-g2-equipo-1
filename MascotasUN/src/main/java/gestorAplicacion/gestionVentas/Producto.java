@@ -51,6 +51,9 @@ public class Producto implements Serializable {
         Tienda.getCatalogo().remove(producto);
         return true;
     }
+    public static void agregarProducto(Producto producto){
+        Producto.productos.add(producto);
+    }
 
 
     // Setters y Getters
