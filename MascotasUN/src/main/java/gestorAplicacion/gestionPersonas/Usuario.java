@@ -92,4 +92,13 @@ public class Usuario extends Persona implements Serializable {
 		mascotas.add(mascota);
 	}
 
+	public static Usuario encontrarPersona(long personaId){
+		for(Usuario p: usuarios){
+			if(p.getPersonaId()== personaId){
+				return p;
+			}
+		}
+		return null;
+	}
+
 }
