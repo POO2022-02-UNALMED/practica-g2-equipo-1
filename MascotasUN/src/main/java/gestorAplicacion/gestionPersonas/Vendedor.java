@@ -2,8 +2,13 @@
  * de la aplicación. Hereda de la clase abstracta Persona*/
 
 package gestorAplicacion.gestionPersonas;
+<<<<<<< Updated upstream
 
 import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método agregarFactura() y el atributo de la lista de ventas realizadas
+=======
+import gestorAplicacion.gestionVentas.Factura;
+import gestorAplicacion.gestionVentas.Producto;
+>>>>>>> Stashed changes
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -90,4 +95,37 @@ public class Vendedor extends Persona implements Serializable {
 	public static void setUsuarios(HashMap<String, String> usuarios) {
 		Vendedor.usuarios = usuarios;
 	}
+<<<<<<< Updated upstream
 }
+=======
+
+	//Métodos
+
+    public static boolean validarCredenciales(String usuario, String contrasena){
+        for (Entry<String, String> entry : usuarios.entrySet()) {
+            if (usuario.equals(entry.getKey()) & contrasena.equals(entry.getValue())){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void agregarVendedor(Vendedor vendedor){
+        Vendedor.vendedores.add(vendedor);
+    }
+
+    @Override
+    public void agregarFactura(Factura f){
+        ventas.add(f);
+    }
+
+    @Override
+    public String toString() {
+        return  "~ ID #"+ personaId + "\n"+
+                "~ Nombre = " + nombre +"\n"+
+                "~ Email = " + email + "\n"+
+                "~ Telefono = " +telefono+ "\n"+
+                "~ Usuario = " +usuario+ "\n"+
+                "~ Ventas = " +ventas+ "\n";
+    }
+}
+>>>>>>> Stashed changes
