@@ -3,6 +3,7 @@ package uiMain.gestion.gestionProductos;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class verProducto {
@@ -29,12 +30,17 @@ public class verProducto {
                     break;
                 case 2:
                     System.out.println("Esta es la lista completa de tus productos");
-                    Tienda.imprimirCatalogo(Tienda.getCatalogo());
+                    imprimirCatalogo(Tienda.getCatalogo());
                     break;
                 case 3:
                     break;
             }
         } while(opcion != 3);
+    }
+    public static void imprimirCatalogo(ArrayList<Producto> catalogo) {
+        for(Producto i : catalogo) {
+            System.out.println("ID: "+ i.getProductoID() + ". Producto: " + i.getNombre() + ". Cantidad: " + i.getCantidadComprada());
+        }
     }
 }
 
