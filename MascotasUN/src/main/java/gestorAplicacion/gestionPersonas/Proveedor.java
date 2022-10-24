@@ -18,7 +18,7 @@ public class Proveedor extends Persona implements Serializable {
     //Atributos
     private ArrayList<Producto> producto = new ArrayList<Producto>();
     private ArrayList<Factura> pedidos = new ArrayList<Factura>();
-    private boolean stock;
+    private boolean stock; //Pueden haber proveedores con y si stock
     
     //Constructor
     public Proveedor(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
@@ -36,7 +36,7 @@ public class Proveedor extends Persona implements Serializable {
     }
     
     // Método que encuentra al proveedor en la lista de proveedores existentes y lo retorna, dado su ID
-    public static Proveedor encontrarPersona(ArrayList<Proveedor> proveedores, long personaId){
+    public static Proveedor encontrarPersona(long personaId){
         for(Proveedor p: proveedores){
             if(p.getPersonaId()== personaId){
                 return p;

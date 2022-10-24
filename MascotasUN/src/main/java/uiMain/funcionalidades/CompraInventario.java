@@ -70,7 +70,7 @@ public class CompraInventario {
                 int opcionp;
             	System.out.print("Indique el ID del proveedor a comprar: ");
             	opcionp = p.nextInt(); // En opcionp se guarda el ID del proveedor
-            	Proveedor proveedorcito = Proveedor.encontrarPersona(Proveedor.getProveedores(), opcionp);
+            	Proveedor proveedorcito = Proveedor.encontrarPersona(opcionp);
             	
                 System.out.println("¿Qué producto desea comprar?");
             	imprimirCatalogo(Tienda.getCatalogo());
@@ -195,3 +195,10 @@ public class CompraInventario {
 	}
 	
 }
+// Saldo inicial:
+// 	Tienda: 10.889.457
+//	Proveedor: 20.858.968
+
+// Dio:
+//	Tienda: 10.193.457
+//	Proveedor: 21.554.968

@@ -45,6 +45,17 @@ public class Usuario extends Persona implements Serializable {
 				"~ Compras = " +compras+ "\n";
 	}
 	
+	// Método que encuentra al usuario en la lista de usuarios existentes y lo retorna, dado su ID
+	public static Usuario encontrarPersona(long personaId){
+		for(Usuario p: usuarios){
+			if(p.getPersonaId()== personaId){
+				return p;
+			}
+		}
+		return null;
+	}
+
+	
 	// Método que agrega una factura al usuario dentro de la lista de compras realizadas
 	@Override
 	public void agregarFactura(Factura f){
@@ -60,16 +71,6 @@ public class Usuario extends Persona implements Serializable {
 	public static boolean eliminarUsuario(Usuario usuario){
 		Usuario.getUsuarios().remove(usuario);
 		return true;
-	}
-
-	// Método que encuentra al usuario en la lista de usuarios existentes y lo retorna, dado su ID
-	public static Usuario encontrarPersona(long personaId){
-		for(Usuario p: usuarios){
-			if(p.getPersonaId()== personaId){
-				return p;
-			}
-		}
-		return null;
 	}
 
 	//Getters y setters
