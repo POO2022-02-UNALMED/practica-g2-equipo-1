@@ -119,7 +119,7 @@ public class Principal {
 	
 	// Entrada al programa
 	public static void main(String[] args) {
-		//Deserializador.deserializar();
+		Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
 		RealizarVenta.funcionalidad();

@@ -6,16 +6,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import uiMain.gestion.gestionProductos.VerProducto;
+import uiMain.gestion.gestionUsuarios.AgregarUsuario;
+import uiMain.gestion.gestionUsuarios.GestionUsuarios;
 
 public class RealizarVenta {
     public static Scanner input = new Scanner(System.in);
-    static  Tienda t= new Tienda();
     static Factura facturaInstance = new Factura();
     public static void funcionalidad() {
 
         int opcionM1;
         int opcionM2;
         do {
+            //Primero se pide al vendedor que proporcione su ID para proceder las acciones de compra
+            System.out.println("Para iniciar ingrese ID del vendendor a continuacion: ");
+            long vendedorID= input.nextLong();
+            Vendedor vend= encontrarVendedor(vendedorID);
+            System.out.println("Hola "+ vend.getNombre() +" puede proceder con la compra\n\n");
             //Muestra las opciones del menu
             System.out.println("Realizar una compra");
             System.out.println(" 1. Mostrar productos disponibles");
@@ -38,10 +44,7 @@ public class RealizarVenta {
                         System.out.println(" 6. volver al menu compra");
                         System.out.print("Indique su eleccion : ");
                         opcionM2 = input.nextInt();
-                        System.out.println("Para iniciar ingrese ID del vendendor a continuacion: ");
-                        long vendedorID= input.nextLong();
-                        Vendedor vend= encontrarVendedor(vendedorID);
-                        System.out.println("Hola "+ vend.getNombre() +" puede proceder con la compra");
+
                         switch (opcionM2){
                             case 1:
 
@@ -56,27 +59,23 @@ public class RealizarVenta {
                                         System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                         String fecha=input.next();
                                         System.out.println("Ingrese el metodo de pago: \n 1 en caso de efectivo 0 en caso de tarjeta");
-                                        facturaInstance= new Factura(cliente, fecha, Vendedor.getVendedores().get(0));
+                                        facturaInstance= new Factura(cliente, fecha, vend);
                                         break;
                                     case 0:
-                                        System.out.println("Si el usuario se desea registrar con cuenta bancaria ingrese 1\n en caso contrario ingrese 0");
-                                        int cu= input.nextInt();
-                                        switch (cu){
-
-
-
-                                        }
-
-
+                                        Usuario clienteN= AgregarUsuario.agregarUsuario();
+                                        System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
+                                        String fecha1=input.next();
+                                        System.out.println("Ingrese el metodo de pago: \n 1 en caso de efectivo 0 en caso de tarjeta");
+                                        facturaInstance= new Factura(clienteN, fecha1, vend);
 
                                 }
                                 while (true){
                                     System.out.println("Ingrese el ID del producto que desea agregar: ");
                                     long idP=input.nextLong();
-                                    Producto aComp= t.encontrarProducto(idP);
+                                    Producto aComp= Tienda.encontrarProducto(idP);
                                     System.out.println("Ingrese la cantidad del producto que desea agregar");
                                     int cantidad= input.nextInt();
-                                    if (t.getInventario().get(aComp)>=cantidad){
+                                    if (Tienda.getInventario().get(aComp)>=cantidad){
                                         facturaInstance.agregarProducto(aComp, cantidad);
                                         System.out.println("El producto se ha agregado con exito a la compra");
                                     } else{
@@ -93,8 +92,8 @@ public class RealizarVenta {
                                     System.out.println("Ingrese el id del producto que desea eliminar");
 
                                     long idE= input.nextLong();
-                                    Producto borrar= t.encontrarProducto(idE);
-                                    if(t.getInventario().containsKey(borrar)==true){
+                                    Producto borrar= Tienda.encontrarProducto(idE);
+                                    if(Tienda.getInventario().containsKey(borrar)==true){
                                         facturaInstance.eliminarProducto(borrar);
 
                                     }else{
