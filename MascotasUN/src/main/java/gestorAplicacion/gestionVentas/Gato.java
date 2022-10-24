@@ -1,3 +1,5 @@
+/**/
+
 package gestorAplicacion.gestionVentas;
 
 // Importando librerías
@@ -7,12 +9,8 @@ import java.util.Map;
 
 public class Gato implements Mascota, Serializable {
 
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-
 	// Serializador Gato
+	private static final long serialVersionUID = 1L;
     private static ArrayList<Gato> gatos = new ArrayList<>();
 
     // Atributos
@@ -27,6 +25,20 @@ public class Gato implements Mascota, Serializable {
         this.edad = edad;
     }
     
+    // Métodos
+    
+    // Método que dependiendo de la edad del gato (ingresada en años) retornará si es Cachorro o Adulto
+    @Override
+    public String calcularEdad(int edad) {
+    	if (edad<=1 ){
+    		return "Cachorro";
+    	}
+    	else {
+    		return "Adulto";
+    	}
+    }
+    
+    // Método que dependiendo de la edad del gato, retornará una lista de productos recomendados
     @Override
     public ArrayList<Producto> tipoAlimento(){
      	ArrayList<Producto> ListAux = new ArrayList<Producto>();
@@ -38,7 +50,8 @@ public class Gato implements Mascota, Serializable {
  		return ListAux;
       }
 
-    // Setters y Getters
+    // Getters y setters
+    
     public static ArrayList<Gato> getGatos() {
         return gatos;
     }
@@ -70,45 +83,4 @@ public class Gato implements Mascota, Serializable {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
-    //Métodos
-    /*@Override
-    public ArrayList tipoAlimento(String raza){
-    		if raza==Raza.GRANDE{
-    			if calcularEdad() == "Cachorro"{
-    				return ArrayList;
-    			}
-    			else if calcularEdad() == "Adulto"{
-    				return ArrayList;
-    			}
-    		}
-    		else if raza==Raza.PEQUENA{
-    			if calcularEdad() == "Cachorro"{
-    				return ArrayList;
-    			}
-    			else if calcularEdad() == "Adulto"{
-    				return ArrayList;
-    			}
-    		}
-    		else if raza==Raza.MEDIANA{
-    			if calcularEdad() == "Cachorro"{
-    				return ArrayList;
-    			}
-    			else if calcularEdad() == "Adulto" {
-    				return ArrayList;	
-    			}
-    		}
-    }*/
-
-    @Override
-    public String calcularEdad(int edad) {
-    	if (edad<=1 ){
-    		return "Cachorro";
-    	}
-    	else {
-    		return "Adulto";
-    	}
-    }
-
-
 }

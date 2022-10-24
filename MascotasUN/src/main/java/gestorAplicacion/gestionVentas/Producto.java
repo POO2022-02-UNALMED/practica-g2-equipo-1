@@ -1,14 +1,16 @@
+/**/
+
 package gestorAplicacion.gestionVentas;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Producto implements Serializable {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 	//Serializador Productos
+	private static final long serialVersionUID = 1L;
     private static ArrayList<Producto> productos = new ArrayList<>();
+    
     //Atributos
     private long productoID;
     private String nombre;
@@ -23,16 +25,16 @@ public class Producto implements Serializable {
 
     // Constructor
     public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra, float precioVenta, int cantidadComprada) {
-    this.productoID = productoID;
-    this.nombre = nombre;
-    this.fechaVencimiento = fechaVencimiento;
-    this.descripcion = descripcion;
-    this.precioCompra = precioCompra;
-    this.precioVenta = precioVenta;
-    this.cantidadComprada = cantidadComprada;
+	    this.productoID = productoID;
+	    this.nombre = nombre;
+	    this.fechaVencimiento = fechaVencimiento;
+	    this.descripcion = descripcion;
+	    this.precioCompra = precioCompra;
+	    this.precioVenta = precioVenta;
+	    this.cantidadComprada = cantidadComprada;
     }
     
-  //Sobreescritura de constructor para crear productos relacionados con gatos
+    	//Sobreescritura de constructor para crear productos relacionados con gatos
     public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra,
 			float precioVenta, int cantidadComprada, String etapa) {
 		this.productoID = productoID;
@@ -45,7 +47,7 @@ public class Producto implements Serializable {
 		this.etapa = etapa;
 	}
     
-    //Sobreescritura de constructor para crear productos relacionados con perros
+    	//Sobreescritura de constructor para crear productos relacionados con perros
     public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra,
 			float precioVenta, int cantidadComprada, String raza, String etapa) {
 		this.productoID = productoID;
@@ -60,14 +62,8 @@ public class Producto implements Serializable {
 	}
 
     // Métodos
-    //Este método se encarga de editar los atributos de un producto
-    public void editarProducto(long productoID,String nombre,int precio, int cantidadComprada){
-        this.nombre=nombre;
-        this.productoID=productoID;
-        this.precioVenta = precio;
-        this.cantidadComprada = cantidadComprada;
-    }
-    //Metodo para generar el string que se imprimira al implementar la UI
+    
+    // Metodo sobrecargado toString() para generar el string que se imprimira al implementar la UI
     @Override
     public String toString() {
         return "~ Código = " + productoID +"\n"+
@@ -76,23 +72,38 @@ public class Producto implements Serializable {
                 "~ Descripcion = " + descripcion+ "\n"+
                 "~ Precio =" + precioVenta;
     }
+    
+    // Método encargado de editar los atributos de un producto
+    public void editarProducto(long productoID,String nombre,int precio, int cantidadComprada){
+        this.nombre=nombre;
+        this.productoID=productoID;
+        this.precioVenta = precio;
+        this.cantidadComprada = cantidadComprada;
+    }
+    
+    // Método
     public static boolean eliminarProducto(Producto producto){
         Tienda.getCatalogo().remove(producto);
         Producto.getProductos().remove(producto);
         return true;
     }
+    
+    // Método
     public static void agregarProducto(Producto producto){
         Producto.productos.add(producto);
     }
 
 
-    // Setters y Getters
+    // Getters y setters
+    
     public static ArrayList<Producto> getProductos() {
         return productos;
     }
+    
     public static void setProductos(ArrayList<Producto> productos) {
         Producto.productos=productos;
     }
+    
     public long getProductoID() {
         return productoID;
     }
@@ -164,7 +175,4 @@ public class Producto implements Serializable {
 	public void setEtapa(String etapa) {
 		this.etapa = etapa;
 	}
-    
-    //Fin getters y setters
-    
 }

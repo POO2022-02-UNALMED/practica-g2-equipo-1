@@ -1,8 +1,8 @@
+/**/
+
 package gestorAplicacion.gestionVentas;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
-import gestorAplicacion.gestionPersonas.Proveedor;
-import gestorAplicacion.gestionPersonas.Usuario;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.Map.Entry;
-import java.util.Set;
 
 public class Tienda implements Serializable {
+	
 	//Serializador clase tienda
 	private static final long serialVersionUID = 1L;
 	private static ArrayList<Tienda> tienda = new ArrayList<>();
+	
 	// Atributos
 	private static ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private static ArrayList<Producto> catalogo = new ArrayList<Producto>();
@@ -26,9 +26,13 @@ public class Tienda implements Serializable {
 	private final float PGANANCIAS = 0.12f;
 	
 	// Métodos
+	
+	// Método
 	public static void agregarProductoCatalogo(Producto producto){
 		catalogo.add(producto);
 	}
+	
+	// Método
 	public static Producto encontrarProducto(long id) {
 		for (Producto p : getCatalogo()) {
 			if (p.getProductoID() == id) {
@@ -37,6 +41,8 @@ public class Tienda implements Serializable {
 		}
 		return null;
 	}
+	
+	// Método
 	public float obtenerGanancias(){
 		float f = 0.0f;
 		for (Factura fact : cantidadDeVentas) {
@@ -49,6 +55,7 @@ public class Tienda implements Serializable {
 		return f*PGANANCIAS;
 	}
 
+	// Método
 	public static void aumentarStock(Factura factura){
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
 			Producto k = fact.getKey();
@@ -58,6 +65,8 @@ public class Tienda implements Serializable {
 		}
 
 	}
+	
+	// Método
 	public static void reducirStock(Factura factura){
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
 			Producto k = fact.getKey();
@@ -71,10 +80,12 @@ public class Tienda implements Serializable {
 		}
 	}
 	
+	// Método
 	public static void agregarVenta(Factura f){
 		cantidadDeVentas.add(f);
 	}
 	
+	// Método
 	public static Boolean validarID(Long opcion){
 		for (Producto i : getCatalogo()) {
     		if (opcion.equals((Long)i.getProductoID())) {
@@ -83,13 +94,14 @@ public class Tienda implements Serializable {
         } return false;
     }
 	
+	// Método
 	public static SortedSet<Integer> getValoresOrdenados() {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
         return valores; // [1, 2, 3, 4, 5, 7]
     }
 	
-	//Getters y Setters
-		// Creamos el getter y setter de Tienda para el serializador
+	//Getters y setters
+	
 	public static ArrayList<Tienda> getTienda() {
 		return tienda;
 	}
@@ -122,7 +134,6 @@ public class Tienda implements Serializable {
 		Tienda.inventario = inventario;
 	}
 	
-
 	public static HashMap<String, Integer> getInventarioProductos() {
 		return inventarioProductos;
 	}

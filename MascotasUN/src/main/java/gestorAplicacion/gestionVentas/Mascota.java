@@ -1,11 +1,11 @@
+/**/
+
 package gestorAplicacion.gestionVentas;
 
-//Importando librerías
-//import java.io.Serializable;
 import java.util.ArrayList;
 
-//Creando la interfaz
 public interface Mascota {
+	
     // Métodos
     ArrayList<Producto> tipoAlimento();
     
@@ -15,4 +15,3 @@ public interface Mascota {
     	PEQUENA, GRANDE, MEDIANA
     }
 }
-
