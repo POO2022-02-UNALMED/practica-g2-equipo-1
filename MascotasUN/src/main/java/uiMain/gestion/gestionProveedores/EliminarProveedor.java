@@ -1,14 +1,12 @@
-package uiMain.gestion.gestionUsuarios;
+package uiMain.gestion.gestionProveedores;
 
 import gestorAplicacion.gestionPersonas.Usuario;
-import gestorAplicacion.gestionVentas.Producto;
-import gestorAplicacion.gestionVentas.Tienda;
 
 import java.util.Scanner;
 
-public class EliminarUsuario {
+public class EliminarProveedor {
     private static int id;
-    public static void eliminarUsuario(){
+    public static void eliminarProveedor(){
         Scanner input = new Scanner(System.in);
 
         while(true){
