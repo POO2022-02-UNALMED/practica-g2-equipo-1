@@ -60,9 +60,15 @@ public class AgregarUsuario {
                 Usuario user1 = new Usuario(id, nombre, email, telefono, new CuentaBancaria(nro, saldo, pin), dir, pets);
                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                 System.out.println("El usuario se agrego de manera exitosa");
+<<<<<<< Updated upstream
                 System.out.println(user1.toString());
                 return user1;
 
+=======
+                user1.toString();
+                System.out.println(user1);
+                break;
+>>>>>>> Stashed changes
             case 0:
                 System.out.println("Ingrese el ID del cliente: ");
                 int id1 = input.nextInt();
@@ -103,9 +109,15 @@ public class AgregarUsuario {
                 Usuario user2 = new Usuario(id1, nombre1, email1, telefono1, dir1, pets1);
                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                 System.out.println("El usuario se agrego de manera exitosa");
+<<<<<<< Updated upstream
                 System.out.println(user2.toString());
                 return user2;
 
+=======
+                user2.toString();
+                System.out.println(user2);
+                break;
+>>>>>>> Stashed changes
         }
     return null;
     }
