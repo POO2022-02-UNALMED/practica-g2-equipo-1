@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AgregarUsuario {
-    public static void agregarUsuario() {
+    public static Usuario agregarUsuario() {
         Scanner input = new Scanner(System.in);
         System.out.println("Estas a punto de ingresar un nuevo usuario al sistema");
         System.out.println("Si el usuario se desea registrar con cuenta bancaria ingrese 1\n en caso contrario ingrese 0");
@@ -61,7 +61,8 @@ public class AgregarUsuario {
                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                 System.out.println("El usuario se agrego de manera exitosa");
                 System.out.println(user1.toString());
-                break;
+                return user1;
+
             case 0:
                 System.out.println("Ingrese el ID del cliente: ");
                 int id1 = input.nextInt();
@@ -103,7 +104,11 @@ public class AgregarUsuario {
                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                 System.out.println("El usuario se agrego de manera exitosa");
                 System.out.println(user2.toString());
-                break;
+                return user2;
+
         }
+    return null;
     }
+
 }
+

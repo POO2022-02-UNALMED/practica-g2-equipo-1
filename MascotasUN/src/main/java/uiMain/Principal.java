@@ -22,6 +22,7 @@ import gestorAplicacion.gestionVentas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.funcionalidades.CompraInventario;
+import uiMain.funcionalidades.RealizarVenta;
 
 public class Principal {
 	
@@ -118,12 +119,13 @@ public class Principal {
 	
 	// Entrada al programa
 	public static void main(String[] args) {
-		//Deserializador.deserializar();
+		Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
 		//System.out.print(Proveedor.getProveedores());
-		CompraInventario.funcionalidad();
+		//CompraInventario.funcionalidad();
 		//Tienda.imprimirRiesgo(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
 		//System.out.println(Tienda.getInventarioProductos());
+        RealizarVenta.funcionalidad();
     }
 }
