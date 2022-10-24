@@ -3,6 +3,8 @@ package gestorAplicacion.gestionVentas;
 // Importando librerías
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Map;
+
 
 public class Perro implements Mascota, Serializable {
     /**
@@ -28,6 +30,16 @@ public class Perro implements Mascota, Serializable {
         this.edad = edad;
         this.raza = raza;
     }
+    
+    public ArrayList<Producto> tipoAlimento(){
+    	ArrayList<Producto> ListAux = new ArrayList<Producto>();
+		for (Map.Entry<Producto, Integer> entry : Tienda.getInventario().entrySet()) {
+			if (entry.getKey().getRaza() == getRaza() & entry.getKey().getEtapa() == calcularEdad(getEdad())) {
+				ListAux.add(entry.getKey());
+			}
+		}
+		return ListAux;
+     }
     
     
     // Setters y Getters
