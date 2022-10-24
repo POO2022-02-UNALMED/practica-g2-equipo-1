@@ -163,7 +163,7 @@ public class RealizarVenta {
                                 while (true){
                                     System.out.println("Ingrese el ID del producto que desea agregar: ");
                                     long idP=input.nextLong();
-                                    Producto aComp= encontrarProducto(idP);
+                                    Producto aComp= t.encontrarProducto(idP);
                                     System.out.println("Ingrese la cantidad del producto que desea agregar");
                                     int cantidad= input.nextInt();
                                     if (t.getInventario().get(aComp)>=cantidad){
@@ -183,7 +183,7 @@ public class RealizarVenta {
                                     System.out.println("Ingrese el id del producto que desea eliminar");
 
                                     long idE= input.nextLong();
-                                    Producto borrar= encontrarProducto(idE);
+                                    Producto borrar= t.encontrarProducto(idE);
                                     if(t.getInventario().containsKey(borrar)==true){
                                         facturita.eliminarProducto(borrar);
 
@@ -279,15 +279,6 @@ public class RealizarVenta {
         for(Usuario cliente: clientes){
             if(cliente.getPersonaId()==id){
                 return cliente;
-            }
-        }
-        return null;
-    }
-
-    public static Producto encontrarProducto(long id){
-        for(Producto p: t.getCatalogo()){
-            if(p.getProductoID()==id){
-                return p;
             }
         }
         return null;
