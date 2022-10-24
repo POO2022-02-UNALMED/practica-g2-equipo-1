@@ -1,11 +1,10 @@
 package baseDatos;
 
 //Gestion personas
-import gestorAplicacion.gestionPersonas.CuentaBancaria;
-import gestorAplicacion.gestionPersonas.Proveedor;
-import gestorAplicacion.gestionPersonas.Usuario;
-import gestorAplicacion.gestionPersonas.Vendedor;
+import gestorAplicacion.gestionPersonas.*;
 import gestorAplicacion.gestionVentas.*;
+import gestorAplicacion.gestionVentas.Gato;
+import gestorAplicacion.gestionVentas.Perro;
 //Gestion ventas
 
 import java.io.*;
