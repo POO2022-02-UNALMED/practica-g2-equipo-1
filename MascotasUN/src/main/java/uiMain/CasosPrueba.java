@@ -46,14 +46,14 @@ public class CasosPrueba {
 		Producto producto6 = new Producto(1006, "Cuido Cachorro Extra", "17/04/2023", "Comida diaria para perro cachorro de raza grande", 9000, 15000, 3, "Grande", "Cachorro");
 			
 			// Perro pequeño adulto
-		Producto producto7 = new Producto(1007, "Croquetas Adulto Mini", "30/08/2023", "Comida en croquetas para perro adulto de raza pequeña", 6000, 13000, 2, "Peque�a", "Adulto");
-		Producto producto8 = new Producto(1008, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 3, "Peque�a", "Adulto");
-		Producto producto9 = new Producto(1009, "Cuido Adulto Small", "14/01/2023", "Comida diaria para perro adulto de raza pequeña", 10000, 16000, 4, "Peque�a", "Adulto");
+		Producto producto7 = new Producto(1007, "Croquetas Adulto Mini", "30/08/2023", "Comida en croquetas para perro adulto de raza pequeña", 6000, 13000, 2, "Peque�a", "Adulto");
+		Producto producto8 = new Producto(1008, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 3, "Peque�a", "Adulto");
+		Producto producto9 = new Producto(1009, "Cuido Adulto Small", "14/01/2023", "Comida diaria para perro adulto de raza pequeña", 10000, 16000, 4, "Peque�a", "Adulto");
 			
 			// Perro pequeño cachorro
-		Producto producto10 = new Producto(1010, "Croquetas Cachorro Mini", "29/08/2023", "Comida en croquetas para perro cachorro de raza pequeña", 6000, 13000, 5, "Peque�a", "Cachorro");
-		Producto producto11 = new Producto(1011, "Comida húmeda Cachorro Junior", "17/12/2022", "Comida húmeda para perro cachorro de raza pequeña", 3000, 6000, 3, "Peque�a", "Cachorro");
-		Producto producto12 = new Producto(1012, "Cuido Cachorro Small", "13/01/2023", "Comida diaria para perro cachorro de raza pequeña", 10000, 16000, 2, "Peque�a", "Cachorro");
+		Producto producto10 = new Producto(1010, "Croquetas Cachorro Mini", "29/08/2023", "Comida en croquetas para perro cachorro de raza pequeña", 6000, 13000, 5, "Peque�a", "Cachorro");
+		Producto producto11 = new Producto(1011, "Comida húmeda Cachorro Junior", "17/12/2022", "Comida húmeda para perro cachorro de raza pequeña", 3000, 6000, 3, "Peque�a", "Cachorro");
+		Producto producto12 = new Producto(1012, "Cuido Cachorro Small", "13/01/2023", "Comida diaria para perro cachorro de raza pequeña", 10000, 16000, 2, "Peque�a", "Cachorro");
 			
 			// Gato cachorro
 		Producto producto13 = new Producto(1013, "Purina catchow cachorro", "19/01/2024", "Comida seca para gato cachorro", 7000, 10000, 7, "Cachorro");
@@ -150,7 +150,7 @@ public class CasosPrueba {
 	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, new ArrayList<Factura>(), "Roberto Barrientos", "adios13");
 	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, new ArrayList<Factura>(), "Laura Vanegas", "lau1245");
 	
-	// Lista de vendedores
+	// Diccionario de vendedores (usuario,contraseña)
 	
 	HashMap<String, String> listavendedores = new HashMap<String, String>(); listavendedores.put(vendedor1.getUsuario(), vendedor1.getContrasena());
 	listavendedores.put(vendedor2.getUsuario(), vendedor2.getContrasena());
@@ -163,28 +163,38 @@ public class CasosPrueba {
 		factura1.setProductos(compra1);
 		Factura factura2 = new Factura(usuario1, "15/10/2022", vendedor1);
 		factura2.setProductos(compra2);
+		usuario1.agregarFactura(factura1);
+		usuario1.agregarFactura(factura2);
 		
 		Factura factura3 = new Factura(usuario2, "22/10/2022", vendedor2);
 		factura3.setProductos(compra3);
 		Factura factura4 = new Factura(usuario2, "21/10/2022", vendedor2);
 		factura4.setProductos(compra4);
+		usuario2.agregarFactura(factura3);
+		usuario2.agregarFactura(factura4);
 		
 		Factura factura5 = new Factura(usuario3, "19/10/2022", vendedor3);
 		factura5.setProductos(compra5);
 		Factura factura6 = new Factura(usuario3, "18/10/2022", vendedor3);
 		factura6.setProductos(compra6);
+		usuario3.agregarFactura(factura5);
+		usuario3.agregarFactura(factura6);
 		
 		Factura factura7 = new Factura(usuario4, "17/10/2022", vendedor3);
 		factura7.setProductos(compra7);
 		Factura factura8 = new Factura(usuario4, "16/10/2022", vendedor3);
 		factura8.setProductos(compra8);
+		usuario4.agregarFactura(factura7);
+		usuario4.agregarFactura(factura8);
 	
 	
 	//ArrayList de facturas
 		ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
+		vendedor1.setVentas(listaFactura1);
 		ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura1.add(factura3); listaFactura1.add(factura4);
+		vendedor2.setVentas(listaFactura2);
 		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura1.add(factura5); listaFactura1.add(factura6); listaFactura1.add(factura7); listaFactura1.add(factura8);
-	
+		vendedor3.setVentas(listaFactura3);
 	
 	}
 	
