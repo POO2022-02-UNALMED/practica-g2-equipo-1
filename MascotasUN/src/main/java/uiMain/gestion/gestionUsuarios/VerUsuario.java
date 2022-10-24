@@ -26,8 +26,7 @@ public class VerUsuario {
                         System.out.println("Ingrese el codigo del usuario que quiere ver: ");
                         id=input.nextInt();
                         Usuario usuario= Usuario.encontrarPersona(id);
-                        System.out.println("*******************************");
-                        System.out.println("ID: "+ usuario.getPersonaId() +"\n"+ ". Nombre: " + usuario.getNombre() +"\n"+ ". Email: " + usuario.getEmail()+"\n"+". Telefono: " + usuario.getTelefono() +"\n"+". Compras: " + usuario.getCompras()+"\n"+". Mascotas: " + usuario.getMascotas()+"\n");
+                        System.out.println(usuario.toString());
                         }
                     break;
                 case 2:

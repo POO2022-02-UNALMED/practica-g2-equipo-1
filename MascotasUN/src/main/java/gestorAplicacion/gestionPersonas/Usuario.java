@@ -2,6 +2,8 @@ package gestorAplicacion.gestionPersonas;
 
 import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionVentas.Mascota;
+import gestorAplicacion.gestionVentas.Producto;
+import gestorAplicacion.gestionVentas.Tienda;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,7 +19,6 @@ public class Usuario extends Persona implements Serializable {
 	//Serializador Usuarios
 	private static ArrayList<Usuario> usuarios = new ArrayList<>();
 	private String direccion;
-	private String envioCompra = "";
 	private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
 	private ArrayList<Factura> compras = new ArrayList<Factura>();
@@ -54,14 +55,6 @@ public class Usuario extends Persona implements Serializable {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	
-	public String getEnvioCompra() {
-		return envioCompra;
-	}
-	
-	public void setEnvioCompra(String envioCompra) {
-		this.envioCompra = envioCompra;
-	}
 
 	public ArrayList<Mascota> getMascotas() {
 		return mascotas;
@@ -92,6 +85,11 @@ public class Usuario extends Persona implements Serializable {
 		mascotas.add(mascota);
 	}
 
+	public static boolean eliminarUsuario(Usuario usuario){
+		Usuario.getUsuarios().remove(usuario);
+		return true;
+	}
+
 	public static Usuario encontrarPersona(long personaId){
 		for(Usuario p: usuarios){
 			if(p.getPersonaId()== personaId){
@@ -100,5 +98,14 @@ public class Usuario extends Persona implements Serializable {
 		}
 		return null;
 	}
-
+	@Override
+	public String toString() {
+		return  "~ ID #"+ personaId + "\n"+
+				"~ Nombre = " + nombre +"\n"+
+				"~ Email = " + email + "\n"+
+				"~ Telefono = " +telefono+ "\n"+
+				"~ Direccion = " +direccion+ "\n"+
+				"~ Mascotas = " +mascotas+ "\n"+
+				"~ Compras = " +compras+ "\n";
+	}
 }

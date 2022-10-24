@@ -49,6 +49,7 @@ public class Producto implements Serializable {
     }
     public static boolean eliminarProducto(Producto producto){
         Tienda.getCatalogo().remove(producto);
+        Producto.getProductos().remove(producto);
         return true;
     }
     public static void agregarProducto(Producto producto){

@@ -244,6 +244,7 @@ public class RealizarVenta {
                                         System.out.println("Ingrese el destino de su compra: ");
                                         String destino= input.next();
                                         Envio envio = new Envio(facturita.getFacturaID(),destino,0);
+                                        envio.setEstadoEnvio("ENVIADO");
                                         System.out.println("Su envio fue creado exitosamente");
                                         break;
                                     case 0:
