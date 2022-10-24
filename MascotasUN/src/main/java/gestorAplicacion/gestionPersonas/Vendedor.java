@@ -67,6 +67,15 @@ public class Vendedor extends Persona implements Serializable {
         }
         return false;
     }
+    // Método que encuentra al vendedor en la lista de vendedores existentes y lo retorna, dado su ID
+    public static Vendedor encontrarPersona(long personaId){
+        for(Vendedor p: vendedores){
+            if(p.getPersonaId()== personaId){
+                return p;
+            }
+        }
+        return null;
+    }
 
     //Getters y setters
     
