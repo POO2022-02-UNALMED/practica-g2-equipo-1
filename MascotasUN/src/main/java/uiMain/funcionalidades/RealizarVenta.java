@@ -1,33 +1,31 @@
 package uiMain.funcionalidades;
 import gestorAplicacion.gestionPersonas.*;
 import gestorAplicacion.gestionVentas.*;
-import uiMain.CasosPrueba;
-import java.sql.SQLOutput;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Date;
-public class RealizarVenta {
-    static  Tienda t= new Tienda();
-     static Factura facturita = new Factura();
+import uiMain.gestion.gestionProductos.VerProducto;
 
-    //Mostrar productos disponibles
+public class RealizarVenta {
     public static Scanner input = new Scanner(System.in);
+    static  Tienda t= new Tienda();
+    static Factura facturaInstance = new Factura();
     public static void funcionalidad() {
-        int opcion;
-        int opcion2;
+
+        int opcionM1;
+        int opcionM2;
         do {
+            //Muestra las opciones del menu
             System.out.println("Realizar una compra");
             System.out.println(" 1. Mostrar productos disponibles");
             System.out.println(" 2. Agregar productos a la compra");
             System.out.println(" 3. Regresar");
             System.out.print("Indique su eleccion : ");
-            opcion = input.nextInt();
-            switch (opcion) {
+            opcionM1 = input.nextInt();
+            switch (opcionM1) {
                 case 1:
-                    obtenerProductos(t);
+                    obtenerProductos(Tienda.getInventario());
                     break;
                 case 2:
                     do{
@@ -39,9 +37,12 @@ public class RealizarVenta {
                         System.out.println(" 5. Configurar envio de compra");
                         System.out.println(" 6. volver al menu compra");
                         System.out.print("Indique su eleccion : ");
-                        opcion2 = input.nextInt();
-
-                        switch (opcion2){
+                        opcionM2 = input.nextInt();
+                        System.out.println("Para iniciar ingrese ID del vendendor a continuacion: ");
+                        long vendedorID= input.nextLong();
+                        Vendedor vend= encontrarVendedor(vendedorID);
+                        System.out.println("Hola "+ vend.getNombre() +" puede proceder con la compra");
+                        switch (opcionM2){
                             case 1:
 
                                 System.out.println("Ingrese 1 para un usuario registrado y 0 para agregar uno nuevo");
@@ -55,7 +56,7 @@ public class RealizarVenta {
                                         System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                         String fecha=input.next();
                                         System.out.println("Ingrese el metodo de pago: \n 1 en caso de efectivo 0 en caso de tarjeta");
-                                        facturita= new Factura(cliente, fecha, Vendedor.getVendedores().get(0));
+                                        facturaInstance= new Factura(cliente, fecha, Vendedor.getVendedores().get(0));
                                         break;
                                     case 0:
                                         System.out.println("Si el usuario se desea registrar con cuenta bancaria ingrese 1\n en caso contrario ingrese 0");
@@ -108,7 +109,7 @@ public class RealizarVenta {
                                                Usuario user1 = new Usuario(id,nombre,email,telefono,new CuentaBancaria(nro,saldo,pin),dir,pets);
                                                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                                 String fecha1=input.next();
-                                                facturita= new Factura(user1,fecha1,Vendedor.getVendedores().get(0));
+                                                facturaInstance= new Factura(user1,fecha1,Vendedor.getVendedores().get(0));
                                                 break;
                                             case 0:
                                                 System.out.println("Ingrese el ID del cliente: ");
@@ -152,7 +153,7 @@ public class RealizarVenta {
                                                 Usuario user2 = new Usuario(id1,nombre1,email1,telefono1,dir1,pets1);
                                                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                                 String fecha2=input.next();
-                                                facturita= new Factura(user2,fecha2,Vendedor.getVendedores().get(0));
+                                                facturaInstance= new Factura(user2,fecha2,Vendedor.getVendedores().get(0));
                                                 break;
 
                                         }
@@ -167,7 +168,7 @@ public class RealizarVenta {
                                     System.out.println("Ingrese la cantidad del producto que desea agregar");
                                     int cantidad= input.nextInt();
                                     if (t.getInventario().get(aComp)>=cantidad){
-                                        facturita.agregarProducto(aComp, cantidad);
+                                        facturaInstance.agregarProducto(aComp, cantidad);
                                         System.out.println("El producto se ha agregado con exito a la compra");
                                     } else{
                                         System.out.println("Lo sentimos no hay stock suficiente para esta venta");
@@ -185,7 +186,7 @@ public class RealizarVenta {
                                     long idE= input.nextLong();
                                     Producto borrar= t.encontrarProducto(idE);
                                     if(t.getInventario().containsKey(borrar)==true){
-                                        facturita.eliminarProducto(borrar);
+                                        facturaInstance.eliminarProducto(borrar);
 
                                     }else{
                                         System.out.println("Lo sentimos el producto no se encuentra en la factura");
@@ -197,9 +198,9 @@ public class RealizarVenta {
                                 }
                             case 3:
                                 System.out.println("Resumen de la factura: ");
-                                System.out.println(facturita.toString());
+                                System.out.println(facturaInstance.toString());
                                 int incrementa=1;
-                                for (Map.Entry<Producto, Integer> entry : facturita.getProductos().entrySet()) {
+                                for (Map.Entry<Producto, Integer> entry : facturaInstance.getProductos().entrySet()) {
                                     Producto k = entry.getKey();
                                     Integer v = entry.getValue();
                                     System.out.println(incrementa + ") " + k.getNombre()+" " + v + " unidades, y tiene un precio unitario de: " + k.getPrecioVenta());
@@ -213,20 +214,20 @@ public class RealizarVenta {
                                     break;
                                 }else {
                                     System.out.println("Resumen de compra");
-                                    System.out.println(facturita.toString());
+                                    System.out.println(facturaInstance.toString());
                                     System.out.println("El usuario desea pagar en efectivo?");
                                     System.out.println("ingrese 1 si el pago es en efectivo y 0 si es con tarjeta");
                                     int z=input.nextInt();
                                     switch (z){
                                         case 1:
-                                            float fina= facturita.realizarCompra(facturita.getCliente());
+                                            float fina= facturaInstance.realizarCompra(facturaInstance.getCliente());
                                             System.out.println("el total de la compra fue: "+ fina);
                                             break;
                                         case 0:
                                             System.out.println("Solicite al cliente la contraseña de su cuenta bancaria");
                                             short contra= input.nextShort();
-                                            if(facturita.getCliente().getCuenta().validarCredenciales(contra)==true){
-                                                float fina2= facturita.realizarCompra(facturita.getCliente(),contra);
+                                            if(facturaInstance.getCliente().getCuenta().validarCredenciales(contra)==true){
+                                                float fina2= facturaInstance.realizarCompra(facturaInstance.getCliente(),contra);
                                                 System.out.println("el total de la compra fue: "+ fina2);
                                             }
                                             break;
@@ -235,7 +236,7 @@ public class RealizarVenta {
                                 break;
 
                             case 5:
-                                System.out.println("La compra con id "+facturita.getFacturaID()+" fue generada \n");
+                                System.out.println("La compra con id "+facturaInstance.getFacturaID()+" fue generada \n");
                                 System.out.println("Desea que se realice un envio de esta?\n");
                                 System.out.println("Digite 1 si el cliente lo requiere o 0 si no");
                                 int g=input.nextInt();
@@ -243,7 +244,7 @@ public class RealizarVenta {
                                     case 1:
                                         System.out.println("Ingrese el destino de su compra: ");
                                         String destino= input.next();
-                                        Envio envio = new Envio(facturita.getFacturaID(),destino,0);
+                                        Envio envio = new Envio(facturaInstance.getFacturaID(),destino,0);
                                         envio.setEstadoEnvio("ENVIADO");
                                         System.out.println("Su envio fue creado exitosamente");
                                         break;
@@ -257,16 +258,16 @@ public class RealizarVenta {
                             case 6:
                                 break;
                         }
-                    } while (opcion2 != 6);
+                    } while (opcionM2 != 6);
                 case 3: break;
             }
 
-        }while (opcion != 3);
+        }while (opcionM1 != 3);
 
     }
 
-    public static void obtenerProductos(Tienda tienda) {
-        for (Map.Entry<Producto, Integer> fact : tienda.getInventario().entrySet()) {
+    public static void obtenerProductos(HashMap<Producto, Integer> inventario) {
+        for (Map.Entry<Producto, Integer> fact : inventario.entrySet()) {
             Producto k = fact.getKey();
             Integer v = fact.getValue();
             System.out.println("~ " + k.toString() + "\n" + "Tiene " + v + " unidades disponibles\n");
@@ -279,6 +280,14 @@ public class RealizarVenta {
         for(Usuario cliente: clientes){
             if(cliente.getPersonaId()==id){
                 return cliente;
+            }
+        }
+        return null;
+    }
+    public static Vendedor encontrarVendedor(long id){
+        for(Vendedor v:Vendedor.getVendedores()){
+            if(v.getPersonaId()==id){
+                return v;
             }
         }
         return null;
