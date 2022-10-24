@@ -6,7 +6,7 @@ import gestorAplicacion.gestionVentas.Tienda;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class verProducto {
+public class VerProducto {
     private static int opcion;
     private static int id;
     public static void verProducto(){
