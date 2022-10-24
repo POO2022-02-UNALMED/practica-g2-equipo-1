@@ -51,8 +51,8 @@ public class CompraInventario {
             
             // Funcionalidad como tal con método
             case 1:
-            	
-            	//System.out.println("Este es su inventario actual");
+            	System.out.println("¿Qué producto desea comprar?");
+            	// Ingrese el ID del producto que desea comprar
             	break;
             	
             // Devuelve al vendedor al menú principal
