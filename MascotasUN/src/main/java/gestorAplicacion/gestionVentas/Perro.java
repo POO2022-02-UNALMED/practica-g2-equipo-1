@@ -25,7 +25,7 @@ public class Perro implements Mascota, Serializable {
         this.edad = edad;
         this.raza = raza;
     }
-    
+
     // Métodos
     
     // Método que dependiendo de la edad del perro (ingresada en años) retornará si es Cachorro o Adulto
