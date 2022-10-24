@@ -134,6 +134,9 @@ public class CasosPrueba {
 	
 	// Proveedor
 	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, listaProductos, true) ;
+	ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
+	proveedores.add(proveedor1);
+	Proveedor.setProveedores(proveedores);
 	
 	// Clientes
 	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", listaMascotas1); //Usuario 1 tiene Perro Cachorro Grande y Gato Cachorro
