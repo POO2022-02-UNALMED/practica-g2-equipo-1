@@ -1,6 +1,9 @@
 package uiMain.gestion.gestionUsuarios;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
+import gestorAplicacion.gestionPersonas.Gato;
+import gestorAplicacion.gestionPersonas.Mascota;
+import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
 import gestorAplicacion.gestionVentas.*;

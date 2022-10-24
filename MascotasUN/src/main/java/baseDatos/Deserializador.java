@@ -3,8 +3,8 @@ package baseDatos;
 //Gestion personas
 import gestorAplicacion.gestionPersonas.*;
 import gestorAplicacion.gestionVentas.*;
-import gestorAplicacion.gestionVentas.Gato;
-import gestorAplicacion.gestionVentas.Perro;
+import gestorAplicacion.gestionPersonas.Gato;
+import gestorAplicacion.gestionPersonas.Perro;
 //Gestion ventas
 
 import java.io.*;

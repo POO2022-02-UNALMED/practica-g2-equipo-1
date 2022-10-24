@@ -6,8 +6,8 @@ import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
 //Importamos del paquete gestion ventas
 import gestorAplicacion.gestionVentas.*;
-import gestorAplicacion.gestionVentas.Gato;
-import gestorAplicacion.gestionVentas.Perro;
+import gestorAplicacion.gestionPersonas.Gato;
+import gestorAplicacion.gestionPersonas.Perro;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
