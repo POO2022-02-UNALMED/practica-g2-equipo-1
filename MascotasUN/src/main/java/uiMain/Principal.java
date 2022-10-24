@@ -118,6 +118,7 @@ public class Principal {
 		//Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
+		////
 		System.out.println(Tienda.getInventarioProductos());
     }
 }
