@@ -18,9 +18,16 @@ public class RealizarVenta {
         int opcionM2;
         do {
             //Primero se pide al vendedor que proporcione su ID para proceder las acciones de compra
-            System.out.println("Para iniciar la venta por favor indique el ID a continuacion: ");
-            long vendedorID= input.nextLong();
-            Vendedor vend= encontrarVendedor(vendedorID);
+            Vendedor vend;
+            do {
+                System.out.println("Para iniciar la venta por favor indique el ID a continuacion: ");
+                long vendedorID= input.nextLong();
+                vend= encontrarVendedor(vendedorID);
+                System.out.println("El id de vendedor ingresado no se encuentra, intentelo de nuevo: ");
+            }while (vend==null);
+
+
+
             System.out.println("Hola "+ vend.getNombre() +" puede proceder con la compra\n\n");
             //Muestra las opciones del menu
             System.out.println("Realizar una compra");
