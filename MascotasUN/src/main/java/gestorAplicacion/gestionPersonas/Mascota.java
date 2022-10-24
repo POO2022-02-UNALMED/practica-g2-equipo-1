@@ -1,8 +1,10 @@
 /*Interfaz de tipo Mascota a ser implementada en las clases Perro y Gato*/
 
-package gestorAplicacion.gestionVentas;
+package gestorAplicacion.gestionPersonas;
 
 import java.util.ArrayList;
+
+import gestorAplicacion.gestionVentas.Producto;
 
 public interface Mascota {
 	

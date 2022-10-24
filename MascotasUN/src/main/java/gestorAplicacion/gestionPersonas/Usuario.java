@@ -4,7 +4,7 @@
 package gestorAplicacion.gestionPersonas;
 
 import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método agregarFactura() y el atributo de la lista de compras que ha hecho un usuario
-import gestorAplicacion.gestionVentas.Mascota; // Importamos la clase Mascota para el atributo de la lista de Mascotas que tiene un usuario
+import gestorAplicacion.gestionPersonas.Mascota; // Importamos la clase Mascota para el atributo de la lista de Mascotas que tiene un usuario
 
 import java.io.Serializable;
 import java.util.ArrayList;

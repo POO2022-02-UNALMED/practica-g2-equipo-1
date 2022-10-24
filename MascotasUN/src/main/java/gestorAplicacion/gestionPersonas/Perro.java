@@ -1,10 +1,13 @@
 /*Clase que crea y gestiona objetos de tipo Perro*/
 
-package gestorAplicacion.gestionVentas;
+package gestorAplicacion.gestionPersonas;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
+
+import gestorAplicacion.gestionVentas.Producto;
+import gestorAplicacion.gestionVentas.Tienda;
 
 public class Perro implements Mascota, Serializable {
 
