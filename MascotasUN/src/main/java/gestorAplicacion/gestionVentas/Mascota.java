@@ -7,7 +7,7 @@ import java.util.ArrayList;
 //Creando la interfaz
 public interface Mascota {
     // Métodos
-    ArrayList<Producto> tipoAlimento(String raza);
+    ArrayList<Producto> tipoAlimento();
     
     String calcularEdad(int edad);
 
