@@ -3,6 +3,8 @@ package uiMain;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Map.Entry;
+
+import baseDatos.Serializador;
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Persona;
 import gestorAplicacion.gestionPersonas.Proveedor;
@@ -105,7 +107,7 @@ public class Principal {
 	}
 	
 	public static void salirDelSistema() {
-        //Serializador.serializar();
+        Serializador.serializar();
     }
 	
 	// Entrada al programa
