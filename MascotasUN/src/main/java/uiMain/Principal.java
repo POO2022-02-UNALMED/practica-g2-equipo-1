@@ -2,6 +2,10 @@ package uiMain;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import baseDatos.Deserializador;
+import baseDatos.Serializador;
+
 import java.util.Map.Entry;
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Persona;
@@ -105,12 +109,12 @@ public class Principal {
 	}
 	
 	public static void salirDelSistema() {
-        //Serializador.serializar();
+        Serializador.serializar();
     }
 	
 	// Entrada al programa
 	public static void main(String[] args) {
-		//Deserializador.deserializar();
+		Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
 		CompraInventario.funcionalidad();

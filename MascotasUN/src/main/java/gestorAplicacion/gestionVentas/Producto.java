@@ -14,7 +14,8 @@ public class Producto implements Serializable {
     private String nombre;
     private String fechaVencimiento;
     private String descripcion;
-    private float precio;
+    private float precioCompra;
+    private float precioVenta;
     private int cantidadComprada;
     //Lista para la recomendacion de concentrado, anadir tipo. y Sobrecarga de constructores.
 
@@ -24,7 +25,8 @@ public class Producto implements Serializable {
     this.nombre = nombre;
     this.fechaVencimiento = fechaVencimiento;
     this.descripcion = descripcion;
-    this.precio = precioCompra;
+    this.precioCompra = precioCompra;
+    this.precioVenta = precioVenta;
     this.cantidadComprada = cantidadComprada;
     }
 
@@ -33,7 +35,7 @@ public class Producto implements Serializable {
     public void editarProducto(long productoID,String nombre,int precio, int cantidadComprada){
         this.nombre=nombre;
         this.productoID=productoID;
-        this.precio = precio;
+        this.precioVenta = precio;
         this.cantidadComprada = cantidadComprada;
     }
     //Metodo para generar el string que se imprimira al implementar la UI
@@ -43,7 +45,7 @@ public class Producto implements Serializable {
                 "~ Producto= " + nombre + '\n' +
                 "~ fechaDeVencimiento=" + fechaVencimiento +"\n"+
                 "~ Descripcion= " + descripcion+ "\n"+
-                "~ Precio=" + precio;
+                "~ Precio=" + precioVenta;
     }
     public static boolean eliminarProducto(Producto producto){
         Tienda.getCatalogo().remove(producto);
@@ -89,17 +91,24 @@ public class Producto implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-
-    public float getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
     
-    public int getCantidadComprada() {
+    public float getPrecioCompra() {
+		return precioCompra;
+	}
+
+	public void setPrecioCompra(float precioCompra) {
+		this.precioCompra = precioCompra;
+	}
+
+	public float getPrecioVenta() {
+		return precioVenta;
+	}
+
+	public void setPrecioVenta(float precioVenta) {
+		this.precioVenta = precioVenta;
+	}
+
+	public int getCantidadComprada() {
         return cantidadComprada;
     }
 

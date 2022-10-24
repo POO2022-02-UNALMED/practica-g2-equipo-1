@@ -79,6 +79,13 @@ public class Tienda implements Serializable {
 		}
 	}
 	
+	public static void imprimirCatalogo(ArrayList<Producto> catalogo) {
+		for(Producto i : catalogo) {
+			System.out.println("ID: "+ i.getProductoID() + ". Producto: " + i.getNombre());
+		}
+		
+	}
+	
 	public static void imprimirRiesgo(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
 		for(Integer i : valores) {
 			for(Entry<String, Integer> j : inventarioProductos.entrySet()){

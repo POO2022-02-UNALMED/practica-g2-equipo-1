@@ -52,7 +52,14 @@ public class CompraInventario {
             // Funcionalidad como tal con método
             case 1:
             	System.out.println("¿Qué producto desea comprar?");
-            	// Ingrese el ID del producto que desea comprar
+            	Tienda.imprimirCatalogo(Tienda.getCatalogo());
+            	System.out.print("Indique el ID del producto a comprar: ");
+            	compraProducto();
+            	// Pedir al vendedor que ingrese el ID
+            	// Hacer una lista de IDs, si el que ingresa la persona está en la lista, hace la compra
+            	// Pedir la cantidad del producto que se va a comprar
+            	// Realizar la compra
+            	// ¿Quiere hacer otra compra? Si no: Thanks. Si sí: Volver a llamar.
             	break;
             	
             // Devuelve al vendedor al menú principal
@@ -66,5 +73,10 @@ public class CompraInventario {
             	break;
             }
         }  while(opcion != 1 & opcion != 2 & opcion != 3);	
+	}
+	
+	// Contiene el case donde se ingresa el ID y se realiza la compra
+	static void compraProducto() {
+		
 	}
 }
