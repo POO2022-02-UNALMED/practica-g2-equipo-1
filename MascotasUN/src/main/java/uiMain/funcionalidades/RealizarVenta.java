@@ -52,7 +52,7 @@ public class RealizarVenta {
                                         //hacer condicional que busque el cliente que ya esté registrado
                                         System.out.println("Ingrese el ID del cliente");
                                         long clienteID= input.nextLong();
-                                        Usuario cliente= encontrarPersona(Usuario.getUsuarios(),clienteID);
+                                        Usuario cliente= encontrarPersona(clienteID);
                                         System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                         String fecha=input.next();
                                         System.out.println("Ingrese el metodo de pago: \n 1 en caso de efectivo 0 en caso de tarjeta");
@@ -62,99 +62,8 @@ public class RealizarVenta {
                                         System.out.println("Si el usuario se desea registrar con cuenta bancaria ingrese 1\n en caso contrario ingrese 0");
                                         int cu= input.nextInt();
                                         switch (cu){
-                                            case 1:
-                                                System.out.println("Ingrese el ID del cliente: ");
-                                                int id= input.nextInt();
-                                                System.out.println("Ingrese el nombre del cliente: ");
-                                                String nombre= input.next();
-                                                System.out.println("Ingrese el email del cliente: ");
-                                                String email= input.next();
-                                                System.out.println("Ingrese el email del cliente: ");
-                                                int telefono= input.nextInt();
-                                                System.out.println("Ingrese el numero de la cuenta bancaria del cliente: ");
-                                                long nro= input.nextLong();
-                                                System.out.println("Ingrese el saldo de la cuenta bancaria del cliente: ");
-                                                float saldo= input.nextFloat();
-                                                System.out.println("Ingrese el pin de la cuenta bancaria cliente: ");
-                                                int pin= input.nextInt();
-                                                System.out.println("Ingrese la direccion del cliente");
-                                                String dir= input.next();
-                                                System.out.println("Ingrese el numero de mascotas del cliente :");
-                                                int mas = input.nextInt();
-                                                ArrayList<Mascota> pets = new ArrayList<>();
-                                                for(int i=0;i<=mas;i++){
-                                                    System.out.println("1 en caso de perro, 0 en caso de gato");
-                                                    int n=input.nextInt();
-                                                    System.out.println("Ingrese el Id de la mascota");
-                                                    long mId= input.nextLong();
-                                                    System.out.println("Ingrese el nombre de la mascota: ");
-                                                    String na= input.next();
-                                                    System.out.println("Ingrese la edad en años de la mascota: ");
-                                                    int edad= input.nextInt();
-                                                    System.out.println("Ingrese la raza de la mascota(para gato ingrese n): ");
-                                                    String raza= input.next();
 
-                                                    switch (n){
-                                                        case 1:
-                                                            Perro p =new Perro(mId,na, edad, raza);
-                                                            pets.add(p);
-                                                            break;
-                                                        case 0:
-                                                            Gato g =new Gato(mId,na, edad);
-                                                            pets.add(g);
-                                                            break;
-                                                    }
 
-                                                }
-                                               Usuario user1 = new Usuario(id,nombre,email,telefono,new CuentaBancaria(nro,saldo,pin),dir,pets);
-                                                System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
-                                                String fecha1=input.next();
-                                                facturaInstance= new Factura(user1,fecha1,Vendedor.getVendedores().get(0));
-                                                break;
-                                            case 0:
-                                                System.out.println("Ingrese el ID del cliente: ");
-                                                int id1= input.nextInt();
-                                                System.out.println("Ingrese el nombre del cliente: ");
-                                                String nombre1= input.next();
-                                                System.out.println("Ingrese el email del cliente: ");
-                                                String email1= input.next();
-                                                System.out.println("Ingrese el email del cliente: ");
-                                                int telefono1= input.nextInt();
-                                                System.out.println("Ingrese la direccion del cliente");
-                                                String dir1= input.next();
-                                                System.out.println("Ingrese el numero de mascotas del cliente :");
-                                                int mas1 = input.nextInt();
-                                                ArrayList<Mascota> pets1 = new ArrayList<>();
-                                                for(int i=0;i<=mas;i++){
-
-                                                    System.out.println("1 en caso de perro, 0 en caso de gato");
-                                                    int n=input.nextInt();
-                                                    System.out.println("Ingrese el ID de la mascota: ");
-                                                    long mId = input.nextLong();
-                                                    System.out.println("Ingrese el nombre de la mascota: ");
-                                                    String na= input.next();
-                                                    System.out.println("Ingrese la edad en años de la mascota: ");
-                                                    int edad= input.nextInt();
-                                                    System.out.println("Ingrese la raza de la mascota (si es gato no aplica (ingrese n)): ");
-                                                    String raza= input.next();
-
-                                                    switch (n){
-                                                        case 1:
-                                                            Perro p =new Perro(mId,na, edad, raza);
-                                                            pets.add(p);
-                                                            break;
-                                                        case 0:
-                                                            Gato g =new Gato(mId,na, edad);
-                                                            pets.add(g);
-                                                            break;
-                                                    }
-
-                                                }
-                                                Usuario user2 = new Usuario(id1,nombre1,email1,telefono1,dir1,pets1);
-                                                System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
-                                                String fecha2=input.next();
-                                                facturaInstance= new Factura(user2,fecha2,Vendedor.getVendedores().get(0));
-                                                break;
 
                                         }
 
@@ -276,8 +185,8 @@ public class RealizarVenta {
 
 
     }
-    public static Usuario encontrarPersona(ArrayList<Usuario> clientes, long id){
-        for(Usuario cliente: clientes){
+    public static Usuario encontrarPersona(long id){
+        for(Usuario cliente: Usuario.getUsuarios()){
             if(cliente.getPersonaId()==id){
                 return cliente;
             }
