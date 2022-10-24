@@ -41,11 +41,11 @@ public class Producto implements Serializable {
     //Metodo para generar el string que se imprimira al implementar la UI
     @Override
     public String toString() {
-        return "~ codigo= " + productoID +"\n"+
-                "~ Producto= " + nombre + '\n' +
-                "~ fechaDeVencimiento=" + fechaVencimiento +"\n"+
-                "~ Descripcion= " + descripcion+ "\n"+
-                "~ Precio=" + precioVenta;
+        return "~ Código = " + productoID +"\n"+
+                "~ Producto = " + nombre + '\n' +
+                "~ fechaDeVencimiento =" + fechaVencimiento +"\n"+
+                "~ Descripcion = " + descripcion+ "\n"+
+                "~ Precio =" + precioVenta;
     }
     public static boolean eliminarProducto(Producto producto){
         Tienda.getCatalogo().remove(producto);
