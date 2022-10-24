@@ -24,7 +24,6 @@ public class Tienda implements Serializable {
 	private static HashMap<Producto, Integer> inventario = new HashMap<>();
 	private static HashMap<String, Integer> inventarioProductos = new HashMap<>();
 	private static CuentaBancaria cuenta;
-	private final float PGANANCIAS = 0.12f;
 	
 	// Métodos
 	
@@ -53,7 +52,7 @@ public class Tienda implements Serializable {
 				f =+ k.getPrecioVenta() * v;
 			}
 		}
-		return f*PGANANCIAS;
+		return f;
 	}
 
 	// Método que aumenta la cantidad de productos de un producto de la tienda
@@ -146,9 +145,5 @@ public class Tienda implements Serializable {
 	
 	public static void setCuenta(CuentaBancaria cuenta) {
 		Tienda.cuenta = cuenta;
-	}
-
-	public float getPGANANCIAS() {
-		return PGANANCIAS;
 	}
 }

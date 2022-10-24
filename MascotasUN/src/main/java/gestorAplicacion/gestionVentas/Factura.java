@@ -23,6 +23,7 @@ public class Factura implements Serializable {
     private HashMap<Producto, Integer> productos = new HashMap<>();
     private static float total = 0.0f;
     private Vendedor vendedor;
+    private final float IVA = 1.16f;
     
     //Constructores
     
@@ -60,6 +61,7 @@ public class Factura implements Serializable {
         }
         
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
+        total = total*IVA;
         Tienda.reducirStock(this);
         Tienda.getCuenta().tranferir(cliente.getCuenta(),total,pswd);
         cliente.agregarFactura(this);
@@ -77,6 +79,7 @@ public class Factura implements Serializable {
             total += k.getPrecioVenta()*v;
         }
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
+        total = total*IVA;
         Tienda.reducirStock(this);
         Tienda.getCuenta().depositar(total);
         cliente.agregarFactura(this);
@@ -94,6 +97,7 @@ public class Factura implements Serializable {
             total += k.getPrecioCompra()*v;
         }
         // se aumenta el stock de la tienda, se resta el saldo a la tienda y se aumenta al proveedor
+        total = total*IVA;
         Tienda.aumentarStock(this); // Le entra una factura
         Tienda.getCuenta().tranferir(proveedor.getCuenta(),total,pin);
         return total;
