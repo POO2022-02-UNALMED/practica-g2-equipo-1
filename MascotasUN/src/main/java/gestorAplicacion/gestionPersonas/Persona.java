@@ -71,4 +71,8 @@ public abstract class Persona {
 	public CuentaBancaria getCuenta() {
 		return cuenta;
 	}
+
+	public void setCuenta(CuentaBancaria cuenta) {
+		this.cuenta = cuenta;
+	}
 }

@@ -121,8 +121,8 @@ public class Principal {
 	public static void main(String[] args) {
 		//Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
-    	//Principal.showMenu();
-		RealizarVenta.funcionalidad();
+    	Principal.showMenu();
+		//RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
     }
 }

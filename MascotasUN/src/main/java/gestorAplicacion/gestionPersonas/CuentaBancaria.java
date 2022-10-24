@@ -12,7 +12,6 @@ public class CuentaBancaria {
 	private static ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<>();
 	
 	//Atributos
-
 	private long nroCuenta;
 	private float saldo;
 	private int pin;
