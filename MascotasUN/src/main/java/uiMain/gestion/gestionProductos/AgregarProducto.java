@@ -5,7 +5,7 @@ import gestorAplicacion.gestionVentas.Tienda;
 
 import java.util.Scanner;
 
-public class agregarProducto {
+public class AgregarProducto {
     public static void registrarProducto(){
         Scanner input = new Scanner(System.in);
         System.out.println("Estas a punto de agregar un nuevo producto \n");

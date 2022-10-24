@@ -5,7 +5,7 @@ import gestorAplicacion.gestionVentas.Tienda;
 
 import java.util.Scanner;
 
-public class editarProducto {
+public class EditarProducto {
     private static int id;
     private static Tienda t;
 

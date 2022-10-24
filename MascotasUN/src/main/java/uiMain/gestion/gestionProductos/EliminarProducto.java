@@ -5,7 +5,7 @@ import gestorAplicacion.gestionVentas.Tienda;
 
 import java.util.Scanner;
 
-public class eliminarProducto {
+public class EliminarProducto {
     private static int id;
     private static Tienda t;
     public static void eliminarProducto(){
