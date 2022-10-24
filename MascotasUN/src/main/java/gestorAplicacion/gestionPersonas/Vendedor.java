@@ -11,6 +11,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class Vendedor extends Persona implements Serializable {
 
@@ -35,6 +37,12 @@ public class Vendedor extends Persona implements Serializable {
     }
 
     //Métodos
+    
+	// Método para ordenar el HashMap del vendedor por la cantidad de ventas 
+	public static SortedSet<Integer> getValoresOrdenados() {
+        SortedSet<Integer> valores = new TreeSet<Integer>(cantidadVentas.values());
+        return valores; 
+    }
     
     // Método sobreescrito toString()
     @Override
