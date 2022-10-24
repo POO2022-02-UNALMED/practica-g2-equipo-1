@@ -25,7 +25,7 @@ public class AgregarUsuario {
                 String nombre = input.next();
                 System.out.println("Ingrese el email del cliente: ");
                 String email = input.next();
-                System.out.println("Ingrese el email del cliente: ");
+                System.out.println("Ingrese el telefono del cliente: ");
                 int telefono = input.nextInt();
                 System.out.println("Ingrese el numero de la cuenta bancaria del cliente: ");
                 long nro = input.nextLong();
