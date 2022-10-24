@@ -27,6 +27,6 @@ public class agregarProducto {
         Producto.agregarProducto(producto);
         Tienda.agregarProductoCatalogo(producto);
         System.out.println("El producto se agrego de manera exitosa");
-        System.out.println(producto);
+        System.out.println(producto.toString());
     }
 }

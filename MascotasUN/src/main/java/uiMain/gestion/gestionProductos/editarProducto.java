@@ -35,17 +35,17 @@ public class editarProducto {
                         case 1:
                             System.out.println("Ingrese el nuevo nombre del producto: ");
                             producto.setNombre(input.next());
-                            System.out.println(producto);
+                            System.out.println(producto.toString());
                             break;
                         case 2:
                             System.out.println("Ingrese el nuevo precio de venta");
                             producto.setPrecioVenta(input.nextInt());
-                            System.out.println(producto);
+                            System.out.println(producto.toString());
                             break;
                         case 3:
                             System.out.println("Ingrese el nueva cantidad de productos comprados");
                             producto.setCantidadComprada(input.nextInt());
-                            System.out.println(producto);
+                            System.out.println(producto.toString());
                             break;
                         case 4:
                             System.out.println("Ingrese el nuevo nombre del producto: ");
@@ -55,7 +55,7 @@ public class editarProducto {
                             System.out.println("Ingrese el nueva cantidad de productos comprados");
                             int cantComprados= input.nextInt();
                             producto.editarProducto(id,nombre,precio,cantComprados);
-                            System.out.println(producto);
+                            System.out.println(producto.toString());
                             break;
                         case 5:
                             break;
