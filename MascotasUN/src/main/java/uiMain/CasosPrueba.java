@@ -150,7 +150,7 @@ public class CasosPrueba {
 	Vendedor vendedor2 = new Vendedor(13205481, "Roberto Barrientos", "rbarriendo@email.com", 4905873, new ArrayList<Factura>(), "Roberto Barrientos", "adios13");
 	Vendedor vendedor3 = new Vendedor(119258647, "Laura Vanegas", "lavanega@email.com", 3158647, new ArrayList<Factura>(), "Laura Vanegas", "lau1245");
 	
-	// Lista de vendedores
+	// Diccionario de vendedores (usuario,contraseña)
 	
 	HashMap<String, String> listavendedores = new HashMap<String, String>(); listavendedores.put(vendedor1.getUsuario(), vendedor1.getContrasena());
 	listavendedores.put(vendedor2.getUsuario(), vendedor2.getContrasena());
@@ -163,28 +163,38 @@ public class CasosPrueba {
 		factura1.setProductos(compra1);
 		Factura factura2 = new Factura(usuario1, "15/10/2022", vendedor1);
 		factura2.setProductos(compra2);
+		usuario1.agregarFactura(factura1);
+		usuario1.agregarFactura(factura2);
 		
 		Factura factura3 = new Factura(usuario2, "22/10/2022", vendedor2);
 		factura3.setProductos(compra3);
 		Factura factura4 = new Factura(usuario2, "21/10/2022", vendedor2);
 		factura4.setProductos(compra4);
+		usuario2.agregarFactura(factura3);
+		usuario2.agregarFactura(factura4);
 		
 		Factura factura5 = new Factura(usuario3, "19/10/2022", vendedor3);
 		factura5.setProductos(compra5);
 		Factura factura6 = new Factura(usuario3, "18/10/2022", vendedor3);
 		factura6.setProductos(compra6);
+		usuario3.agregarFactura(factura5);
+		usuario3.agregarFactura(factura6);
 		
 		Factura factura7 = new Factura(usuario4, "17/10/2022", vendedor3);
 		factura7.setProductos(compra7);
 		Factura factura8 = new Factura(usuario4, "16/10/2022", vendedor3);
 		factura8.setProductos(compra8);
+		usuario4.agregarFactura(factura7);
+		usuario4.agregarFactura(factura8);
 	
 	
 	//ArrayList de facturas
 		ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
+		vendedor1.setVentas(listaFactura1);
 		ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura1.add(factura3); listaFactura1.add(factura4);
+		vendedor2.setVentas(listaFactura2);
 		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura1.add(factura5); listaFactura1.add(factura6); listaFactura1.add(factura7); listaFactura1.add(factura8);
-	
+		vendedor3.setVentas(listaFactura3);
 	
 	}
 	

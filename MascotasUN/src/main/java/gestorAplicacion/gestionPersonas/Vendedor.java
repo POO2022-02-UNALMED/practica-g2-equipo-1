@@ -2,13 +2,11 @@
  * de la aplicación. Hereda de la clase abstracta Persona*/
 
 package gestorAplicacion.gestionPersonas;
-<<<<<<< Updated upstream
+
 
 import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método agregarFactura() y el atributo de la lista de ventas realizadas
-=======
 import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionVentas.Producto;
->>>>>>> Stashed changes
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -95,9 +93,6 @@ public class Vendedor extends Persona implements Serializable {
 	public static void setUsuarios(HashMap<String, String> usuarios) {
 		Vendedor.usuarios = usuarios;
 	}
-<<<<<<< Updated upstream
-}
-=======
 
 	//Métodos
 
@@ -128,4 +123,4 @@ public class Vendedor extends Persona implements Serializable {
                 "~ Ventas = " +ventas+ "\n";
     }
 }
->>>>>>> Stashed changes
+
