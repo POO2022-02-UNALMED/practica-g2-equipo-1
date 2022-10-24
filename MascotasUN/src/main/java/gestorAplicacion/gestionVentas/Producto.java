@@ -17,6 +17,8 @@ public class Producto implements Serializable {
     private float precioCompra;
     private float precioVenta;
     private int cantidadComprada;
+    private String raza;
+    private String etapa;
     //Lista para la recomendacion de concentrado, anadir tipo. y Sobrecarga de constructores.
 
     // Constructor
@@ -29,6 +31,33 @@ public class Producto implements Serializable {
     this.precioVenta = precioVenta;
     this.cantidadComprada = cantidadComprada;
     }
+    
+  //Sobreescritura de constructor para crear productos relacionados con gatos
+    public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra,
+			float precioVenta, int cantidadComprada, String etapa) {
+		this.productoID = productoID;
+		this.nombre = nombre;
+		this.fechaVencimiento = fechaVencimiento;
+		this.descripcion = descripcion;
+		this.precioCompra = precioCompra;
+		this.precioVenta = precioVenta;
+		this.cantidadComprada = cantidadComprada;
+		this.etapa = etapa;
+	}
+    
+    //Sobreescritura de constructor para crear productos relacionados con perros
+    public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra,
+			float precioVenta, int cantidadComprada, String raza, String etapa) {
+		this.productoID = productoID;
+		this.nombre = nombre;
+		this.fechaVencimiento = fechaVencimiento;
+		this.descripcion = descripcion;
+		this.precioCompra = precioCompra;
+		this.precioVenta = precioVenta;
+		this.cantidadComprada = cantidadComprada;
+		this.raza = raza;
+		this.etapa = etapa;
+	}
 
     // Métodos
     //Este método se encarga de editar los atributos de un producto
@@ -119,6 +148,23 @@ public class Producto implements Serializable {
     public void setCantidadComprada(int cantidadComprada) {
         this.cantidadComprada = cantidadComprada;
     }
+
+	public String getRaza() {
+		return raza;
+	}
+
+	public void setRaza(String raza) {
+		this.raza = raza;
+	}
+
+	public String getEtapa() {
+		return etapa;
+	}
+
+	public void setEtapa(String etapa) {
+		this.etapa = etapa;
+	}
+    
     //Fin getters y setters
     
 }
