@@ -2,6 +2,7 @@ package uiMain.funcionalidades;
 
 import java.util.Scanner;
 
+import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.Principal;
 
@@ -53,10 +54,7 @@ public class CompraInventario {
             case 1:
             	System.out.println("¿Qué producto desea comprar?");
             	Tienda.imprimirCatalogo(Tienda.getCatalogo());
-            	System.out.print("Indique el ID del producto a comprar: ");
             	compraProducto();
-            	// Pedir al vendedor que ingrese el ID
-            	// Hacer una lista de IDs, si el que ingresa la persona está en la lista, hace la compra
             	// Pedir la cantidad del producto que se va a comprar
             	// Realizar la compra
             	// ¿Quiere hacer otra compra? Si no: Thanks. Si sí: Volver a llamar.
@@ -77,6 +75,15 @@ public class CompraInventario {
 	
 	// Contiene el case donde se ingresa el ID y se realiza la compra
 	static void compraProducto() {
-		
+		Scanner ID = new Scanner(System.in);
+        Long opcion;
+    	System.out.print("Indique el ID del producto a comprar: ");
+    	opcion = ID.nextLong(); // En opcion se guarda el ID
+    	if (Tienda.validarID(opcion).equals(true)) {
+    		// Se realiza la compra
+    	} else {
+    		System.err.println("El producto no existe\n");
+			compraProducto();
+    	}
 	}
 }

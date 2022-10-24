@@ -96,6 +96,14 @@ public class Tienda implements Serializable {
 		}
 	}
 	
+	public static Boolean validarID(Long opcion){
+		for (Producto i : getCatalogo()) {
+    		if (opcion.equals((Long)i.getProductoID())) {
+    			return true;
+            }
+        } return false;
+    }
+	
 	public static SortedSet<Integer> getValoresOrdenados() {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
         return valores; // [1, 2, 3, 4, 5, 7]

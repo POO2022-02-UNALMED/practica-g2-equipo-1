@@ -35,34 +35,34 @@ public class CasosPrueba {
 	
 	// Productos
 		// Perro grande adulto
-	Producto producto1 = new Producto(1, "Croquetas Adulto Plus", "13/04/2023", "Comida en croquetas para perro adulto de raza grande", 5000, 12000, 2);
-	Producto producto2 = new Producto(2, "Comida húmeda Adulto Max", "28/12/2022", "Comida húmeda para perro adulto de raza grande", 2000, 5000, 3);
-	Producto producto3 = new Producto(3, "Cuido Adulto Extra", "18/05/2023", "Comida diaria para perro adulto de raza grande", 9000, 15000, 4);
+	Producto producto1 = new Producto(1001, "Croquetas Adulto Plus", "13/04/2023", "Comida en croquetas para perro adulto de raza grande", 5000, 12000, 2);
+	Producto producto2 = new Producto(1002, "Comida húmeda Adulto Max", "28/12/2022", "Comida húmeda para perro adulto de raza grande", 2000, 5000, 3);
+	Producto producto3 = new Producto(1003, "Cuido Adulto Extra", "18/05/2023", "Comida diaria para perro adulto de raza grande", 9000, 15000, 4);
 		
 		// Perro grande cachorro
-	Producto producto4 = new Producto(4, "Croquetas Cachorro Plus", "18/05/2023", "Comida en croquetas para perro cachorro de raza grande", 5000, 12000, 4);
-	Producto producto5 = new Producto(5, "Comida húmeda Cachorro Max", "29/11/2022", "Comida húmeda para perro cachorro de raza grande", 2000, 5000, 2);
-	Producto producto6 = new Producto(6, "Cuido Cachorro Extra", "17/04/2023", "Comida diaria para perro cachorro de raza grande", 9000, 15000, 3);
+	Producto producto4 = new Producto(1004, "Croquetas Cachorro Plus", "18/05/2023", "Comida en croquetas para perro cachorro de raza grande", 5000, 12000, 4);
+	Producto producto5 = new Producto(1005, "Comida húmeda Cachorro Max", "29/11/2022", "Comida húmeda para perro cachorro de raza grande", 2000, 5000, 2);
+	Producto producto6 = new Producto(1006, "Cuido Cachorro Extra", "17/04/2023", "Comida diaria para perro cachorro de raza grande", 9000, 15000, 3);
 		
 		// Perro pequeño adulto
-	Producto producto7 = new Producto(7, "Croquetas Adulto Mini", "30/08/2023", "Comida en croquetas para perro adulto de raza pequeña", 6000, 13000, 2);
-	Producto producto8 = new Producto(8, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 3);
-	Producto producto9 = new Producto(9, "Cuido Adulto Small", "14/01/2023", "Comida diaria para perro adulto de raza pequeña", 10000, 16000, 4);
+	Producto producto7 = new Producto(1007, "Croquetas Adulto Mini", "30/08/2023", "Comida en croquetas para perro adulto de raza pequeña", 6000, 13000, 2);
+	Producto producto8 = new Producto(1008, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 3);
+	Producto producto9 = new Producto(1009, "Cuido Adulto Small", "14/01/2023", "Comida diaria para perro adulto de raza pequeña", 10000, 16000, 4);
 		
 		// Perro pequeño cachorro
-	Producto producto10 = new Producto(10, "Croquetas Cachorro Mini", "29/08/2023", "Comida en croquetas para perro cachorro de raza pequeña", 6000, 13000, 5);
-	Producto producto11 = new Producto(11, "Comida húmeda Cachorro Junior", "17/12/2022", "Comida húmeda para perro cachorro de raza pequeña", 3000, 6000, 3);
-	Producto producto12 = new Producto(12, "Cuido Cachorro Small", "13/01/2023", "Comida diaria para perro cachorro de raza pequeña", 10000, 16000, 2);
+	Producto producto10 = new Producto(1010, "Croquetas Cachorro Mini", "29/08/2023", "Comida en croquetas para perro cachorro de raza pequeña", 6000, 13000, 5);
+	Producto producto11 = new Producto(1011, "Comida húmeda Cachorro Junior", "17/12/2022", "Comida húmeda para perro cachorro de raza pequeña", 3000, 6000, 3);
+	Producto producto12 = new Producto(1012, "Cuido Cachorro Small", "13/01/2023", "Comida diaria para perro cachorro de raza pequeña", 10000, 16000, 2);
 		
 		// Gato cachorro
-	Producto producto13 = new Producto(13, "Purina catchow cachorro", "19/01/2024", "Comida seca para gato cachorro", 7000, 10000, 7);
-	Producto producto14 = new Producto(14, "Comida enlatada felino cachorro", "29/05/2024", "Comida húmeda para gato cachorro", 5000, 9000, 2);
-	Producto producto15 = new Producto(15, "Whiskas para felino cachorro", "09/08/2024", "Alimento balanceado para gato cachorro", 11000, 15000, 1);
+	Producto producto13 = new Producto(1013, "Purina catchow cachorro", "19/01/2024", "Comida seca para gato cachorro", 7000, 10000, 7);
+	Producto producto14 = new Producto(1014, "Comida enlatada felino cachorro", "29/05/2024", "Comida húmeda para gato cachorro", 5000, 9000, 2);
+	Producto producto15 = new Producto(1015, "Whiskas para felino cachorro", "09/08/2024", "Alimento balanceado para gato cachorro", 11000, 15000, 1);
 		
 		// Gato adulto
-	Producto producto16 = new Producto(16, "Purina catchow adulto", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2);
-	Producto producto17 = new Producto(17, "Comida enlatada felino adulto", "28/05/2024", "Comida húmeda para gato adulto", 5000, 9000, 3);
-	Producto producto18 = new Producto(18, "Whiskas para felino adulto", "01/09/2024", "Alimento balanceado para gato adulto", 11000, 15000, 4);
+	Producto producto16 = new Producto(1016, "Purina catchow adulto", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2);
+	Producto producto17 = new Producto(1017, "Comida enlatada felino adulto", "28/05/2024", "Comida húmeda para gato adulto", 5000, 9000, 3);
+	Producto producto18 = new Producto(1018, "Whiskas para felino adulto", "01/09/2024", "Alimento balanceado para gato adulto", 11000, 15000, 4);
 	
 	//ArrayList de productos que tiene la tienda
 	ArrayList<Producto> listaProductos = new ArrayList<Producto>(); listaProductos.add(producto1); listaProductos.add(producto2);listaProductos.add(producto3); listaProductos.add(producto4);
