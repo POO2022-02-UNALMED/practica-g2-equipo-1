@@ -1,16 +1,12 @@
+/*Clase abstracta Padre de las clases Usuario, Proveedor y Vendedor encarga de darle atributos y metodos basicos
+ * a los objetos creados a partir de estas clases*/
+
 package gestorAplicacion.gestionPersonas;
-import java.util.ArrayList;
-
-import gestorAplicacion.gestionVentas.Factura;
-
-//import java.util.ArrayList;
-//import java.util.Date;
+import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método de agregarFactura()
 
 public abstract class Persona {
-    /* Esta clase se encarga de darle atributos y metodos basicos a las diferentes personas
-    que interactuan con nuestra interfaz */
 
-   //Atributos (protected para utilizarlos dentro del paquete)
+	//Atributos (protected para utilizarlos dentro del paquete)
     protected long personaId;
     protected String nombre;
     protected String email;
@@ -25,14 +21,16 @@ public abstract class Persona {
         this.telefono=telefono;
     }
     
-    // Sobrecarga de constructor
+    	// Sobrecarga de constructor, que incluye la cuenta bancaria de la persona
     public Persona(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
         this(personaId,nombre,email,telefono);
         this.cuenta = cuenta;
     }
     
+    //Métodos
+  	protected abstract void agregarFactura(Factura f); // Método abstracto
     
-    //getters y setters
+    //Getters y setters
     public void setPersonaId(long personaId) {
         this.personaId = personaId;
     }
@@ -72,7 +70,4 @@ public abstract class Persona {
 	public CuentaBancaria getCuenta() {
 		return cuenta;
 	}
-
-    //Metodos
-	protected abstract void agregarFactura(Factura f);
 }

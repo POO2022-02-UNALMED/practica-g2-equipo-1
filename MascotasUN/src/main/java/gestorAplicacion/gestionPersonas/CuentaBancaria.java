@@ -37,8 +37,8 @@ public class CuentaBancaria {
 		}
 		
 		/*Metodo para depositar dinero en la cuenta propia. Ingresamos el monto a depositar.
-		 * Se utiliza en el método transferir()*/
-		void depositar(float monto) {
+		 * Se utiliza en el método transferir() de la clase actual y en realizarCompra() de la clase Factura*/
+		public void depositar(float monto) {
 			setSaldo(monto + getSaldo());
 		}
 
