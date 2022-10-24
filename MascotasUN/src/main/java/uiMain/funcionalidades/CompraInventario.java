@@ -2,6 +2,7 @@ package uiMain.funcionalidades;
 
 import java.util.Scanner;
 
+import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.Principal;
@@ -80,7 +81,21 @@ public class CompraInventario {
     	System.out.print("Indique el ID del producto a comprar: ");
     	opcion = ID.nextLong(); // En opcion se guarda el ID
     	if (Tienda.validarID(opcion).equals(true)) {
-    		// Se realiza la compra
+    		
+    		// Indique cuántos del ID quiere comprar. Se guarda en un HashMap
+    		// ¿Quiere más? Si sí, en el hashmap creado. Si no, solo calcula con uno solito
+    		
+    		// Guardar el objeto
+    		// Preguntar a qué proveedor (aunque haya uno) para seleccionar el objeto
+    		// Preguntar el número de cantidad a comprar y calcular el monto multiplicandoo = monto
+    		
+    		tranferir(cuentaproveedor, monto, Tienda.getCuenta().getPin());
+    		// Se realiza la compra:
+    		// 	1. Quitarle plata a la tienda
+    		//	2. Aumentarle plata al proveedor
+    		//	3. Aumentar la cantidad del producto seleccionado
+    		//	print: Plata tienda, Plata proveedor, inventario
+    		// Preguntar si quiere comprar más.
     	} else {
     		System.err.println("El producto no existe\n");
 			compraProducto();

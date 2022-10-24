@@ -32,8 +32,6 @@ public class CuentaBancaria {
 		CuentaBancaria.cuentasBancarias=cuentasBancarias;
 	}
 
-
-	
 	public long getNroCuenta() {
 		return nroCuenta;
 	}
@@ -57,9 +55,10 @@ public class CuentaBancaria {
 	public void setPin(short contrasena) {
 		this.pin = contrasena;
 	}
-	//Final getters y setters
 	
-	//Metodo para retirar dinero de la cuenta
+	// Métodos
+	
+	//Metodo para retirar dinero de la cuenta. Ingresamos el monto a retirar y el pin.
 	public void retirar(float monto, int pin) {
 		if (monto <= saldo & validarCredenciales(pin)==true ) {
 			setSaldo(getSaldo() - monto);
@@ -72,7 +71,7 @@ public class CuentaBancaria {
 	}
 	
 
-	//Metodo para tranferirle dinero a otra cuenta. Requiere ingresar la cuenta a la que se depositar� el dinero, el monto a depositar, y el pin de la cuenta
+	//Metodo para tranferirle dinero a otra cuenta. Requiere ingresar la cuenta a la que se depositará el dinero, el monto a depositar, y el pin de la cuenta
 	public void tranferir(CuentaBancaria cuenta, float monto, int pin) {
 		if (monto <= this.getSaldo() & validarCredenciales(pin)== true) {
 			this.retirar(monto, pin);

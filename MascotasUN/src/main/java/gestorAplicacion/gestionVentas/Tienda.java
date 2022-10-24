@@ -1,6 +1,8 @@
 package gestorAplicacion.gestionVentas;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
+import gestorAplicacion.gestionPersonas.Proveedor;
+import gestorAplicacion.gestionPersonas.Usuario;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public class Tienda implements Serializable {
 	//Serializador clase tienda
