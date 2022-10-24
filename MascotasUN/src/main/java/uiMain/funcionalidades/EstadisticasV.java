@@ -33,7 +33,6 @@ public class EstadisticasV {
     	            case 1:
     	            	System.out.println("Estas son las ventas por vendedor");
     	            	imprimirVentas(Vendedor.getValoresOrdenados(), Vendedor.getCantidadVentas());
-
     	            	break;
     	            	
     	            // Se le muestra al vendedor los productos más vendidos, ordenados de mayor a menor
@@ -59,7 +58,7 @@ public class EstadisticasV {
 		for(Integer i : valores) {
 			for(Entry<String, Integer> j : ventas.entrySet()){
 				if(j.getValue().equals(i)) {
-					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
+					System.out.println("Vendedor: " + j.getKey() + ". Cantidad: "+ j.getValue());
 				}
 			}
 		}

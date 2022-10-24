@@ -22,6 +22,7 @@ import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.funcionalidades.CompraInventario;
+import uiMain.funcionalidades.EstadisticasV;
 import uiMain.funcionalidades.RealizarVenta;
 
 public class Principal {
@@ -123,6 +124,7 @@ public class Principal {
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
 		//RealizarVenta.funcionalidad();
-		CompraInventario.funcionalidad();
+		//CompraInventario.funcionalidad();
+		EstadisticasV.funcionalidad();
     }
 }

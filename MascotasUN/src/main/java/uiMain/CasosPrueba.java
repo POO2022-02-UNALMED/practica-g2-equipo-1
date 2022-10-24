@@ -193,18 +193,19 @@ public class CasosPrueba {
 	//ArrayList de facturas
 		ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
 		vendedor1.setVentas(listaFactura1);
-		ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura1.add(factura3); listaFactura1.add(factura4);
+		ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura2.add(factura3); listaFactura2.add(factura4);
 		vendedor2.setVentas(listaFactura2);
-		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura1.add(factura5); listaFactura1.add(factura6); listaFactura1.add(factura7); listaFactura1.add(factura8);
+		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura3.add(factura5); listaFactura3.add(factura6); listaFactura3.add(factura7); listaFactura3.add(factura8);
 		vendedor3.setVentas(listaFactura3);
 		
 		
 	// Diccionario de vendedores (usuario,cantidadVentas)
 		
 		HashMap<String, Integer> ventasT = new HashMap<String, Integer>(); ventasT.put(vendedor1.getUsuario(), vendedor1.getVentas().size());
-		ventasT.put(vendedor2.getUsuario(), vendedor1.getVentas().size());
-		ventasT.put(vendedor3.getUsuario(), vendedor1.getVentas().size());
+		ventasT.put(vendedor2.getUsuario(), vendedor2.getVentas().size());
+		ventasT.put(vendedor3.getUsuario(), vendedor3.getVentas().size());
 		
+		Vendedor.setCantidadVentas(ventasT);
 	}
 	
 	
