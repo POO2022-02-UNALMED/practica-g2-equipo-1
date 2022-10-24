@@ -56,6 +56,7 @@ public class Usuario extends Persona implements Serializable {
 		mascotas.add(mascota);
 	}
 
+	// Método que permite eliminar un usuario desde la gestión de usuarios de la tienda
 	public static boolean eliminarUsuario(Usuario usuario){
 		Usuario.getUsuarios().remove(usuario);
 		return true;
@@ -72,6 +73,7 @@ public class Usuario extends Persona implements Serializable {
 	}
 
 	//Getters y setters
+	
 	public static ArrayList<Usuario> getUsuarios() {
 		return usuarios;
 	}

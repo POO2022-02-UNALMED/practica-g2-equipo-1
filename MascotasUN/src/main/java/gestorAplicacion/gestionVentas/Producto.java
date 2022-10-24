@@ -1,4 +1,4 @@
-/**/
+/*Clase que crea y gestiona los objetos de tipo Producto, los cuales son los productos que la aplicación vende*/
 
 package gestorAplicacion.gestionVentas;
 
@@ -81,14 +81,14 @@ public class Producto implements Serializable {
         this.cantidadComprada = cantidadComprada;
     }
     
-    // Método
+    // Método que elimina un producto de la lista de productos a comprar
     public static boolean eliminarProducto(Producto producto){
         Tienda.getCatalogo().remove(producto);
         Producto.getProductos().remove(producto);
         return true;
     }
     
-    // Método
+    // Método que agrega un producto a la lista de productos a comprar
     public static void agregarProducto(Producto producto){
         Producto.productos.add(producto);
     }

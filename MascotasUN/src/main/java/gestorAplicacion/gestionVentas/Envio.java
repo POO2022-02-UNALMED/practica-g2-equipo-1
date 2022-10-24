@@ -1,4 +1,4 @@
-/**/
+/*Clase que permite la gestión de la funcionalidad de los envíos programados periódicos a un cliente*/
 
 package gestorAplicacion.gestionVentas;
 

@@ -1,4 +1,4 @@
-/**/
+/*Clase que crea y gestiona objetos de tipo Perro*/
 
 package gestorAplicacion.gestionVentas;
 
@@ -54,6 +54,7 @@ public class Perro implements Mascota, Serializable {
     
     
     // Getters y setters
+    
     public static ArrayList<Perro> getPerros() {
         return perros;
     }

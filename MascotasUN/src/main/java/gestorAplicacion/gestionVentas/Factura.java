@@ -48,7 +48,8 @@ public class Factura implements Serializable {
                 "~ Cantidad a pagar = " +total+ "\n";
     }
     
-   //Metodo sobrecargado que realiza la compra, cuando el usuario utiliza como método de pago una cuenta bancaria
+    /*Metodo que realiza la compra, cuando el usuario utiliza como método de pago una cuenta bancaria.
+    Retorna el total del precio de la compra tomando el precio del producto por la cantidad y los suma*/
     public float realizarCompra(Usuario cliente, short pswd){
 
         //Primero se calcula el total de la compra con este for
@@ -82,7 +83,7 @@ public class Factura implements Serializable {
         Tienda.agregarVenta(this);
         return total;
     }
-    
+  
     // Método sobrecargado que realizar la compra de la tienda al proveedor
     public float realizarCompra(Proveedor proveedor, HashMap<Producto, Integer> productos, int pin, float total){
         

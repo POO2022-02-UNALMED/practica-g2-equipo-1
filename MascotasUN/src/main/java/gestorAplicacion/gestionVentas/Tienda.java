@@ -1,4 +1,5 @@
-/**/
+/*Clase desde la cual se gestiona la inteligencia de negocio de la tienda, desde la parte económica y 
+ * de inventario, hasta las estadísticas relacionadas con ello*/
 
 package gestorAplicacion.gestionVentas;
 
@@ -27,12 +28,12 @@ public class Tienda implements Serializable {
 	
 	// Métodos
 	
-	// Método
+	// Método que agrega un producto nuevo al catálogo de productos ofrecido por la tienda
 	public static void agregarProductoCatalogo(Producto producto){
 		catalogo.add(producto);
 	}
 	
-	// Método
+	// Método que encuentra y retorna un producto del catálogo de la tienda dado su ID
 	public static Producto encontrarProducto(long id) {
 		for (Producto p : getCatalogo()) {
 			if (p.getProductoID() == id) {
@@ -42,7 +43,7 @@ public class Tienda implements Serializable {
 		return null;
 	}
 	
-	// Método
+	// Método que calcula las ganancias obtenidas por la tienda
 	public float obtenerGanancias(){
 		float f = 0.0f;
 		for (Factura fact : cantidadDeVentas) {
@@ -55,7 +56,7 @@ public class Tienda implements Serializable {
 		return f*PGANANCIAS;
 	}
 
-	// Método
+	// Método que aumenta la cantidad de productos de un producto de la tienda
 	public static void aumentarStock(Factura factura){
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
 			Producto k = fact.getKey();
@@ -66,26 +67,23 @@ public class Tienda implements Serializable {
 
 	}
 	
-	// Método
+	// Método que reduce la cantidad de productos de un producto de la tienda
 	public static void reducirStock(Factura factura){
 		for (Map.Entry<Producto, Integer> fact : factura.getProductos().entrySet()) {
 			Producto k = fact.getKey();
 			Integer v = fact.getValue();
 			Integer ch = inventario.get(k);
 			inventario.put(k, ch - v);
-			inventario.put(k, ch-v);
-
-			//metodo que hace el total del precio de la compra tomando el precio del producto por
-			//la cantidad y los suma
+			inventario.put(k, ch - v);
 		}
 	}
 	
-	// Método
+	// Método que agrega una venta a la lista de ventas realizadas por la tienda
 	public static void agregarVenta(Factura f){
 		cantidadDeVentas.add(f);
 	}
 	
-	// Método
+	// Método que valida el ID ingresado con el ID correspondiente del catálogo
 	public static Boolean validarID(Long opcion){
 		for (Producto i : getCatalogo()) {
     		if (opcion.equals((Long)i.getProductoID())) {
@@ -94,10 +92,10 @@ public class Tienda implements Serializable {
         } return false;
     }
 	
-	// Método
+	// Método para ordenar el HashMap del inventario por su valor
 	public static SortedSet<Integer> getValoresOrdenados() {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
-        return valores; // [1, 2, 3, 4, 5, 7]
+        return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
     }
 	
 	//Getters y setters

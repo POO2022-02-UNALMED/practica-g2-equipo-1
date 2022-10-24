@@ -1,8 +1,7 @@
-/**/
+/*Clase que crea y gestiona objetos de tipo Gato*/
 
 package gestorAplicacion.gestionVentas;
 
-// Importando librerías
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
