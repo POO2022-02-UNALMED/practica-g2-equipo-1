@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
     	//Vendedor.dict();
     	//Vendedor.getUsuarios();
-    	Principal.showMenu();
+    	//Principal.showMenu();
     	//System.out.println(Vendedor.getUsuarios());
     }
 }

@@ -119,6 +119,7 @@ public class Principal {
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
 		////
-		System.out.println(Tienda.getInventarioProductos());
+		Tienda.imprimirOrdenado(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
+		//System.out.println(Tienda.getInventarioProductos());
     }
 }

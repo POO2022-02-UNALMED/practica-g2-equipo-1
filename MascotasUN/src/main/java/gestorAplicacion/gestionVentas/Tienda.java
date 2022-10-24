@@ -6,6 +6,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.Map.Entry;
 
 public class Tienda implements Serializable {
 	//Serializador clase tienda
@@ -18,16 +21,6 @@ public class Tienda implements Serializable {
 	private static HashMap<String, Integer> inventarioProductos = new HashMap<>();
 	private static CuentaBancaria cuenta;
 	private final float PGANANCIAS = 0.12f;
-
-	//Getters y Setters
-	// Creamos el getter y setter de Tienda para el serializador
-	public static ArrayList<Tienda> getTienda() {
-		return tienda;
-	}
-
-	public static void setTienda(ArrayList<Tienda> tienda) {
-		Tienda.tienda=tienda;
-	}
 	
 	// Métodos
 	public float obtenerGanancias(){
@@ -63,11 +56,35 @@ public class Tienda implements Serializable {
 			//la cantidad y los suma
 		}
 	}
+	
 	public static void agregarVenta(Factura f){
 		cantidadDeVentas.add(f);
 	}
 	
-	// Getters y Setters
+	public static void imprimirOrdenado(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
+		for(Integer i : valores) {
+			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
+				if(j.getValue().equals(i)) {
+					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
+				}
+			}
+		}
+	}
+	
+	public static SortedSet<Integer> getValoresOrdenados() {
+        SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
+        return valores; // [1, 2, 3, 4, 5, 7]
+    }
+	
+	//Getters y Setters
+		// Creamos el getter y setter de Tienda para el serializador
+	public static ArrayList<Tienda> getTienda() {
+		return tienda;
+	}
+
+	public static void setTienda(ArrayList<Tienda> tienda) {
+		Tienda.tienda=tienda;
+	}
 
 	public static int getCantidadDeVentas() {
 		return cantidadDeVentas.size();
@@ -93,7 +110,7 @@ public class Tienda implements Serializable {
 		Tienda.inventario = inventario;
 	}
 	
-	
+
 	public static HashMap<String, Integer> getInventarioProductos() {
 		return inventarioProductos;
 	}
