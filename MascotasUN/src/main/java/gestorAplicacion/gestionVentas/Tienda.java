@@ -15,6 +15,7 @@ public class Tienda implements Serializable {
 	private static ArrayList<Factura> cantidadDeVentas = new ArrayList<Factura>();
 	private static ArrayList<Producto> catalogo = new ArrayList<Producto>();
 	private static HashMap<Producto, Integer> inventario = new HashMap<>();
+	private static HashMap<String, Integer> inventarioProductos = new HashMap<>();
 	private static CuentaBancaria cuenta;
 	private final float PGANANCIAS = 0.12f;
 
@@ -90,6 +91,15 @@ public class Tienda implements Serializable {
 
 	public static void setInventario(HashMap<Producto, Integer> inventario) {
 		Tienda.inventario = inventario;
+	}
+	
+	
+	public static HashMap<String, Integer> getInventarioProductos() {
+		return inventarioProductos;
+	}
+
+	public static void setInventarioProductos(HashMap<String, Integer> inventarioProductos) {
+		Tienda.inventarioProductos = inventarioProductos;
 	}
 
 	public static CuentaBancaria getCuenta() {
