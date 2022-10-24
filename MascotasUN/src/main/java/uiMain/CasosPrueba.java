@@ -32,6 +32,7 @@ public class CasosPrueba {
 		
 		// Cuenta bancaria de la tienda
 	CuentaBancaria cuentaTienda = new CuentaBancaria((long)1077774562, (float)10889456.6, 1023);
+	Tienda.setCuenta(cuentaTienda);
 	
 	// Productos
 		// Perro grande adulto

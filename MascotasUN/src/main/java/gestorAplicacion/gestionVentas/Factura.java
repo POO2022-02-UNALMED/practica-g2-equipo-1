@@ -49,7 +49,7 @@ public class Factura implements Serializable {
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
-            total=+ k.getPrecioVenta()*v;
+            total += k.getPrecioVenta()*v;
         }
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         Tienda.reducirStock(this);
@@ -65,7 +65,7 @@ public class Factura implements Serializable {
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
-            total=+ k.getPrecioVenta()*v;
+            total += k.getPrecioVenta()*v;
         }
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         Tienda.reducirStock(this);
@@ -77,13 +77,13 @@ public class Factura implements Serializable {
     }
     
     // Realizar compra de la tienda al proveedor
-    public float realizarCompra(Proveedor proveedor, HashMap<Producto, Integer> productos, int pin){
-	 	float total = 0;
+    public float realizarCompra(Proveedor proveedor, HashMap<Producto, Integer> productos, int pin, float total){
+	 	//float total = 0;
         //Primero se calcula el total de la compra con este for
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
-            total =+ k.getPrecioCompra()*v;
+            total += k.getPrecioCompra()*v;
         }
         // se aumenta el stock de la tienda, se resta el saldo a la tienda y se aumenta al proveedor
         Tienda.aumentarStock(this); // Le entra una factura

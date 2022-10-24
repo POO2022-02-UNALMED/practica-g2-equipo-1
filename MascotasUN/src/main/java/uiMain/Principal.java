@@ -125,3 +125,10 @@ public class Principal {
 		//System.out.println(Tienda.getInventarioProductos());
     }
 }
+// Dio:
+// Tienda: 10.389.457
+// Proveedor: 21.358.968
+
+// Debía dar: 
+// Tienda: 10.289.457
+// Proveedor: 21.458.968

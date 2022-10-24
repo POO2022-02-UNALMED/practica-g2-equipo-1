@@ -57,9 +57,25 @@ public class CompraInventario {
             
             // Funcionalidad como tal con método
             case 1:
+        		Factura facturita = new Factura();
+
+            	// Se pregunta por el proveedor
+        		System.out.print("¿A cuál proveedor desea comprar?\n");
+                for (Proveedor i : Proveedor.getProveedores()) {
+                	System.out.println("ID: " + i.getPersonaId() + ". Nombre: " + i.getNombre());
+                }
+                Scanner p = new Scanner(System.in);
+                int opcionp;
+            	System.out.print("Indique el ID del proveedor a comprar: ");
+            	opcionp = p.nextInt(); // En opcionp se guarda el ID del proveedor
+            	Proveedor proveedorcito = Proveedor.encontrarPersona(Proveedor.getProveedores(), opcionp);
+            	
                 System.out.println("¿Qué producto desea comprar?");
             	Tienda.imprimirCatalogo(Tienda.getCatalogo());
-            	compraProducto();
+            	
+            	HashMap<Producto, Integer> productos = new HashMap<>(); // Se crea el HashMap que guardará los productos a comprar
+            	
+            	compraProducto(proveedorcito, productos, facturita);
             	// Pedir la cantidad del producto que se va a comprar
             	// Realizar la compra
             	// ¿Quiere hacer otra compra? Si no: Thanks. Si sí: Volver a llamar.
@@ -79,71 +95,56 @@ public class CompraInventario {
 	}
 	
 	// Contiene el case donde se ingresan los ID y se realiza la compra
-	static void compraProducto() {
+	static void compraProducto(Proveedor proveedorcito, HashMap<Producto, Integer> productos, Factura facturita) {
 		// Se pide el ID del producto a comprar
-		Factura facturita = new Factura();
 		Scanner ID = new Scanner(System.in);
         Long opcion;
     	System.out.print("Indique el ID del producto a comprar: ");
     	opcion = ID.nextLong(); // En opcion se guarda el ID
-    	HashMap<Producto, Integer> productos = new HashMap<>(); // Se crea el HashMap que guardará los productos a comprar
     	// Se valida que el producto exista
     	if (Tienda.validarID(opcion).equals(true)) {
     		// Se pide la cantidad de productos por producto
     		Scanner num = new Scanner(System.in);
     		int cantidad;
-    		System.out.print("¿Cuántos desea comprar?");
+    		System.out.print("¿Cuántos desea comprar?\n");
+    		System.out.print("Indique su eleccion : ");
     		cantidad = num.nextInt();
     		productos.put(Tienda.encontrarProducto(opcion), cantidad); // Se guarda en el HashMap
-    		// Se pregunta por el proveedor
-    		System.out.print("¿A cuál proveedor desea comprar?\n");
-            for (Proveedor i : Proveedor.getProveedores()) {
-            	System.out.println("ID: " + i.getPersonaId() + ". Nombre: " + i.getNombre());
-            }
-            Scanner p = new Scanner(System.in);
-            int opcionp;
-        	System.out.print("Indique el ID del proveedor a comprar: ");
-        	opcionp = p.nextInt(); // En opcionp se guarda el ID del proveedor
-        	Proveedor proveedorcito = Proveedor.encontrarPersona(Proveedor.getProveedores(), opcionp);
-            
+    		
     		// Se pregunta si desea comprar más productos
     		Scanner num_extra = new Scanner(System.in);
     		int seleccion;
-    		System.out.print("¿Desea comprar más productos?");
+    		System.out.print("¿Desea comprar más productos?\n");
+    		System.out.print("Indique su eleccion : \n");
     		do {
                 System.out.println(" 1. Sí");
                 System.out.println(" 2. No");
-                System.out.print("Indique su eleccion : ");
+                System.out.print("Indique su eleccion : \n");
                 seleccion = num_extra.nextInt();
 
                 switch (seleccion) {
                     case 1:
-                    	compraProducto();
+                    	compraProducto(proveedorcito, productos, facturita);
                     	break;
                     case 2:
-                    	facturita.realizarCompra(proveedorcito, productos, Tienda.getCuenta().getPin());
+                    	//System.out.println("Proveedor: "+proveedorcito+"\n");
+                    	//System.out.println("Lista productos: "+productos+"\n");
+                    	//System.out.println("Pin tienda: "+Tienda.getCuenta().getPin()+"\n");
+                    	int total = 0;
+                    	facturita.realizarCompra(proveedorcito, productos, Tienda.getCuenta().getPin(),total);
+                    	System.out.println("¡Su compra ha sido realizada con éxito!");
+                    	System.out.println("Saldo actual Tienda: " + Tienda.getCuenta().getSaldo() + "\n");
+                    	System.out.println("Saldo actual Proveedor: " + proveedorcito.getCuenta().getSaldo() + "\n");
+                    	// Llamar al menú principal
                     	break;
                 }
             } while (seleccion != 1 & seleccion != 2);
     		
-    		
-    		
-    		// Indique cuántos del ID quiere comprar. Se guarda en un HashMap
-    		// ¿Quiere más? Si sí, en el hashmap creado. Si no, solo calcula con uno solito
-    		
-    		// Guardar el objeto
-    		// Preguntar a qué proveedor (aunque haya uno) para seleccionar el objeto
-    		// Preguntar el número de cantidad a comprar y calcular el monto multiplicandoo = monto
-    		//////realizarCompra(proveedor, HashMap<Producto, Integer> productos, Tienda.getCuenta().getPin());
-    		// Se realiza la compra:
-    		// 	1. Quitarle plata a la tienda
-    		//	2. Aumentarle plata al proveedor
-    		//	3. Aumentar la cantidad del producto seleccionado
     		//	print: Plata tienda, Plata proveedor, inventario
-    		// Preguntar si quiere comprar más.
+
     	} else {
     		System.err.println("El producto no existe\n");
-			compraProducto();
+    		compraProducto(proveedorcito, productos, facturita);
     	}
 	}
 }
