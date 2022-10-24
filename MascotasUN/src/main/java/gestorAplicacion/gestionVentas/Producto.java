@@ -45,6 +45,11 @@ public class Producto implements Serializable {
                 "~ Descripcion= " + descripcion+ "\n"+
                 "~ Precio=" + precio;
     }
+    public static boolean eliminarProducto(Producto producto){
+        Tienda.getCatalogo().remove(producto);
+        return true;
+    }
+
 
     // Setters y Getters
     public static ArrayList<Producto> getProductos() {

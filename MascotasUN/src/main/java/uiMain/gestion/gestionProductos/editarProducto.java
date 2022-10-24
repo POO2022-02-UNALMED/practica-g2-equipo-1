@@ -15,7 +15,7 @@ public class editarProducto {
         while (true) {
             System.out.println("Para editar el producto ingrese el codigo de registro del mismo: ");
             id = input.nextInt();
-            Producto producto=encontrarProducto(id);
+            Producto producto=t.encontrarProducto(id);
             if (producto == null) {
                 System.out.println("Ese producto no existe en el sistema, intente de nuevo");
             }
@@ -63,13 +63,5 @@ public class editarProducto {
                 } while (opcion != 5);
             }
         }
-    }
-    public static Producto encontrarProducto(long id) {
-        for (Producto p : t.getCatalogo()) {
-            if (p.getProductoID() == id) {
-                return p;
-            }
-        }
-        return null;
     }
 }
