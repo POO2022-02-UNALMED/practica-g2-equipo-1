@@ -13,24 +13,24 @@ public class VerVendedor {
     public static void verVendedor(){
         Scanner input =new Scanner(System.in);
         do {
-            System.out.println("Estas a punto de ver algunos datos de tus compañeros de laburo");
-            System.out.println("1. Para ver un compañero en especifico");
-            System.out.println("2. Para ver la lista completa de tus compañeros");
+            System.out.println("Estas a punto de ver algunos datos de tus companeros de laburo");
+            System.out.println("1. Para ver un companero en especifico");
+            System.out.println("2. Para ver la lista completa de tus companeros");
             System.out.println("3. Volver");
             opcion=input.nextInt();
             switch (opcion){
                 case 1:
-                    System.out.println("Cuantos compañeros desea ver");
+                    System.out.println("Cuantos companeros desea ver?");
                     int cantidad=input.nextInt();
                     for(int i=1;i<=cantidad;i++){
-                        System.out.println("Ingrese el codigo del compañero que quiere ver: ");
+                        System.out.println("Ingrese el codigo del companero que quiere ver: ");
                         id=input.nextInt();
                         Vendedor vendedor= Vendedor.encontrarPersona(id);
                         System.out.println(vendedor.toString());
                         }
                     break;
                 case 2:
-                    System.out.println("Esta es la lista completa de tus compañeros");
+                    System.out.println("Esta es la lista completa de tus companeros");
                     System.out.println(Vendedor.getVendedores().toString());
                     break;
                 case 3:

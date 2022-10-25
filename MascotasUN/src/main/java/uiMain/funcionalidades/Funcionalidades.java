@@ -7,7 +7,7 @@ public class Funcionalidades {
         Scanner input = new Scanner(System.in);
         int opcion;
         do {
-            System.out.println("¿Que haremos hoy?");
+            System.out.println("Que haremos hoy?");
             System.out.println(" 1. Realizar una venta");
             System.out.println(" 2. Comprar inventario");
             System.out.println(" 3. Cobrar una comision");

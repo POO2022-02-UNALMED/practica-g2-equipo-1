@@ -15,7 +15,7 @@ public class GestionClases {
         Scanner input = new Scanner(System.in);
         do {
             System.out.println("Bienvenido, en este lugar puedes gestionar todo lo relacionado con tus companeros, usuarios, proveedores y productos de tu tienda");
-            System.out.println("¿Que deseas hacer?");
+            System.out.println("Que deseas hacer?");
             System.out.println(" 1. Gestionar Productos");
             System.out.println(" 2. Gestionar Proveedores");
             System.out.println(" 3. Gestionar Usuarios");

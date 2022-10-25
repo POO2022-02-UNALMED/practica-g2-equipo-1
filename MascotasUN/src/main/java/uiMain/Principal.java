@@ -29,14 +29,14 @@ public class Principal {
 "╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═════╝░░╚════╝░░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░░░░░░░░╚═════╝░╚═╝░░╚══╝\n");
     
 	System.out.println("				𝕯𝖔𝖓𝖉𝖊 𝖊𝖓𝖈𝖔𝖓𝖙𝖗𝖆𝖗𝖆́𝖘 𝖙𝖔𝖉𝖔 𝖕𝖆𝖗𝖆 𝖙𝖚𝖘 𝖕𝖊𝖑𝖚𝖉𝖔𝖘\n\n");
-	System.out.println("¿Qué desea hacer?\n");
+	System.out.println("Que desea hacer?\n");
     
 	/* El vendedor ingresa al programa y selecciona si desea iniciar sesión o salir
 	 del programa */
 	
     int response = 0; // Se inicializa la variable response
     do {
-        System.out.println("1. Iniciar sesión");
+        System.out.println("1. Iniciar sesion");
         System.out.println("0. Salir");
 
         Scanner sc = new Scanner(System.in);
@@ -47,7 +47,7 @@ public class Principal {
             inicioSesion();
             break;
         case 0:
-            System.out.println("¡Vuelva pronto!");
+            System.out.println("Vuelva pronto!");
             System.exit(0);
             break;
         default:
@@ -64,7 +64,7 @@ public class Principal {
 		Scanner sc_usuario = new Scanner(System.in);
         System.out.println("Ingrese el usuario:" );
         Usuario = sc_usuario.nextLine();
-        System.out.println("Ingresa la contraseña: ");
+        System.out.println("Ingresa la contrasena: ");
         Scanner sc_contra = new Scanner(System.in);
         Contrasena=sc_contra.nextLine();
         
@@ -81,12 +81,12 @@ public class Principal {
 	/* Acceso al menú de uiMain.funcionalidades */
 
 	public static void menuPrincipal() {
-		System.out.println("¿Qué quieres hacer?");
+		System.out.println("Que quieres hacer?");
 
 		Scanner input = new Scanner(System.in);
         int opcion;
         do {
-            System.out.println(" 1. Gestionar la aplicación");
+            System.out.println(" 1. Gestionar la aplicacion");
             System.out.println(" 2. Navegar por las funcionalidades");
             System.out.println(" 3. Salir");
             System.out.print("Indique su eleccion : ");
@@ -103,7 +103,7 @@ public class Principal {
 	
 	public static void salirDelSistema() {
         Serializador.serializar();
-		System.out.println("¡Vuelva pronto!");
+		System.out.println("Vuelva pronto!");
 		System.exit(0);
     }
 	

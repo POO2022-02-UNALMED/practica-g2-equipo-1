@@ -37,7 +37,7 @@ public class RecomendacionesP {
 			}		
 		}
 		
-		//Se ejecuta el m�todo que permite seleccionar la mascota.
+		//Se ejecuta el metodo que permite seleccionar la mascota.
 		Mascota mascotasel = RecomendacionesP.seleccionarMascota(usuario);
 		
 		
