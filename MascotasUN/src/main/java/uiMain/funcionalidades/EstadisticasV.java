@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Vendedor;
+import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
@@ -41,10 +42,8 @@ public class EstadisticasV {
     	            	System.out.println("Estos son los productos más vendidos");
     	            	Tienda.getVentas(); //lista de facturas de la tienda
     	               	HashMap<Producto, Integer> ventas = new HashMap<Producto, Integer>();
-
     	               	Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto", "Gato");;
     	               	ventas.put(productoprueba,1);
-    	         
     	               	HashMap<Producto, Integer> ventas2 = calcularProductoMasVendido(Tienda.getVentas(), ventas);
     	               	SortedSet<Integer> valores= getValoresOrdenados(ventas2);
     	               	imprimirProductos(valores, ventas2);
@@ -52,7 +51,7 @@ public class EstadisticasV {
     	            // Se le muestra al vendedor los clientes destacados, ordenado de mmayor a menor
     	            case 3:
     	            	System.out.println("Estos son los clientes destacados");
-
+    	            	imprimirClientes(
     	            	break;
     	            	
     	            // Se le muestra al vendedor los productos que están por agotarse, ordenado por cantidad
@@ -117,6 +116,13 @@ public class EstadisticasV {
 			}
 		}
 	}
+	
+	public static void imprimirClientes(ArrayList<Usuario> clientes ) {
+		for(Usuario i : clientes) {
+			int a=i.getCompras().size();
+			System.out.println("Cliente: " + i.getNombre() + ". Cantidad: "+ a) ;
+			}
+		}
     
 	public static SortedSet<Integer> getValoresOrdenados(HashMap<Producto, Integer> inventarioProductos) {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
