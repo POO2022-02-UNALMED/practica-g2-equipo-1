@@ -1,3 +1,5 @@
+/*Esta clase se encarga de gestionar las funciones principales que tiene nuestra tienda de mascotas */
+
 package uiMain.funcionalidades;
 import java.text.ParseException;
 import java.util.Scanner;

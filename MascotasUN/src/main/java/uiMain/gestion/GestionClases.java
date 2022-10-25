@@ -1,11 +1,12 @@
+/*Esta clase se encarga de gestionar las clases individuales de gestion de productos, proveedores, usuarios y vendedores*/
+
 package uiMain.gestion;
 
 import uiMain.gestion.gestionProductos.GestionProductos;
 import uiMain.gestion.gestionProveedores.GestionProveedor;
 import uiMain.gestion.gestionUsuarios.GestionUsuarios;
-import uiMain.gestion.gestionVendedores.CrearVendedor;
 import uiMain.gestion.gestionVendedores.GestionVendedores;
-import uiMain.gestion.gestionVendedores.VerVendedor;
+
 
 import java.util.Scanner;
 
