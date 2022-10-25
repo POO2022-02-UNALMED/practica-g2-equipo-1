@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import gestorAplicacion.gestionVentas.Tienda;
 
-public class Usuario extends Persona implements Serializable {
+public class Usuario extends Persona implements Serializable, Comparable<Usuario> {
 	
 	//Serializador Usuarios
 	private static final long serialVersionUID = 1L;
@@ -110,5 +110,10 @@ public class Usuario extends Persona implements Serializable {
 
 	public void setCompras(ArrayList<Factura> compras) {
 		this.compras = compras;
+	}
+	@Override
+	public int compareTo(Usuario o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
