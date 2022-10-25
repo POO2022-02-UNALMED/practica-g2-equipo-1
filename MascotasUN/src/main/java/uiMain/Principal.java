@@ -21,6 +21,7 @@ import gestorAplicacion.gestionPersonas.Gato;
 import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
+import uiMain.funcionalidades.CobrarComision;
 import uiMain.funcionalidades.CompraInventario;
 import uiMain.funcionalidades.EstadisticasV;
 import uiMain.funcionalidades.RealizarVenta;
@@ -134,8 +135,8 @@ public class Principal {
 
 		//RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
-        //RealizarVenta.funcionalidad();
-		EstadisticasV.funcionalidad();
+        CobrarComision.funcionalidad();
+		//EstadisticasV.funcionalidad();
 		
         //System.out.println(Tienda.getInventario());
         //System.out.println(Tienda.getInventarioProductos());

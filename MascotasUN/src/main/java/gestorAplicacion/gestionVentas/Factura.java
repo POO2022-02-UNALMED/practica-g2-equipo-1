@@ -53,7 +53,7 @@ public class Factura implements Serializable {
     
     /*Metodo que realiza la compra, cuando el usuario utiliza como método de pago una cuenta bancaria.
     Retorna el total del precio de la compra tomando el precio del producto por la cantidad y los suma*/
-    public void calcularTotal(){
+    public double calcularTotal(){
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
@@ -62,6 +62,7 @@ public class Factura implements Serializable {
 
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         total = total*IVA;
+        return total;
     }
     public void realizarCompra(Usuario cliente, short pswd){
 

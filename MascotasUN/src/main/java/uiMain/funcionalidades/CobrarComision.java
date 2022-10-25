@@ -1,8 +1,10 @@
 package uiMain.funcionalidades;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.SortedSet;
+import java.util.Map.Entry;
 
 import baseDatos.Serializador;
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
@@ -43,18 +45,41 @@ public class CobrarComision {
         opcion = input1.nextInt();
         switch (opcion) {
         
-        // Se le muestra al vendedor las ventas por vendedor, ordenados de mmayor a menor
+        // Se calcula y se cobra la comision
         case 1:
-
-        	
-        // Se le muestra al vendedor los productos más vendidos, ordenados de mayor a menor
+        	long cedula;
+    		Scanner sc_cedula = new Scanner(System.in);
+            System.out.println("Ingrese su cedula:" );
+            cedula = sc_cedula.nextLong(); 
+            Vendedor vendedorcito =Vendedor.encontrarPersona(cedula);
+            if (vendedorcito==null) {
+            	System.out.println("Ingresó mal su cedula, vuelva a intentarlo");
+            	funcionalidad();
+            }
+            ArrayList<Factura> fact= vendedorcito.getVentas(); //lista de facturas del vendedor
+            double a=calcularProductoMasVendido(fact);
+            double b= a*Vendedor.getComision();
+            System.out.println("Tus ventas totales fueron: "+a);
+            System.out.println("Por lo que tus comisiones son: "+b);  
+            Tienda.getCuenta().tranferir(vendedorcito.getCuenta(), (float) b , Tienda.getCuenta().getPin());
+            System.out.println("Tu dinero ha sido transferido exitosamente ");
+        // Se sale de la funcionalidad
         case 2:
-
+        	Principal.salirDelSistema();
         	break;
-   
         }
         
     }  while(opcion != 1 & opcion != 2 );
+    
+    
 }
+    public static double calcularProductoMasVendido(ArrayList<Factura> facturas) {
+    	//dict donde se añade la suma de productos vendidos
+    	double a=0;
+		for(Factura i : facturas) {  // lista de diccionarios de facturas
+			a+=i.calcularTotal();
+			}
+		return a;
+		}
 
 }
