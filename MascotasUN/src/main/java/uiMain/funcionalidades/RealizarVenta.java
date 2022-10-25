@@ -179,6 +179,8 @@ public class RealizarVenta {
                                                 System.out.println("el total de la compra fue: " + facturaInstance.getTotal());
                                             }
                                             break;
+                                        default:
+                                            System.out.println("Por favor seleccione una respuesta correcta");
                                     }
                                 }
                                 System.out.println("Su accion ha sido finalizada presione 1 para volver al menu");
@@ -209,10 +211,14 @@ public class RealizarVenta {
 
                             case 6:
                                 break;
+                            default:
+                                System.out.println("Por favor seleccione una respuesta correcta");
                         }
                     } while (opcionM2 != 6);
                 case 3:
                     ;
+                default:
+                    System.out.println("Por favor seleccione una respuesta correcta");
             }
 
         } while (opcionM1 != 3);
