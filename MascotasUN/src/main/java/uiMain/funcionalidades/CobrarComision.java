@@ -1,5 +1,11 @@
 package uiMain.funcionalidades;
+import java.util.ArrayList;
 import java.util.Scanner;
+import gestorAplicacion.gestionPersonas.Vendedor;
+import gestorAplicacion.gestionVentas.Factura;
+import gestorAplicacion.gestionVentas.Tienda;
+import uiMain.Principal;
+
 
 public class CobrarComision {
     public static void funcionalidad(){
