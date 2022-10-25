@@ -24,10 +24,9 @@ public class EstadisticasV {
     	        int opcion;
     	        do {
     	        	System.out.println("	1. Número de ventas por vendedor");
-    	            System.out.println("	2. Producto más vendidos");
+    	            System.out.println("	2. Productos más vendidos");
     	            System.out.println("	3. Clientes destacados");
-    	            System.out.println("	4. Ganancias actuales de la tienda");
-    	            System.out.println("	5. Salir");
+    	            System.out.println("	4. Salir");
     	            System.out.print("Indique su eleccion : ");
     	            opcion = input1.nextInt();
     	            switch (opcion) {
@@ -54,18 +53,12 @@ public class EstadisticasV {
     	            	imprimirClientes(Usuario.getUsuarios());
     	            	break;
     	            	
-    	            // Se le muestra al vendedor los productos que están por agotarse, ordenado por cantidad
-    	            case 4:
-    	            	System.out.println("Estoas son las ganancias actuales de la tienda");
-
-    	            	break;
-    	            
-		            case 5:
+		            case 4:
 		           		Principal.salirDelSistema();
 		            	break;
 		            }
     	            
-    	        }  while(opcion != 1 & opcion != 2 & opcion != 3 & opcion != 4 & opcion != 5);
+    	        }  while(opcion != 1 & opcion != 2 & opcion != 3 & opcion != 4);
     		}
     
     
@@ -85,22 +78,21 @@ public class EstadisticasV {
     	//dict donde se añade la suma de productos vendidos
 		for(Factura i : facturas) {  // lista de diccionarios de facturas
 			for(Entry<Producto, Integer> k : i.getProductos().entrySet()){//dict de productos vendidos
+				int z=0;
 				for(Entry<Producto, Integer> j :  ventas.entrySet()){  //dict de productos totales
 					if(k.getKey().getNombre().equals(j.getKey().getNombre())) {
 						Integer a=k.getValue();
 						Integer b=j.getValue();
-						Integer c=b+a+5;
-						System.out.println("esta es a: "+ a+"\n");
-						System.out.println("esta es b: "+ b+"\n");
-						System.out.println("esta es c: "+ c+"\n");
-						
+						Integer c=b+a;
+						z=1;
 						ventas.put(k.getKey(),c);
 						 
 					}
 					
-					} ventas.put(k.getKey(), k.getValue());
+					} if (z!=1) {ventas.put(k.getKey(), k.getValue());
 
 					ventas.keySet().removeIf(key -> key.getNombre() =="P");
+					}
 					
 				} 
 			
@@ -111,10 +103,12 @@ public class EstadisticasV {
 		for(Integer i : valores) {
 			for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
 				if(j.getValue().equals(i)) {
-					System.out.println("Producto: " + j.getKey().getProductoID() + ". Cantidad: "+ j.getValue());
+					System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
 				}
 			}
 		}
+		System.out.println("");
+		funcionalidad();
 	}
 	
 	public static void imprimirClientes(ArrayList<Usuario> clientes ) {
@@ -132,7 +126,9 @@ public class EstadisticasV {
 	public static void impresionPrueba(HashMap<Producto, Integer> inventarioProductos) {
 		for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
 				System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
+				
 		}
+		
 	}
 	
 
