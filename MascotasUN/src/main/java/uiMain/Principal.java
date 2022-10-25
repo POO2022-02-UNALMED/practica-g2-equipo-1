@@ -24,6 +24,7 @@ import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.funcionalidades.CompraInventario;
 import uiMain.funcionalidades.EstadisticasV;
 import uiMain.funcionalidades.RealizarVenta;
+import uiMain.funcionalidades.RecomendacionesP;
 import uiMain.gestion.gestionProductos.AgregarProducto;
 import uiMain.gestion.gestionProductos.EditarProducto;
 import uiMain.gestion.gestionProductos.EliminarProducto;
@@ -131,11 +132,11 @@ public class Principal {
 		//Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
-
-		//RealizarVenta.funcionalidad();
-		//CompraInventario.funcionalidad();
+		//RecomendacionesP.funcionalidad();
+		EstadisticasV.funcionalidad();
         //RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
+		
         System.out.println(Tienda.getInventario());
         System.out.println(Tienda.getInventarioProductos());
     }
