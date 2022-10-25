@@ -1,41 +1,20 @@
 package uiMain;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import baseDatos.Deserializador;
-import baseDatos.Serializador;
-
-import java.util.Map.Entry;
-
-import baseDatos.Serializador;
-import gestorAplicacion.gestionPersonas.CuentaBancaria;
-import gestorAplicacion.gestionPersonas.Persona;
 import gestorAplicacion.gestionPersonas.Proveedor;
-import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
-import gestorAplicacion.gestionVentas.Envio;
-import gestorAplicacion.gestionVentas.Factura;
-import gestorAplicacion.gestionPersonas.Mascota;
-import gestorAplicacion.gestionPersonas.Gato;
-import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.funcionalidades.CobrarComision;
 import uiMain.funcionalidades.CompraInventario;
 import uiMain.funcionalidades.EstadisticasV;
-import uiMain.funcionalidades.RealizarVenta;
-import uiMain.gestion.gestionProductos.AgregarProducto;
 import uiMain.gestion.gestionProductos.EditarProducto;
-import uiMain.gestion.gestionProductos.EliminarProducto;
 import uiMain.gestion.gestionProductos.GestionProductos;
-import uiMain.gestion.gestionProveedores.EliminarProveedor;
 import uiMain.gestion.gestionProveedores.GestionProveedor;
-import uiMain.gestion.gestionProveedores.VerProveedor;
-import uiMain.gestion.gestionUsuarios.AgregarUsuario;
 
 public class Principal {
-	
+
 	public static void showMenu(){
 
         // Inicio del programa
@@ -47,13 +26,13 @@ public class Principal {
 "██║╚██╔╝██║██╔══██║░╚═══██╗██║░░██╗██║░░██║░░░██║░░░██╔══██║░╚═══██╗╚════╝██║░░░██║██║╚████║\n"+
 "██║░╚═╝░██║██║░░██║██████╔╝╚█████╔╝╚█████╔╝░░░██║░░░██║░░██║██████╔╝░░░░░░╚██████╔╝██║░╚███║\n"+
 "╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═════╝░░╚════╝░░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░░░░░░░░╚═════╝░╚═╝░░╚══╝\n");
-    
+
 	System.out.println("				𝕯𝖔𝖓𝖉𝖊 𝖊𝖓𝖈𝖔𝖓𝖙𝖗𝖆𝖗𝖆́𝖘 𝖙𝖔𝖉𝖔 𝖕𝖆𝖗𝖆 𝖙𝖚𝖘 𝖕𝖊𝖑𝖚𝖉𝖔𝖘\n\n");
 	System.out.println("¿Qué desea hacer?\n");
-    
+
 	/* El vendedor ingresa al programa y selecciona si desea iniciar sesión o salir
 	 del programa */
-	
+
     int response = 0; // Se inicializa la variable response
     do {
         System.out.println("1. Iniciar sesión");
@@ -61,7 +40,7 @@ public class Principal {
 
         Scanner sc = new Scanner(System.in);
         response = Integer.valueOf(sc.nextLine());
-        
+
         switch(response){
         case 1:
             inicioSesion();
@@ -75,9 +54,9 @@ public class Principal {
 		   }
     	} while(response != 0);
 	}
-	
+
 	/* Menú que muestra el inicio de sesión*/
-	
+
 	static void inicioSesion(){
 		String Usuario;
 		String Contrasena;
@@ -87,7 +66,7 @@ public class Principal {
         System.out.println("Ingresa la contraseña: ");
         Scanner sc_contra = new Scanner(System.in);
         Contrasena=sc_contra.nextLine();
-        
+
         if(Vendedor.validarCredenciales(Usuario,Contrasena)==true) {
             System.out.println("Bienvenido, "+ Usuario);
             menuPrincipal();
@@ -97,7 +76,7 @@ public class Principal {
             inicioSesion();
         }
 	}
-	
+
 	/* Acceso al menú de uiMain.funcionalidades */
 
 	public static void menuPrincipal() {
@@ -120,13 +99,13 @@ public class Principal {
         } while (opcion != 6);
 		System.exit(0);
 	}
-	
+
 	public static void salirDelSistema() {
 		System.out.println("¡Vuelva pronto!");
 		System.exit(0);
         //Serializador.serializar();
     }
-	
+
 	// Entrada al programa
 	public static void main(String[] args) {
 		//Deserializador.deserializar();
@@ -137,7 +116,7 @@ public class Principal {
 		//CompraInventario.funcionalidad();
         CobrarComision.funcionalidad();
 		//EstadisticasV.funcionalidad();
-		
+
         //System.out.println(Tienda.getInventario());
         //System.out.println(Tienda.getInventarioProductos());
         //System.out.println(Tienda.getInventario());

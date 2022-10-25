@@ -72,7 +72,7 @@ public class Producto implements Serializable {
     // Metodo sobrecargado toString() para generar el string que se imprimira al implementar la UI
     @Override
     public String toString() {
-        return "~ Código = " + productoID +"\n"+
+        return "~ Codigo = " + productoID +"\n"+
                 "~ Producto = " + nombre + '\n' +
                 "~ fechaDeVencimiento =" + fechaVencimiento +"\n"+
                 "~ Descripcion = " + descripcion+ "\n"+

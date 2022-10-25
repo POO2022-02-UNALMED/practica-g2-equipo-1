@@ -7,7 +7,7 @@ import gestorAplicacion.gestionVentas.Factura;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AgregarVendedor {
+public class CrearVendedor {
     public static void agregarVendedor(){
         Scanner input = new Scanner(System.in);
         System.out.println("Estas a punto de agregar un nuevo vendedor \n");

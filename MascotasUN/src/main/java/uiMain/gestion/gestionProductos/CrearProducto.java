@@ -5,7 +5,7 @@ import gestorAplicacion.gestionVentas.Tienda;
 
 import java.util.Scanner;
 
-public class AgregarProducto {
+public class CrearProducto {
     public static void registrarProducto(){
         Scanner input = new Scanner(System.in);
         System.out.println("Estas a punto de agregar un nuevo producto \n");
@@ -24,7 +24,6 @@ public class AgregarProducto {
         System.out.println("Ingrese el precio de venta del producto");
         float precioVenta= input.nextFloat();
         Producto producto= new Producto(productoID,nombre,fechaV,descripcion,precioCompra,precioVenta,cantidadComprada);
-        Producto.agregarProducto(producto);
         Tienda.agregarProductoCatalogo(producto);
         System.out.println("El producto se agrego de manera exitosa");
         System.out.println(producto.toString());

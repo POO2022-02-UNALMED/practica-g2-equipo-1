@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GestionProductos {
     private static int opcion;
-    public static void GestionarProductos() {
+    public static void gestionarProductos() {
         Scanner input = new Scanner(System.in);
         do {
             System.out.println("Estas a punto de gestionar tus productos");
@@ -18,7 +18,7 @@ public class GestionProductos {
 
             switch (opcion) {
                 case 1: ; VerProducto.verProducto(); break;
-                case 2: ; AgregarProducto.registrarProducto(); break;
+                case 2: ; CrearProducto.registrarProducto(); break;
                 case 3: ; EliminarProducto.eliminarProducto(); break;
                 case 4: ; EditarProducto.editarProducto(); break;
                 case 5: break;

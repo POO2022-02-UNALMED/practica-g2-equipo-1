@@ -19,6 +19,7 @@ public class EliminarProveedor {
                 System.out.println("No se encontro el proveedor, intente nuevamente");
             } else {
                 System.out.println("Proveedor Eliminado");
+                //System.out.println(Proveedor.getProveedores()); Si quieren ver el uso de eliminar
                 break;
             }
         }

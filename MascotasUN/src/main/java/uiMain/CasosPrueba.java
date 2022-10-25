@@ -29,6 +29,8 @@ public class CasosPrueba {
 	
 		// Cuenta bancaria del proveedor
 	CuentaBancaria cuentaProveedor = new CuentaBancaria((long)1089523479, (float)20858967.8, 5782);
+	CuentaBancaria cuentaProveedor1 = new CuentaBancaria((long)1872854124, (float)48248582.8, 5784);
+	CuentaBancaria cuentaProveedor2 = new CuentaBancaria((long)1234567887, (float)0, 1875);
 		
 		// Cuenta bancaria de la tienda
 	CuentaBancaria cuentaTienda = new CuentaBancaria((long)1077774562, (float)10889456.6, 1023);
@@ -70,9 +72,21 @@ public class CasosPrueba {
 	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto8); listaProductos.add(producto9); listaProductos.add(producto10);
 	listaProductos.add(producto11); listaProductos.add(producto12); listaProductos.add(producto13); listaProductos.add(producto14); listaProductos.add(producto15); listaProductos.add(producto16);
 	listaProductos.add(producto17); listaProductos.add(producto18);
+	Tienda.setCatalogo(listaProductos);
 
 	Tienda.setCatalogo(listaProductos); // Creamos el catalogo de la tienda
-	
+	ArrayList<Producto> listaProductos1 = new ArrayList<Producto>(); listaProductos1.add(producto1); listaProductos1.add(producto2);listaProductos1.add(producto3); listaProductos1.add(producto4);
+	listaProductos1.add(producto5); listaProductos1.add(producto6); listaProductos1.add(producto7); listaProductos1.add(producto10);listaProductos1.add(producto11); listaProductos1.add(producto12);
+
+	ArrayList<Producto> listaProductos2 = new ArrayList<Producto>();
+	listaProductos2.add(producto5); listaProductos2.add(producto6); listaProductos2.add(producto7); listaProductos2.add(producto10);listaProductos2.add(producto11); listaProductos2.add(producto12);
+	Tienda.setCatalogo(listaProductos2);
+
+	ArrayList<Producto> listaProductos3 = new ArrayList<Producto>(); listaProductos3.add(producto1); listaProductos3.add(producto2);listaProductos3.add(producto3); listaProductos3.add(producto4);
+	listaProductos.add(producto5); listaProductos3.add(producto6); listaProductos3.add(producto7); listaProductos3.add(producto8); listaProductos3.add(producto9); listaProductos3.add(producto10);
+	listaProductos.add(producto11); listaProductos3.add(producto12); listaProductos3.add(producto13); listaProductos3.add(producto14); listaProductos3.add(producto15); listaProductos3.add(producto16);
+	listaProductos.add(producto17); listaProductos3.add(producto18);
+	Tienda.setCatalogo(listaProductos3);
 	// Creando el inventario
 	HashMap<String, Integer> listaInventario = new HashMap<String, Integer>(); listaInventario.put(producto1.getNombre(), producto1.getCantidadComprada());
 	listaInventario.put(producto2.getNombre(), producto2.getCantidadComprada());
@@ -154,11 +168,20 @@ public class CasosPrueba {
 		
 	
 	// Proveedor
-	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, listaProductos, true) ;
+	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, listaProductos1, true) ;
 	ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
 	proveedores.add(proveedor1);
+
+
+	Proveedor proveedor2 = new Proveedor(43825897, "Armando Marin", "armandocasasde@email.com", 4484254, cuentaProveedor1, listaProductos2, false) ;
+	proveedores.add(proveedor2);
+
+	Proveedor proveedor3 = new Proveedor(58415, "Sol lunar", "solunar@email.com", 3482414, cuentaProveedor2, listaProductos3,true) ;
+	ArrayList<Proveedor> proveedores2 = new ArrayList<Proveedor>();
+	proveedores.add(proveedor3);
 	Proveedor.setProveedores(proveedores);
-	
+
+
 	// Clientes
 	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", listaMascotas1); //Usuario 1 tiene Perro Cachorro Grande y Gato Cachorro
 	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Cra 58 # 78-29", listaMascotas2); //Usuario 2 tiene Gato Adulto
@@ -243,6 +266,5 @@ public class CasosPrueba {
 		
 		Tienda.setCantidadDeVentas(listaFacturasTienda);
 	}
-	
 	
 }

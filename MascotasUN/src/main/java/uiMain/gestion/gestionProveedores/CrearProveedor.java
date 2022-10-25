@@ -1,13 +1,12 @@
 package uiMain.gestion.gestionProveedores;
 
 import gestorAplicacion.gestionPersonas.*;
-import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionVentas.Producto;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AgregarProveedor {
+public class CrearProveedor {
     public static void agregarProveedor(){
         Scanner input = new Scanner(System.in);
         System.out.println("Estas a punto de agregar un nuevo proveedor \n");

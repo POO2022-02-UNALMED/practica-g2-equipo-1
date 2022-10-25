@@ -1,16 +1,5 @@
-import uiMain.Principal;
-import gestorAplicacion.gestionPersonas.CuentaBancaria;
-import gestorAplicacion.gestionPersonas.Persona;
-import gestorAplicacion.gestionPersonas.Proveedor;
-import gestorAplicacion.gestionPersonas.Usuario;
-import gestorAplicacion.gestionPersonas.Vendedor;
-import gestorAplicacion.gestionVentas.Envio;
-import gestorAplicacion.gestionVentas.Factura;
-import gestorAplicacion.gestionPersonas.Mascota;
-import gestorAplicacion.gestionPersonas.Gato;
-import gestorAplicacion.gestionPersonas.Perro;
-import gestorAplicacion.gestionVentas.Producto;
-import gestorAplicacion.gestionVentas.Tienda;
+import uiMain.gestion.gestionProductos.CrearProducto;
+import uiMain.gestion.gestionProductos.EditarProducto;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,5 +7,6 @@ public class Main {
     	//Vendedor.getUsuarios();
     	//Principal.showMenu();
     	//System.out.println(Vendedor.getUsuarios());
+        //EditarProducto.editarProducto();
     }
 }

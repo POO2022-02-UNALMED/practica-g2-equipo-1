@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GestionVendedores {
     private static int opcion;
-    public static void GestionarVendedores() {
+    public static void gestionarVendedores() {
         Scanner input = new Scanner(System.in);
         do {
             System.out.println("Estas a punto de acceder a la gestión de tus compañeros de trabajo");
@@ -16,7 +16,7 @@ public class GestionVendedores {
 
             switch (opcion) {
                 case 1: ; VerVendedor.verVendedor(); break;
-                case 2: ; AgregarVendedor.agregarVendedor(); break;
+                case 2: ; CrearVendedor.agregarVendedor(); break;
                 case 3: break;
             }
         } while (opcion != 3);

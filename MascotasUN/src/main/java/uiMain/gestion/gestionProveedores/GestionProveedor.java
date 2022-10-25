@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GestionProveedor {
     private static int opcion;
-    public static void GestionarUsuarios() {
+    public static void gestionProveedores() {
         Scanner input = new Scanner(System.in);
         do {
             System.out.println("Estas a punto de gestionar tus proveedores");
@@ -17,7 +17,7 @@ public class GestionProveedor {
 
             switch (opcion) {
                 case 1: ; VerProveedor.verProveedor(); break;
-                case 2: ; AgregarProveedor.agregarProveedor(); break;
+                case 2: ; CrearProveedor.agregarProveedor(); break;
                 case 3: ; EliminarProveedor.eliminarProveedor(); break;
                 case 4: break;
             }
