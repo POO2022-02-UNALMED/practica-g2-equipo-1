@@ -4,6 +4,11 @@
 package gestorAplicacion.gestionVentas;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
+<<<<<<< Updated upstream
+import gestorAplicacion.gestionPersonas.Usuario;
+=======
+import gestorAplicacion.gestionPersonas.Vendedor;
+>>>>>>> Stashed changes
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 
 public class Tienda implements Serializable {
 	
@@ -24,6 +30,7 @@ public class Tienda implements Serializable {
 	private static HashMap<Producto, Integer> inventario = new HashMap<>();
 	private static HashMap<String, Integer> inventarioProductos = new HashMap<>();
 	private static CuentaBancaria cuenta;
+	private static HashMap<Long, Usuario> usuarios = new HashMap<>();
 	
 	// Métodos
 	
@@ -99,6 +106,10 @@ public class Tienda implements Serializable {
 		return cantidadDeVentas.size();
 	}
 	
+    public static ArrayList<Factura> getVentas() {
+        return cantidadDeVentas;
+    }
+	
 	public static void setCantidadDeVentas(ArrayList<Factura> cantidadDeVentas) {
 		Tienda.cantidadDeVentas = cantidadDeVentas;
 	}
@@ -134,4 +145,13 @@ public class Tienda implements Serializable {
 	public static void setCuenta(CuentaBancaria cuenta) {
 		Tienda.cuenta = cuenta;
 	}
+
+	public static HashMap<Long, Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public static void setUsuarios(HashMap<Long, Usuario> usuarios) {
+		Tienda.usuarios = usuarios;
+	}
+	
 }

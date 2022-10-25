@@ -33,7 +33,7 @@ public class Perro implements Mascota, Serializable {
     
     // Método que dependiendo de la edad del perro (ingresada en años) retornará si es Cachorro o Adulto
     @Override
-    public String calcularEdad(int edad) {
+    public String calcularEdad() {
     	if (edad <= 1) {
     		return "Cachorro";
     	}
@@ -47,14 +47,14 @@ public class Perro implements Mascota, Serializable {
     @Override
     public ArrayList<Producto> tipoAlimento(){
     	ArrayList<Producto> ListAux = new ArrayList<Producto>();
-		for (Map.Entry<Producto, Integer> entry : Tienda.getInventario().entrySet()) {
-			if (entry.getKey().getRaza() == getRaza() & entry.getKey().getEtapa() == calcularEdad(getEdad())) {
-				ListAux.add(entry.getKey());
+		for (int i = 0; i < Tienda.getCatalogo().size(); i++) {
+			Producto p = Tienda.getCatalogo().get(i);
+			if (p.getEtapa() == calcularEdad() & p.getRaza() == raza & p.getEspecie() == "Perro") {
+				ListAux.add(p);
 			}
 		}
 		return ListAux;
      }
-    
     
     // Getters y setters
     
