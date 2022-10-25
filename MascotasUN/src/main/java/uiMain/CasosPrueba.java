@@ -198,7 +198,6 @@ public class CasosPrueba {
 		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura3.add(factura5); listaFactura3.add(factura6); listaFactura3.add(factura7); listaFactura3.add(factura8);
 		vendedor3.setVentas(listaFactura3);
 		
-		
 	// Diccionario de vendedores (usuario,cantidadVentas)
 		
 		HashMap<String, Integer> ventasT = new HashMap<String, Integer>(); ventasT.put(vendedor1.getUsuario(), vendedor1.getVentas().size());
@@ -206,6 +205,15 @@ public class CasosPrueba {
 		ventasT.put(vendedor3.getUsuario(), vendedor3.getVentas().size());
 		
 		Vendedor.setCantidadVentas(ventasT);
+		
+		
+	//Lista de facturas para la tienda
+		ArrayList<Factura> listaFacturasTienda = new ArrayList<Factura>(); listaFacturasTienda.add(factura1);listaFacturasTienda.add(factura2);
+		listaFacturasTienda.add(factura3);listaFacturasTienda.add(factura4); listaFacturasTienda.add(factura5); listaFacturasTienda.add(factura6);
+		listaFacturasTienda.add(factura7); listaFacturasTienda.add(factura8);
+		
+		
+		Tienda.setCantidadDeVentas(listaFacturasTienda);
 	}
 	
 	

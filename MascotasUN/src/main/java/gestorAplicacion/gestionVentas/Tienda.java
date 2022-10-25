@@ -4,7 +4,11 @@
 package gestorAplicacion.gestionVentas;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
+<<<<<<< Updated upstream
 import gestorAplicacion.gestionPersonas.Usuario;
+=======
+import gestorAplicacion.gestionPersonas.Vendedor;
+>>>>>>> Stashed changes
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -101,6 +105,10 @@ public class Tienda implements Serializable {
 	public static int getCantidadDeVentas() {
 		return cantidadDeVentas.size();
 	}
+	
+    public static ArrayList<Factura> getVentas() {
+        return cantidadDeVentas;
+    }
 	
 	public static void setCantidadDeVentas(ArrayList<Factura> cantidadDeVentas) {
 		Tienda.cantidadDeVentas = cantidadDeVentas;

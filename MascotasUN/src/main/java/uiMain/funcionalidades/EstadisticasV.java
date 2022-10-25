@@ -25,6 +25,7 @@ public class EstadisticasV {
     	            System.out.println("	2. Producto más vendidos");
     	            System.out.println("	3. Clientes destacados");
     	            System.out.println("	4. Ganancias actuales de la tienda");
+    	            System.out.println("	5. Salir");
     	            System.out.print("Indique su eleccion : ");
     	            opcion = input1.nextInt();
     	            switch (opcion) {
@@ -33,12 +34,19 @@ public class EstadisticasV {
     	            case 1:
     	            	System.out.println("Estas son las ventas por vendedor");
     	            	imprimirVentas(Vendedor.getValoresOrdenados(), Vendedor.getCantidadVentas());
-    	            	break;
     	            	
     	            // Se le muestra al vendedor los productos más vendidos, ordenados de mayor a menor
     	            case 2:
     	            	System.out.println("Estos son los productos más vendidos");
-
+    	            	Tienda.getVentas(); //lista de facturas de la tienda
+    	               	HashMap<Producto, Integer> ventas = new HashMap<Producto, Integer>();
+    	               	
+    	               	Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto");
+    	               	ventas.put(productoprueba,1);
+    	               	
+    	               	HashMap<Producto, Integer> ventas2 = calcularProductoMasVendido(Tienda.getVentas(), ventas);
+    	               	
+    	               	imprimirProductos(Tienda.getValoresOrdenados(), ventas2);
     	            	break;
     	            // Se le muestra al vendedor los clientes destacados, ordenado de mmayor a menor
     	            case 3:
@@ -51,18 +59,65 @@ public class EstadisticasV {
     	            	System.out.println("Estoas son las ganancias actuales de la tienda");
 
     	            	break;
-    	            }
-    	        }  while(opcion != 1 & opcion != 2 & opcion != 3 & opcion != 4);
+    	            
+		            case 5:
+		           		Principal.salirDelSistema();
+		            	break;
+		            }
+    	            
+    	        }  while(opcion != 1 & opcion != 2 & opcion != 3 & opcion != 4 & opcion != 5);
     		}
+    
+    
     public static void imprimirVentas(SortedSet<Integer> valores, HashMap<String, Integer> ventas) {
 		for(Integer i : valores) {
 			for(Entry<String, Integer> j : ventas.entrySet()){
 				if(j.getValue().equals(i)) {
 					System.out.println("Vendedor: " + j.getKey() + ". Cantidad: "+ j.getValue());
+					
 				}
 			}
 		}
-		
+		System.out.println("");
+		funcionalidad();
+	}
+    
+    public static HashMap<Producto, Integer> calcularProductoMasVendido(ArrayList<Factura> facturas, HashMap<Producto, Integer> ventas ) {
+    	//dict donde se añade la suma de productos vendidos
+		for(Factura i : facturas) {  // lista de diccionarios de facturas
+			for(Entry<Producto, Integer> k : i.getProductos().entrySet()){//dict de productos vendidos
+				System.out.println("k value: "+ k.getValue());
+				System.out.println("k key: "+ k.getKey().getNombre());
+				for(Entry<Producto, Integer> j :  ventas.entrySet()){  //dict de productos totales
+					System.out.println("j value"+ j.getValue());
+					System.out.println("k value"+ k.getValue());
+					if(k.getKey().getNombre().equals(j.getKey().getNombre())) {
+						System.out.println("j value"+ j.getValue());
+						Integer a=k.getValue();
+						Integer b=j.getValue();
+						Integer c=b+a;
+						
+						ventas.put(k.getKey(),c);
+						 
+					} else {
+						ventas.put(k.getKey(), k.getValue());
+					}
+					
+				} 
+			
+			}
+			
+		}
+		return ventas;
+    }
+	public static void imprimirProductos(SortedSet<Integer> valores, HashMap<Producto, Integer> inventarioProductos) {
+		for(Integer i : valores) {
+			for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
+				if(j.getValue().equals(i) & (i <= 2)) {
+					System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
+				}
+			}
+		}
 	}
     
 }
