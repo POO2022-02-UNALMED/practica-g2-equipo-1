@@ -37,7 +37,8 @@ public class VerProducto {
                 case 2:
                     System.out.println("Esta es la lista completa de tus productos");
                     //imprime todas las instancias de producto
-                    imprimirCatalogo(Tienda.getCatalogo());
+                    System.out.println(Producto.getProductos().toString());
+                    //imprimirCatalogo(Tienda.getCatalogo());
                     break;
                 case 3:
                     break;

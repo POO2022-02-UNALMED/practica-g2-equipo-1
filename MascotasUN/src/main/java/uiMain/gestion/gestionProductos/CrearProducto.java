@@ -32,6 +32,7 @@ public class CrearProducto {
         Producto producto= new Producto(productoID,nombre,fechaV,descripcion,precioCompra,precioVenta,cantidadComprada);
         //Se agrega el producto creado a la lista de productos existente en catalogo
         Tienda.agregarProductoCatalogo(producto);
+        Producto.agregarProducto(producto);
         System.out.println("El producto se agrego de manera exitosa");
         //Se hace el toString para imprimir los atributos del objeto y no la referencia
         System.out.println(producto.toString());
