@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.Map.Entry;
-
+import java.util.Collections;
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Vendedor;
@@ -52,8 +52,8 @@ public class EstadisticasV {
     	            	System.out.println("Estos son los clientes destacados");
     	            	//imprimirClientes(Usuario.getUsuarios());
     	            	ArrayList<Integer> listita=lista(Usuario.getUsuarios());
-    	            	SortedSet<Integer> orden = getValoresOrdenados2(listita);
-    	            	imprimirClientes2(orden,Usuario.getUsuarios());
+    	            	//SortedSet<Integer> orden = getValoresOrdenados2(listita);
+    	            	imprimirClientes2(listita,Usuario.getUsuarios());
     	            	
     	            	break;
     	            	
@@ -115,26 +115,20 @@ public class EstadisticasV {
 		funcionalidad();
 	}
 	
-	/*public static void imprimirClientes(ArrayList<Usuario> clientes ) {
-		for(Usuario i : clientes) {			
-			int a=i.getCompras().size();
-			System.out.println("Cliente: " + i.getNombre() + ". Cantidad: "+ a) ;
-			}
-		System.out.println("");
-		funcionalidad();
-		}*/
 	
 	public static ArrayList<Integer> lista(ArrayList<Usuario> clientes) {
 		ArrayList<Integer> listita=new ArrayList<Integer>();
 		for(Usuario i : clientes) {			
 			int a=i.getCompras().size();
-			listita.add(a);
+			if (listita.contains(a)) {}
+			else{ listita.add(a);}
 		}
+		Collections.sort(listita, Collections.reverseOrder());
 		return listita;
 	}
 	
-	public static void imprimirClientes2(SortedSet<Integer> valores, ArrayList<Usuario> clientes) {
-		for(Integer i : valores) {
+	public static void imprimirClientes2(ArrayList<Integer> cant, ArrayList<Usuario> clientes) {
+		for(Integer i : cant) {
 			for(Usuario j : clientes){
 				if((j.getCompras().size()==i)) {
 					System.out.println("Cliente: " + j.getNombre() + ". Cantidad: "+ i);
@@ -150,10 +144,10 @@ public class EstadisticasV {
         return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
     }
 	
-	public static SortedSet<Integer> getValoresOrdenados2(ArrayList<Integer> cant) {
+	/*public static SortedSet<Integer> getValoresOrdenados2(ArrayList<Integer> cant) {
         SortedSet<Integer> valores = new TreeSet<Integer>(cant);
         return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
-    }
+    }*/
 	
 
 	

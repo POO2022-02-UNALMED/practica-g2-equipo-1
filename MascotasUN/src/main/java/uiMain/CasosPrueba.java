@@ -36,7 +36,7 @@ public class CasosPrueba {
 	
 	// Productos
 			// Perro grande adulto
-		Producto producto1 = new Producto(1001, "Croquetas Adulto Plus", "13/04/2023", "Comida en croquetas para perro adulto de raza grande", 5000, 12000, 2, "Grande", "Adulto");
+		Producto producto1 = new Producto(1001, "Croquetas Adulto Plus", "13/04/2023", "Comida en croquetas para perro adulto de raza grande", 5000, 12000, 10, "Grande", "Adulto");
 		Producto producto2 = new Producto(1002, "Comida húmeda Adulto Max", "28/12/2022", "Comida húmeda para perro adulto de raza grande", 2000, 5000, 3, "Grande", "Adulto");
 		Producto producto3 = new Producto(1003, "Cuido Adulto Extra", "18/05/2023", "Comida diaria para perro adulto de raza grande", 9000, 15000, 4, "Grande", "Adulto");
 			
@@ -47,7 +47,7 @@ public class CasosPrueba {
 			
 			// Perro pequeño adulto
 		Producto producto7 = new Producto(1007, "Croquetas Adulto Mini", "30/08/2023", "Comida en croquetas para perro adulto de raza pequeña", 6000, 13000, 2, "Peque�a", "Adulto", "Perro");
-		Producto producto8 = new Producto(1008, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 3, "Peque�a", "Adulto", "Perro");
+		Producto producto8 = new Producto(1008, "Comida húmeda Adulto Junior", "18/12/2022", "Comida húmeda para perro adulto de raza pequeña", 3000, 6000, 10, "Peque�a", "Adulto", "Perro");
 		Producto producto9 = new Producto(1009, "Cuido Adulto Small", "14/01/2023", "Comida diaria para perro adulto de raza pequeña", 10000, 16000, 4, "Peque�a", "Adulto", "Perro");
 			
 			// Perro pequeño cachorro
@@ -133,7 +133,8 @@ public class CasosPrueba {
 	compra7.put(producto11, 2); compra7.put(producto12, 1);
 	HashMap<Producto, Integer> compra8 =new HashMap<Producto, Integer>(); compra8.put(producto8, 1); compra8.put(producto9, 1); compra8.put(producto10, 2); compra8.put(producto11, 1); 
 	compra8.put(producto12, 1);
-
+	
+	HashMap<Producto, Integer> compra9 =new HashMap<Producto, Integer>(); compra9.put(producto8, 1);
 	// Mascotas
 			// Perros
 		Perro perro1 = new Perro(100, "Dante", 1, "Grande"); //Perro Cachorro Grande
@@ -210,6 +211,9 @@ public class CasosPrueba {
 		factura7.setProductos(compra7);
 		Factura factura8 = new Factura(usuario4, "16/10/2022", vendedor3);
 		factura8.setProductos(compra8);
+		Factura factura9 = new Factura(usuario4, "10/10/2022", vendedor2);
+		factura9.setProductos(compra9);
+		usuario4.agregarFactura(factura9);
 		usuario4.agregarFactura(factura7);
 		usuario4.agregarFactura(factura8);
 	
@@ -217,10 +221,10 @@ public class CasosPrueba {
 	//ArrayList de facturas
 		ArrayList<Factura> listaFactura1 = new ArrayList<Factura>(); listaFactura1.add(factura1); listaFactura1.add(factura2);
 		vendedor1.setVentas(listaFactura1);
-		ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura2.add(factura3); listaFactura2.add(factura4);
+		ArrayList<Factura> listaFactura2 = new ArrayList<Factura>(); listaFactura2.add(factura3); listaFactura2.add(factura4);  listaFactura2.add(factura9);
 		vendedor2.setVentas(listaFactura2);
 		ArrayList<Factura> listaFactura3 = new ArrayList<Factura>(); listaFactura3.add(factura5); listaFactura3.add(factura6); listaFactura3.add(factura7); listaFactura3.add(factura8);
-		vendedor3.setVentas(listaFactura3);
+		vendedor3.setVentas(listaFactura3); 
 		
 	// Diccionario de vendedores (usuario,cantidadVentas)
 		
@@ -234,7 +238,7 @@ public class CasosPrueba {
 	//Lista de facturas para la tienda
 		ArrayList<Factura> listaFacturasTienda = new ArrayList<Factura>(); listaFacturasTienda.add(factura1);listaFacturasTienda.add(factura2);
 		listaFacturasTienda.add(factura3);listaFacturasTienda.add(factura4); listaFacturasTienda.add(factura5); listaFacturasTienda.add(factura6);
-		listaFacturasTienda.add(factura7); listaFacturasTienda.add(factura8);
+		listaFacturasTienda.add(factura7); listaFacturasTienda.add(factura8);listaFacturasTienda.add(factura9);
 		
 		
 		Tienda.setCantidadDeVentas(listaFacturasTienda);
