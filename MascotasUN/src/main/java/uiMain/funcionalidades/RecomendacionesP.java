@@ -52,7 +52,7 @@ public class RecomendacionesP {
 				}
 			}		
 		}
-		Mascota mascotasel = F3.seleccionarMascota(usuario);
+		Mascota mascotasel = RecomendacionesP.seleccionarMascota(usuario);
 		
 		
 		
@@ -63,11 +63,11 @@ public class RecomendacionesP {
 		//Se genera la lista de recomendaciones para esa mascota tipoAlimento()
 		ArrayList<Producto> productosrecomendados = new ArrayList<Producto>();
 		if (mascotasel.getClass() == Gato.class) {
-			ArrayList<Producto> lista = F3.recomendacionGato(mascotasel);
+			ArrayList<Producto> lista = RecomendacionesP.recomendacionGato(mascotasel);
 			productosrecomendados = lista;
 		}
 		if (mascotasel.getClass() == Perro.class) {
-			ArrayList<Producto> lista = F3.recomendacionPerro(mascotasel);
+			ArrayList<Producto> lista = RecomendacionesP.recomendacionPerro(mascotasel);
 			productosrecomendados = lista;
 		}
 		
