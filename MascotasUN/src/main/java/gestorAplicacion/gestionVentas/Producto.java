@@ -35,9 +35,9 @@ public class Producto implements Serializable {
 	    this.cantidadComprada = cantidadComprada;
     }
     
-    	//Sobreescritura de constructor para crear productos relacionados con gatos
+  //Sobreescritura de constructor para crear productos relacionados con gatos
     public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra,
-			float precioVenta, int cantidadComprada, String etapa) {
+			float precioVenta, int cantidadComprada, String etapa, String especie) {
 		this.productoID = productoID;
 		this.nombre = nombre;
 		this.fechaVencimiento = fechaVencimiento;
@@ -46,11 +46,12 @@ public class Producto implements Serializable {
 		this.precioVenta = precioVenta;
 		this.cantidadComprada = cantidadComprada;
 		this.etapa = etapa;
+		this.especie = especie;
 	}
     
-    	//Sobreescritura de constructor para crear productos relacionados con perros
+    //Sobreescritura de constructor para crear productos relacionados con perros
     public Producto(long productoID, String nombre, String fechaVencimiento, String descripcion, float precioCompra,
-			float precioVenta, int cantidadComprada, String raza, String etapa) {
+			float precioVenta, int cantidadComprada, String raza, String etapa, String especie) {
 		this.productoID = productoID;
 		this.nombre = nombre;
 		this.fechaVencimiento = fechaVencimiento;
@@ -60,6 +61,7 @@ public class Producto implements Serializable {
 		this.cantidadComprada = cantidadComprada;
 		this.raza = raza;
 		this.etapa = etapa;
+		this.especie = especie;
 	}
 
     // Métodos
