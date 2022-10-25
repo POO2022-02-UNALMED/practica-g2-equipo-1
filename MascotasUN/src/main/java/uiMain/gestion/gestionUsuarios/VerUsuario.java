@@ -17,7 +17,7 @@ public class VerUsuario {
             System.out.println("1. Para ver un usuario en especifico");
             System.out.println("2. Para ver la lista completa de tus usuarios");
             System.out.println("3. Volver");
-            opcion=Integer.parseInt(input.nextLine());
+            opcion=input.nextInt();
             switch (opcion){
                 case 1:
                     System.out.println("Cuantos usuarios desea ver");
