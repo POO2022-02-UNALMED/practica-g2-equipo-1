@@ -42,13 +42,10 @@ public class EstadisticasV {
     	            	Tienda.getVentas(); //lista de facturas de la tienda
     	               	HashMap<Producto, Integer> ventas = new HashMap<Producto, Integer>();
     	               	
-<<<<<<< Updated upstream
     	               	//Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto");
     	               	//ventas.put(productoprueba,1);
-=======
     	               	Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto", "Gato");;
     	               	ventas.put(productoprueba,1);
->>>>>>> Stashed changes
     	               	
     	               	HashMap<Producto, Integer> ventas2 = calcularProductoMasVendido(Tienda.getVentas(), ventas);
     	               	getValoresOrdenados(ventas2);
