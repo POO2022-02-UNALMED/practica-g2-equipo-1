@@ -162,9 +162,8 @@ public class CasosPrueba {
 	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", listaMascotas1); //Usuario 1 tiene Perro Cachorro Grande y Gato Cachorro
 	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Cra 58 # 78-29", listaMascotas2); //Usuario 2 tiene Gato Adulto
 	Usuario usuario3 = new Usuario(25787278, "Jorge Sierra", "jsierra@email.com", 7895589, cuenta3, "Cll 66 # 43-47", listaMascotas3); //Usuario 3 tiene Perro Adulto Grande
-	Usuario usuario4 = new Usuario(1027278278, "Manuela Arboleda", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", listaMascotas4); // Usuario 4 tiene Perro Adulto Pequeño y Perro Cachorro Pequeño
+	Usuario usuario4 = new Usuario(1027278278, "Manuela Sanchez", "manuarbol@email.com", 4422879, "Cll 48 # 63-102", listaMascotas4); // Usuario 4 tiene Perro Adulto Pequeño y Perro Cachorro Pequeño
 	
-	//lista clientes
 	ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>(); listaUsuarios.add(usuario1); listaUsuarios.add(usuario2);
 	listaUsuarios.add(usuario3); listaUsuarios.add(usuario4);
 	Usuario.setUsuarios(listaUsuarios);

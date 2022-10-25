@@ -50,7 +50,11 @@ public class EstadisticasV {
     	            // Se le muestra al vendedor los clientes destacados, ordenado de mmayor a menor
     	            case 3:
     	            	System.out.println("Estos son los clientes destacados");
-    	            	imprimirClientes(Usuario.getUsuarios());
+    	            	//imprimirClientes(Usuario.getUsuarios());
+    	            	ArrayList<Integer> listita=lista(Usuario.getUsuarios());
+    	            	SortedSet<Integer> orden = getValoresOrdenados2(listita);
+    	            	imprimirClientes2(orden,Usuario.getUsuarios());
+    	            	
     	            	break;
     	            	
 		            case 4:
@@ -111,25 +115,48 @@ public class EstadisticasV {
 		funcionalidad();
 	}
 	
-	public static void imprimirClientes(ArrayList<Usuario> clientes ) {
-		for(Usuario i : clientes) {
+	/*public static void imprimirClientes(ArrayList<Usuario> clientes ) {
+		for(Usuario i : clientes) {			
 			int a=i.getCompras().size();
 			System.out.println("Cliente: " + i.getNombre() + ". Cantidad: "+ a) ;
 			}
+		System.out.println("");
+		funcionalidad();
+		}*/
+	
+	public static ArrayList<Integer> lista(ArrayList<Usuario> clientes) {
+		ArrayList<Integer> listita=new ArrayList<Integer>();
+		for(Usuario i : clientes) {			
+			int a=i.getCompras().size();
+			listita.add(a);
 		}
+		return listita;
+	}
+	
+	public static void imprimirClientes2(SortedSet<Integer> valores, ArrayList<Usuario> clientes) {
+		for(Integer i : valores) {
+			for(Usuario j : clientes){
+				if((j.getCompras().size()==i)) {
+					System.out.println("Cliente: " + j.getNombre() + ". Cantidad: "+ i);
+				}
+			}
+		}
+		System.out.println("");
+		funcionalidad();
+	}
     
 	public static SortedSet<Integer> getValoresOrdenados(HashMap<Producto, Integer> inventarioProductos) {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
         return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
     }
 	
-	public static void impresionPrueba(HashMap<Producto, Integer> inventarioProductos) {
-		for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
-				System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
-				
-		}
-		
-	}
+	public static SortedSet<Integer> getValoresOrdenados2(ArrayList<Integer> cant) {
+        SortedSet<Integer> valores = new TreeSet<Integer>(cant);
+        return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
+    }
+	
+
+	
 	
 
     
