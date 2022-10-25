@@ -148,9 +148,9 @@ public class Tienda implements Serializable {
 	public static HashMap<Long, Usuario> getUsuarios() {
 		return usuarios;
 	}
-
-	public static void setUsuarios(HashMap<Long, Usuario> usuarios) {
-		Tienda.usuarios = usuarios;
+	
+	public static void setUsuarios(Long ID, Usuario usuario) {
+		Tienda.usuarios.put(ID, usuario);
 	}
 	
 }
