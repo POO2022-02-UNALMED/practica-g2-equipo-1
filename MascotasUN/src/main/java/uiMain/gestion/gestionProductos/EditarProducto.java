@@ -1,3 +1,6 @@
+/*Esta clase se encarga de editar los productos preexistentes y devolver el toString() del
+* producto editado*/
+
 package uiMain.gestion.gestionProductos;
 
 import gestorAplicacion.gestionVentas.Producto;
@@ -14,7 +17,7 @@ public class EditarProducto {
         while (true) {
             System.out.println("Para editar el producto ingrese el codigo de registro del mismo: ");
             id = input.nextInt();
-            Producto producto=Tienda.encontrarProducto(id);
+            Producto producto=Tienda.encontrarProducto(id); //buscar producto por id
             if (producto == null) {
                 System.out.println("Ese producto no existe en el sistema, intente de nuevo");
             }
@@ -30,21 +33,21 @@ public class EditarProducto {
                     System.out.println("4. Editar todos los parametros de producto");
                     System.out.println("5. Regresar");
                     opcion= input.nextInt();
-                    switch (opcion){
+                    switch (opcion){ //Case dependiendo de lo que se quiera editar
                         case 1:
                             System.out.println("Ingrese el nuevo nombre del producto: ");
                             producto.setNombre(input.next());
-                            System.out.println(producto.toString());
+                            System.out.println(producto.toString());//Se imprime la instancia de producto con los atributos modificados
                             break;
                         case 2:
                             System.out.println("Ingrese el nuevo precio de venta");
                             producto.setPrecioVenta(input.nextInt());
-                            System.out.println(producto.toString());
+                            System.out.println(producto.toString());//Se imprime la instancia de producto con los atributos modificados
                             break;
                         case 3:
                             System.out.println("Ingrese el nueva cantidad de productos comprados");
                             producto.setCantidadComprada(input.nextInt());
-                            System.out.println(producto.toString());
+                            System.out.println(producto.toString());//Se imprime la instancia de producto con los atributos modificados
                             break;
                         case 4:
                             System.out.println("Ingrese el nuevo nombre del producto: ");
@@ -54,7 +57,7 @@ public class EditarProducto {
                             System.out.println("Ingrese el nueva cantidad de productos comprados");
                             int cantComprados= input.nextInt();
                             producto.editarProducto(id,nombre,precio,cantComprados);
-                            System.out.println(producto.toString());
+                            System.out.println(producto.toString()); //Se imprime la instancia de producto con los atributos modificados
                             break;
                         case 5:
                             break;
