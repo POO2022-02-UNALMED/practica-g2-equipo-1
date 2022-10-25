@@ -26,7 +26,7 @@ public class EstadisticasV {
     	        	System.out.println("	1. Número de ventas por vendedor");
     	            System.out.println("	2. Productos más vendidos");
     	            System.out.println("	3. Clientes destacados");
-    	            System.out.println("	4. Salir");
+    	            System.out.println("	4. Salir \n");
     	            System.out.print("Indique su eleccion : ");
     	            opcion = input1.nextInt();
     	            switch (opcion) {
