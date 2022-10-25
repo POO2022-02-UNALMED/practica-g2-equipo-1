@@ -41,19 +41,7 @@ public class Tienda implements Serializable {
 		}
 		return null;
 	}
-	
-	// Método que calcula las ganancias obtenidas por la tienda
-	public float obtenerGanancias(){
-		float f = 0.0f;
-		for (Factura fact : cantidadDeVentas) {
-			for (Map.Entry<Producto, Integer> entry : fact.getProductos().entrySet()) {
-				Producto k = entry.getKey();
-				Integer v = entry.getValue();
-				f =+ k.getPrecioVenta() * v;
-			}
-		}
-		return f;
-	}
+
 
 	// Método que aumenta la cantidad de productos de un producto de la tienda
 	public static void aumentarStock(Factura factura){

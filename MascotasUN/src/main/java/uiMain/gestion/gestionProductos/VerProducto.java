@@ -16,7 +16,7 @@ public class VerProducto {
             System.out.println("1. Para ver un producto en especifico");
             System.out.println("2. Para ver la lista completa de tus productos");
             System.out.println("3. Volver");
-            opcion=Integer.parseInt(input.nextLine());
+            opcion= input.nextInt();
             switch (opcion){
                 case 1:
                     System.out.println("Cuantos productos desea ver");

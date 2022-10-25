@@ -16,19 +16,14 @@ public class RealizarVenta {
 
         int opcionM1;
         int opcionM2;
+        //Primero se pide al vendedor que proporcione su ID para proceder las acciones de compra
+        Vendedor vend;
+        System.out.println("Para iniciar la venta por favor indique el ID a continuacion: ");
+        long vendedorID= input.nextLong();
+        vend= Vendedor.encontrarVendedor(vendedorID);
+        System.out.println("Hola  puede proceder con la compra\n");
         do {
-            //Primero se pide al vendedor que proporcione su ID para proceder las acciones de compra
-            Vendedor vend;
-            do {
-                System.out.println("Para iniciar la venta por favor indique el ID a continuacion: ");
-                long vendedorID= input.nextLong();
-                vend= encontrarVendedor(vendedorID);
-                System.out.println("El id de vendedor ingresado no se encuentra, intentelo de nuevo: ");
-            }while (vend==null);
 
-
-
-            System.out.println("Hola "+ vend.getNombre() +" puede proceder con la compra\n\n");
             //Muestra las opciones del menu
             System.out.println("Realizar una compra");
             System.out.println(" 1. Mostrar productos disponibles");
@@ -38,7 +33,7 @@ public class RealizarVenta {
             opcionM1 = input.nextInt();
             switch (opcionM1) {
                 case 1:
-                    obtenerProductos(Tienda.getInventario());
+                    VerProducto.imprimirCatalogo(Tienda.getCatalogo());
                     break;
                 case 2:
                     do{
@@ -65,7 +60,7 @@ public class RealizarVenta {
                                         Usuario cliente= encontrarPersona(clienteID);
                                         System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                         String fecha=input.next();
-                                        System.out.println("Ingrese el metodo de pago: \n 1 en caso de efectivo 0 en caso de tarjeta");
+
                                         facturaInstance= new Factura(cliente, fecha, vend);
                                         break;
                                     case 0:
@@ -174,23 +169,14 @@ public class RealizarVenta {
                                 break;
                         }
                     } while (opcionM2 != 6);
-                case 3: break;
+                case 3: ;
             }
 
         }while (opcionM1 != 3);
 
     }
 
-    public static void obtenerProductos(HashMap<Producto, Integer> inventario) {
-        for (Map.Entry<Producto, Integer> fact : inventario.entrySet()) {
-            Producto k = fact.getKey();
-            Integer v = fact.getValue();
-            System.out.println("~ " + k.toString() + "\n" + "Tiene " + v + " unidades disponibles\n");
 
-        }
-
-
-    }
     public static Usuario encontrarPersona(long id){
         for(Usuario cliente: Usuario.getUsuarios()){
             if(cliente.getPersonaId()==id){
@@ -199,13 +185,6 @@ public class RealizarVenta {
         }
         return null;
     }
-    public static Vendedor encontrarVendedor(long id){
-        for(Vendedor v:Vendedor.getVendedores()){
-            if(v.getPersonaId()==id){
-                return v;
-            }
-        }
-        return null;
-    }
 }
+
 
