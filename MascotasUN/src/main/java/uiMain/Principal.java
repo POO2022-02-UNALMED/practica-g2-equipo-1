@@ -137,7 +137,7 @@ public class Principal {
         //RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
 		
-        System.out.println(Tienda.getInventario());
-        System.out.println(Tienda.getInventarioProductos());
+        //System.out.println(Tienda.getInventario());
+        //System.out.println(Tienda.getInventarioProductos());
     }
 }

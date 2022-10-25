@@ -41,16 +41,13 @@ public class EstadisticasV {
     	            	System.out.println("Estos son los productos más vendidos");
     	            	Tienda.getVentas(); //lista de facturas de la tienda
     	               	HashMap<Producto, Integer> ventas = new HashMap<Producto, Integer>();
-    	               	
-    	               	//Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto");
-    	               	//ventas.put(productoprueba,1);
+
     	               	Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto", "Gato");;
     	               	ventas.put(productoprueba,1);
-    	               	
+    	         
     	               	HashMap<Producto, Integer> ventas2 = calcularProductoMasVendido(Tienda.getVentas(), ventas);
-    	               	getValoresOrdenados(ventas2);
-    	               	//SortedSet<Integer> valores= getValoresOrdenados(ventas2);
-    	               	//imprimirProductos(valores, ventas2);
+    	               	SortedSet<Integer> valores= getValoresOrdenados(ventas2);
+    	               	imprimirProductos(valores, ventas2);
     	            	break;
     	            // Se le muestra al vendedor los clientes destacados, ordenado de mmayor a menor
     	            case 3:
@@ -78,7 +75,6 @@ public class EstadisticasV {
 			for(Entry<String, Integer> j : ventas.entrySet()){
 				if(j.getValue().equals(i)) {
 					System.out.println("Vendedor: " + j.getKey() + ". Cantidad: "+ j.getValue());
-					
 				}
 			}
 		}
@@ -90,51 +86,50 @@ public class EstadisticasV {
     	//dict donde se añade la suma de productos vendidos
 		for(Factura i : facturas) {  // lista de diccionarios de facturas
 			for(Entry<Producto, Integer> k : i.getProductos().entrySet()){//dict de productos vendidos
-				System.out.println("k value: "+ k.getValue());
-				System.out.println("k key: "+ k.getKey().getNombre());
 				for(Entry<Producto, Integer> j :  ventas.entrySet()){  //dict de productos totales
-					System.out.println("j value"+ j.getValue());
-					System.out.println("k value"+ k.getValue());
 					if(k.getKey().getNombre().equals(j.getKey().getNombre())) {
-						System.out.println("j value"+ j.getValue());
 						Integer a=k.getValue();
 						Integer b=j.getValue();
-						Integer c=b+a;
+						Integer c=b+a+5;
+						System.out.println("esta es a: "+ a+"\n");
+						System.out.println("esta es b: "+ b+"\n");
+						System.out.println("esta es c: "+ c+"\n");
 						
 						ventas.put(k.getKey(),c);
 						 
-					} else {
-						ventas.put(k.getKey(), k.getValue());
 					}
+					
+					} ventas.put(k.getKey(), k.getValue());
+
+					ventas.keySet().removeIf(key -> key.getNombre() =="P");
 					
 				} 
 			
 			}
-			
-		}
 		return ventas;
-    }
+		}
+	public static void imprimirProductos(SortedSet<Integer> valores, HashMap<Producto, Integer> inventarioProductos) {
+		for(Integer i : valores) {
+			for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
+				if(j.getValue().equals(i)) {
+					System.out.println("Producto: " + j.getKey().getProductoID() + ". Cantidad: "+ j.getValue());
+				}
+			}
+		}
+	}
     
-	/*public static SortedSet<Integer> getValoresOrdenados(HashMap<Producto, Integer> inventarioProductos) {
+	public static SortedSet<Integer> getValoresOrdenados(HashMap<Producto, Integer> inventarioProductos) {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
         return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
-    }*/
+    }
 	
-	public static void getValoresOrdenados(HashMap<Producto, Integer> inventarioProductos) {
+	public static void impresionPrueba(HashMap<Producto, Integer> inventarioProductos) {
 		for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
 				System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
 		}
 	}
 	
-	public static void imprimirProductos(SortedSet<Integer> valores, HashMap<Producto, Integer> inventarioProductos) {
-		for(Integer i : valores) {
-			for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
-				if(j.getValue().equals(i) & (i <= 2)) {
-					System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
-				}
-			}
-		}
-	}
+
     
 }
 
