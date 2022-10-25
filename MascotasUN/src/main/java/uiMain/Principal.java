@@ -24,6 +24,14 @@ import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.funcionalidades.CompraInventario;
 import uiMain.funcionalidades.EstadisticasV;
 import uiMain.funcionalidades.RealizarVenta;
+import uiMain.gestion.gestionProductos.AgregarProducto;
+import uiMain.gestion.gestionProductos.EditarProducto;
+import uiMain.gestion.gestionProductos.EliminarProducto;
+import uiMain.gestion.gestionProductos.GestionProductos;
+import uiMain.gestion.gestionProveedores.EliminarProveedor;
+import uiMain.gestion.gestionProveedores.GestionProveedor;
+import uiMain.gestion.gestionProveedores.VerProveedor;
+import uiMain.gestion.gestionUsuarios.AgregarUsuario;
 
 public class Principal {
 	
@@ -123,8 +131,13 @@ public class Principal {
 		//Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
+<<<<<<< Updated upstream
 		//RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
 		EstadisticasV.funcionalidad();
+=======
+        AgregarUsuario.agregarUsuario();
+		//CompraInventario.funcionalidad();
+>>>>>>> Stashed changes
     }
 }
