@@ -18,7 +18,7 @@ public class RealizarVenta {
         while (true) {
             System.out.println("Para iniciar la venta por favor indique el ID a continuacion: ");
             long vendedorID = input.nextLong();
-            vend = Vendedor.encontrarVendedor(vendedorID);
+            vend = Vendedor.encontrarPersona(vendedorID);
 
             if (vend != null) {
                 break;

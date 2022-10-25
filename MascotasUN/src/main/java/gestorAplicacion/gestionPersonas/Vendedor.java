@@ -46,14 +46,6 @@ public class Vendedor extends Persona implements Serializable {
         SortedSet<Integer> valores = new TreeSet<Integer>(cantidadVentas.values());
         return valores; 
     }
-    public static Vendedor encontrarVendedor(long personaId){
-        for(Vendedor v: vendedores){
-            if(v.getPersonaId()== personaId){
-                return v;
-            }
-        }
-        return null;
-    }
 
     // Método sobreescrito toString()
     @Override
