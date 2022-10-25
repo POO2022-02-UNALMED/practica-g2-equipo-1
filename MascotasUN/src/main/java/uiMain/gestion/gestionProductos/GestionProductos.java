@@ -8,7 +8,7 @@ public class GestionProductos {
         Scanner input = new Scanner(System.in);
         do {
             System.out.println("Estas a punto de gestionar tus productos");
-            System.out.println("¿Que deseas hacer?");
+            System.out.println("Que deseas hacer?");
             System.out.println(" 1. Ver productos");
             System.out.println(" 2. Agregar nuevo producto");
             System.out.println(" 3. Eliminar producto");
