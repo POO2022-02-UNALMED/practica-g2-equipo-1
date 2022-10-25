@@ -45,7 +45,7 @@ public class Factura implements Serializable {
 	public String toString() {
         return  "~ Factura #"+ facturaID + "\n"+
                 "~ Fecha = " + fechaFactura +"\n"+
-                "~ Cliente = " + cliente + '\n' +
+                "~ Cliente = " + cliente.getNombre() + '\n' +
                 "~ Cantidad a pagar = " +total+ "\n";
     }
     

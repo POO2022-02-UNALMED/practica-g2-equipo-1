@@ -134,9 +134,7 @@ public class Principal {
 
 		//RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
-		EstadisticasV.funcionalidad();
-
-        AgregarUsuario.agregarUsuario();
+        RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
 
     }

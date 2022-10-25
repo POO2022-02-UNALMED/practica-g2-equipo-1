@@ -18,9 +18,13 @@ public class RealizarVenta {
         int opcionM2;
         //Primero se pide al vendedor que proporcione su ID para proceder las acciones de compra
         Vendedor vend;
-        System.out.println("Para iniciar la venta por favor indique el ID a continuacion: ");
-        long vendedorID= input.nextLong();
-        vend= Vendedor.encontrarVendedor(vendedorID);
+
+        while (true){
+            System.out.println("Para iniciar la venta por favor indique el ID a continuacion: ");
+            long vendedorID= input.nextLong();
+            vend= Vendedor.encontrarVendedor(vendedorID);
+            if (vend!=null){break;}
+        }
         System.out.println("Hola  puede proceder con la compra\n");
         do {
 
@@ -57,7 +61,7 @@ public class RealizarVenta {
                                         //hacer condicional que busque el cliente que ya esté registrado
                                         System.out.println("Ingrese el ID del cliente");
                                         long clienteID= input.nextLong();
-                                        Usuario cliente= encontrarPersona(clienteID);
+                                        Usuario cliente= Usuario.encontrarPersona(clienteID);
                                         System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                                         String fecha=input.next();
 
@@ -77,7 +81,7 @@ public class RealizarVenta {
                                     Producto aComp= Tienda.encontrarProducto(idP);
                                     System.out.println("Ingrese la cantidad del producto que desea agregar");
                                     int cantidad= input.nextInt();
-                                    if (Tienda.getInventario().get(aComp)>=cantidad){
+                                    if (aComp.getCantidadComprada()>=cantidad){
                                         facturaInstance.agregarProducto(aComp, cantidad);
                                         System.out.println("El producto se ha agregado con exito a la compra");
                                     } else{
@@ -177,14 +181,7 @@ public class RealizarVenta {
     }
 
 
-    public static Usuario encontrarPersona(long id){
-        for(Usuario cliente: Usuario.getUsuarios()){
-            if(cliente.getPersonaId()==id){
-                return cliente;
-            }
-        }
-        return null;
-    }
+
 }
 
 
