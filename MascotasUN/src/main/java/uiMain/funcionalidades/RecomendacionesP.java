@@ -44,14 +44,18 @@ public class RecomendacionesP {
 			System.out.println("Para cual de sus mascotas desea la recomendacion");
 			for (int i=0; i <usuario.getMascotas().size(); i++) {
 				Mascota mascota = usuario.getMascotas().get(i);
+				//Se imprime el IDMascota y su nombre si es perro
 				if (mascota.getClass() == Perro.class) {
 					System.out.println(((Perro)mascota).getMascotaID() + " " + ((Perro)mascota).getNombre());
 				}
+				//Se imprime el IDMascota y su nombre si es gato
 				if (mascota.getClass() == Gato.class) {
 					System.out.println(((Gato)mascota).getMascotaID() + " " + ((Gato)mascota).getNombre());
 				}
 			}		
 		}
+		
+		//Se ejecuta el método que permite seleccionar la mascota.
 		Mascota mascotasel = RecomendacionesP.seleccionarMascota(usuario);
 		
 		
@@ -62,10 +66,12 @@ public class RecomendacionesP {
 			
 		//Se genera la lista de recomendaciones para esa mascota tipoAlimento()
 		ArrayList<Producto> productosrecomendados = new ArrayList<Producto>();
+		//Lista si la mascota es Perro
 		if (mascotasel.getClass() == Gato.class) {
 			ArrayList<Producto> lista = RecomendacionesP.recomendacionGato(mascotasel);
 			productosrecomendados = lista;
 		}
+		//Lista si la mascota es Gato
 		if (mascotasel.getClass() == Perro.class) {
 			ArrayList<Producto> lista = RecomendacionesP.recomendacionPerro(mascotasel);
 			productosrecomendados = lista;
@@ -74,9 +80,7 @@ public class RecomendacionesP {
 		//Se imprime el ToString de cada producto que aparezca en la lista
 		for (int i = 1; i < productosrecomendados.size() + 1; i++) {
 			System.out.println("Producto " + i + "\n" + productosrecomendados.get(i-1));
-		}
-		//(Podría preguntarse uno por uno de la lista si es el producto que desea o si no y continuar al siguiente en la lista.)
-	
+		}	
 	}
 	//Se pide seleccionar la mascota para la que desea la recomendación en caso de no existir crear la nueva mascota.
 	public static Mascota seleccionarMascota(Usuario usuario) {
@@ -107,6 +111,7 @@ public class RecomendacionesP {
         return mascota;
 	}
 	
+	//Crea la lista de productos recomendados para Perros. Segun su Etapa y Raza
 	public static ArrayList<Producto> recomendacionPerro(Mascota mascotasel) {
 			Perro mascota = (Perro) mascotasel;
 			System.out.println("La mascota seleccionada es: " + mascota.getNombre());
@@ -116,6 +121,7 @@ public class RecomendacionesP {
 			return lista;
 	}
 	
+	//Crea la lista de productos recomendados para gatos. Segun su edad
 	public static ArrayList<Producto> recomendacionGato(Mascota mascotasel) {
 		Gato mascota = (Gato) mascotasel;
 		System.out.println("La mascota seleccionada es: " + mascota.getNombre());
