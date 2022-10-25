@@ -26,12 +26,12 @@ public class Factura implements Serializable {
     private final float IVA = 1.16f;
     
     //Constructores
-    
+
     public Factura(){
     	facturaID=+1; // El ID de la factura se va incrementando a medida que se crea una nueva
         facturas.add(this);
     };
-    
+
     public Factura(Usuario cliente, String fechaFactura, Vendedor vendedor) {
 	    facturaID=+1;
 	    this.cliente=cliente;
@@ -53,26 +53,28 @@ public class Factura implements Serializable {
     
     /*Metodo que realiza la compra, cuando el usuario utiliza como método de pago una cuenta bancaria.
     Retorna el total del precio de la compra tomando el precio del producto por la cantidad y los suma*/
-    public float realizarCompra(Usuario cliente, short pswd){
-
-        //Primero se calcula el total de la compra con este for
+    public void calcularTotal(){
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
             Integer v = entry.getValue();
             total += k.getPrecioVenta()*v;
         }
-        
+
         // se reduce el stock de la tienda, se resta el saldo al cliente y se le agrega a la tienda
         total = total*IVA;
+    }
+    public void realizarCompra(Usuario cliente, short pswd){
+
+        //Primero se calcula el total de la compra con este for
+
         Tienda.reducirStock(this);
         Tienda.getCuenta().tranferir(cliente.getCuenta(),total,pswd);
         cliente.agregarFactura(this);
         Tienda.agregarVenta(this);
-        return total;
     }
     
     //Metodo sobrecargado que realiza la compra, cuando el usuario utiliza como método de pago efectivo
-    public float realizarCompra(Usuario cliente){
+    public void realizarCompra(Usuario cliente){
 
         //Primero se calcula el total de la compra con este for
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
@@ -86,7 +88,6 @@ public class Factura implements Serializable {
         Tienda.getCuenta().depositar(total);
         cliente.agregarFactura(this);
         Tienda.agregarVenta(this);
-        return total;
     }
   
     // Método sobrecargado que realizar la compra de la tienda al proveedor
@@ -111,8 +112,17 @@ public class Factura implements Serializable {
     }
     
     // Método que elimina un producto al hashmap de la compra
-    public void eliminarProducto(Producto p){
-        productos.remove(p);
+    public boolean eliminarProducto(Producto p){
+
+
+        if(productos.containsKey(p)){
+            productos.remove(p);
+            return true;
+        }else{
+            return false;
+
+        }
+
     }
     
     //Getters y setters

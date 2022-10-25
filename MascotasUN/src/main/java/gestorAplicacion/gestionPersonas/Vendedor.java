@@ -34,6 +34,7 @@ public class Vendedor extends Persona implements Serializable {
         this.ventas = ventas;
         this.usuario = usuario;
         this.contrasena = contrasena;
+        vendedores.add(this);
     }
 
     //Métodos

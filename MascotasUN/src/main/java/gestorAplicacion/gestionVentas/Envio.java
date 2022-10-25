@@ -14,7 +14,7 @@ public class Envio implements Serializable {
     // Atributos
     private String destino;
     private Factura factura;
-    private long idEnvio;
+    private static long idEnvio = 0;
     private String estadoEnvio = "";
     private int periodicidad;
     public enum EstadoEnvio{
@@ -23,7 +23,7 @@ public class Envio implements Serializable {
 
     //Constructor
     public Envio(long idEnvio, String destino, int periodicidad) {
-        this.idEnvio= factura.getFacturaID();
+        this.idEnvio++;
         this.destino = destino;
         this.periodicidad = periodicidad;
         envios.add(this);
