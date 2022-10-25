@@ -64,10 +64,10 @@ public class Factura implements Serializable {
         total = total*IVA;
         return total;
     }
+
+    /* Metodo que realiza la  compra cuando el usuario utiliza como metodo de pago con tarjeta */
     public void realizarCompra(Usuario cliente, short pswd){
-
         //Primero se calcula el total de la compra con este for
-
         Tienda.reducirStock(this);
         Tienda.getCuenta().tranferir(cliente.getCuenta(),total,pswd);
         cliente.agregarFactura(this);
@@ -76,7 +76,6 @@ public class Factura implements Serializable {
     
     //Metodo sobrecargado que realiza la compra, cuando el usuario utiliza como método de pago efectivo
     public void realizarCompra(Usuario cliente){
-
         //Primero se calcula el total de la compra con este for
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
@@ -93,7 +92,6 @@ public class Factura implements Serializable {
   
     // Método sobrecargado que realizar la compra de la tienda al proveedor
     public float realizarCompra(Proveedor proveedor, HashMap<Producto, Integer> productos, int pin, float total){
-        
     	//Primero se calcula el total de la compra con este for
         for (Map.Entry<Producto, Integer> entry : productos.entrySet()) {
             Producto k = entry.getKey();
@@ -114,28 +112,24 @@ public class Factura implements Serializable {
     
     // Método que elimina un producto al hashmap de la compra
     public boolean eliminarProducto(Producto p){
-
-
         if(productos.containsKey(p)){
             productos.remove(p);
             return true;
         }else{
             return false;
-
         }
-
     }
-    
-    //Getters y setters
-    
+
+    //getter y setter del serializador y deserializador
     public static ArrayList<Factura> getFacturas() {
         return facturas;
     }
-    
+
     public static void setFacturas(ArrayList<Factura> facturas) {
         Factura.facturas=facturas;
     }
-    
+
+    //Getters y setters
     public long getFacturaID() {
         return facturaID;
     }

@@ -6,9 +6,6 @@ package gestorAplicacion.gestionVentas;
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
 import gestorAplicacion.gestionPersonas.Usuario;
 
-import gestorAplicacion.gestionPersonas.Vendedor;
-
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,7 +44,6 @@ public class Tienda implements Serializable {
 		}
 		return null;
 	}
-
 
 	// Método que aumenta la cantidad de productos de un producto de la tienda
 	public static void aumentarStock(Factura factura){
@@ -90,9 +86,8 @@ public class Tienda implements Serializable {
         SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
         return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
     }
-	
-	//Getters y setters
-	
+
+	//getter y setter del serializador y deserializador
 	public static ArrayList<Tienda> getTienda() {
 		return tienda;
 	}
@@ -100,6 +95,8 @@ public class Tienda implements Serializable {
 	public static void setTienda(ArrayList<Tienda> tienda) {
 		Tienda.tienda=tienda;
 	}
+
+	//Getters y setters
 
 	public static int getCantidadDeVentas() {
 		return cantidadDeVentas.size();
@@ -152,5 +149,4 @@ public class Tienda implements Serializable {
 	public static void setUsuarios(Long ID, Usuario usuario) {
 		Tienda.usuarios.put(ID, usuario);
 	}
-	
 }

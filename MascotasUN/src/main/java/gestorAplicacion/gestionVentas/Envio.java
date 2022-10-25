@@ -43,16 +43,16 @@ public class Envio implements Serializable {
     	this.estadoEnvio = estadoEnvio;
     }
 
-    //Getters y setters
-    
+    //getter y setter del serializador y deserializador
     public static ArrayList<Envio> getEnvios() {
         return envios;
     }
-    
+
     public static void setEnvios(ArrayList<Envio> envios) {
         Envio.envios=envios;
     }
-    
+    //Getters y setters
+
     public String getDestino() {
         return destino;
     }

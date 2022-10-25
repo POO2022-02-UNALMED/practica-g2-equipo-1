@@ -99,16 +99,16 @@ public class Producto implements Serializable {
         Producto.productos.add(producto);
     }
 
-
-    // Getters y setters
-    
+    //getter y setter del serializador y deserializador
     public static ArrayList<Producto> getProductos() {
         return productos;
     }
-    
+
     public static void setProductos(ArrayList<Producto> productos) {
         Producto.productos=productos;
     }
+
+    // Getters y setters
     
     public long getProductoID() {
         return productoID;
