@@ -97,8 +97,6 @@ public class RecomendacionesP {
 	public static ArrayList<Producto> recomendacionPerro(Mascota mascotasel) {
 			Perro mascota = (Perro) mascotasel;
 			System.out.println("La mascota seleccionada es: " + mascota.getNombre());
-			System.out.println(mascota.calcularEdad());
-			System.out.println(mascota.getRaza());
 			ArrayList<Producto> lista = mascota.tipoAlimento();
 			return lista;
 	}
