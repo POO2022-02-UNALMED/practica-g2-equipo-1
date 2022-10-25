@@ -12,7 +12,7 @@ public interface Mascota {
 	
     ArrayList<Producto> tipoAlimento();
     
-    String calcularEdad(int edad);
+    String calcularEdad();
     
     public enum TipoEdad{
         CACHORRO, ADULTO;

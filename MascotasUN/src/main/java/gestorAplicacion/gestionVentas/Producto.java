@@ -21,6 +21,7 @@ public class Producto implements Serializable {
     private int cantidadComprada;
     private String raza;
     private String etapa;
+    private String especie;
     //Lista para la recomendacion de concentrado, anadir tipo. y Sobrecarga de constructores.
 
     // Constructor
@@ -174,5 +175,13 @@ public class Producto implements Serializable {
 
 	public void setEtapa(String etapa) {
 		this.etapa = etapa;
+	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
 	}
 }
