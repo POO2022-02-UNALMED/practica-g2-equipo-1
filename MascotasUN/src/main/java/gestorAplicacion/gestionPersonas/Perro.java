@@ -27,6 +27,7 @@ public class Perro implements Mascota, Serializable {
     	this.nombre = nombre;
         this.edad = edad;
         this.raza = raza;
+        perros.add(this);
     }
 
     // Métodos

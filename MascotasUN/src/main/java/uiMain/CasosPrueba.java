@@ -114,7 +114,7 @@ public class CasosPrueba {
 		inventario.put(producto16, producto16.getCantidadComprada());
 		inventario.put(producto17, producto17.getCantidadComprada());
 		inventario.put(producto18, producto18.getCantidadComprada());
-		Tienda.setInventarioProductos(listaInventario);
+		Tienda.setInventario(inventario);
 		//Compras usuario1
 	HashMap<Producto, Integer> compra1 =new HashMap<Producto, Integer>(); compra1.put(producto4, 2); compra1.put(producto5, 2); compra1.put(producto6, 3); compra1.put(producto13, 4); 
 	compra1.put(producto14, 2); compra1.put(producto15, 1);	

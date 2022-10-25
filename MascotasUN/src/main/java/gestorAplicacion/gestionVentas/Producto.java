@@ -33,6 +33,7 @@ public class Producto implements Serializable {
 	    this.precioCompra = precioCompra;
 	    this.precioVenta = precioVenta;
 	    this.cantidadComprada = cantidadComprada;
+        productos.add(this);
     }
     
   //Sobreescritura de constructor para crear productos relacionados con gatos
@@ -47,6 +48,7 @@ public class Producto implements Serializable {
 		this.cantidadComprada = cantidadComprada;
 		this.etapa = etapa;
 		this.especie = especie;
+        productos.add(this);
 	}
     
     //Sobreescritura de constructor para crear productos relacionados con perros
@@ -62,6 +64,7 @@ public class Producto implements Serializable {
 		this.raza = raza;
 		this.etapa = etapa;
 		this.especie = especie;
+        productos.add(this);
 	}
 
     // Métodos

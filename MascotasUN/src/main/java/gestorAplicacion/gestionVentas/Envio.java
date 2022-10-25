@@ -26,6 +26,7 @@ public class Envio implements Serializable {
         this.idEnvio= factura.getFacturaID();
         this.destino = destino;
         this.periodicidad = periodicidad;
+        envios.add(this);
     }
     
     //Métodos
