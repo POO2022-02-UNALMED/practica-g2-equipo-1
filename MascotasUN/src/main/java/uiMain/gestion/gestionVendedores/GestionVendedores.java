@@ -16,7 +16,7 @@ public class GestionVendedores {
 
             switch (opcion) {
                 case 1: ; VerVendedor.verVendedor(); break;
-                case 2: ; AgregarVendedor.agregarVendedor(); break;
+                case 2: ; CrearVendedor.agregarVendedor(); break;
                 case 3: break;
             }
         } while (opcion != 3);

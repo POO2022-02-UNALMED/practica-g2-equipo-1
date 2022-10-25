@@ -1,37 +1,15 @@
 package uiMain;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import baseDatos.Deserializador;
-import baseDatos.Serializador;
-
-import java.util.Map.Entry;
-
-import baseDatos.Serializador;
-import gestorAplicacion.gestionPersonas.CuentaBancaria;
-import gestorAplicacion.gestionPersonas.Persona;
 import gestorAplicacion.gestionPersonas.Proveedor;
-import gestorAplicacion.gestionPersonas.Usuario;
 import gestorAplicacion.gestionPersonas.Vendedor;
-import gestorAplicacion.gestionVentas.Envio;
-import gestorAplicacion.gestionVentas.Factura;
-import gestorAplicacion.gestionPersonas.Mascota;
-import gestorAplicacion.gestionPersonas.Gato;
-import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
-import uiMain.funcionalidades.CompraInventario;
 import uiMain.funcionalidades.EstadisticasV;
-import uiMain.funcionalidades.RealizarVenta;
-import uiMain.gestion.gestionProductos.AgregarProducto;
 import uiMain.gestion.gestionProductos.EditarProducto;
-import uiMain.gestion.gestionProductos.EliminarProducto;
 import uiMain.gestion.gestionProductos.GestionProductos;
-import uiMain.gestion.gestionProveedores.EliminarProveedor;
 import uiMain.gestion.gestionProveedores.GestionProveedor;
-import uiMain.gestion.gestionProveedores.VerProveedor;
-import uiMain.gestion.gestionUsuarios.AgregarUsuario;
 
 public class Principal {
 	
@@ -135,8 +113,9 @@ public class Principal {
 		//RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
         //RealizarVenta.funcionalidad();
-		EstadisticasV.funcionalidad();
-		
+		//EstadisticasV.funcionalidad();
+        //GestionProveedor.gestionProveedores();
+        System.out.println(Proveedor.getProveedores());
         //System.out.println(Tienda.getInventario());
         //System.out.println(Tienda.getInventarioProductos());
         //System.out.println(Tienda.getInventario());

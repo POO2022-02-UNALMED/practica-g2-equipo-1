@@ -3,42 +3,24 @@ package uiMain.funcionalidades;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import baseDatos.Serializador;
-import gestorAplicacion.gestionPersonas.CuentaBancaria;
-import gestorAplicacion.gestionPersonas.Persona;
-import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Usuario;
-import gestorAplicacion.gestionPersonas.Vendedor;
-import gestorAplicacion.gestionVentas.Envio;
-import gestorAplicacion.gestionVentas.Factura;
 import gestorAplicacion.gestionPersonas.Mascota;
 import gestorAplicacion.gestionPersonas.Gato;
 import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
-import uiMain.funcionalidades.CompraInventario;
-import uiMain.funcionalidades.EstadisticasV;
-import uiMain.funcionalidades.RealizarVenta;
-import uiMain.gestion.gestionProductos.AgregarProducto;
-import uiMain.gestion.gestionProductos.EditarProducto;
-import uiMain.gestion.gestionProductos.EliminarProducto;
-import uiMain.gestion.gestionProductos.GestionProductos;
-import uiMain.gestion.gestionProveedores.EliminarProveedor;
-import uiMain.gestion.gestionProveedores.GestionProveedor;
-import uiMain.gestion.gestionProveedores.VerProveedor;
-import uiMain.gestion.gestionUsuarios.AgregarUsuario;
 
 public class RecomendacionesP {
 	public static void funcionalidad() {
 		
-		//Se pregunta al vendedor que usuario requiere la recomendación(El ID, o el nombre)
+		//Se pregunta al vendedor que usuario requiere la recomendaciï¿½n(El ID, o el nombre)
 		System.out.println("Ingrese el ID de usuario");
 		Scanner input1 = new Scanner(System.in);
 		long opcion;
 		System.out.print("Indique su eleccion : ");
         opcion = input1.nextInt();
         Usuario usuario = null;
-		//Si este cliente existe, extraer la información, en caso contrario crear al cliente, con sus respectivas mascotas.
+		//Si este cliente existe, extraer la informaciï¿½n, en caso contrario crear al cliente, con sus respectivas mascotas.
 		if (Tienda.getUsuarios().containsKey(opcion)) {
 			usuario = Tienda.getUsuarios().get(opcion);
 			System.out.println("Para cual de sus mascotas desea la recomendacion");
@@ -55,13 +37,13 @@ public class RecomendacionesP {
 			}		
 		}
 		
-		//Se ejecuta el método que permite seleccionar la mascota.
+		//Se ejecuta el mï¿½todo que permite seleccionar la mascota.
 		Mascota mascotasel = RecomendacionesP.seleccionarMascota(usuario);
 		
 		
 		
 		//Crear nuevo cliente
-		//Metodo para crear cliente y luego crear y añadir a sus mascotas
+		//Metodo para crear cliente y luego crear y aï¿½adir a sus mascotas
 		
 			
 		//Se genera la lista de recomendaciones para esa mascota tipoAlimento()
@@ -82,7 +64,7 @@ public class RecomendacionesP {
 			System.out.println("Producto " + i + "\n" + productosrecomendados.get(i-1));
 		}	
 	}
-	//Se pide seleccionar la mascota para la que desea la recomendación en caso de no existir crear la nueva mascota.
+	//Se pide seleccionar la mascota para la que desea la recomendaciï¿½n en caso de no existir crear la nueva mascota.
 	public static Mascota seleccionarMascota(Usuario usuario) {
 		System.out.println("Ingrese el ID de su mascota"); 
 		Scanner input = new Scanner(System.in);

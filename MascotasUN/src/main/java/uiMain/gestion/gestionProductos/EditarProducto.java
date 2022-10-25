@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class EditarProducto {
     private static int id;
-    private static Tienda t;
 
     public static void editarProducto() {
         Scanner input = new Scanner(System.in);
@@ -15,7 +14,7 @@ public class EditarProducto {
         while (true) {
             System.out.println("Para editar el producto ingrese el codigo de registro del mismo: ");
             id = input.nextInt();
-            Producto producto=t.encontrarProducto(id);
+            Producto producto=Tienda.encontrarProducto(id);
             if (producto == null) {
                 System.out.println("Ese producto no existe en el sistema, intente de nuevo");
             }
