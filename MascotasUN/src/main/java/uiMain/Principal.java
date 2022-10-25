@@ -2,6 +2,8 @@ package uiMain;
 
 import java.util.Scanner;
 
+import baseDatos.Deserializador;
+import baseDatos.Serializador;
 import gestorAplicacion.gestionPersonas.Proveedor;
 import gestorAplicacion.gestionPersonas.Vendedor;
 import gestorAplicacion.gestionVentas.Producto;
@@ -85,7 +87,7 @@ public class Principal {
         int opcion;
         do {
             System.out.println(" 1. Gestionar la aplicación");
-            System.out.println(" 2. Aplicar funcionalidades");
+            System.out.println(" 2. Navegar por las funcionalidades");
             System.out.println(" 3. Salir");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
@@ -95,32 +97,20 @@ public class Principal {
                 case 2: uiMain.funcionalidades.Funcionalidades.gestionFuncionalidades(); break;
                 case 3: salirDelSistema(); break;
             }
-        } while (opcion != 6);
+        } while (opcion != 3);
 		System.exit(0);
 	}
 	
 	public static void salirDelSistema() {
+        Serializador.serializar();
 		System.out.println("¡Vuelva pronto!");
 		System.exit(0);
-        //Serializador.serializar();
     }
 	
 	// Entrada al programa
 	public static void main(String[] args) {
-		//Deserializador.deserializar();
+		Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
-    	//Principal.showMenu();
-
-		//RealizarVenta.funcionalidad();
-		//CompraInventario.funcionalidad();
-        //RealizarVenta.funcionalidad();
-		//EstadisticasV.funcionalidad();
-        //GestionProveedor.gestionProveedores();
-        GestionClases.gestionClases();
-        //System.out.println(Tienda.getInventario());
-        //System.out.println(Tienda.getInventarioProductos());
-        //System.out.println(Tienda.getInventario());
-        //System.out.println(Tienda.getUsuarios());
-        //System.out.println(Vendedor.getVendedores());
+    	Principal.showMenu();
     }
 }
