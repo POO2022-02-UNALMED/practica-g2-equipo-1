@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CuentaBancaria {
+	/* Esta clase se encarga de crear las cuentas bancarias para los objetos de tipo
+	* persona y tienda. El atributo credenciales es un hashmap que como key recibe el id
+	* de la cuenta y como value el pin*/
 
 	//Atributo para el serializador
 	private static ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<>();
@@ -18,13 +21,14 @@ public class CuentaBancaria {
 	static private HashMap<Long,Integer> credenciales = new HashMap<>();
 
 	//Constructor
+
 	public CuentaBancaria(long nroCuenta, float saldo, int pin) {
-		this.nroCuenta = nroCuenta;
-		this.saldo = saldo;
+		this(nroCuenta,saldo);
 		this.pin = pin;
 		credenciales.put(nroCuenta, pin);
 		cuentasBancarias.add(this);
 	}
+	//Sobrecarga de constructores que se utiliza para la clase vendedores
 	public CuentaBancaria(long nroCuenta, float saldo){
 		this.nroCuenta= nroCuenta;
 		this.saldo=saldo;
@@ -65,8 +69,7 @@ public class CuentaBancaria {
 	        }
 		}
 
-	//Getters y setters
-		
+	//Getter y setter utilizados para la serializacion y deserializacion de objetos
 	public static ArrayList<CuentaBancaria> getCuentasBancarias() {
 		return cuentasBancarias;
 	}
@@ -74,6 +77,7 @@ public class CuentaBancaria {
 		CuentaBancaria.cuentasBancarias=cuentasBancarias;
 	}
 
+	//Getters y setters
 	public long getNroCuenta() {
 		return nroCuenta;
 	}
