@@ -27,11 +27,13 @@ public class Usuario extends Persona implements Serializable {
 		super(personaId, nombre, email, telefono, cuenta);
 		this.direccion = direccion;
 		this.mascotas = mascotas;
+		usuarios.add(this);
 		Tienda.setUsuarios(personaId, this);
 	}
 		// Sobrecarga de constructor, cuando el usuario no posee cuenta bancaria
 	public Usuario(long personaId, String nombre, String email, int telefono, String direccion, ArrayList<Mascota> mascotas) {
 		this(personaId, nombre, email, telefono, null, direccion, mascotas);
+		usuarios.add(this);
 	}
 	
 	// Métodos

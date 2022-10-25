@@ -29,6 +29,7 @@ public class Factura implements Serializable {
     
     public Factura(){
     	facturaID=+1; // El ID de la factura se va incrementando a medida que se crea una nueva
+        facturas.add(this);
     };
     
     public Factura(Usuario cliente, String fechaFactura, Vendedor vendedor) {
@@ -36,6 +37,7 @@ public class Factura implements Serializable {
 	    this.cliente=cliente;
 	    this.fechaFactura= fechaFactura;
 	    this.vendedor=vendedor;
+        facturas.add(this);
     }
     
     // Métodos

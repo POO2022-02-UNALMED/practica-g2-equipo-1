@@ -25,6 +25,7 @@ public class Gato implements Mascota, Serializable {
         this.mascotaID = mascotaID;
     	this.nombre = nombre;
         this.edad = edad;
+        gatos.add(this);
     }
     
     // Métodos

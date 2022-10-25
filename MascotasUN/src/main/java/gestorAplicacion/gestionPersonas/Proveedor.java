@@ -25,6 +25,7 @@ public class Proveedor extends Persona implements Serializable {
         super(personaId, nombre, email, telefono, cuenta);
         this.producto = producto;
         this.stock = stock;
+        proveedores.add(this);
     }
 
     //Métodos
