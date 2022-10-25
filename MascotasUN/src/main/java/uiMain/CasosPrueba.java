@@ -70,7 +70,7 @@ public class CasosPrueba {
 	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto8); listaProductos.add(producto9); listaProductos.add(producto10);
 	listaProductos.add(producto11); listaProductos.add(producto12); listaProductos.add(producto13); listaProductos.add(producto14); listaProductos.add(producto15); listaProductos.add(producto16);
 	listaProductos.add(producto17); listaProductos.add(producto18);
-	
+
 	Tienda.setCatalogo(listaProductos); // Creamos el catalogo de la tienda
 	
 	// Creando el inventario
@@ -92,10 +92,29 @@ public class CasosPrueba {
 	listaInventario.put(producto16.getNombre(), producto16.getCantidadComprada());
 	listaInventario.put(producto17.getNombre(), producto17.getCantidadComprada());
 	listaInventario.put(producto18.getNombre(), producto18.getCantidadComprada());
-	
 	Tienda.setInventarioProductos(listaInventario);
-	
-	//HashMap de productos
+	//HashMap de productos(solo con el nombre
+
+/////// Se crea el inventario (Hay que revisar listainventario porque no tiene nada de sentido
+		HashMap<Producto, Integer> inventario = new HashMap<Producto, Integer>(); inventario.put(producto1, producto1.getCantidadComprada());
+		inventario.put(producto2, producto2.getCantidadComprada());
+		inventario.put(producto3 , producto3.getCantidadComprada());
+		inventario.put(producto4, producto4.getCantidadComprada());
+		listaInventario.put(producto5, producto5.getCantidadComprada());
+		listaInventario.put(producto6, producto6.getCantidadComprada());
+		listaInventario.put(producto7, producto7.getCantidadComprada());
+		listaInventario.put(producto8, producto8.getCantidadComprada());
+		listaInventario.put(producto9, producto9.getCantidadComprada());
+		listaInventario.put(producto10, producto10.getCantidadComprada());
+		listaInventario.put(producto11, producto11.getCantidadComprada());
+		listaInventario.put(producto12, producto12.getCantidadComprada());
+		listaInventario.put(producto13, producto13.getCantidadComprada());
+		listaInventario.put(producto14, producto14.getCantidadComprada());
+		listaInventario.put(producto15.getNombre(), producto15.getCantidadComprada());
+		listaInventario.put(producto16.getNombre(), producto16.getCantidadComprada());
+		listaInventario.put(producto17.getNombre(), producto17.getCantidadComprada());
+		listaInventario.put(producto18.getNombre(), producto18.getCantidadComprada());
+		Tienda.setInventarioProductos(listaInventario);
 		//Compras usuario1
 	HashMap<Producto, Integer> compra1 =new HashMap<Producto, Integer>(); compra1.put(producto4, 2); compra1.put(producto5, 2); compra1.put(producto6, 3); compra1.put(producto13, 4); 
 	compra1.put(producto14, 2); compra1.put(producto15, 1);	
