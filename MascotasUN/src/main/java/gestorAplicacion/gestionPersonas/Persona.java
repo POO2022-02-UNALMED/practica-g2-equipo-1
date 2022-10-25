@@ -16,6 +16,11 @@ public abstract class Persona {
     protected int telefono;
     protected CuentaBancaria cuenta;
 
+    // Constructor por defecto
+    
+    public Persona() {
+    }
+    
     //Constructor
     public Persona(long personaId, String nombre, String email, int telefono){
         this.personaId=personaId;

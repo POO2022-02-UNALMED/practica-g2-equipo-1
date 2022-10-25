@@ -20,7 +20,11 @@ public class Proveedor extends Persona implements Serializable {
     private ArrayList<Factura> pedidos = new ArrayList<Factura>();
     private boolean stock; //Pueden haber proveedores con y si stock
     
-    //Constructor
+    //Constructores
+    
+    public Proveedor() {
+    }
+    
     public Proveedor(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta, ArrayList<Producto> producto, boolean stock) {
         super(personaId, nombre, email, telefono, cuenta);
         this.producto = producto;

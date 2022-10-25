@@ -15,7 +15,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Deserializador {
-    public static void deserializar(){
+    @SuppressWarnings("unchecked")
+	public static void deserializar(){
         FileInputStream fileIn;
         //Deserializacion proveedores
         try {
