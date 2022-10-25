@@ -131,13 +131,13 @@ public class Principal {
 		//Deserializador.deserializar();
 		CasosPrueba.crearCasosDePrueba();
     	//Principal.showMenu();
-<<<<<<< Updated upstream
+
 		//RealizarVenta.funcionalidad();
 		//CompraInventario.funcionalidad();
 		EstadisticasV.funcionalidad();
-=======
+
         AgregarUsuario.agregarUsuario();
 		//CompraInventario.funcionalidad();
->>>>>>> Stashed changes
+
     }
 }
