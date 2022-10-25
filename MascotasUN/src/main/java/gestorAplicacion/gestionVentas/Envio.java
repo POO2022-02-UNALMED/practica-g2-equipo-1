@@ -23,7 +23,7 @@ public class Envio implements Serializable {
 
     //Constructor
     public Envio(long idEnvio, String destino, int periodicidad) {
-        this.idEnvio++;
+        idEnvio++;
         this.destino = destino;
         this.periodicidad = periodicidad;
         envios.add(this);
@@ -71,10 +71,6 @@ public class Envio implements Serializable {
 
 	public long getIdEnvio() {
 		return idEnvio;
-	}
-
-	public void setIdEnvio(long idEnvio) {
-		this.idEnvio = idEnvio;
 	}
 
 	public String getEstadoEnvio() {
