@@ -32,7 +32,7 @@ public class CobrarComision {
             	funcionalidad();
             }
             ArrayList<Factura> fact= vendedorcito.getVentas(); //lista de facturas del vendedor
-            double a=calcularProductoMasVendido(fact);
+            double a=calcularTotalVentas(fact);
             double b= a*Vendedor.getComision();
             System.out.println("Tus ventas totales fueron: "+a);
             System.out.println("Por lo que tus comisiones son: "+b);
@@ -48,8 +48,8 @@ public class CobrarComision {
 
 
 }
-    public static double calcularProductoMasVendido(ArrayList<Factura> facturas) {
-    	//dict donde se añade la suma de productos vendidos
+    //método para calcular el total de las ventas
+    public static double calcularTotalVentas(ArrayList<Factura> facturas) {
     	double a=0;
 		for(Factura i : facturas) {  // lista de diccionarios de facturas
 			a+=i.calcularTotal();
