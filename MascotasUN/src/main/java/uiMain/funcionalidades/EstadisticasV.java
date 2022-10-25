@@ -51,7 +51,7 @@ public class EstadisticasV {
     	            // Se le muestra al vendedor los clientes destacados, ordenado de mmayor a menor
     	            case 3:
     	            	System.out.println("Estos son los clientes destacados");
-    	            	imprimirClientes(
+    	            	imprimirClientes(Usuario.getUsuarios());
     	            	break;
     	            	
     	            // Se le muestra al vendedor los productos que están por agotarse, ordenado por cantidad
