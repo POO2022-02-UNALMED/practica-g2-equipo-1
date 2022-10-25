@@ -18,7 +18,10 @@ public class Vendedor extends Persona implements Serializable {
 
 	//Serializador vendedor
 	private static final long serialVersionUID = 1L;
-    private static ArrayList<Vendedor> vendedores = new ArrayList<>();
+	private static final double comision = 0.05;
+
+
+	private static ArrayList<Vendedor> vendedores = new ArrayList<>();
     
     // Atributos
     private ArrayList<Factura> ventas=new ArrayList<Factura>();
@@ -142,6 +145,10 @@ public class Vendedor extends Persona implements Serializable {
 
 	public static void setCantidadVentas(HashMap<String, Integer> cantidadVentas) {
 		Vendedor.cantidadVentas = cantidadVentas;
+	}
+	
+    public static double getComision() {
+		return comision;
 	}
 	
 }
