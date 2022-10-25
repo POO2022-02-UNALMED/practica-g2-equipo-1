@@ -137,7 +137,6 @@ public class CompraInventario {
                     	facturita.realizarCompra(proveedorcito, productos, Tienda.getCuenta().getPin(),total);
                     	System.out.println("¡Su compra ha sido realizada con éxito!");
                     	System.out.println("Saldo actual Tienda: " + Tienda.getCuenta().getSaldo() + "\n");
-                    	System.out.println("Saldo actual Proveedor: " + proveedorcito.getCuenta().getSaldo() + "\n");
                     	// Llamar al menú principal
                     	System.out.println("¿Qué desea hacer?");
                     	Scanner num_menu = new Scanner(System.in);
