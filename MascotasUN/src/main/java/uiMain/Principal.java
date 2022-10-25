@@ -7,6 +7,7 @@ import gestorAplicacion.gestionPersonas.Vendedor;
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
 import uiMain.funcionalidades.EstadisticasV;
+import uiMain.gestion.GestionClases;
 import uiMain.gestion.gestionProductos.EditarProducto;
 import uiMain.gestion.gestionProductos.GestionProductos;
 import uiMain.gestion.gestionProveedores.GestionProveedor;
@@ -115,7 +116,7 @@ public class Principal {
         //RealizarVenta.funcionalidad();
 		//EstadisticasV.funcionalidad();
         //GestionProveedor.gestionProveedores();
-        System.out.println(Proveedor.getProveedores().toString());
+        GestionClases.gestionClases();
         //System.out.println(Tienda.getInventario());
         //System.out.println(Tienda.getInventarioProductos());
         //System.out.println(Tienda.getInventario());

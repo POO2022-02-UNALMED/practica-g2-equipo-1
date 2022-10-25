@@ -11,7 +11,7 @@ public class GestionVendedores {
             System.out.println("¿Que deseas hacer?");
             System.out.println(" 1. Ver vendedor");
             System.out.println(" 2. Agregar nuevo vendedor");
-            System.out.println(" 4. Regresar");
+            System.out.println(" 3. Regresar");
             opcion = input.nextInt();
 
             switch (opcion) {
