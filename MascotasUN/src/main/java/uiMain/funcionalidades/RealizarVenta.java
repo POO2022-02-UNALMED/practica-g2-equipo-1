@@ -24,6 +24,7 @@ public class RealizarVenta {
                 break;
             }
             System.out.println("Ingrese un ID de vendedor valido");
+            // Luego se pide al vendedor que solicite al usuario su id para proceder a crear la factura
         }
         System.out.println("Hola " + vend.getNombre() + " puede proceder con la compra\n");
         Usuario cliente;
@@ -43,7 +44,7 @@ public class RealizarVenta {
         Factura facturaInstance = new Factura(cliente, fecha, vend);
         do {
 
-            //Muestra las opciones del menu
+            //se despliega el menu en el cual se muestran las principales opciones de la funcionalidad
             System.out.println("Realizar una compra");
             System.out.println(" 1. Mostrar productos disponibles");
             System.out.println(" 2. Agregar productos a la compra");
@@ -52,12 +53,14 @@ public class RealizarVenta {
             opcionM1 = input.nextInt();
             switch (opcionM1) {
                 case 1:
+                    // En este caso se imprime el inventario, para que el vendedor pueda saber que ofertar al cliente
                     mostrarInventario();
 
                     System.out.println("Su accion ha sido finalizada presione 1 para volver al menu");
                     int m=input.nextInt();
                     if(m==1){break;}
                 case 2:
+                    // Se entra al menu de la compra donde se gestionan los productos y el envio de la factura
                     do {
                         System.out.println("Agregar a la compra");
                         System.out.println(" 1. Agregar un nuevo producto");
@@ -71,6 +74,8 @@ public class RealizarVenta {
 
                         switch (opcionM2) {
                             case 1:
+                                //En este caso se agregan los productos
+                                // Se verifica que el producto exista y que tenga stock disponible y luego se procede a agregar a la compra
                                 while (true) {
                                     System.out.println("Ingrese el ID del producto que desea agregar: ");
                                     Producto aComp;
@@ -117,6 +122,7 @@ public class RealizarVenta {
                                 int me=input.nextInt();
                                 if(me==1){break;}
                             case 2:
+                                //En este caso se accede a eliminar productos, aqui se valida que el producto este en la factura
                                 while (true) {
                                     System.out.println("Ingrese el id del producto que desea eliminar");
 
@@ -140,6 +146,8 @@ public class RealizarVenta {
                                 int me1=input.nextInt();
                                 if(me1==1){break;}
                             case 3:
+                                //En este caso se imprime la informacion más relevante de la factura, para proporcionar al vendedor
+                                //un resumen de compra del que se pueda mostrar al cliente
                                 System.out.println("Resumen de la factura: ");
                                 facturaInstance.calcularTotal();
                                 System.out.println(facturaInstance.toString());
@@ -154,6 +162,7 @@ public class RealizarVenta {
                                 int me2=input.nextInt();
                                 if(me2==1){break;}
                             case 4:
+                                //En este caso se realiza la compra para ello se solicita el medio de pago y se procede
                                 System.out.println("Está a punto de finalizar la compra, está seguro que desea terminar la venta?");
                                 System.out.println("ingrese 1 para finalizar la compra y cero para continuar con la compra");
                                 int y = input.nextInt();
@@ -188,6 +197,8 @@ public class RealizarVenta {
                                 if(me3==1){break;}
 
                             case 5:
+                                // En este caso se ofrece al cliente la opcion de envio en caso de llegar a ser necesario
+                                // Y se genera el envio
                                 System.out.println("La compra con id " + facturaInstance.getFacturaID() + " fue generada \n");
                                 System.out.println("Desea que se realice un envio de esta?\n");
                                 System.out.println("Digite 1 si el cliente lo requiere o 0 si no");
@@ -224,6 +235,7 @@ public class RealizarVenta {
         } while (opcionM1 != 3);
 
     }
+    //metodo que imprime los productos tomados del hashmap  inventario
 static void mostrarInventario(){
     for (Map.Entry<Producto, Integer> entry :Tienda.getInventario().entrySet()) {
         Producto k = entry.getKey();
