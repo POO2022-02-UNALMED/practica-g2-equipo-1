@@ -74,8 +74,11 @@ public class Usuario extends Persona implements Serializable {
 
 	// Método que permite eliminar un usuario desde la gestión de usuarios de la tienda
 	public static boolean eliminarUsuario(Usuario usuario){
-		Usuario.getUsuarios().remove(usuario);
-		return true;
+		if(Usuario.getUsuarios().contains(usuario)){
+			Usuario.getUsuarios().remove(usuario);
+			return true;
+		}
+		return false;
 	}
 
 	//Getters y setters

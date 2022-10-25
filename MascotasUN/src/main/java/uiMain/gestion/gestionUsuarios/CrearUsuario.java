@@ -5,14 +5,12 @@ import gestorAplicacion.gestionPersonas.Gato;
 import gestorAplicacion.gestionPersonas.Mascota;
 import gestorAplicacion.gestionPersonas.Perro;
 import gestorAplicacion.gestionPersonas.Usuario;
-import gestorAplicacion.gestionPersonas.Vendedor;
-import gestorAplicacion.gestionVentas.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AgregarUsuario {
-    public static Usuario agregarUsuario() {
+public class CrearUsuario {
+    public static Usuario crearUsuario() {
         Scanner input = new Scanner(System.in);
         System.out.println("Estas a punto de ingresar un nuevo usuario al sistema");
         System.out.println("Si el usuario se desea registrar con cuenta bancaria ingrese 1\n en caso contrario ingrese 0");
@@ -38,7 +36,7 @@ public class AgregarUsuario {
                 System.out.println("Ingrese el numero de mascotas del cliente :");
                 int mas = input.nextInt();
                 ArrayList<Mascota> pets = new ArrayList<>();
-                for (int i = 0; i <= mas; i++) {
+                for (int i = 1; i <= mas; i++) {
                     System.out.println("1 en caso de perro, 0 en caso de gato");
                     int n = input.nextInt();
                     System.out.println("Ingrese el Id de la mascota");
@@ -74,14 +72,14 @@ public class AgregarUsuario {
                 String nombre1 = input.next();
                 System.out.println("Ingrese el email del cliente: ");
                 String email1 = input.next();
-                System.out.println("Ingrese el email del cliente: ");
+                System.out.println("Ingrese el telefono del cliente: ");
                 int telefono1 = input.nextInt();
                 System.out.println("Ingrese la direccion del cliente");
                 String dir1 = input.next();
                 System.out.println("Ingrese el numero de mascotas del cliente :");
                 int mas1 = input.nextInt();
                 ArrayList<Mascota> pets1 = new ArrayList<>();
-                for (int i = 0; i <= mas1; i++) {
+                for (int i = 1; i <= mas1; i++) {
                     System.out.println("1 en caso de perro, 0 en caso de gato");
                     int n = input.nextInt();
                     System.out.println("Ingrese el ID de la mascota: ");

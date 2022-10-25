@@ -17,7 +17,7 @@ public class GestionUsuarios {
 
             switch (opcion) {
                 case 1: ; VerUsuario.verUsuario(); break;
-                case 2: ; AgregarUsuario.agregarUsuario(); break;
+                case 2: ; CrearUsuario.crearUsuario(); break;
                 case 3: ; EliminarUsuario.eliminarUsuario(); break;
                 case 4: break;
             }
