@@ -1,13 +1,9 @@
 package uiMain.funcionalidades;
 import gestorAplicacion.gestionPersonas.*;
 import gestorAplicacion.gestionVentas.*;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.Map;
 import java.util.Scanner;
-import uiMain.gestion.gestionProductos.VerProducto;
-import uiMain.gestion.gestionUsuarios.AgregarUsuario;
-import uiMain.gestion.gestionUsuarios.GestionUsuarios;
 
 public class RealizarVenta {
     public static Scanner input = new Scanner(System.in);

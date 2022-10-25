@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GestionUsuarios {
     private static int opcion;
-    public static void GestionarUsuarios() {
+    public static void gestionarUsuarios() {
         Scanner input = new Scanner(System.in);
         do {
             System.out.println("Estas a punto de gestionar tus usuarios");
@@ -17,7 +17,7 @@ public class GestionUsuarios {
 
             switch (opcion) {
                 case 1: ; VerUsuario.verUsuario(); break;
-                case 2: ; AgregarUsuario.agregarUsuario(); break;
+                case 2: ; CrearUsuario.crearUsuario(); break;
                 case 3: ; EliminarUsuario.eliminarUsuario(); break;
                 case 4: break;
             }
