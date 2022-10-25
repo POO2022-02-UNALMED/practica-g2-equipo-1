@@ -1,6 +1,7 @@
 package uiMain.funcionalidades;
 import gestorAplicacion.gestionPersonas.*;
 import gestorAplicacion.gestionVentas.*;
+import uiMain.Principal;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -218,7 +219,7 @@ public class RealizarVenta {
                                 System.out.println("Gracias por preferirnos");
                                 System.out.println("Su accion ha sido finalizada presione 1 para volver al menu");
                                 int me4=input.nextInt();
-                                if(me4==1){break;}
+                                if(me4==1) {break;}
 
                             case 6:
                                 break;

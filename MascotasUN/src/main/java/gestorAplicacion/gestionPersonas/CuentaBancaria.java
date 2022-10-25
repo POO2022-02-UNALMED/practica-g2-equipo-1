@@ -4,11 +4,14 @@
 
 package gestorAplicacion.gestionPersonas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CuentaBancaria {
+public class CuentaBancaria implements Serializable{
+
 	//Atributo para el serializador
+	private static final long serialVersionUID = 1L;
 	private static ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<>();
 	
 	//Atributos

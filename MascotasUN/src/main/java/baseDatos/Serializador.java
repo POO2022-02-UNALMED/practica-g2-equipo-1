@@ -22,7 +22,7 @@ public class Serializador {
         FileOutputStream fileOut;
         //serializador proveedores
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\proveedores.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\proveedores.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Proveedor.getProveedores());
             salida.close();
@@ -34,7 +34,7 @@ public class Serializador {
         }
         //serializador CuentaBancaria
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\cuentasBancarias.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\cuentasBancarias.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(CuentaBancaria.getCuentasBancarias());
             salida.close();
@@ -46,7 +46,7 @@ public class Serializador {
         }
         //serializador usuarios
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\usuarios.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\usuarios.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Usuario.getUsuarios());
             salida.close();
@@ -58,7 +58,7 @@ public class Serializador {
         }
         //serializador vendedores
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\vendedores.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\vendedores.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Vendedor.getVendedores());
             salida.close();
@@ -70,7 +70,7 @@ public class Serializador {
         }
         //serializador envio
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\envios.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\envios.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Envio.getEnvios());
             salida.close();
@@ -82,7 +82,7 @@ public class Serializador {
         }
         //serializador factura
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\facturas.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\facturas.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Factura.getFacturas());
             salida.close();
@@ -94,7 +94,7 @@ public class Serializador {
         }
         //serializador perro
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\perros.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\perros.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Perro.getPerros());
             salida.close();
@@ -106,7 +106,7 @@ public class Serializador {
         }
       //serializador gato
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\gatos.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\gatos.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Gato.getGatos());
             salida.close();
@@ -118,7 +118,7 @@ public class Serializador {
         }
         //serializador productos
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\productos.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\productos.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Producto.getProductos());
             salida.close();
@@ -130,7 +130,7 @@ public class Serializador {
         }
         //serializador tienda
         try {
-            fileOut = new FileOutputStream("src\\baseDatos\\temp\\tienda.txt");
+            fileOut = new FileOutputStream("src\\main\\java\\baseDatos\\temp\\tienda.txt");
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
             salida.writeObject(Tienda.getTienda());
             salida.close();
