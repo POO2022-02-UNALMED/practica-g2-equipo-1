@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.Map.Entry;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
@@ -43,10 +44,13 @@ public class EstadisticasV {
     	               	
     	               	//Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto");
     	               	//ventas.put(productoprueba,1);
+    	               	Producto productoprueba = new Producto(1, "P", "18/01/2024", "Comida seca para gato adulto", 7000, 10000, 2, "Adulto", "Gato");;
+    	               	ventas.put(productoprueba,1);
     	               	
     	               	HashMap<Producto, Integer> ventas2 = calcularProductoMasVendido(Tienda.getVentas(), ventas);
-    	               	
-    	               	imprimirProductos(Tienda.getValoresOrdenados(), ventas2);
+    	               	getValoresOrdenados(ventas2);
+    	               	//SortedSet<Integer> valores= getValoresOrdenados(ventas2);
+    	               	//imprimirProductos(valores, ventas2);
     	            	break;
     	            // Se le muestra al vendedor los clientes destacados, ordenado de mmayor a menor
     	            case 3:
@@ -110,6 +114,18 @@ public class EstadisticasV {
 		}
 		return ventas;
     }
+    
+	/*public static SortedSet<Integer> getValoresOrdenados(HashMap<Producto, Integer> inventarioProductos) {
+        SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
+        return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
+    }*/
+	
+	public static void getValoresOrdenados(HashMap<Producto, Integer> inventarioProductos) {
+		for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
+				System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
+		}
+	}
+	
 	public static void imprimirProductos(SortedSet<Integer> valores, HashMap<Producto, Integer> inventarioProductos) {
 		for(Integer i : valores) {
 			for(Entry<Producto, Integer> j : inventarioProductos.entrySet()){
