@@ -4,7 +4,6 @@ package gestorAplicacion.gestionPersonas;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Map;
 
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
@@ -32,19 +31,18 @@ public class Perro implements Mascota, Serializable {
 
     // Métodos
     
-    // Método que dependiendo de la edad del perro (ingresada en años) retornará si es Cachorro o Adulto
+    // Método implementado de mascota que dependiendo de la edad del perro (ingresada en años) retornará si es Cachorro o Adulto
     @Override
     public String calcularEdad() {
     	if (edad <= 1) {
     		return "Cachorro";
     	}
-    	
     	else {
     		return "Adulto";
     	}
     }
     
-    // Método que dependiendo de la edad y la raza del perro, retornará una lista de productos recomendados
+    // Método implementado de mascota que dependiendo de la edad y la raza del perro, retornará una lista de productos recomendados
     @Override
     public ArrayList<Producto> tipoAlimento(){
     	ArrayList<Producto> ListAux = new ArrayList<Producto>();
@@ -56,17 +54,18 @@ public class Perro implements Mascota, Serializable {
 		}
 		return ListAux;
      }
-    
-    // Getters y setters
-    
+
+     //getter y setter del serializador y deserializador
     public static ArrayList<Perro> getPerros() {
         return perros;
     }
-    
+
     public static void setPerros(ArrayList<Perro> perros) {
         Perro.perros=perros;
     }
-    
+
+    // Getters y setters
+
     public long getMascotaID() {
         return mascotaID;
     }

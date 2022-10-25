@@ -22,7 +22,7 @@ public abstract class Persona {
         this.telefono=telefono;
     }
     
-    	// Sobrecarga de constructor, que incluye la cuenta bancaria de la persona
+    // Sobrecarga de constructor, que incluye la cuenta bancaria de la persona
     public Persona(long personaId, String nombre, String email, int telefono, CuentaBancaria cuenta){
         this(personaId,nombre,email,telefono);
         this.cuenta = cuenta;

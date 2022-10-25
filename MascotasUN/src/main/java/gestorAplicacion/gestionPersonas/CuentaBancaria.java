@@ -1,5 +1,6 @@
-/*Clase utilizada para la gestión de las cuentas bancarias de los objetos de tipo Usuario y Proveedor,
- * y de la clase Tienda, donde cada objeto tipo CuentaBancaria se asociará a un objeto de las clases mencionadas*/
+	/* Esta clase se encarga de crear las cuentas bancarias para los objetos de tipo
+	 * persona y tienda. El atributo credenciales es un hashmap que como key recibe el id
+	 * de la cuenta y como value el pin*/
 
 package gestorAplicacion.gestionPersonas;
 
@@ -7,10 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CuentaBancaria {
-	/* Esta clase se encarga de crear las cuentas bancarias para los objetos de tipo
-	* persona y tienda. El atributo credenciales es un hashmap que como key recibe el id
-	* de la cuenta y como value el pin*/
-
 	//Atributo para el serializador
 	private static ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<>();
 	

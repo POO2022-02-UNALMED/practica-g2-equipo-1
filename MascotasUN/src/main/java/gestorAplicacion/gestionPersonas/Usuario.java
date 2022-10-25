@@ -4,7 +4,6 @@
 package gestorAplicacion.gestionPersonas;
 
 import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método agregarFactura() y el atributo de la lista de compras que ha hecho un usuario
-import gestorAplicacion.gestionPersonas.Mascota; // Importamos la clase Mascota para el atributo de la lista de Mascotas que tiene un usuario
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -30,15 +29,15 @@ public class Usuario extends Persona implements Serializable {
 		usuarios.add(this);
 		Tienda.setUsuarios(personaId, this);
 	}
-		// Sobrecarga de constructor, cuando el usuario no posee cuenta bancaria
+	// Sobrecarga de constructor, cuando el usuario no posee cuenta bancaria
 	public Usuario(long personaId, String nombre, String email, int telefono, String direccion, ArrayList<Mascota> mascotas) {
 		this(personaId, nombre, email, telefono, null, direccion, mascotas);
 		usuarios.add(this);
 	}
 	
 	// Métodos
-	
-	// Método toString() sobreescrito
+
+	//Metodo toString() sobreescrito que se encarga de mostrar atributos determinados de la clase usuario
 	@Override
 	public String toString() {
 		return  "~ ID #"+ personaId + "\n"+
@@ -59,7 +58,6 @@ public class Usuario extends Persona implements Serializable {
 		}
 		return null;
 	}
-
 	
 	// Método que agrega una factura al usuario dentro de la lista de compras realizadas
 	@Override
@@ -81,8 +79,7 @@ public class Usuario extends Persona implements Serializable {
 		return false;
 	}
 
-	//Getters y setters
-	
+	//getter y setter del serializador y deserializador
 	public static ArrayList<Usuario> getUsuarios() {
 		return usuarios;
 	}
@@ -90,7 +87,9 @@ public class Usuario extends Persona implements Serializable {
 	public static void setUsuarios(ArrayList<Usuario> usuarios) {
 		Usuario.usuarios=usuarios;
 	}
-	
+
+	//Getters y setters
+
 	public String getDireccion() {
 		return direccion;
 	}

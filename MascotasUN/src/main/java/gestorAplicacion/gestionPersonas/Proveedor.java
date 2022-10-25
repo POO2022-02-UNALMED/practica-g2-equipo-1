@@ -36,6 +36,7 @@ public class Proveedor extends Persona implements Serializable {
         pedidos.add(f);
     }
 
+    //Metodo toString() sobreescrito que se encarga de mostrar atributos determinados de la clase proveedor
     @Override
     public String toString() {
         return  "~ ID #"+ personaId + "\n"+
@@ -55,22 +56,23 @@ public class Proveedor extends Persona implements Serializable {
         }
         return null;
     }
-    // Metodo que elimina a un proveedor
+
+    // Metodo que elimina a un proveedor de la lista de provedores y retorna un booleano
     public static boolean eliminarProveedor(Proveedor proveedor){
         Proveedor.getProveedores().remove(proveedor);
         return true;
     }
 
-    //Getters y setters
-    
+    //getter y setter del serializador y deserializador
     public static ArrayList<Proveedor> getProveedores() {
         return proveedores;
     }
-    
+
     public static void setProveedores(ArrayList<Proveedor> proveedores) {
         Proveedor.proveedores = proveedores;
     }
-    
+
+    //Getters y setters
     public ArrayList<Producto> getProducto() {
         return producto;
     }

@@ -4,7 +4,6 @@ package gestorAplicacion.gestionPersonas;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Map;
 
 import gestorAplicacion.gestionVentas.Producto;
 import gestorAplicacion.gestionVentas.Tienda;
@@ -54,16 +53,16 @@ public class Gato implements Mascota, Serializable {
 		return ListAux;
      }
 
-    // Getters y setters
-    
+     //getter y setter del serializador y deserializador
     public static ArrayList<Gato> getGatos() {
         return gatos;
     }
-    
+
     public static void setGatos(ArrayList<Gato> gatos) {
         Gato.gatos=gatos;
     }
-    
+
+    // Getters y setters
     public long getMascotaID() {
         return mascotaID;
     }

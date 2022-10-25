@@ -1,11 +1,12 @@
 /*Clase que crea y gestiona los objetos tipo Vendedor, los cuales interactúan directamente con las funcionalidades
- * de la aplicación. Hereda de la clase abstracta Persona*/
+ * de la aplicación. Hereda de la clase abstracta Persona. Existen dos hashmap, el primero (usuarios) se encarga de
+ * obtener usuarios con usuario y contrasena, el segundo (cantidadVentas) muestra el string del usuario y las ventas
+ * del mismo*/
 
 package gestorAplicacion.gestionPersonas;
 
 
 import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método agregarFactura() y el atributo de la lista de ventas realizadas
-import gestorAplicacion.gestionVentas.Producto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,8 +20,6 @@ public class Vendedor extends Persona implements Serializable {
 	//Serializador vendedor
 	private static final long serialVersionUID = 1L;
 	private static final double comision = 0.05;
-
-
 	private static ArrayList<Vendedor> vendedores = new ArrayList<>();
     
     // Atributos

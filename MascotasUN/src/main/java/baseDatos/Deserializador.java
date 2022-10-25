@@ -1,3 +1,7 @@
+    /* Se encarga de deserializar las listas de cada clase*/
+    /* En cada caso se lee un archivo de texto que contiene los objetos creados para una clase en especifico,
+     * despues estos se asignan a las listas correspondientes por medio del set y se cierra el archivo*/
+
 package baseDatos;
 
 //Gestion personas
@@ -11,9 +15,6 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Deserializador {
-    /* Se encarga de deserializar las listas de cada clase*/
-    /* En cada caso se lee un archivo de texto que contiene los objetos creados para una clase en especifico,
-    * despues estos se asignan a las listas correspondientes por medio del set y se cierra el archivo*/
     public static void deserializar(){
         FileInputStream fileIn;
         //Deserializacion proveedores
