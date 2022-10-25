@@ -31,12 +31,12 @@ public class EstadisticasV {
     	            opcion = input1.nextInt();
     	            switch (opcion) {
     	            
-    	            // Se le muestra al vendedor las ventas por vendedor, ordenados de mmayor a menor
+    	            // Se le muestra al vendedor las ventas por vendedor
     	            case 1:
     	            	System.out.println("Estas son las ventas por vendedor");
     	            	imprimirVentas(Vendedor.getValoresOrdenados(), Vendedor.getCantidadVentas());
     	            	
-    	            // Se le muestra al vendedor los productos más vendidos, ordenados de mayor a menor
+    	            // Se le muestra al vendedor los productos más vendidos
     	            case 2:
     	            	System.out.println("Estos son los productos más vendidos");
     	            	Tienda.getVentas(); //lista de facturas de la tienda
@@ -47,7 +47,7 @@ public class EstadisticasV {
     	               	SortedSet<Integer> valores= getValoresOrdenados(ventas2);
     	               	imprimirProductos(valores, ventas2);
     	            	break;
-    	            // Se le muestra al vendedor los clientes destacados, ordenado de mmayor a menor
+    	            // Se le muestra al vendedor los clientes destacados
     	            case 3:
     	            	System.out.println("Estos son los clientes destacados");
     	            	//imprimirClientes(Usuario.getUsuarios());

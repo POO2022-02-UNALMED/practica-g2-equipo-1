@@ -199,6 +199,6 @@ public class CompraInventario {
 // 	Tienda: 10.889.457
 //	Proveedor: 20.858.968
 
-// Dio:
+// Dio caso de prueba:
 //	Tienda: 10.193.457
 //	Proveedor: 21.554.968
