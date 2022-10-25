@@ -9,14 +9,15 @@ import gestorAplicacion.gestionVentas.Tienda;
 
 import java.util.Scanner;
 
+
 public class CrearProducto {
     public static void registrarProducto(){
         Scanner input = new Scanner(System.in);
         System.out.println("Estas a punto de agregar un nuevo producto \n");
         System.out.println("Ingresa el nombre del producto");
-        String nombre = input.next();
+        String nombre = input.nextLine();
         System.out.println("Ingresa el ID del producto");
-        int productoID= input.nextInt();
+        long productoID= input.nextLong();
         System.out.println("Ingrese la fecha del vencimiento");
         String fechaV= input.next();
         System.out.println("Ingrese la descripcion del producto");
