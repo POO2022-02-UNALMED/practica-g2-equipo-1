@@ -1,3 +1,6 @@
+/*Esta clase se encarga de registrar un nuevo objeto de la clase vendedor
+ */
+
 package uiMain.gestion.gestionVendedores;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;

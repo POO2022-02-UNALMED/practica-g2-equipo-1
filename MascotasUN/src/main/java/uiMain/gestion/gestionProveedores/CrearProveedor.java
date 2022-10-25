@@ -1,3 +1,6 @@
+/*Esta clase se encarga de registrar un nuevo objeto de la clase proveedor, incluyendo la cuenta bancaria que se
+ asocia al mismo y los productos que posee, por ultimo se muestra para comprobar que se agrego exitosamente */
+
 package uiMain.gestion.gestionProveedores;
 
 import gestorAplicacion.gestionPersonas.*;
@@ -27,6 +30,9 @@ public class CrearProveedor {
         System.out.println("Ingrese el numero de productos que desea agregar :");
         int mas = input.nextInt();
         ArrayList<Producto> productos = new ArrayList<>();
+        /*Se hace una lista que agrega los productos haciendo uso del for dependiendo de la cantidad de productos
+        que tiene el proveedor
+         */
         for (int i = 0; i <= mas; i++) {
             System.out.println("Ingrese el Id del producto");
             long mId = input.nextLong();
@@ -46,11 +52,16 @@ public class CrearProveedor {
             String raza = input.next();
             System.out.println("Ingrese para que etapa esta orientado el producto: ");
             String etapa = input.next();
+            //Se crea un nuevo objeto de la clase producto
             Producto producto = new Producto(mId,nombrep,fechav,descripcion,precioc,preciov,cantidad,raza,etapa);
             productos.add(producto);
         }
+        /*Se crea una nueva instancia de la clase proveedor con su respectiva lista de productos y cuenta bancaria
+        que a su vez crean objetos de otras clases (CuentaBancaria y Producto)
+         */
         Proveedor proveedor= new Proveedor(proveedorID,nombre,email,telefono,new CuentaBancaria(nro,saldo),productos,stock);
         System.out.println("El proveedor se agrego de manera exitosa");
+        /* Se imprime la instancia del objeto creado haciendo uso del toString de la clase proveedor*/
         proveedor.toString();
         System.out.println(proveedor);
     }

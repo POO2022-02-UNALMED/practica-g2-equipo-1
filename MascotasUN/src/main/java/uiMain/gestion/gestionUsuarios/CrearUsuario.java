@@ -1,3 +1,6 @@
+/*Esta clase se encarga de registrar un nuevo objeto de la clase usuario, incluyendo la cuenta bancaria que se
+ asocia al mismo y las mascotas que posee, por ultimo se muestra para comprobar que se agrego exitosamente */
+
 package uiMain.gestion.gestionUsuarios;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
@@ -35,6 +38,9 @@ public class CrearUsuario {
                 String dir = input.next();
                 System.out.println("Ingrese el numero de mascotas del cliente :");
                 int mas = input.nextInt();
+                /*Se hace una lista que agrega a las mascotas haciendo uso del for dependiendo de la cantidad de mascotas
+                que tiene el cliente
+                */
                 ArrayList<Mascota> pets = new ArrayList<>();
                 for (int i = 1; i <= mas; i++) {
                     System.out.println("1 en caso de perro, 0 en caso de gato");
@@ -47,25 +53,32 @@ public class CrearUsuario {
                     int edad = input.nextInt();
                     System.out.println("Ingrese la raza de la mascota(para gato ingrese n): ");
                     String raza = input.next();
+                    /*Se hace uso del switch para determinar si la instancia es de la clase perro o gato */
                     switch (n) {
                         case 1:
+                            //Se crea instancia de la clase perro
                             Perro p = new Perro(mId, na, edad, raza);
                             pets.add(p);
                             break;
                         case 0:
+                            //Se crea instancia de la clase gato
                             Gato g = new Gato(mId, na, edad);
                             pets.add(g);
                             break;
                     }
                 }
+                /*Se crea una nueva instancia de la clase usuario con su respectiva lista de mascotas y cuenta bancaria
+                que a su vez crean objetos de otras clases (CuentaBancaria y Perro o Gato)
+                */
                 Usuario user1 = new Usuario(id, nombre, email, telefono, new CuentaBancaria(nro, saldo, pin), dir, pets);
                 System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
                 System.out.println("El usuario se agrego de manera exitosa");
+                /*Imprime el usuario creado con atributos predeterminados en el toString()*/
                 user1.toString();
                 System.out.println(user1);
                 return user1;
 
-            case 0:
+            case 0: // Este case realiza lo mismo pero sin instanciar la clase CuentaBancaria
                 System.out.println("Ingrese el ID del cliente: ");
                 int id1 = input.nextInt();
                 System.out.println("Ingrese el nombre del cliente: ");
@@ -111,6 +124,5 @@ public class CrearUsuario {
         }
     return null;
     }
-
 }
 

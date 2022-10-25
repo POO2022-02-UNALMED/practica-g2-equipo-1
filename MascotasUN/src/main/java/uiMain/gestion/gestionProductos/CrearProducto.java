@@ -1,3 +1,7 @@
+/*Esta clase se encarga de registrar un nuevo objeto de la clase producto y agregarlo al catalogo de
+la tienda
+ */
+
 package uiMain.gestion.gestionProductos;
 
 import gestorAplicacion.gestionVentas.Producto;
@@ -23,9 +27,12 @@ public class CrearProducto {
         float precioCompra= input.nextFloat();
         System.out.println("Ingrese el precio de venta del producto");
         float precioVenta= input.nextFloat();
+        //Se crea el nuevo objeto de la clase producto
         Producto producto= new Producto(productoID,nombre,fechaV,descripcion,precioCompra,precioVenta,cantidadComprada);
+        //Se agrega el producto creado a la lista de productos existente en catalogo
         Tienda.agregarProductoCatalogo(producto);
         System.out.println("El producto se agrego de manera exitosa");
+        //Se hace el toString para imprimir los atributos del objeto y no la referencia
         System.out.println(producto.toString());
     }
 }
