@@ -72,11 +72,11 @@ public class CasosPrueba {
 	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto8); listaProductos.add(producto9); listaProductos.add(producto10);
 	listaProductos.add(producto11); listaProductos.add(producto12); listaProductos.add(producto13); listaProductos.add(producto14); listaProductos.add(producto15); listaProductos.add(producto16);
 	listaProductos.add(producto17); listaProductos.add(producto18);
+	Tienda.setCatalogo(listaProductos);
 
 	Tienda.setCatalogo(listaProductos); // Creamos el catalogo de la tienda
 	ArrayList<Producto> listaProductos1 = new ArrayList<Producto>(); listaProductos.add(producto1); listaProductos.add(producto2);listaProductos.add(producto3); listaProductos.add(producto4);
 	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto10);listaProductos.add(producto11); listaProductos.add(producto12);
-	Tienda.setCatalogo(listaProductos1);
 
 	ArrayList<Producto> listaProductos2 = new ArrayList<Producto>();
 	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto10);listaProductos.add(producto11); listaProductos.add(producto12);
@@ -171,17 +171,17 @@ public class CasosPrueba {
 	Proveedor proveedor1 = new Proveedor(43825896, "Pedro Casas", "pcasas@email.com", 4484250, cuentaProveedor, listaProductos1, true) ;
 	ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
 	proveedores.add(proveedor1);
-	Proveedor.setProveedores(proveedores);
+
 
 	Proveedor proveedor2 = new Proveedor(43825897, "Armando Marin", "armandocasasde@email.com", 4484254, cuentaProveedor1, listaProductos2, false) ;
-	ArrayList<Proveedor> proveedores1 = new ArrayList<Proveedor>();
-	proveedores1.add(proveedor2);
-	Proveedor.setProveedores(proveedores1);
+	proveedores.add(proveedor2);
 
-	Proveedor proveedor3 = new Proveedor(58415, "Sol lunar", "solunar@email.com", 3482414, cuentaProveedor2, listaProductos3, true) ;
+	Proveedor proveedor3 = new Proveedor(58415, "Sol lunar", "solunar@email.com", 3482414, cuentaProveedor2, listaProductos3,true) ;
 	ArrayList<Proveedor> proveedores2 = new ArrayList<Proveedor>();
-	proveedores2.add(proveedor2);
-	Proveedor.setProveedores(proveedores2);
+	proveedores.add(proveedor3);
+	Proveedor.setProveedores(proveedores);
+
+
 	// Clientes
 	Usuario usuario1 = new Usuario(1093186721, "Manuela Arboleda", "manuarbol@email.com", 4422879, cuenta1, "Cra 170 # 2-103", listaMascotas1); //Usuario 1 tiene Perro Cachorro Grande y Gato Cachorro
 	Usuario usuario2 = new Usuario(35164789, "Valentina Higuita", "vhiguita@email.com", 3728945, cuenta2, "Cra 58 # 78-29", listaMascotas2); //Usuario 2 tiene Gato Adulto
@@ -266,6 +266,5 @@ public class CasosPrueba {
 		
 		Tienda.setCantidadDeVentas(listaFacturasTienda);
 	}
-	
 	
 }

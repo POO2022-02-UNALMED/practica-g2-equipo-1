@@ -35,6 +35,16 @@ public class Proveedor extends Persona implements Serializable {
     public void agregarFactura(Factura f){
         pedidos.add(f);
     }
+
+    @Override
+    public String toString() {
+        return  "~ ID #"+ personaId + "\n"+
+                "~ Nombre = " + nombre +"\n"+
+                "~ Email = " + email + "\n"+
+                "~ Telefono = " +telefono+ "\n"+
+                "~ Productos = " +producto.size()+ "\n"+
+                "~ Stock = " +stock+ "\n";
+    }
     
     // Método que encuentra al proveedor en la lista de proveedores existentes y lo retorna, dado su ID
     public static Proveedor encontrarPersona(long personaId){

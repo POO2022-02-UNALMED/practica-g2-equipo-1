@@ -21,7 +21,7 @@ import uiMain.Principal;
 import uiMain.funcionalidades.CompraInventario;
 import uiMain.funcionalidades.EstadisticasV;
 import uiMain.funcionalidades.RealizarVenta;
-import uiMain.gestion.gestionProductos.AgregarProducto;
+import uiMain.gestion.gestionProductos.CrearProducto;
 import uiMain.gestion.gestionProductos.EditarProducto;
 import uiMain.gestion.gestionProductos.EliminarProducto;
 import uiMain.gestion.gestionProductos.GestionProductos;

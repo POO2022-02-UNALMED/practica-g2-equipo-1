@@ -115,7 +115,7 @@ public class Principal {
         //RealizarVenta.funcionalidad();
 		//EstadisticasV.funcionalidad();
         //GestionProveedor.gestionProveedores();
-        System.out.println(Proveedor.getProveedores());
+        System.out.println(Proveedor.getProveedores().toString());
         //System.out.println(Tienda.getInventario());
         //System.out.println(Tienda.getInventarioProductos());
         //System.out.println(Tienda.getInventario());
