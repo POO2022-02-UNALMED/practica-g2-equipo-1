@@ -1,3 +1,9 @@
+/*
+Funcionalidad RealizarVenta:
+Accede al menu y muestra las opcciones de realizar venta especificadas en los switch del codigo.
+al iniciar se pide el id del vendedor, luego el del cliente y entra en el menu
+ahi puede realizar una compra,agregar y eliminar productos de la factura y realizar un envio de la compra 
+ */
 package uiMain.funcionalidades;
 import gestorAplicacion.gestionPersonas.*;
 import gestorAplicacion.gestionVentas.*;
