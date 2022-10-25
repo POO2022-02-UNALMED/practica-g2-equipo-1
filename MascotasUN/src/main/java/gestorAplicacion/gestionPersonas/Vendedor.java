@@ -60,7 +60,7 @@ public class Vendedor extends Persona implements Serializable {
     
     // Método que agrega al vendedor a la lista de vendedores
     public static void agregarVendedor(Vendedor vendedor){
-        Vendedor.vendedores.add(vendedor);
+        vendedores.add(vendedor);
     }
 
     // Método que agrega una factura al vendedor dentro de la lista de ventas realizadas

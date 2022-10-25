@@ -3,11 +3,13 @@
 
 package gestorAplicacion.gestionPersonas;
 
+import java.util.ArrayList;
 import gestorAplicacion.gestionVentas.Factura; // Importamos la clase Factura para el método de agregarFactura()
 
 public abstract class Persona {
 
 	//Atributos (protected para utilizarlos dentro del paquete)
+	protected static ArrayList<Persona> personas = new ArrayList<Persona>();
     protected long personaId;
     protected String nombre;
     protected String email;
@@ -29,7 +31,40 @@ public abstract class Persona {
     }
     
     //Métodos
+    
+    /* Método abstracto que se hereda a las clases Usuario, Proveedor y Vendedor,
+     * que recibe como parámetro un objeto tipo Factura y retorna un void */
   	protected abstract void agregarFactura(Factura f); // Método abstracto
+  	
+  	/*Método que recorre la lista de personas y las imprime, retornando un String.
+  	 * Se resuelve el metodo toString() más específico de Usuario, Proveedor o Vendedor
+  	 * por medio de la ligadura dinámica en tiempo de ejecucion*/
+  	public static String verPersona() {
+  		String resultado_nombre = "";
+  		
+  		for (int i=0; i < personas.size(); i++) {
+  			resultado_nombre += (i+1) + ". " + personas.get(i) + "\n";
+  		}
+  		return resultado_nombre;
+  	}
+  	
+  	// Método que encuentra a la persona en la lista de personas existentes y la retorna, dado su ID
+ 	public static Persona encontrarPersona(long personaId){
+ 		for(Persona p: personas){
+ 			if(p.getPersonaId()== personaId){
+ 				return p;
+ 			}
+ 		}
+ 		return null;
+ 	}
+  	
+ 	// Método que dado el ID de la persona, retorna un String con su respectiva bienvenida.
+ 	// El método encontrarPersona() se resuelve por ligadura dinámica
+  	public String bienvenidaPersona(long ID) {
+  		String bienvenida = "Bienvenido, " + encontrarPersona(ID).getNombre();
+  		
+  		return bienvenida;
+  	}
     
     //Getters y setters
     public void setPersonaId(long personaId) {
@@ -74,5 +109,9 @@ public abstract class Persona {
 
 	public void setCuenta(CuentaBancaria cuenta) {
 		this.cuenta = cuenta;
+	}
+
+	public static ArrayList<Persona> getPersonas() {
+		return personas;
 	}
 }
