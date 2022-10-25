@@ -75,17 +75,17 @@ public class CasosPrueba {
 	Tienda.setCatalogo(listaProductos);
 
 	Tienda.setCatalogo(listaProductos); // Creamos el catalogo de la tienda
-	ArrayList<Producto> listaProductos1 = new ArrayList<Producto>(); listaProductos.add(producto1); listaProductos.add(producto2);listaProductos.add(producto3); listaProductos.add(producto4);
-	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto10);listaProductos.add(producto11); listaProductos.add(producto12);
+	ArrayList<Producto> listaProductos1 = new ArrayList<Producto>(); listaProductos1.add(producto1); listaProductos1.add(producto2);listaProductos1.add(producto3); listaProductos1.add(producto4);
+	listaProductos1.add(producto5); listaProductos1.add(producto6); listaProductos1.add(producto7); listaProductos1.add(producto10);listaProductos1.add(producto11); listaProductos1.add(producto12);
 
 	ArrayList<Producto> listaProductos2 = new ArrayList<Producto>();
-	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto10);listaProductos.add(producto11); listaProductos.add(producto12);
+	listaProductos2.add(producto5); listaProductos2.add(producto6); listaProductos2.add(producto7); listaProductos2.add(producto10);listaProductos2.add(producto11); listaProductos2.add(producto12);
 	Tienda.setCatalogo(listaProductos2);
 
-	ArrayList<Producto> listaProductos3 = new ArrayList<Producto>(); listaProductos.add(producto1); listaProductos.add(producto2);listaProductos.add(producto3); listaProductos.add(producto4);
-	listaProductos.add(producto5); listaProductos.add(producto6); listaProductos.add(producto7); listaProductos.add(producto8); listaProductos.add(producto9); listaProductos.add(producto10);
-	listaProductos.add(producto11); listaProductos.add(producto12); listaProductos.add(producto13); listaProductos.add(producto14); listaProductos.add(producto15); listaProductos.add(producto16);
-	listaProductos.add(producto17); listaProductos.add(producto18);
+	ArrayList<Producto> listaProductos3 = new ArrayList<Producto>(); listaProductos3.add(producto1); listaProductos3.add(producto2);listaProductos3.add(producto3); listaProductos3.add(producto4);
+	listaProductos.add(producto5); listaProductos3.add(producto6); listaProductos3.add(producto7); listaProductos3.add(producto8); listaProductos3.add(producto9); listaProductos3.add(producto10);
+	listaProductos.add(producto11); listaProductos3.add(producto12); listaProductos3.add(producto13); listaProductos3.add(producto14); listaProductos3.add(producto15); listaProductos3.add(producto16);
+	listaProductos.add(producto17); listaProductos3.add(producto18);
 	Tienda.setCatalogo(listaProductos3);
 	// Creando el inventario
 	HashMap<String, Integer> listaInventario = new HashMap<String, Integer>(); listaInventario.put(producto1.getNombre(), producto1.getCantidadComprada());
