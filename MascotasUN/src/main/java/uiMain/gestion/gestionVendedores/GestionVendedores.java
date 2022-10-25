@@ -1,3 +1,5 @@
+/*Esta clase se encarga de gestionar las clases que sirven para ver o crear un vendedor*/
+
 package uiMain.gestion.gestionVendedores;
 
 import java.util.Scanner;

@@ -1,3 +1,5 @@
+/*Esta clase se encarga de gestionar las clases que sirven para agregar, eliminar o ver un usuario*/
+
 package uiMain.gestion.gestionUsuarios;
 
 import java.util.Scanner;

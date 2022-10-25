@@ -1,3 +1,5 @@
+/*Esta clase se encarga de gestionar las clases que sirven para ver, crear o eliminar un proveedor*/
+
 package uiMain.gestion.gestionProveedores;
 
 import java.util.Scanner;

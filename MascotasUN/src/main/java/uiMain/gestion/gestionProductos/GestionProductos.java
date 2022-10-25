@@ -1,3 +1,4 @@
+/*Esta clase se encarga de gestionar las clases que sirven para ver, crear, eliminar o editar un producto*/
 package uiMain.gestion.gestionProductos;
 
 import java.util.Scanner;
