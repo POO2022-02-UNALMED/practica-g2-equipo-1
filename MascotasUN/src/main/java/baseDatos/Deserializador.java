@@ -20,7 +20,7 @@ public class Deserializador {
         FileInputStream fileIn;
         //Deserializacion proveedores
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\proveedores.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/proveedores.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Proveedor> proveedores;
             proveedores = (ArrayList<Proveedor>) in.readObject();
@@ -36,7 +36,7 @@ public class Deserializador {
         }
         //Deserializacion usuarios
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\usuarios.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/usuarios.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Usuario> usuarios;
             usuarios = (ArrayList<Usuario>) in.readObject();
@@ -52,7 +52,7 @@ public class Deserializador {
         }
         //Deserializacion vendedores
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\vendedores.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/vendedores.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Vendedor> vendedores;
             vendedores = (ArrayList<Vendedor>) in.readObject();
@@ -68,7 +68,7 @@ public class Deserializador {
         }
         //Deserializacion Cuentas Bancarias
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\cuentasBancarias.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/cuentasBancarias.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<CuentaBancaria> cuentasBancarias;
             cuentasBancarias = (ArrayList<CuentaBancaria>) in.readObject();
@@ -84,7 +84,7 @@ public class Deserializador {
         }
         //Deserializacion envios
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\envios.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/envios.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Envio> envios;
             envios = (ArrayList<Envio>) in.readObject();
@@ -100,7 +100,7 @@ public class Deserializador {
         }
         //Deserializacion facturas
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\facturas.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/facturas.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Factura> facturas;
             facturas = (ArrayList<Factura>) in.readObject();
@@ -116,7 +116,7 @@ public class Deserializador {
         }
       //Deserializacion gatos
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\gatos.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/gatos.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Gato> gatos;
             gatos = (ArrayList<Gato>) in.readObject();
@@ -132,7 +132,7 @@ public class Deserializador {
         }
         //Deserializacion perros
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\perros.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/perros.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Perro> perros;
             perros = (ArrayList<Perro>) in.readObject();
@@ -148,7 +148,7 @@ public class Deserializador {
         }
         //Deserializacion productos
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\productos.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/productos.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Producto> productos;
             productos = (ArrayList<Producto>) in.readObject();
@@ -164,7 +164,7 @@ public class Deserializador {
         }
         //Deserializar tienda
         try {
-            fileIn = new FileInputStream("src\\main\\java\\baseDatos\\temp\\tienda.txt");
+            fileIn = new FileInputStream("MascotasUN/src/main/java/baseDatos/temp/tienda.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ArrayList<Tienda> tienda;
             tienda = (ArrayList<Tienda>) in.readObject();
