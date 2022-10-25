@@ -83,7 +83,7 @@ public class Tienda implements Serializable {
 	
 	// Método para ordenar el HashMap del inventario por su valor
 	public static SortedSet<Integer> getValoresOrdenados() {
-        SortedSet<Integer> valores = new TreeSet<Integer>(inventarioProductos.values());
+        SortedSet<Integer> valores = new TreeSet<Integer>(inventario.values());
         return valores; // Retorna una lista como [1, 2, 3, 4, 5, 7], que se utiliza en la funcionalidad
     }
 

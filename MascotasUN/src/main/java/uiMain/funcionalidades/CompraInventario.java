@@ -30,14 +30,14 @@ public class CompraInventario {
             // Se le muestra al vendedor el inventario completo, ordenado por cantidad
             case 1:
             	System.out.println("Este es su inventario actual");
-            	imprimirOrdenado(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
+            	imprimirOrdenado(Tienda.getValoresOrdenados(), Tienda.getInventario());
             	compraInventario(); // Va al menú para comprar el inventario
             	break;
             	
             // Se le muestra al vendedor los productos que están por agotarse, ordenado por cantidad
             case 2:
             	System.out.println("Estos son los productos en riesgo de agotarse");
-            	imprimirRiesgo(Tienda.getValoresOrdenados(), Tienda.getInventarioProductos());
+            	imprimirRiesgo(Tienda.getValoresOrdenados(), Tienda.getInventario());
             	compraInventario(); // Va al menú para comprar el inventario
             	break;
             }
@@ -66,21 +66,22 @@ public class CompraInventario {
                 for (Proveedor i : Proveedor.getProveedores()) {
                 	System.out.println("ID: " + i.getPersonaId() + ". Nombre: " + i.getNombre());
                 }
-                Scanner p = new Scanner(System.in);
-                int opcionp;
-            	System.out.print("Indique el ID del proveedor a comprar: ");
-            	opcionp = p.nextInt(); // En opcionp se guarda el ID del proveedor
-            	Proveedor proveedorcito = Proveedor.encontrarPersona(opcionp);
-            	
-                System.out.println("¿Qué producto desea comprar?");
-            	imprimirCatalogo(Tienda.getCatalogo());
-            	
-            	HashMap<Producto, Integer> productos = new HashMap<>(); // Se crea el HashMap que guardará los productos a comprar
-            	
-            	compraProducto(proveedorcito, productos, facturita);
-            	// Pedir la cantidad del producto que se va a comprar
-            	// Realizar la compra
-            	// ¿Quiere hacer otra compra? Si no: Thanks. Si sí: Volver a llamar.
+
+					Scanner p = new Scanner(System.in);
+					int opcionp;
+					System.out.print("Indique el ID del proveedor a comprar: ");
+					opcionp = p.nextInt(); // En opcionp se guarda el ID del proveedor
+					Proveedor proveedorcito = Proveedor.encontrarPersona(opcionp);
+
+					System.out.println("¿Qué producto desea comprar?");
+					imprimirCatalogo(Tienda.getCatalogo());
+
+					HashMap<Producto, Integer> productos = new HashMap<>(); // Se crea el HashMap que guardará los productos a comprar
+
+					compraProducto(proveedorcito, productos, facturita);
+					// Pedir la cantidad del producto que se va a comprar
+					// Realizar la compra
+					// ¿Quiere hacer otra compra? Si no: Thanks. Si sí: Volver a llamar.
             	break;
             	
             // Devuelve al vendedor al menú principal
@@ -167,11 +168,11 @@ public class CompraInventario {
     	}
 	}
 	
-	public static void imprimirOrdenado(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
+	public static void imprimirOrdenado(SortedSet<Integer> valores, HashMap<Producto, Integer> inventario) {
 		for(Integer i : valores) {
-			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
+			for(Entry<Producto, Integer> j : inventario.entrySet()){
 				if(j.getValue().equals(i)) {
-					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
+					System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
 				}
 			}
 		}
@@ -184,11 +185,11 @@ public class CompraInventario {
 		
 	}
 	
-	public static void imprimirRiesgo(SortedSet<Integer> valores, HashMap<String, Integer> inventarioProductos) {
+	public static void imprimirRiesgo(SortedSet<Integer> valores, HashMap<Producto, Integer> inventario) {
 		for(Integer i : valores) {
-			for(Entry<String, Integer> j : inventarioProductos.entrySet()){
+			for(Entry<Producto, Integer> j : inventario.entrySet()){
 				if(j.getValue().equals(i) & (i <= 2)) {
-					System.out.println("Producto: " + j.getKey() + ". Cantidad: "+ j.getValue());
+					System.out.println("Producto: " + j.getKey().getNombre() + ". Cantidad: "+ j.getValue());
 				}
 			}
 		}

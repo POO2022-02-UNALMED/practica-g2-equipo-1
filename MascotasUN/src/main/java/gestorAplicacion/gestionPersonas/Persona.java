@@ -35,6 +35,7 @@ public abstract class Persona {
     /* Método abstracto que se hereda a las clases Usuario, Proveedor y Vendedor,
      * que recibe como parámetro un objeto tipo Factura y retorna un void */
   	protected abstract void agregarFactura(Factura f); // Método abstracto
+
   	
   	/*Método que recorre la lista de personas y las imprime, retornando un String.
   	 * Se resuelve el metodo toString() más específico de Usuario, Proveedor o Vendedor
@@ -67,6 +68,9 @@ public abstract class Persona {
   	}
     
     //Getters y setters
+
+       //Getters y setters
+
     public void setPersonaId(long personaId) {
         this.personaId = personaId;
     }
