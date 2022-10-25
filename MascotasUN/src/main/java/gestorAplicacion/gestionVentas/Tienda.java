@@ -4,11 +4,10 @@
 package gestorAplicacion.gestionVentas;
 
 import gestorAplicacion.gestionPersonas.CuentaBancaria;
-<<<<<<< Updated upstream
 import gestorAplicacion.gestionPersonas.Usuario;
-=======
+
 import gestorAplicacion.gestionPersonas.Vendedor;
->>>>>>> Stashed changes
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
