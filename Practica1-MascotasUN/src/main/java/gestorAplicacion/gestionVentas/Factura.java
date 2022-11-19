@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Factura implements Serializable {
+public class No Factura implements Serializable {
     
 	//Serializador factura
 	private static final long serialVersionUID = 1L;
