@@ -16,6 +16,7 @@ class Envio():
         self.periodicidad =periodicidad
         #Se guarda el objeto en un diccionario con su id como key
         Envio.envios[self.idEnvio]=self 
+        #Se trae objeto de tipo factura
         self.factura=None   
     #Métodos
     
@@ -24,15 +25,27 @@ class Envio():
         self.estadoEnvio=estadoEnvio
         self.destino=destino
         self.periodicidad=periodicidad
+        
+    #Metodo toString    
+    def __str__(self)->str:
+        return   "Identificador: "+ str(self.idEnvio) + "\n" \
+            + "Destino: "+ str(self.destino) + "\n" \
+            + "Estado envio: "+ str(self.estadoEnvio) + "\n" \
+            + "Periodicidad: "+ str(self.periodicidad) + "\n" \
+            + "Factura Asociada: "+ str(self.factura) + "\n"       
+            
     
     #Metodos de clase
     @classmethod
     def getEnvios(cls):
         return cls.envios
+    
     @classmethod
-    def setEnvios(cls, facturas):
-        cls.facturas=facturas
-    #Getters y setters 
+    def setEnvios(cls, envios):
+        cls.envios=envios
+        
+    #Getters y setters
+     
     def getDestino(self):
         return self.destino
     
@@ -56,12 +69,6 @@ class Envio():
     
     def setPeriodicidad(self,periodicidad):
         self.periodicidad=periodicidad
-    #Metodo toString    
-    def __str__(self)->str:
-        return   "Identificador: "+ str(self.idEnvio) + "\n" \
-            + "Destino: "+ str(self.destino) + "\n" \
-            + "Estado envio: "+ str(self.estadoEnvio) + "\n" \
-            + "Periodicidad: "+ str(self.periodicidad) + "\n" \
-            + "Factura Asociada: "+ str(self.factura) + "\n"            
+     
         
         
