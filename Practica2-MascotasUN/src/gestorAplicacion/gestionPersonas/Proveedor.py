@@ -44,7 +44,7 @@ class Proveedor(Persona):
                 return p
         return None
     
-    #Metodo que elimina a un proveedor de la lista de provedores y retorna un booleano 
+    #Metodo que elimina a un proveedor de la lista de provedores
     def eliminarProveedor(self):
         for p in self.proveedores:
             if p.getPersonaId()==self.personaId:
