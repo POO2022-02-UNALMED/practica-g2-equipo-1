@@ -1,3 +1,5 @@
+# Clase que crea y gestiona los objetos de tipo Producto, los cuales son los productos que la aplicación vende
+
 class Producto:
     
     productos = []
