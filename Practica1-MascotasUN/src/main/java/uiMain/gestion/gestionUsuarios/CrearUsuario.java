@@ -71,7 +71,7 @@ public class CrearUsuario {
                 que a su vez crean objetos de otras clases (CuentaBancaria y Perro o Gato)
                 */
                 Usuario user1 = new Usuario(id, nombre, email, telefono, new CuentaBancaria(nro, saldo, pin), dir, pets);
-                System.out.println("Ingrese la fecha en formado: dd/mm/yyyy ");
+                System.out.println("Ingrese la fecha en formato: dd/mm/yyyy ");
                 System.out.println("El usuario se agrego de manera exitosa");
                 /*Imprime el usuario creado con atributos predeterminados en el toString()*/
                 user1.toString();
