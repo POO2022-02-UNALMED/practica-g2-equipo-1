@@ -148,7 +148,7 @@ class ConsultaBDD(Frame):
                 return
 
             for proveedor in Proveedor.getProveedores().values():
-                texto += Proveedor.__str__() + "\n"
+                texto += proveedor.__str__() + "\n"
 
         elif entrada == 4:
 
@@ -164,15 +164,39 @@ class ConsultaBDD(Frame):
                 
         elif entrada == 5:
 
-            if len(Compra.getCompras().values()) == 0:
+            if len(Vendedor.getVendedores().values()) == 0:
                 try:
                     raise ExcepcionConjuntoVacio()
                 except ExcepcionConjuntoVacio as f:
                     f.showMessage()
                 return
 
-            for compra in Compra.getCompras().values():
-                texto += compra.__str__() + "\n"
+            for vendedor in Vendedor.getVendedores().values():
+                texto += vendedor.__str__() + "\n"
+
+        elif entrada == 6:
+
+            if len(Factura.getFacturas().values()) == 0:
+                try:
+                    raise ExcepcionConjuntoVacio()
+                except ExcepcionConjuntoVacio as f:
+                    f.showMessage()
+                return
+
+            for factura in Factura.getFacturas().values():
+                texto += factura.__str__() + "\n"
+
+        elif entrada == 7:
+
+            if len(Producto.getProductos().values()) == 0:
+                try:
+                    raise ExcepcionConjuntoVacio()
+                except ExcepcionConjuntoVacio as f:
+                    f.showMessage()
+                return
+
+            for producto in Producto.getProductos().values():
+                texto += producto.__str__() + "\n"
                 
         else: 
             try:

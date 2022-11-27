@@ -9,7 +9,7 @@ from src.gestorAplicacion.gestionPersonas import Persona
 
 class Vendedor(Persona):
     _comision=0.05
-    _vendedores=[]
+    vendedores={}
     usuarios={}
     cantidadVentas={}
     personaId=0
@@ -22,7 +22,7 @@ class Vendedor(Persona):
         self._usuario = usuario
         self._contrasena = contrasena
         Vendedor.personaId+=1
-        Vendedor._vendedores.append(self)
+        Vendedor.vendedores[self.personaId] = self
 
     #Métodos
     
@@ -63,7 +63,7 @@ class Vendedor(Persona):
     #Método que encuentra al vendedor en la lista de vendedores existentes y lo retorna, dado su ID
     @classmethod
     def encontrarPersona(cls, personaId):
-        for p in cls._vendedores:
+        for p in cls.vendedores:
             if(p.getPersonaId()== personaId):
                 return p
         return None
@@ -80,11 +80,11 @@ class Vendedor(Persona):
 
     @classmethod
     def getVendedores(cls):
-        return cls._vendedores
+        return cls.vendedores
 
     @classmethod
     def setVendedores(cls,vendedores):
-        cls._vendedores=vendedores
+        cls.vendedores=vendedores
     
     def getVentas(self):
         return self._ventas

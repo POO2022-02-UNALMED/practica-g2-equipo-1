@@ -2,7 +2,7 @@ from src.gestorAplicacion.gestionPersonas import Vendedor
 from src.gestorAplicacion.gestionPersonas import Usuario
 from src.gestorAplicacion.gestionVentas import  Tienda
 class Factura:
-    facturas= []
+    facturas= {}
     facturaID = 38040000
     total = 0.0
     IVA = 1.16
@@ -10,7 +10,7 @@ class Factura:
 
     def __init__(self, cliente=None, fechaFactura="", vendedor=None):
         self.facturaID+=1
-        self.facturas.append(self)
+        Factura.facturas[self.facturaID] = self
         self.cliente=cliente
         self.fechaFactura = fechaFactura
         self.vendedor= vendedor
