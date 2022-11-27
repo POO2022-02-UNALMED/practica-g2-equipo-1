@@ -3,33 +3,9 @@
 class Producto:
     
     productos = []
-    
+        
     # Constructor
-    def __init__(self, productoID, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada):
-        self.productoID = productoID
-        self.nombre = nombre
-        self.fechaVencimiento = fechaVencimiento
-        self.descripcion = descripcion
-        self.precioCompra = precioCompra
-        self.precioVenta = precioVenta
-        self.cantidadComprada = cantidadComprada
-        self.productos.append(self)
-        
-    # Sobreescritura de constructor para crear productos relacionados con gatos
-    def __init__(self, productoID, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, etapa, especie):
-        self.productoID = productoID
-        self.nombre = nombre
-        self.fechaVencimiento = fechaVencimiento
-        self.descripcion = descripcion
-        self.precioCompra = precioCompra
-        self.precioVenta = precioVenta
-        self.cantidadComprada = cantidadComprada
-        self.etapa = etapa
-        self.especie = especie
-        self.productos.append(self)
-        
-    # Sobreescritura de constructor para crear productos relacionados con perros
-    def __init__(self, productoID, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza, etapa, especie):
+    def __init__(self, productoID, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza="", etapa="", especie=""):
         self.productoID = productoID
         self.nombre = nombre
         self.fechaVencimiento = fechaVencimiento
