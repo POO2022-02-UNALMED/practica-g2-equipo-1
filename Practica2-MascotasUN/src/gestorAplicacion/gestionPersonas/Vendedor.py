@@ -2,8 +2,8 @@
  #de la aplicación. Hereda de la clase abstracta Persona. Existen dos diccionarios, el primero (usuarios) se encarga de
  #obtener usuarios con usuario y contrasena, el segundo (cantidadVentas) muestra el string del usuario y las ventas
  #del mismo
-
-from gestorAplicacion.gestionPersonas.Persona import Persona
+from src.gestorAplicacion.gestionPersonas.CuentaBancaria import CuentaBancaria
+from src.gestorAplicacion.gestionPersonas.Persona import Persona
 #from gestorAplicacion.gestionVentas.Factura import Factura
 
 
@@ -12,14 +12,16 @@ class Vendedor(Persona):
     _vendedores=[]
     usuarios={}
     cantidadVentas={}
+    personaId=0
     
     #Constructor
-    def __init__(self,personaId, nombre, email, telefono, ventas, usuario, contrasena, cuenta):
-        super().__init__(personaId, nombre, email, telefono,cuenta)
-        self._ventas = ventas
+    def __init__(self,nombre, email, telefono, usuario,contrasena,nroCuenta,saldo,pin):
+        self.cuentaBancaria = CuentaBancaria(nroCuenta, saldo, pin)
+        super().__init__(nombre, email, telefono,self.cuentaBancaria)
+        _ventas=None
         self._usuario = usuario
         self._contrasena = contrasena
-        
+        Vendedor.personaId+=1
         Vendedor._vendedores.append(self)
 
     #Métodos
@@ -50,6 +52,7 @@ class Vendedor(Persona):
         self._ventas.append(f)
 
     #Método que permite validar que las credenciales ingresadas por el vendedor al iniciar sesión sean correctas
+
     @classmethod
     def validarCredenciales(cls,usuario, contrasena):
         for i in cls.usuarios.keys():
@@ -64,6 +67,14 @@ class Vendedor(Persona):
             if(p.getPersonaId()== personaId):
                 return p
         return None
+
+    @classmethod
+    def getId(cls):
+        return cls.personaId
+
+    @classmethod
+    def setId(cls, personaId):
+        cls.personaId = personaId
 
     #Getters y setters
     
