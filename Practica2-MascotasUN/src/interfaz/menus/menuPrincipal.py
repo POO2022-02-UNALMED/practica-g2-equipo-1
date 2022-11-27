@@ -106,14 +106,14 @@ class MenuPrincipal(Menu):
 
     #Falta
     def _gestionarProductos(self):
-        self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Fecha de compra", "Codigo Cliente", "Codigo Cajero"]
+        self._values["criterios"] = ["ID","Nombre","Fecha de vencimiento","Descripcion","Precio Compra","Precio Venta","Cantidad Comprada","Raza","Etapa","Especie"]
         self._values["habilitado"] = ["ID"]
-        self._values["valores"] = [None]* len(self._values["criterios"])
-        self._values["nombreProceso"] = "Gestionar Compra-Productos"
-        self._values["descripcionProceso"] = "Registra la informacion de una nueva compra de productos en el sistema"
-        from src.gestorAplicacion.gestion
-        self._values["objeto"] = CompraProductos
-        self._values["atributos"] = ['id', 'descripcion', 'descuento', 'fecha_de_compra', 'codigo_cliente', 'codigo_cajero']
+        self._values["nombreProceso"] = "Gestionar Productos"
+        self._values["descripcionProceso"] = "Registra la informacion de un nuevo producto al sistema"
+        from src.gestorAplicacion.gestionVentas import Producto
+        self._values["objeto"] = Producto
+        self._values["valores"] = [Producto.getProductoId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["atributos"] = ['productoID','nombre','fechaVencimiento','descripcion','precioCompra','precioVenta','cantidadComprada','raza','etapa','especie']
         self._padre.showFieldFrame(self._values)
 
     def _gestionarPerro(self):
