@@ -31,14 +31,18 @@ class Principal(Toplevel):
         self._contenedor.grid_columnconfigure(0, weight=1)
         self._contenedor.grid_rowconfigure(0, weight=1)
         
-        self._framesFuncionalidades = {}
+        self.frameFuncionalidad = {}
         
         for F in (Instrucciones, ClienteValioso, Devolucion, Comision, Informe, ConsultaBDD):
             self._frame =F(self._contenedor, self)
-            self._framesFuncionalidades[F] = self._frame
+            self.frameFuncionalidad[F] = self._frame
             self._frame.grid(row=0, column=0, sticky=NSEW)
             
+<<<<<<< Updated upstream
         self.mostrarFrameFuncionalidades(Instrucciones)
+=======
+        self.mostrarFuncionalidades(Lanzamiento)
+>>>>>>> Stashed changes
         
         self._frame = Instrucciones(self._contenedor, self)
         self._frame.grid(row=0, column=0, sticky=NSEW)
@@ -48,6 +52,6 @@ class Principal(Toplevel):
         self._frame.grid(row=0, column=0, sticky=NSEW)
         self._frame.tkraise()
 
-    def mostrarFrameFuncionalidades(self, contenedor):
-        self._frame = self._framesFuncionalidades[contenedor]
+    def mostrarFuncionalidades(self, container):
+        self._frame = self.frameFuncionalidad[container]
         self._frame.tkraise()

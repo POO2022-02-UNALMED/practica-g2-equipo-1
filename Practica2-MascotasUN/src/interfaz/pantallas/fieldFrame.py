@@ -2,11 +2,7 @@ from tkinter import *
 
 #from pytest import Instance
 from src.interfaz.estilos.styles import *
-<<<<<<< Updated upstream
-=======
 from excepciones import *
-
->>>>>>> Stashed changes
 
 class FieldFrame(Frame):
     

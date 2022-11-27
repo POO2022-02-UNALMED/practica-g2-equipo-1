@@ -138,17 +138,17 @@ class MenuPrincipal(Menu):
         self._values["atributos"] = ['mascotaID', 'nombre','edad','idUsuario']
         self._padre.showFieldFrame(self._values)
     
-    def _verClientesValiosos(self):
-        self._padre.mostrarFrameFuncionalidades(ClienteValioso)
+    def _realizarVenta(self):
+        self._padre.mostrarFuncionalidades(ClienteValioso)
 
-    def _verDevolucionCompraProductos(self):
-        self._padre.mostrarFrameFuncionalidades(Devolucion)
+    def _comprarInventario(self):
+        self._padre.mostrarFuncionalidades(Devolucion)
 
-    def _calcularComision(self):
-        self._padre.mostrarFrameFuncionalidades(Comision)
+    def _cobrarComision(self):
+        self._padre.mostrarFuncionalidades(Comision)
 
-    def _generarInforme(self):
-        self._padre.mostrarFrameFuncionalidades(Informe)
+    def _verEstadisticasVentas(self):
+        self._padre.mostrarFuncionalidades(Informe)
 
-    def _consultaBaseDeDatos(self):
-        self._padre.mostrarFrameFuncionalidades(ConsultaBDD)
+    def _recomendacionesPersonalizadas(self):
+        self._padre.mostrarFuncionalidades(ConsultaBDD)
