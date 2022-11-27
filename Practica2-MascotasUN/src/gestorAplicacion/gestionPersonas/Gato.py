@@ -1,13 +1,14 @@
 
+from Mascota import Mascota
 
-
-class Gato:
+class Gato(Mascota):
 
     #Constructor
     def __init__(self, mascotaID, nombre, edad):
         self._mascotaID = mascotaID
         self._nombre = nombre
         self._edad = edad
+        Mascota._mascotas.append(self)
 
     #Metodos
 
