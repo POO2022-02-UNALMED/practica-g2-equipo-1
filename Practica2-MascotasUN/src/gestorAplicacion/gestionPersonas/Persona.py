@@ -5,10 +5,8 @@ from gestorAplicacion.gestionVentas.Factura import Factura # Importamos la clase
 
 class Persona:
     personas = []
-    
     #Constructor
-    def __init__(self,personaId, nombre, email, telefono, cuenta):
-        self.personaId = personaId
+    def __init__(self,nombre, email, telefono, cuenta):
         self.nombre = nombre
         self.email = email
         self.telefono= telefono

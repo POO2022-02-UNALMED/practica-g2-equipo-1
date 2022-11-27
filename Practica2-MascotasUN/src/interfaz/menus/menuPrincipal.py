@@ -79,23 +79,32 @@ class MenuPrincipal(Menu):
         from src.gestorAplicacion.gestionPersonas import Usuario
         self._values["objeto"] = Usuario
         self._values["valores"] = [Usuario.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
-        from src.gestorAplicacion.gestionPersonas import CuentaBancaria
         self._values["atributos"] = ['personaId','nombre','email','telefono','direccion','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
 
     def _gestionarProveedores(self):
         self._values["criterios"] = ["ID","Nombre","Email","Telefono","Stock","nroCuenta","saldo","pin"]
         self._values["habilitado"] = ["ID"]
-        self._values["nombreProceso"] = "Gestionar usuario"
-        self._values["descripcionProceso"] = "Guarda la informacion de un nuevo cliente"
-        from src.gestorAplicacion.gestionPersonas import Usuario
-        self._values["objeto"] = Usuario
-        self._values["valores"] = [Usuario.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
-        from src.gestorAplicacion.gestionPersonas import CuentaBancaria
-        self._values["atributos"] = ['personaId','nombre','email','telefono','direccion','nroCuenta','saldo','pin']
+        self._values["nombreProceso"] = "Gestionar Proveedores"
+        self._values["descripcionProceso"] = "Guarda la informacion de un nuevo proveedor"
+        from src.gestorAplicacion.gestionPersonas import Proveedor
+        self._values["objeto"] = Proveedor
+        self._values["valores"] = [Proveedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["atributos"] = ['personaId','nombre','email','telefono','stock','nroCuenta','saldo','pin']
+        self._padre.showFieldFrame(self._values)
+
+    def _gestionarVendedores(self):
+        self._values["criterios"] = ["ID","Nombre","Email","Telefono","Usuario","Contrasena","nroCuenta","saldo","pin"]
+        self._values["habilitado"] = ["ID"]
+        self._values["nombreProceso"] = "Gestionar Vendedores"
+        self._values["descripcionProceso"] = "Guarda la informacion de un nuevo vendedor"
+        from src.gestorAplicacion.gestionPersonas import Vendedor
+        self._values["objeto"] = Vendedor
+        self._values["valores"] = [Vendedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["atributos"] = ['personaId','nombre','email','telefono','usuario','contrasena','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
     
-    def _gestionarComprasProductos(self):
+    def _gestionarProductos(self):
         self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Fecha de compra", "Codigo Cliente", "Codigo Cajero"]
         self._values["habilitado"] = ["ID"]
         self._values["valores"] = [None]* len(self._values["criterios"])

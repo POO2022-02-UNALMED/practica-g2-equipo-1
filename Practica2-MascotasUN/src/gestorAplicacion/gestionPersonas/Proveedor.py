@@ -2,6 +2,9 @@
 vendiéndole el inventario requerido"""
 
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
+from src.gestorAplicacion.gestionPersonas.Persona import Persona
+
+
 class Proveedor(Persona):
     # Diccionario para almacenar las instancias de tipo proveedor
     proveedores = {}
@@ -11,15 +14,16 @@ class Proveedor(Persona):
     }"""
 
     # Constructor de la clase
-    def __init__(self, personaId: int, nombre: str, email: str, telefono: int, stock: bool, nroCuenta:int,saldo:int,pin:int) -> None:
+    def __init__(self,nombre: str, email: str, telefono: int, stock: bool, nroCuenta:int,saldo:int,pin:int) -> None:
         self.cuentaBancaria = CuentaBancaria(nroCuenta, saldo, pin)
         # Hacemos referencia al construtor de la clase padre
-        super().__init__(self, personaId, nombre, email, telefono,self.cuentaBancaria)
+        super().__init__(self,nombre, email, telefono,self.cuentaBancaria)
         # Atributos
         producto = None
         pedidos = None
         factura = None
         self.stock = stock
+        Proveedor.personaId+=1
         # Se guarda el objeto en un diccionario con su id como key
         Proveedor.proveedores[self.personaId] = self
 
