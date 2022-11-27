@@ -1,6 +1,6 @@
 
-
-
+from gestionVentas.Tienda import Producto
+from gestionVentas.Tienda import Tienda
 from Mascota import Mascota
 
 class Perro(Mascota):
@@ -22,7 +22,10 @@ class Perro(Mascota):
             return "Adulto"
 
     # Metodo que dependiendo de la edad del gato, retornara una lista de productos recomendados
-    ## def tipoAlimento(self):
+    def tipoAlimento(self):
+        LAux = []
+        for i in Tienda.getCatalogo:
+            if (i isinstance Producto): 
 
     #Getters & Setters
     def getMascotaID(self):
