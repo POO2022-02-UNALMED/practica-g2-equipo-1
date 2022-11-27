@@ -24,6 +24,11 @@ class Gato(Mascota):
             return "Cachorro"
         else:
             return "Adulto"
+    def __str__(self) -> str:
+        return "~ ID # " + str(self.mascotaID) + "\n" \
+               + "~ Nombre: " + str(self._nombre) + "\n" \
+               + "~ Edad: " + str(self._edad) + "\n" \
+               + "~ Dueño: " + str(self._idUsuario) + "\n"
 
     def encontrarUsuario(self,id):
         if id in Usuario.getUsuarios():

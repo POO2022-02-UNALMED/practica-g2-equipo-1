@@ -2,6 +2,8 @@
   con la tienda comprando productos. Hereda de la clase Persona"""
 
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
+from src.gestorAplicacion.gestionPersonas.Persona import Persona
+
 
 class Usuario(Persona):
     usuarios = {}

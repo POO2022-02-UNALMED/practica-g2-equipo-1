@@ -1,11 +1,15 @@
 from tkinter import *
-from interfaz.estilos.styles import *
-from gestionAplicacion.compras.cliente import Cliente
-from gestionAplicacion.productos.producto import Producto
-from gestionAplicacion.compras.compra import Compra
-from gestionAplicacion.servicios.servicio import Servicio
-from gestionAplicacion.empleados.empleado import Empleado
-from gestionAplicacion.empleados.cajero import Cajero
+from src.interfaz.estilos.styles import *
+
+from src.gestorAplicacion.gestionPersonas import Gato
+from src.gestorAplicacion.gestionPersonas import Perro
+from src.gestorAplicacion.gestionPersonas import Proveedor
+from src.gestorAplicacion.gestionPersonas import Usuario
+from src.gestorAplicacion.gestionPersonas import Vendedor
+from src.gestorAplicacion.gestionVentas import Factura
+from src.gestorAplicacion.gestionVentas import Producto
+
+from src.gestorAplicacion.gestionVentas import *
 from excepciones import *
 
 class ConsultaBDD(Frame):
@@ -31,32 +35,33 @@ class ConsultaBDD(Frame):
 
     def _Consultar(self):
         # Frame anidado debajo del título en el cuál se le van a agregar los widgets para hacer la consulta 
-        self._frameSolicitarConsulta = Frame(self, bg=BACKGROUND_FRAMES)
-        self._frameSolicitarConsulta.pack(side=TOP, fill=X, padx=100, pady=10)
+        self._frameConsultar = Frame(self, bg=BACKGROUND_FRAMES)
+        self._frameConsultar.pack(side=TOP, fill=X, padx=100, pady=10)
 
         # Label con el título Ingrese los datos a consultar
-        texto = "Ingrese un número para seleccionar la tabla a buscar" + "\n" \
-                    + "1. Productos" + "\n" \
-                    + "2. Servicios" + "\n" \
-                    + "3. Empleados" + "\n" \
-                    + "4. Clientes" + "\n" \
-                    + "5. Compras" + "\n"
+        texto = "Bienvenido. Ingrese el tipo de dato que desea visualizar: " + "\n" \
+                    + "(1) Gatos registrados" + "\n" \
+                    + "(2) Perros registrados" + "\n" \
+                    + "(3) Proveedores registrados" + "\n" \
+                    + "(4) Usuarios registrados" + "\n" \
+                    + "(5) Vendedores registrados" + "\n" \
+                    + "(6) Facturas registrados" + "\n" \
+                    + "(7) Productos registrados" + "\n"
                     
-        self._labelConsulta = Label(self._frameSolicitarConsulta, text=texto, bg=BACKGROUND_FRAMES, font=FONT3, fg=FG, justify=CENTER)
+        self._labelConsulta = Label(self._frameConsultar, text=texto, bg=BACKGROUND_FRAMES, font=FONT3, fg=FG, justify=CENTER)
         self._labelConsulta.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
 
         # Entry para ingresar el valor por el cuál se quiere consultar un cliente valioso
-        self._entryConsulta = Entry(self._frameSolicitarConsulta, bg="white", font=FONT2, fg=FG2, justify=CENTER)
+        self._entryConsulta = Entry(self._frameConsultar, bg="white", font=FONT2, fg=FG2, justify=CENTER)
         self._entryConsulta.pack(side=LEFT, fill=BOTH,expand=True, padx=10, pady=10)
 
         # Botón de consulta
-        self._botonConsulta = Button(self._frameSolicitarConsulta, text="Buscar", font=FONT, command=self.buscarConsulta)
+        self._botonConsulta = Button(self._frameConsultar, text="Buscar", font=FONT, command=self.buscarConsulta)
         self._botonConsulta.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
 
-        self._frameSolicitarConsulta.columnconfigure(1, weight=1)
+        self._frameConsultar.columnconfigure(1, weight=1)
 
     def _inicializarFrameConsulta(self):
-        # Frame anidado debajo en el cuál se van a mostrar los clientes valiosos de acuerdo al valor valioso pasado en el Entry de arriba
         self._frameMostrarResultadoConsulta = Frame(self, bg="white")
         self._frameMostrarResultadoConsulta.pack(side=TOP, fill=BOTH, expand=True, padx=100, pady=10)
         
@@ -81,23 +86,23 @@ class ConsultaBDD(Frame):
         self._mostrarResultadoConsulta.columnconfigure(1, weight=1)
 
     def buscarConsulta(self):
-        valor = self._entryConsulta.get()
+        entrada = self._entryConsulta.get()
 
         try:
-            val = int(valor)
+            valor = int(entrada)
         except ValueError:
             raise ExcepcionTiposMissMatch().showMessage()
             return
 
-        if int(valor) < 0 :
+        if int(entrada) < 0:
             try:
                 raise ExcepcionNegativos()
             except ExcepcionNegativos as f:
                 f.showMessage()
             return
         
-        if len(valor) != 0:
-            valor = int(valor)
+        if len(entrada) != 0:
+            valor = int(entrada)
             self._mostrarConsulta(valor)
         else:
             try:
@@ -106,65 +111,58 @@ class ConsultaBDD(Frame):
                 f.showMessage()
             return
                 
-    def _mostrarConsulta(self, valor):
+    def _mostrarConsulta(self, entrada):
         texto = ""
         
-        if valor == 1:
+        if entrada == 1:
 
-            if len(Producto.getProductos().values()) == 0:
+            if len(Gato.getGatos.values()) == 0:
                 try:
                     raise ExcepcionConjuntoVacio()
                 except ExcepcionConjuntoVacio as f:
                     f.showMessage()
                 return
 
-            for producto in Producto.getProductos().values():
-                texto += producto.__str__() + "\n"
+            for gato in Gato.getGatos().values():
+                texto += gato.__str__() + "\n"
                 
-        elif valor == 2:
+        elif entrada == 2:
 
-            if len(Servicio.getServicios().values()) == 0:
+            if len(Perro.getPerros().values()) == 0:
                 try:
                     raise ExcepcionConjuntoVacio()
                 except ExcepcionConjuntoVacio as f:
                     f.showMessage()
                 return
 
-            for servicio in Servicio.getServicios().values():
-                texto += servicio.__str__() + "\n"
+            for perro in Perro.getPerros().values():
+                texto += perro.__str__() + "\n"
         
-        elif valor == 3:
+        elif entrada == 3:
 
-            if len(Empleado.getEmpleados().values()) == 0:
+            if len(Proveedor.getProveedores().values()) == 0:
                 try:
                     raise ExcepcionConjuntoVacio()
                 except ExcepcionConjuntoVacio as f:
                     f.showMessage()
                 return
 
-            texto_cajero = "****CAJEROS****\n"
-            texto_tecnico = "****TECNICOS****\n"
+            for proveedor in Proveedor.getProveedores().values():
+                texto += Proveedor.__str__() + "\n"
 
-            for empleado in Empleado.getEmpleados().values():
-                if isinstance(empleado, Cajero):
-                    texto_cajero += empleado.__str__()
-                else:
-                    texto_tecnico += empleado.__str__()
-            texto = texto_cajero + "\n" +texto_tecnico
+        elif entrada == 4:
 
-        elif valor == 4:
-
-            if len(Cliente.getClientes().values()) == 0:
+            if len(Usuario.getUsuarios().values()) == 0:
                 try:
                     raise ExcepcionConjuntoVacio()
                 except ExcepcionConjuntoVacio as f:
                     f.showMessage()
                 return
 
-            for cliente in Cliente.getClientes().values():
-                texto += cliente.__str__() + "\n"
+            for usuarios in Usuario.getUsuarios().values():
+                texto += usuarios.__str__() + "\n"
                 
-        elif valor == 5:
+        elif entrada == 5:
 
             if len(Compra.getCompras().values()) == 0:
                 try:

@@ -27,6 +27,14 @@ class Perro(Mascota):
         else:
             return "Adulto"
 
+    def __str__(self) -> str:
+        return "~ ID # " + str(self.mascotaID) + "\n" \
+               + "~ Nombre: " + str(self._nombre) + "\n" \
+               + "~ Edad: " + str(self._edad) + "\n" \
+               + "~ Raza: " + str(self._raza) + "\n" \
+               + "~ Dueño: " + str(self._idUsuario) + "\n"
+
+
     # Metodo que dependiendo de la edad del gato, retornara una lista de productos recomendados
     def tipoAlimento(self):
         LAux = []

@@ -1,6 +1,6 @@
 from tkinter import *
-from interfaz.estilos.styles import *
-from gestionAplicacion.empleados.empleado import Empleado
+from src.interfaz.estilos.styles import *
+from src.gestorAplicacion.gestionPersonas import Vendedor
 
 class Comision(Frame):
     
@@ -54,7 +54,7 @@ class Comision(Frame):
         self._labelMostrarComisiones.columnconfigure(1, weight=1)
         
     def _calcularComision(self):
-        comisiones = Empleado.calcularComision()
+        comisiones = Vendedor.calcularComision()
         self._showComisiones(comisiones)
         
     def _showComisiones(self, empleados):
