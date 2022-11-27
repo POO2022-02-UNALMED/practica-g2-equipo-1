@@ -1,19 +1,20 @@
 """Clase que crea los objetos tipo Proveedor, los cuales interactúan con la tienda
 vendiéndole el inventario requerido"""
 
-
+from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 class Proveedor(Persona):
     # Diccionario para almacenar las instancias de tipo proveedor
     proveedores = {}
+    personaId = 0
     """
        public Proveedor() {
     }"""
 
     # Constructor de la clase
-    def __init__(self, personaId: int, nombre: str, email: str, telefono: int, stock: bool) -> None:
-        cuenta = None
+    def __init__(self, personaId: int, nombre: str, email: str, telefono: int, stock: bool, nroCuenta:int,saldo:int,pin:int) -> None:
+        self.cuentaBancaria = CuentaBancaria(nroCuenta, saldo, pin)
         # Hacemos referencia al construtor de la clase padre
-        super().__init__(self, personaId, nombre, email, telefono, cuenta)
+        super().__init__(self, personaId, nombre, email, telefono,self.cuentaBancaria)
         # Atributos
         producto = None
         pedidos = None
@@ -57,6 +58,13 @@ class Proveedor(Persona):
         return None
 
         # Metodos de clase
+    @classmethod
+    def getId(cls):
+        return cls.personaId
+
+    @classmethod
+    def setId(cls, personaId):
+        cls.personaId = personaId
 
     @classmethod
     def getProveedores(cls):

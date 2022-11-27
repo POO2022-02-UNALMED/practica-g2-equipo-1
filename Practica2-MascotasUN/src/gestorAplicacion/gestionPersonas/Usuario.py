@@ -1,15 +1,17 @@
 """Clase que crea y gestiona los objetos tipo Usuario, los cuales interactúan
   con la tienda comprando productos. Hereda de la clase Persona"""
 
+from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 
 class Usuario(Persona):
     usuarios = {}
+    personaId = 0
 
     # Constructor de la clase
-    def __init__(self, personaId: int, nombre: str, email: str, telefono: int, direccion: str) -> None:
-        cuenta = None
+    def __init__(self, personaId: int, nombre: str, email: str, telefono: int, direccion: str,nroCuenta:int,saldo:int,pin:int) -> None:
+        self.cuentaBancaria= CuentaBancaria(nroCuenta,saldo,pin)
         # Hacemos referencia al construtor de la clase padre
-        super().__init__(self, personaId, nombre, email, telefono, cuenta)
+        super().__init__(self, personaId, nombre, email, telefono,self.cuentaBancaria)
         # Atributos
         mascotas = None
         compras = None
@@ -69,6 +71,14 @@ class Usuario(Persona):
         @classmethod
         def setUsuarios(cls, usuarios):
             cls.usuarios = usuarios
+
+        @classmethod
+        def getId(cls):
+            return cls.personaId
+
+        @classmethod
+        def setId(cls, personaId):
+            cls.personaId = personaId
 
         # Getters y setters
         def getDireccion(self):
