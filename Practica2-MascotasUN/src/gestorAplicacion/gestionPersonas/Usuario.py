@@ -2,20 +2,24 @@
   con la tienda comprando productos. Hereda de la clase Persona"""
 
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
-from src.gestorAplicacion.gestionPersonas import  Persona
+from src.gestorAplicacion.gestionPersonas import Persona
+from src.gestorAplicacion.gestionPersonas.Persona import Persona
+
+
 class Usuario(Persona):
     usuarios = {}
     personaId = 0
     # Constructor de la clase
-    def __init__(self, nombre: str, email: str, telefono: int, direccion: str,nroCuenta:int,saldo:int,pin:int) -> None:
-        self.cuentaBancaria= CuentaBancaria(nroCuenta,saldo,pin)
+
+    def __init__(self, nombre: str, email: str, telefono: int, direccion: str, nroCuenta: int, saldo: int, pin: int) -> None:
+        self.cuentaBancaria = CuentaBancaria(nroCuenta, saldo, pin)
         # Hacemos referencia al construtor de la clase padre
-        super().__init__(self,nombre, email, telefono,self.cuentaBancaria)
+        super().__init__(self, nombre, email, telefono, self.cuentaBancaria)
         # Atributos
         mascotas = None
         compras = None
         factura = None
-        Usuario.personaId+=1
+        Usuario.personaId += 1
         self.direccion = direccion
         # Se guarda el objeto en un diccionario con su id como key
         Usuario.usuarios[self.personaId] = self
