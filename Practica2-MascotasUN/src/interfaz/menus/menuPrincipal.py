@@ -2,6 +2,13 @@
 from distutils import command
 from tkinter import *
 from tkinter import messagebox
+
+from src.interfaz.pantallas.clientesValioso import ClienteValioso
+from src.interfaz.pantallas.comision import Comision
+from src.interfaz.pantallas.consultaBDD import ConsultaBDD
+from src.interfaz.pantallas.devolucion import Devolucion
+from src.interfaz.pantallas.informeTienda import Informe
+
 """from interfaz.pantallas.fieldFrame import *
 from interfaz.pantallas.clientesValioso import ClienteValioso
 from interfaz.pantallas.devolucion import Devolucion

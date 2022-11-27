@@ -98,9 +98,9 @@ class FieldFrame(Frame):
         valores.pop("id")
         creando = self._objeto.crearInterfaz(**valores)
         if creando==True:
-            self.mensaje.config(text="Fue Exitosó la operación")
+            self.mensaje.config(text="El registro se realizo correctamente")
         else:
-            self.mensaje.config(text="Hay un error en los códigos ó revisa el tipo de dato")
+            self.mensaje.config(text="Hay fallas dentro de los campos")
 
         [item.delete(0, END) for item in self.entrys.values()]
 
