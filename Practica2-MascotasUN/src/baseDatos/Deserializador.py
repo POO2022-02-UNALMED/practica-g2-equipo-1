@@ -13,7 +13,7 @@ class Deserializador:
     @classmethod
     def deserializar(cls):
         #Deserializar Vendedor
-        vendedores=open("src/baseDatos/tmp/proveedores.pkl","rb")
+        vendedores=open("src/baseDatos/tmp/vendedores.pkl","rb")
         Vendedor.setVendedore(pickle.load(vendedores))
         vendedores.close()
         #Deserializador Usuario
