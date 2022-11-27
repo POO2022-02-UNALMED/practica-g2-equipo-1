@@ -1,6 +1,9 @@
 
-from Mascota import Mascota
+from src.gestorAplicacion.gestionVentas import Producto
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 from src.gestorAplicacion.gestionPersonas import Usuario
+from Mascota import Mascota
+
 class Gato(Mascota):
     mascotaID=0
     gatos = {}
@@ -28,7 +31,12 @@ class Gato(Mascota):
         else:
             return None
     # Metodo que dependiendo de la edad del gato, retornara una lista de productos recomendados
-    ## def tipoAlimento(self):
+    def tipoAlimento(self):
+        LAux = []
+        for i in Tienda.getCatalogo():
+            if isinstance(i, Producto):
+                if ((i.getEspecie == "Gato") & (i.getEtapa == self.calcularEdad)):
+                    LAux.append(i) 
 
     #Getters & Setters
     @classmethod

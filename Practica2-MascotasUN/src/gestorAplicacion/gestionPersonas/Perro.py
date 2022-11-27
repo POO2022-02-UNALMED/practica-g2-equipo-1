@@ -30,8 +30,10 @@ class Perro(Mascota):
     # Metodo que dependiendo de la edad del gato, retornara una lista de productos recomendados
     def tipoAlimento(self):
         LAux = []
-        for i in Tienda.getCatalogo:
-            if (i isinstance Producto):
+        for i in Tienda.getCatalogo():
+            if isinstance(i, Producto):
+                if ((i.getEspecie == "Perro") & (i.getRaza == self.getRaza) & (i.getEtapa == self.calcularEdad)):
+                    LAux.append(i)
 
     def encontrarUsuario(self,id):
         if id in Usuario.getUsuarios():
