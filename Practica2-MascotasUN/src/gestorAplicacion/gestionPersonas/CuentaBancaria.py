@@ -16,8 +16,8 @@ class CuentaBancaria:
 	# Metodo para retirar dinero de la cuenta propia. Ingresamos el monto a retirar y el pin de la cuenta. 
 	# Se utiliza en el método transferir()
 	def retirar(self, monto, pin) :
-		if (monto <= self._saldo & self._validarCredenciales(pin)==True):
-			setSaldo(getSaldo() - monto)
+		if (monto <= self._saldo and self._validarCredenciales(pin)==True):
+			self.setSaldo(self.getSaldo() - monto)
 		
 	#Metodo para depositar dinero en la cuenta propia. Ingresamos el monto a depositar.
 	#Se utiliza en el método transferir() de la clase actual y en realizarCompra() de la clase Factura*/
@@ -26,16 +26,12 @@ class CuentaBancaria:
 
 	#Metodo para tranferir dinero a otra cuenta. Requiere ingresar la cuenta a la que se depositará el dinero, el monto a depositar, y el pin de la cuenta*/
 	def tranferir(self, cuenta, monto, pin):
-		if (monto <= self.getSaldo() & self.validarCredenciales(pin)== True):
+		if (monto <= self.getSaldo() and self.validarCredenciales(pin)== True):
 			self.retirar(monto, pin)
-			if (isinstance(cuenta, CuentaBancaria)):
+			if (isinstance(cuenta, CuentaBancaria)==True):
 			    cuenta.depositar(monto)	
-    #Metodo para la seguridad al acceso del dinero de la cuenta
-    def validarCredenciales(self, pin):
-	    if (self.getPin() == pin):
-	        return True
-	    else:
-		    return False
+			
+       
 
     #Getter y setter utilizados para la serializacion y deserializacion de objetos
     @classmethod
