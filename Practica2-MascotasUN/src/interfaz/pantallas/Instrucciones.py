@@ -1,7 +1,7 @@
 from tkinter import *
 from src.interfaz.estilos.styles import *
 
-class Lanzamiento(Frame):
+class Instrucciones(Frame):
     
     def __init__(self, padre, controlador):
         super().__init__(padre)

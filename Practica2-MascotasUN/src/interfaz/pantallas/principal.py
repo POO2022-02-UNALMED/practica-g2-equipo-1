@@ -1,14 +1,14 @@
 # Se importan las librerías que vamos a utilizar
 from tkinter import *
-from interfaz.menus.menuPrincipal import MenuPrincipal
-from interfaz.estilos.styles import *
-from interfaz.pantallas.lanzamiento import Lanzamiento
-from interfaz.pantallas.fieldFrame import FieldFrame
-from interfaz.pantallas.clientesValioso import ClienteValioso
-from interfaz.pantallas.devolucion import Devolucion
-from interfaz.pantallas.comision import Comision
-from interfaz.pantallas.informeTienda import Informe
-from interfaz.pantallas.consultaBDD import ConsultaBDD
+from src.interfaz.menus.menuPrincipal import MenuPrincipal
+from src.interfaz.estilos.styles import *
+from src.interfaz.pantallas.Instrucciones import Instrucciones
+from src.interfaz.pantallas.fieldFrame import FieldFrame
+from src.interfaz.pantallas.clientesValioso import ClienteValioso
+from src.interfaz.pantallas.devolucion import Devolucion
+from src.interfaz.pantallas.comision import Comision
+from src.interfaz.pantallas.informeTienda import Informe
+from src.interfaz.pantallas.consultaBDD import ConsultaBDD
 
 class Principal(Toplevel):
     
@@ -18,7 +18,7 @@ class Principal(Toplevel):
         super().__init__(padre)
         
         # Titulo
-        self.title("PJ Tech")
+        self.title("Mascotas UN")
         self.geometry("1280x1080")
         # Se agrega el menu
         menuPrincipal = MenuPrincipal(self, padre)
@@ -33,14 +33,14 @@ class Principal(Toplevel):
         
         self._framesFuncionalidades = {}
         
-        for F in (Lanzamiento, ClienteValioso, Devolucion, Comision, Informe, ConsultaBDD):
+        for F in (Instrucciones, ClienteValioso, Devolucion, Comision, Informe, ConsultaBDD):
             self._frame =F(self._contenedor, self)
             self._framesFuncionalidades[F] = self._frame
             self._frame.grid(row=0, column=0, sticky=NSEW)
             
-        self.mostrarFrameFuncionalidades(Lanzamiento)
+        self.mostrarFrameFuncionalidades(Instrucciones)
         
-        self._frame = Lanzamiento(self._contenedor, self)
+        self._frame = Instrucciones(self._contenedor, self)
         self._frame.grid(row=0, column=0, sticky=NSEW)
         
     def showFieldFrame(self, values:dict):
