@@ -37,13 +37,7 @@ class Principal(Toplevel):
             self._frame =F(self._contenedor, self)
             self.frameFuncionalidad[F] = self._frame
             self._frame.grid(row=0, column=0, sticky=NSEW)
-            
-<<<<<<< Updated upstream
-        self.mostrarFrameFuncionalidades(Instrucciones)
-=======
-        self.mostrarFuncionalidades(Lanzamiento)
->>>>>>> Stashed changes
-        
+        self.mostrarFuncionalidades(Instrucciones)
         self._frame = Instrucciones(self._contenedor, self)
         self._frame.grid(row=0, column=0, sticky=NSEW)
         
