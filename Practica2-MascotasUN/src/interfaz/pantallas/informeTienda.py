@@ -22,12 +22,12 @@ class Informe(Frame):
 
     def _mostrarTitulo(self):
         # Label superior con el título de la pantalla
-        self._titulo = Label(self, justify=CENTER, text="Informe Tienda PJ Tech", bg=BACKGROUND_FRAMES, font=FONT, fg=FG)
+        self._titulo = Label(self, justify=CENTER, text="Estadísticas de MascotasUN", bg=BACKGROUND_FRAMES, font=FONT, fg=FG)
         self._titulo.pack(side=TOP, fill=X, padx=100, pady=10)
 
     def _mostrarBotonGenerarInfome(self):
         # Se crea el botón con el cuál  va a mostrar el Informe de PJ Tech
-        self._botonGenerarInforme = Button(self, text="Generar Informe", font=FONT, command=self.generarInforme)
+        self._botonGenerarInforme = Button(self, text="Generar Informe de Estadísticas", font=FONT, command=self.generarInforme)
         self._botonGenerarInforme.pack(side=TOP, fill=X, padx=400, pady=10)
         
     def _mostrarInforme(self):
