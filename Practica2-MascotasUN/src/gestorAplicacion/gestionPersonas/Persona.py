@@ -30,6 +30,7 @@ class Persona:
   	#Método que recorre la lista de personas y las imprime, retornando un String.
   	#Se resuelve el metodo toString() más específico de Usuario, Proveedor o Vendedor
   	#por medio de la ligadura dinámica en tiempo de ejecucion*/
+    @classmethod
     def verPersona(cls):
         resultado_nombre = ""
         for i in range(len(cls.personas)):
@@ -37,6 +38,7 @@ class Persona:
         return resultado_nombre
   	
   	#Método que encuentra a la persona en la lista de personas existentes y la retorna, dado su ID
+    @classmethod
     def encontrarPersona(cls,personaId):
         for p in cls.personas:
             if(p.getPersonaId()== personaId):
@@ -45,8 +47,8 @@ class Persona:
   	
  	#Método que dado el ID de la persona, retorna un String con su respectiva bienvenida.
  	#El método encontrarPersona() se resuelve por ligadura dinámica
-    def bienvenidaPersona(ID):
-        bienvenida = "Bienvenido, " + encontrarPersona(ID).getNombre()
+    def bienvenidaPersona(self,ID):
+        bienvenida = "Bienvenido, " + self.encontrarPersona(ID).getNombre()
         return bienvenida
     
     #Getters y setters
