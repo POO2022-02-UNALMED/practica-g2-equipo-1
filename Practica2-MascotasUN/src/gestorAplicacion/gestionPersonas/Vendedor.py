@@ -2,9 +2,9 @@
  #de la aplicación. Hereda de la clase abstracta Persona. Existen dos diccionarios, el primero (usuarios) se encarga de
  #obtener usuarios con usuario y contrasena, el segundo (cantidadVentas) muestra el string del usuario y las ventas
  #del mismo
+
 from src.gestorAplicacion.gestionPersonas.CuentaBancaria import CuentaBancaria
-from src.gestorAplicacion.gestionPersonas import Persona
-#from gestorAplicacion.gestionVentas.Factura import Factura
+from src.gestorAplicacion.gestionPersonas.Persona import Persona
 
 
 class Vendedor(Persona):

@@ -8,7 +8,7 @@ from src.interfaz.pantallas.clientesValioso import ClienteValioso
 from src.interfaz.pantallas.devolucion import Devolucion
 from src.interfaz.pantallas.comision import Comision
 from src.interfaz.pantallas.informeTienda import Informe
-from src.interfaz.pantallas.consultaBDD import ConsultaBDD
+from src.interfaz.pantallas.consultaInformacion import ConsultaBDD
 
 class Principal(Toplevel):
     
