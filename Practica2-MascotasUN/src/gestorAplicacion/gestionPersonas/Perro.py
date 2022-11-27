@@ -51,12 +51,12 @@ class Perro(Mascota):
     #Getters y setters
 
     @classmethod
-    def getVendedores(cls):
-        return cls._vendedores
+    def getPerros(cls):
+        return cls.perros
 
     @classmethod
-    def setVendedores(cls,vendedores):
-        cls._vendedores=vendedores
+    def setPerros(cls,perros):
+        cls.perros=perros
 
     def getIdUsuario(self):
         return self._idUsuario
