@@ -1,4 +1,3 @@
-
 class CuentaBancaria:	
 	
 	_cuentasBancarias = []
@@ -30,10 +29,16 @@ class CuentaBancaria:
 			self.retirar(monto, pin)
 			if (isinstance(cuenta, CuentaBancaria)==True):
 			    cuenta.depositar(monto)	
-			
-       
 
     #Getter y setter utilizados para la serializacion y deserializacion de objetos
+    @classmethod
+	def getCuentasBancarias(cls):
+		return cls._cuentasBancarias
+    
+	@classmethod
+	def setNroCuenta(cls, nroCuenta):
+		cls._nroCuenta = nroCuenta
+    
     @classmethod
     def getCuentasBancarias(cls):
 		return cls._cuentasBancarias
@@ -47,7 +52,7 @@ class CuentaBancaria:
 		return self._nroCuenta
 	
 	def setNroCuenta(self, nroCuenta):
-		self._nroCuenta = nroCuenta;
+		self._nroCuenta = nroCuenta
 	
 	def getSaldo(self):
 		return self._saldo
