@@ -1,16 +1,21 @@
 
-from gestionVentas.Tienda import Producto
-from gestionVentas.Tienda import Tienda
+from src.gestorAplicacion.gestionVentas import Producto
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
+from src.gestorAplicacion.gestionPersonas import Usuario
 from Mascota import Mascota
 
 class Perro(Mascota):
+    mascotaID=0
+    perros = {}
 
     #Constructor
-    def __init__(self, mascotaID, nombre, edad, raza):
-        self._mascotaID = mascotaID
+    def __init__(self, nombre, edad, raza,idUsuario):
+        Perro.mascotaID+=1
         self._nombre = nombre
         self._edad = edad
         self._raza = raza
+        self.usuario=self.encontrarUsuario(idUsuario)
+        Perro.perros[self.mascotaID] = self
 
     #Metodos
 
@@ -25,14 +30,38 @@ class Perro(Mascota):
     def tipoAlimento(self):
         LAux = []
         for i in Tienda.getCatalogo:
-            if (i isinstance Producto): 
+            if (i isinstance Producto):
+
+    def encontrarUsuario(self,id):
+        if id in Usuario.getUsuarios():
+            return Usuario.getUsuarios()[id]
+        else:
+            return None
 
     #Getters & Setters
-    def getMascotaID(self):
-        return self._mascotaID
-    
-    def setMascotaID(self, mascotaID):
-        self._mascotaID = mascotaID
+    @classmethod
+    def getMascotaId(cls):
+        return cls.mascotaID
+
+    @classmethod
+    def setMascotaId(cls, mascotaID):
+        cls.mascotaID = mascotaID
+
+    #Getters y setters
+
+    @classmethod
+    def getVendedores(cls):
+        return cls._vendedores
+
+    @classmethod
+    def setVendedores(cls,vendedores):
+        cls._vendedores=vendedores
+
+    def getIdUsuario(self):
+        return self._idUsuario
+
+    def setIdUsuario(self, idUsuario):
+        self._idUsuario= idUsuario
 
     def getNombre(self):
         return self._nombre

@@ -103,27 +103,28 @@ class MenuPrincipal(Menu):
         self._values["valores"] = [Vendedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['personaId','nombre','email','telefono','usuario','contrasena','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
-    
+
+    #Falta
     def _gestionarProductos(self):
         self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Fecha de compra", "Codigo Cliente", "Codigo Cajero"]
         self._values["habilitado"] = ["ID"]
         self._values["valores"] = [None]* len(self._values["criterios"])
         self._values["nombreProceso"] = "Gestionar Compra-Productos"
         self._values["descripcionProceso"] = "Registra la informacion de una nueva compra de productos en el sistema"
-        from gestionAplicacion.compras.compra_productos import CompraProductos
+        from src.gestorAplicacion.gestion
         self._values["objeto"] = CompraProductos
         self._values["atributos"] = ['id', 'descripcion', 'descuento', 'fecha_de_compra', 'codigo_cliente', 'codigo_cajero']
         self._padre.showFieldFrame(self._values)
 
-    def _gestionarCompraServicio(self):
-        self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Tiempo de culminación", "Codigo Tipo Servicio"]
+    def _gestionarPerro(self):
+        self._values["criterios"] = ["ID", "Nombre", "Edad", "Raza","Id Usuario"]
         self._values["habilitado"] = ["ID"]
-        self._values["valores"] = [None]* len(self._values["criterios"])
-        self._values["nombreProceso"] = "Gestionar Compra-Servicios"
-        self._values["descripcionProceso"] = "Registra la informacion de una nueva compra de servicios en el sistema"
-        from gestionAplicacion.compras.compra_servicios import CompraServicios
-        self._values["objeto"] = CompraServicios
-        self._values["atributos"] = ['id', 'descripcion', 'descuento', 'tiempo_de_culminacion', 'codigo_tipo_servicio']
+        self._values["nombreProceso"] = "Gestionar Perros"
+        self._values["descripcionProceso"] = "Registra la informacion de una nueva mascota de tipo perro"
+        from src.gestorAplicacion.gestionPersonas import Perro
+        self._values["objeto"] = Perro
+        self._values["valores"] = [Perro.mascotaID()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["atributos"] = ['mascotaID', 'nombre','edad','raza','idUsuario']
         self._padre.showFieldFrame(self._values)
     
     def _gestionarCajeros(self):

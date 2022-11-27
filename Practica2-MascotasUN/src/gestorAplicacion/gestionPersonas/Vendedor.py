@@ -77,10 +77,12 @@ class Vendedor(Persona):
         cls.personaId = personaId
 
     #Getters y setters
-    
+
+    @classmethod
     def getVendedores(cls):
         return cls._vendedores
-    
+
+    @classmethod
     def setVendedores(cls,vendedores):
         cls._vendedores=vendedores
     
