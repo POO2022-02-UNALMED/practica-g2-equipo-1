@@ -2,11 +2,12 @@
 
 class Producto:
     
-    productos = []
+    productos = {}
+    productoID=444444
         
     # Constructor
-    def __init__(self, productoID, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza="", etapa="", especie=""):
-        self.productoID = productoID
+    def __init__(self, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza="", etapa="", especie=""):
+        Producto.productoID+=1
         self.nombre = nombre
         self.fechaVencimiento = fechaVencimiento
         self.descripcion = descripcion
@@ -16,7 +17,7 @@ class Producto:
         self.raza = raza
         self.etapa = etapa
         self.especie = especie
-        self.productos.append(self)
+        Producto.productos[self.productoID] = self
         
     # Métodos
     
@@ -49,7 +50,14 @@ class Producto:
         cls.productos.append(producto)
     
     # Setters y getters
-    
+    @classmethod
+    def getProductoId(cls):
+        return cls.productoID
+
+    @classmethod
+    def setProductoId(cls, productoID):
+        cls.productoID = productoID
+
     @classmethod
     def getProductos(cls):
         return cls.productos

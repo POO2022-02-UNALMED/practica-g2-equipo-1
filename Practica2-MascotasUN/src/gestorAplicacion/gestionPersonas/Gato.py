@@ -1,13 +1,20 @@
 
+from src.gestorAplicacion.gestionVentas import Producto
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
+from src.gestorAplicacion.gestionPersonas import Usuario
+from Mascota import Mascota
 
-
-class Gato:
-
+class Gato(Mascota):
+    mascotaID=0
+    gatos = {}
     #Constructor
-    def __init__(self, mascotaID, nombre, edad):
-        self._mascotaID = mascotaID
+    def __init__(self, nombre, edad,idUsuario):
+        Gato.mascotaID+=1
         self._nombre = nombre
         self._edad = edad
+        Mascota._mascotas.append(self)
+        self.usuario=self.encontrarUsuario(idUsuario)
+        Gato.gatos[self.mascotaID] = self
 
     #Metodos
 
@@ -18,15 +25,37 @@ class Gato:
         else:
             return "Adulto"
 
+    def encontrarUsuario(self,id):
+        if id in Usuario.getUsuarios():
+            return Usuario.getUsuarios()[id]
+        else:
+            return None
     # Metodo que dependiendo de la edad del gato, retornara una lista de productos recomendados
-    ## def tipoAlimento(self):
+    def tipoAlimento(self):
+        LAux = []
+        for i in Tienda.getCatalogo():
+            if isinstance(i, Producto):
+                if ((i.getEspecie == "Gato") & (i.getEtapa == self.calcularEdad)):
+                    LAux.append(i) 
 
     #Getters & Setters
-    def getMascotaID(self):
-        return self._mascotaID
-    
-    def setMascotaID(self, mascotaID):
-        self._mascotaID = mascotaID
+    @classmethod
+    def getMascotaId(cls):
+        return cls.mascotaID
+
+    @classmethod
+    def setMascotaId(cls, mascotaID):
+        cls.mascotaID = mascotaID
+
+    #Getters y setters
+
+    @classmethod
+    def getGatos(cls):
+        return cls.gatos
+
+    @classmethod
+    def setGatos(cls,gatos):
+        cls.gatos=gatos
 
     def getNombre(self):
         return self._nombre

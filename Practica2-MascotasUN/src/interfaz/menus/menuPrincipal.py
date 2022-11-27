@@ -103,73 +103,52 @@ class MenuPrincipal(Menu):
         self._values["valores"] = [Vendedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['personaId','nombre','email','telefono','usuario','contrasena','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
-    
-    def _gestionarProductos(self):
-        self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Fecha de compra", "Codigo Cliente", "Codigo Cajero"]
-        self._values["habilitado"] = ["ID"]
-        self._values["valores"] = [None]* len(self._values["criterios"])
-        self._values["nombreProceso"] = "Gestionar Compra-Productos"
-        self._values["descripcionProceso"] = "Registra la informacion de una nueva compra de productos en el sistema"
-        from gestionAplicacion.compras.compra_productos import CompraProductos
-        self._values["objeto"] = CompraProductos
-        self._values["atributos"] = ['id', 'descripcion', 'descuento', 'fecha_de_compra', 'codigo_cliente', 'codigo_cajero']
-        self._padre.showFieldFrame(self._values)
 
-    def _gestionarCompraServicio(self):
-        self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Tiempo de culminación", "Codigo Tipo Servicio"]
-        self._values["habilitado"] = ["ID"]
-        self._values["valores"] = [None]* len(self._values["criterios"])
-        self._values["nombreProceso"] = "Gestionar Compra-Servicios"
-        self._values["descripcionProceso"] = "Registra la informacion de una nueva compra de servicios en el sistema"
-        from gestionAplicacion.compras.compra_servicios import CompraServicios
-        self._values["objeto"] = CompraServicios
-        self._values["atributos"] = ['id', 'descripcion', 'descuento', 'tiempo_de_culminacion', 'codigo_tipo_servicio']
-        self._padre.showFieldFrame(self._values)
-    
-    def _gestionarCajeros(self):
-        self._values["criterios"] = ["ID", "Nombre", "Sueldo", "Comision", "Correo", "Número de contacto", "Cantidad de ventas"]
-        self._values["habilitado"] = ["ID"]
-        self._values["valores"] = [None]* len(self._values["criterios"])
-        self._values["nombreProceso"] = "Gestionar empleados de cajeros"
-        self._values["descripcionProceso"] = "Registra la informacion de un nuevo empleado cajero en el sitema"
-        from gestionAplicacion.empleados.cajero import Cajero
-        self._values["objeto"] = Cajero
-        self._values["atributos"] = ['id', 'nombre', 'sueldo', 'comision', 'correo', 'numeroContacto', 'cantidadEnVentas']
-        self._padre.showFieldFrame(self._values)
-    
-    def _gestionarTecnico(self):
-        self._values["criterios"] = ["ID", "Nombre", "Sueldo", "Comision", "Correo", "Número de contacto", "Años de experiencias"]
-        self._values["habilitado"] = ["ID"]
-        self._values["valores"] = [None]* len(self._values["criterios"])
-        self._values["nombreProceso"] = "Gestionar empleados tecnicos"
-        self._values["descripcionProceso"] = "Registra la informacion de un nuevos empleado tecnico"
-        from gestionAplicacion.empleados.tecnico import Tecnico
-        self._values["objeto"] = Tecnico
-        self._values["atributos"] = ['id', 'nombre', 'sueldo', 'comision', 'correo', 'numeroContacto', 'experiencia']
-        self._padre.showFieldFrame(self._values)
-    
+    #Falta
     def _gestionarProductos(self):
-        self._values["criterios"] = ["ID", "Nombre", "Fecha de Ingreso", "Precio", "Descripción"]
+        self._values["criterios"] = ["ID","Nombre","Fecha de vencimiento","Descripcion","Precio Compra","Precio Venta","Cantidad Comprada","Raza","Etapa","Especie"]
         self._values["habilitado"] = ["ID"]
-        self._values["valores"] = [None]* len(self._values["criterios"])
         self._values["nombreProceso"] = "Gestionar Productos"
-        self._values["descripcionProceso"] = "Registra la informacion de un nuevo producto"
-        from gestionAplicacion.productos.producto import Producto
+        self._values["descripcionProceso"] = "Registra la informacion de un nuevo producto al sistema"
+        from src.gestorAplicacion.gestionVentas import Producto
         self._values["objeto"] = Producto
-        self._values["atributos"] = ['id', 'nombre', 'fecha_ingreso', 'precio', 'descripcion']
+        self._values["valores"] = [Producto.getProductoId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["atributos"] = ['productoID','nombre','fechaVencimiento','descripcion','precioCompra','precioVenta','cantidadComprada','raza','etapa','especie']
+        self._padre.showFieldFrame(self._values)
+
+    def _gestionarPerro(self):
+        self._values["criterios"] = ["ID", "Nombre", "Edad", "Raza","Id Usuario"]
+        self._values["habilitado"] = ["ID"]
+        self._values["nombreProceso"] = "Gestionar Perros"
+        self._values["descripcionProceso"] = "Registra la informacion de una nueva mascota de tipo perro"
+        from src.gestorAplicacion.gestionPersonas import Perro
+        self._values["objeto"] = Perro
+        self._values["valores"] = [Perro.getMascotaID()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["atributos"] = ['mascotaID', 'nombre','edad','raza','idUsuario']
+        self._padre.showFieldFrame(self._values)
+
+    def _gestionarGato(self):
+        self._values["criterios"] = ["ID", "Nombre", "Edad","Id Usuario"]
+        self._values["habilitado"] = ["ID"]
+        self._values["nombreProceso"] = "Gestionar Gatos"
+        self._values["descripcionProceso"] = "Registra la informacion de una nueva mascota de tipo gato"
+        from src.gestorAplicacion.gestionPersonas import Gato
+        self._values["objeto"] = Gato
+        self._values["valores"] = [Gato.getMascotaID()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["atributos"] = ['mascotaID', 'nombre','edad','idUsuario']
         self._padre.showFieldFrame(self._values)
     
-    def _verClientesValiosos(self):
-        self._padre.mostrarFrameFuncionalidades(ClienteValioso)
+    def _realizarVenta(self):
+        self._padre.mostrarFuncionalidades(ClienteValioso)
 
-    def _verDevolucionCompraProductos(self):
-        self._padre.mostrarFrameFuncionalidades(Devolucion)
+    def _comprarInventario(self):
+        self._padre.mostrarFuncionalidades(Devolucion)
 
-    def _calcularComision(self):
-        self._padre.mostrarFrameFuncionalidades(Comision)
+    def _cobrarComision(self):
+        self._padre.mostrarFuncionalidades(Comision)
 
-    def _generarInforme(self):
-        self._padre.mostrarFrameFuncionalidades(Informe)
+    def _verEstadisticasVentas(self):
+        self._padre.mostrarFuncionalidades(Informe)
 
-    def _consultaBaseDeDatos(self):
-        self._padre.mostrarFrameFuncionalidades(ConsultaBDD)
+    def _recomendacionesPersonalizadas(self):
+        self._padre.mostrarFuncionalidades(ConsultaBDD)

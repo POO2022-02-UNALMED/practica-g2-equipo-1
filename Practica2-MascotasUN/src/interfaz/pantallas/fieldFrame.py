@@ -2,6 +2,7 @@ from tkinter import *
 
 #from pytest import Instance
 from src.interfaz.estilos.styles import *
+from excepciones import *
 
 class FieldFrame(Frame):
     
