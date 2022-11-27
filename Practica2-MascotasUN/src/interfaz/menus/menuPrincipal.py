@@ -2,12 +2,12 @@
 from distutils import command
 from tkinter import *
 from tkinter import messagebox
-from interfaz.pantallas.fieldFrame import *
+"""from interfaz.pantallas.fieldFrame import *
 from interfaz.pantallas.clientesValioso import ClienteValioso
 from interfaz.pantallas.devolucion import Devolucion
 from interfaz.pantallas.comision import Comision
 from interfaz.pantallas.informeTienda import Informe
-from interfaz.pantallas.consultaBDD import ConsultaBDD
+from interfaz.pantallas.consultaBDD import ConsultaBDD"""
 
 class MenuPrincipal(Menu):
     
@@ -34,22 +34,20 @@ class MenuPrincipal(Menu):
         # Se crean los opciones de cada submenu
         
         # Para el caso del submenu Archivos
-        menuArchivos.add_command(label="Aplicacion", command=self.mostrarInfo)
+        menuArchivos.add_command(label="Aplicacion", command=self.informacionAplicativo)
         menuArchivos.add_command(label="Salir", command=self.salir)
         
         # Para el caso del submenu Procesos y Consultas
-        menuProcesos.add_command(label="Gestionar Clientes", command=self._gestionarCliente)
-        menuProcesos.add_command(label="Gestionar Compra-Productos", command = self._gestionarComprasProductos)
-        menuProcesos.add_command(label="Gestionar Compra-Servicios", command=self._gestionarCompraServicio)
-        menuProcesos.add_command(label="Gestionar Cajeros", command = self._gestionarCajeros)
-        menuProcesos.add_command(label="Gestionar Técnicos", command=self._gestionarTecnico)
         menuProcesos.add_command(label="Gestionar Productos", command=self._gestionarProductos)
-        menuProcesos.add_command(label="Consulta Base de Datos", command=self._consultaBaseDeDatos)
-        menuProcesos.add_command(label="Ver clientes valiosos", command=self._verClientesValiosos)
-        menuProcesos.add_command(label="Devolucion compra productos", command=self._verDevolucionCompraProductos)
-        menuProcesos.add_command(label="Calcular comisiones empleados", command=self._calcularComision)
-        menuProcesos.add_command(label="Generar informe estado de tienda", command=self._generarInforme)
-        
+        menuProcesos.add_command(label="Gestionar Proveedores", command = self._gestionarProveedores)
+        menuProcesos.add_command(label="Gestionar Usuarios", command=self._gestionarUsuarios)
+        menuProcesos.add_command(label="Gestionar Vendedores", command = self._gestionarVendedores)
+        menuProcesos.add_command(label="Realizar Venta", command=self._realizarVenta)
+        menuProcesos.add_command(label="Comprar inventario", command=self._comprarInventario)
+        menuProcesos.add_command(label="Cobrar comision", command=self._cobrarComision)
+        menuProcesos.add_command(label="Ver estadisticas ventas", command=self._verEstadisticasVentas)
+        menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacionesPersonalizadas)
+
         # Para el caso del submenu Ayuda
         menuAyuda.add_command(label="Acerca de", command=self.quienesSomos)
         
@@ -57,19 +55,21 @@ class MenuPrincipal(Menu):
         self._controlador.deiconify()
         self._padre.destroy()
         
-    def mostrarInfo(self):
+    def informacionAplicativo(self):
         messagebox.showinfo(
                 title="Información Básica",
-                message="PJ Tech es una tienda que ofrece gran variedad de productos y servicios, orientada a aficionados de la tecnología. Entre los productos que ofrecemos tenemos: computadores, periféricos, componentes (memorias, CPUs, GPUs, discos duros), videojuegos, etc.. Ofrecemos servicios de mantenimiento y reparación tanto de consolas como PCs"
+                message="MascotasUN es una aplicacion pensada para la gestión de facturacion e inventario de una tienda "
+                        "de productos para mascotas vista desde un administrador  que es el vendedor y  al obtener este "
+                        "producto de software tendra acceso a una aplicacion en la cual podra llevar control de la tienda"
             )
         
     def quienesSomos(self):
         messagebox.showinfo(
                 title="Autores",
-                message="Diego Valentín Osorio Marín \nFredy Alberto Orozco Loaiza \nJaime Andrés Monsalve Ballesteros" 
+                message="Hinara Pastora Sanchez Mata \nAlejandra Uribe Sierra \n Anna Ospina Bedoya \n Juan Felipe Lopez Ramirez\nJuan Jose Tobon Zapata"
             )
         
-    def _gestionarCliente(self):
+    def _gestionarUsuarios(self):
         self._values["criterios"] = ["ID", "Nombre", "Fecha Nacimiento", "Dirección", "Teléfono"]
         self._values["habilitado"] = ["ID"]
         self._values["nombreProceso"] = "Gestionar cliente"
@@ -78,7 +78,7 @@ class MenuPrincipal(Menu):
         self._values["objeto"] = Cliente
         self._values["valores"] = [Cliente.getIndex()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['id', 'nombre', 'fecha_nacimiento', 'direccion', 'telefono']
-        self._padre.mostrarFieldFrame(self._values)
+        self._padre.showFieldFrame(self._values)
     
     def _gestionarComprasProductos(self):
         self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Fecha de compra", "Codigo Cliente", "Codigo Cajero"]
@@ -89,7 +89,7 @@ class MenuPrincipal(Menu):
         from gestionAplicacion.compras.compra_productos import CompraProductos
         self._values["objeto"] = CompraProductos
         self._values["atributos"] = ['id', 'descripcion', 'descuento', 'fecha_de_compra', 'codigo_cliente', 'codigo_cajero']
-        self._padre.mostrarFieldFrame(self._values)
+        self._padre.showFieldFrame(self._values)
 
     def _gestionarCompraServicio(self):
         self._values["criterios"] = ["ID", "Descripcion", "Descuento", "Tiempo de culminación", "Codigo Tipo Servicio"]
@@ -100,7 +100,7 @@ class MenuPrincipal(Menu):
         from gestionAplicacion.compras.compra_servicios import CompraServicios
         self._values["objeto"] = CompraServicios
         self._values["atributos"] = ['id', 'descripcion', 'descuento', 'tiempo_de_culminacion', 'codigo_tipo_servicio']
-        self._padre.mostrarFieldFrame(self._values)
+        self._padre.showFieldFrame(self._values)
     
     def _gestionarCajeros(self):
         self._values["criterios"] = ["ID", "Nombre", "Sueldo", "Comision", "Correo", "Número de contacto", "Cantidad de ventas"]
@@ -111,7 +111,7 @@ class MenuPrincipal(Menu):
         from gestionAplicacion.empleados.cajero import Cajero
         self._values["objeto"] = Cajero
         self._values["atributos"] = ['id', 'nombre', 'sueldo', 'comision', 'correo', 'numeroContacto', 'cantidadEnVentas']
-        self._padre.mostrarFieldFrame(self._values)
+        self._padre.showFieldFrame(self._values)
     
     def _gestionarTecnico(self):
         self._values["criterios"] = ["ID", "Nombre", "Sueldo", "Comision", "Correo", "Número de contacto", "Años de experiencias"]
@@ -122,7 +122,7 @@ class MenuPrincipal(Menu):
         from gestionAplicacion.empleados.tecnico import Tecnico
         self._values["objeto"] = Tecnico
         self._values["atributos"] = ['id', 'nombre', 'sueldo', 'comision', 'correo', 'numeroContacto', 'experiencia']
-        self._padre.mostrarFieldFrame(self._values)
+        self._padre.showFieldFrame(self._values)
     
     def _gestionarProductos(self):
         self._values["criterios"] = ["ID", "Nombre", "Fecha de Ingreso", "Precio", "Descripción"]
@@ -133,7 +133,7 @@ class MenuPrincipal(Menu):
         from gestionAplicacion.productos.producto import Producto
         self._values["objeto"] = Producto
         self._values["atributos"] = ['id', 'nombre', 'fecha_ingreso', 'precio', 'descripcion']
-        self._padre.mostrarFieldFrame(self._values)
+        self._padre.showFieldFrame(self._values)
     
     def _verClientesValiosos(self):
         self._padre.mostrarFrameFuncionalidades(ClienteValioso)

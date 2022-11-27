@@ -43,7 +43,7 @@ class Principal(Toplevel):
         self._frame = Lanzamiento(self._contenedor, self)
         self._frame.grid(row=0, column=0, sticky=NSEW)
         
-    def mostrarFieldFrame(self, values:dict):
+    def showFieldFrame(self, values:dict):
         self._frame = FieldFrame(self._contenedor, self, **values)
         self._frame.grid(row=0, column=0, sticky=NSEW)
         self._frame.tkraise()

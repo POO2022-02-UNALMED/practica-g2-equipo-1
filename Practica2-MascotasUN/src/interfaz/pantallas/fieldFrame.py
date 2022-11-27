@@ -1,9 +1,7 @@
 from tkinter import *
 
 #from pytest import Instance
-from interfaz.estilos.styles import *
-from excepciones import *
-
+from src.interfaz.estilos.styles import *
 
 class FieldFrame(Frame):
     
@@ -25,7 +23,7 @@ class FieldFrame(Frame):
         self._descripcionProceso = descripcionProceso
         self._objeto = objeto
         self._atributos = atributos
-        
+
         # Inicializamos los widgets
         
         # Titulo (Gestion ....)
@@ -78,13 +76,13 @@ class FieldFrame(Frame):
         frameBotones = Frame(self, bg=BACKGROUND_FRAMES)
         frameBotones.pack(side=TOP, fill=BOTH, expand=True, padx=10, pady=20)
         
-        aceptar = Button(frameBotones, text="Aceptar", command=self.guardarObjeto, font=FONT)
+        aceptar = Button(frameBotones, text="Aceptar", command=self.guardarOperacion, font=FONT)
         aceptar.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
         
-        borrar = Button(frameBotones, text="Borrar", command = self.borrarCampos, font=FONT)
+        borrar = Button(frameBotones, text="Borrar", command = self.borrarCeldas, font=FONT)
         borrar.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
 
-    def guardarObjeto(self):
+    def guardarOperacion(self):
         
         valores = {k:v.get() for k, v in self.entrys.items()}
 
@@ -96,18 +94,14 @@ class FieldFrame(Frame):
                     f.showMessage()
                 return
 
-
-        
         valores.pop("id")
-        esta_guardo = self._objeto.crearInterfaz(**valores)
-        if esta_guardo:
+        creando = self._objeto.crearInterfaz(**valores)
+        if creando==True:
             self.mensaje.config(text="Fue Exitosó la operación")
         else:
             self.mensaje.config(text="Hay un error en los códigos ó revisa el tipo de dato")
 
-
-
         [item.delete(0, END) for item in self.entrys.values()]
 
-    def borrarCampos(self):
+    def borrarCeldas(self):
         [item.delete(0, END) for item in self.entrys.values()]
