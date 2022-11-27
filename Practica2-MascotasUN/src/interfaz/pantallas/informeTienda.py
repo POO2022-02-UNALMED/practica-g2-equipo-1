@@ -1,8 +1,11 @@
 from tkinter import *
 from interfaz.estilos.styles import *
-from gestionAplicacion.productos.detalle_producto import DetalleProducto
-from gestionAplicacion.servicios.servicio import Servicio
-from gestionAplicacion.empleados.empleado import Empleado
+from gestorAplicacion.gestionVentas import Producto
+from gestorAplicacion.gestionVentas import Factura
+from gestorAplicacion.gestionVentas import Tienda
+from gestorAplicacion.gestionPersonas import Usuario
+from gestorAplicacion.gestionPersonas import Vendedor
+from gestorAplicacion.gestionPersonas import CuentaBancaria
 
 class Informe(Frame):
 
@@ -12,7 +15,7 @@ class Informe(Frame):
         super().__init__(padre)
         # Se configura el Frame
         self.configure(background=BACKGROUND_CONTENEDOR)
-        #Atributos
+        # Atributos
         self._controlador = controlador
 
         # Se inicializan los widgets que van en la interfaz
@@ -44,40 +47,73 @@ class Informe(Frame):
         
         
     def generarInforme(self):
-        # En este método se generará el informe a modo resumen de la tienda PJ Tech
-        texto = "*******INFORME PJ TECH*******" + "\n" \
-                    + "Ingresos Totales: " + str(self.getIngresosTotales()) + "\n" \
-                    + "Egresos Totales: " + str(self.getEgresosTotales()) + "\n" \
-                    + "Utilidades: " + str(self.getUtilidades()) + "\n" \
+        # En este método se generará el informe a modo resumen de la tienda MascotasUN
+        texto = "*******INFORME MascotasUN*******" + "\n\n\n" \
+                    + "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas()) + "\n\n" \
+                    + "Productos más vendidos" +"\n"+ str(self.imprimirProductos()) + "\n\n" \
+                    + "Clientes destacados" +"\n"+ str(self.imprimirClientes()) + "\n" \
                         
         self._labelMostrarInforme.config(text=texto)
-                        
-    def getIngresosTotales(self):
         
-        ingresoCompraProductos = 0
-        for i in DetalleProducto.getDetallesProductos().values():
-            precio = i.getProducto().getPrecio()
-            ingresoCompraProductos += precio
-            
-        ingresoPorServicios = 0
-        for i in Servicio.getServicios().values():
-            precio = i.getPrecio()
-            ingresoPorServicios += precio
-            
-        ingresosTotales = ingresoCompraProductos + ingresoPorServicios
-        
-        return ingresosTotales
+    # Método que muestra en pantalla cada vendedor y el número de ventas que ha realizado en orden descendente
+    # Valores es una lista *** y ventas es un diccionario con el nombre del vendedor y el número de ventas
+    def imprimirVentas(valores,ventas):
+        for i in range(len(valores)):
+            for j in ventas:
+                if valores[i] == ventas[j]:
+                    print("El vendedor",j,"ha realizado",ventas[j],"ventas")
+                    break
+                
+    # Método que muestra en pantalla los productos más vendidos en orden descendente     
+    def imprimirProductos(valores,productos):
+        for i in range(len(valores)):
+            for j in productos:
+                if valores[i] == productos[j]:
+                    print("El producto",j,"ha sido vendido",productos[j],"veces")
+                    break
+                
+    # Método que muestra en pantalla los productos más vendidos en orden descendente
+    def calcularProductoMasVendido(self,facturas,ventas):
+        productos = {}
+        for i in facturas:
+            for j in i.getDetalle():
+                if j.getProducto().getNombre() in productos:
+                    productos[j.getProducto().getNombre()] += j.getCantidad()
+                else:
+                    productos[j.getProducto().getNombre()] = j.getCantidad()
+        valores = list(productos.values())
+        valores.sort(reverse=True)
+        self.imprimirProductos(valores,productos)
+        return productos
     
-    def getEgresosTotales(self):
-        
-        nomina = 0
-        for i in Empleado.getEmpleados().values():
-            sueldo = i.getSueldo()
-            nomina += sueldo
-            
-        return nomina
-            
-    def getUtilidades(self):
-        return self.getIngresosTotales() - self.getEgresosTotales()
-        
-
+    def calcularProductoMasVendido(facturas, ventas):
+        # dict donde se añade la suma de productos vendidos por cada factura
+        for i in facturas: # Lista de diccionarios de facturas
+            for k in i: # dict de productos vendidos
+                z = 0
+                for j in ventas: # dict de productos totales
+                    if i[k] == ventas[j]:
+                        a = i[k]
+                        b = ventas[j]
+                        c = a + b
+                        z = 1
+                        ventas[i[k]] = c
+                    if z != 1:
+                        ventas[i[k]] = i[k]
+              
+    def calcularProductoMasVendido(self):
+        productos = Producto.getProductos()
+        cantidad = 0
+        for i in productos:
+            if productos[i].getCantidad() > cantidad:
+                cantidad = productos[i].getCantidad()
+                producto = productos[i]
+        return producto
+                        
+    # Método que muestra en pantalla los clientes que más han comprado en orden descendente
+    def imprimirClientes(valores,clientes):
+        for i in range(len(valores)):
+            for j in clientes:
+                if valores[i] == clientes[j]:
+                    print("El cliente",j,"ha comprado",clientes[j],"productos")
+                    break
