@@ -1,11 +1,11 @@
-from interfaz.manager import Manager
+from src.interfaz.manager import Manager
 from tkinter import *
-from interfaz.pantallas.principal import Principal
-from baseDatos.deserializador import deserializar
-from baseDatos.serializador import serializar
+from src.interfaz.pantallas.principal import Principal
+from src.baseDatos.Deserializador import *
+from src.baseDatos.Serializador import *
 
 if __name__ == "__main__":
     app = Manager()
-    deserializar()
+    Deserializador.deserializar()
     app.mainloop()
-    serializar()
+    Serializador.serializar()
