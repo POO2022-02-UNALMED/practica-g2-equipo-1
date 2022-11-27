@@ -1,21 +1,14 @@
+from src.gestorAplicacion.gestionPersonas import Vendedor
+from src.gestorAplicacion.gestionPersonas import Usuario
+from src.gestorAplicacion.gestionVentas import  Tienda
 class Factura:
     facturas= []
     facturaID = 38040000
     total = 0.0
     IVA = 1.16
 
-    def __int__(self):
-        self.facturaID+=1
-        self.facturas.append(self)
-        self.productos = {}
-    def __init__(self, cliente, fechaFactura, vendedor):
-        self.facturaID+=1
-        self.facturas.append(self)
-        self.cliente=cliente
-        self.fechaFactura = fechaFactura
-        self.vendedor= vendedor
-        self.productos= {}
-    def __init__(self, cliente, fechaFactura, vendedor):
+
+    def __init__(self, cliente=None, fechaFactura="", vendedor=None):
         self.facturaID+=1
         self.facturas.append(self)
         self.cliente=cliente
@@ -34,6 +27,13 @@ class Factura:
             tot+= producto* self.productos[producto]
         self.total=tot*self.IVA
         return  tot
+    @classmethod
+    def realizarCompra(cls,cliente):
+        total= cls.calcularTotal()
+        Tienda.reducirStock(cls)
+        Tienda.getCuenta.depositar(total)
+        cliente.agregarFactura(cls)
+        Tienda.agregarVenta(cls)
 
     def agregarProducto(self, producto, cantidad):
         self.productos[producto] = cantidad

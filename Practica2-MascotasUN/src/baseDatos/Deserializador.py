@@ -49,7 +49,7 @@ class Deserializador:
         Producto.setProductos(pickle.load(productos))
         productos.close()
         #Deserializador Tienda
-        tienda=("src/baseDatos/tmp/.pkl","rb")
+        tienda=open("src/baseDatos/tmp/tienda.pkl","rb")
         Tienda.setTienda(pickle.load(tienda))
         tienda.close()
         #Deserializador Inventario

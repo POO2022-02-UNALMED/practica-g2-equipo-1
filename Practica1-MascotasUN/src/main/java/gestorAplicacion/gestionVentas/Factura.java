@@ -1,6 +1,5 @@
 /*Clase utilizada para la gestión de las facturas generadas al momento de realizar una venta de un producto,
  * permitiendo realizar las transacciones asociadas a la venta del mismo*/
-
 package gestorAplicacion.gestionVentas;
 
 import gestorAplicacion.gestionPersonas.*;
