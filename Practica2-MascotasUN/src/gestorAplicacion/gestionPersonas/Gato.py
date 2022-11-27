@@ -8,7 +8,7 @@ class Gato(Mascota):
         self._mascotaID = mascotaID
         self._nombre = nombre
         self._edad = edad
-        Mascota._mascotas[mascotaID] = self
+        Mascota._mascotas.append(self)
 
     #Metodos
 

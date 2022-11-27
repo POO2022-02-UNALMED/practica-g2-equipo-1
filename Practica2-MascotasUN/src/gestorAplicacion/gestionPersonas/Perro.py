@@ -11,7 +11,7 @@ class Perro(Mascota):
         self._nombre = nombre
         self._edad = edad
         self._raza = raza
-        Mascota._mascotas[mascotaID] = self
+        Mascota._mascotas.append(self)
     #Metodos
 
     # Metodo que dependiendo de la edad del gato (ingresada en anos) retornara si es Cachorro o Adulto
