@@ -1,5 +1,5 @@
 from tkinter import *
-from interfaz.estilos.styles import *
+from src.interfaz.estilos.styles import *
 
 class Lanzamiento(Frame):
     
@@ -17,12 +17,12 @@ class Lanzamiento(Frame):
         labelInicial.pack(side=TOP, fill=BOTH, padx=10, pady=10)
         
     def _mostrarInformacion(self):
-        Label(self, text="¡En este momento estas en la pantalla principal del gestor de la tienda!", bg=BACKGROUND_CONTENEDOR, font=FONT2, fg=FG).pack(side=TOP, fill=BOTH, padx=10, pady=10)
-        Label(self, text="¿Qué puedes hacer?", bg=BACKGROUND_CONTENEDOR, font=FONT2, fg=FG).pack(side=TOP, fill=BOTH, padx=10, pady=10)
-        Label(self, text="En el menú superior podrás encontrar varios opciones interesantes, tales como", bg=BACKGROUND_CONTENEDOR, font=FONT3, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=30)
-        Label(self, text="1. (Archivo) Aquí encontraras información sobre PJ Tech y una opción para volver a la interfaz de inicio", bg=BACKGROUND_CONTENEDOR, font=FONT4, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=10)
-        Label(self, text="2. (Procesos y consultas) Aquí podrás utilizar las principales funcionalidades de la aplicación, entre ellas cálculos de comisiones, búsquedas, y otras funcionalidades de mucha utilidad para la tienda", bg=BACKGROUND_CONTENEDOR, font=FONT4, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=10)
-        Label(self, text="3.(Ayuda) Aquí encontraras los nombres de los desarrolladores, por si deseas contactarnos y saber más", bg=BACKGROUND_CONTENEDOR, font=FONT4, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=10)
+        Label(self, text="Te encuentras en el menu principal de Mascotas UN", bg=BACKGROUND_CONTENEDOR, font=FONT2, fg=FG).pack(side=TOP, fill=BOTH, padx=10, pady=10)
+        Label(self, text="Tienes las siguientes opciones disponibles", bg=BACKGROUND_CONTENEDOR, font=FONT2, fg=FG).pack(side=TOP, fill=BOTH, padx=10, pady=10)
+        Label(self, text="En el menú desplegable en la parte superior podras encontrar", bg=BACKGROUND_CONTENEDOR, font=FONT3, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=30)
+        Label(self, text="~ [Archivo] Aquí encontraras información sobre acerca de la tienda Mascotas UN", bg=BACKGROUND_CONTENEDOR, font=FONT4, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=10)
+        Label(self, text="~ [Procesos y consultas] Aquí podrás utilizar las principales funcionalidades de la aplicación, entre ellas cálculos de comisiones, búsquedas, y otras funcionalidades de mucha utilidad para la tienda", bg=BACKGROUND_CONTENEDOR, font=FONT4, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=10)
+        Label(self, text="~ [Ayuda] Aquí puedes encontrar la información de contacto de los desarrolladores", bg=BACKGROUND_CONTENEDOR, font=FONT4, fg=FG, justify=LEFT).pack(side=TOP, fill=BOTH, padx=10, pady=10)
         
         
         
