@@ -2,7 +2,7 @@
   con la tienda comprando productos. Hereda de la clase Persona"""
 
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
-
+from src.gestorAplicacion.gestionPersonas import  Persona
 class Usuario(Persona):
     usuarios = {}
     personaId = 0

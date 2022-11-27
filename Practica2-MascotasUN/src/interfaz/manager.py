@@ -1,7 +1,8 @@
 from tkinter import *
 from src.interfaz.estilos.styles import *
-from src.interfaz.pantallas.inicio import Inicio
 from src.interfaz.menus.menuInicio import MenuInicio
+from src.interfaz.pantallas import inicio
+
 
 class Manager(Tk):
 
@@ -15,10 +16,10 @@ class Manager(Tk):
         contenedor.grid_columnconfigure(0, weight = 1)
         contenedor.grid_rowconfigure(0, weight = 1)
         
-        self._ventanaInicio = Inicio(contenedor, self)
+        self._ventanaInicio = inicio.Inicio(contenedor, self)
         self._ventanaInicio.grid(row = 0, column = 0, sticky = NSEW)
-        
-        menuInicio = MenuInicio(self)
+        #Revisar
+        menuInicio = MenuInicio(self,self._ventanaInicio)
         self['menu'] = menuInicio
         
 

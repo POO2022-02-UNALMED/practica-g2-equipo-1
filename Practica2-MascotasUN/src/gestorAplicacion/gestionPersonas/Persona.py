@@ -1,7 +1,7 @@
 #Clase abstracta Padre de las clases Usuario, Proveedor y Vendedor encarga de darle atributos y metodos basicos
 # a los objetos creados a partir de estas clases*/
 
-from gestorAplicacion.gestionVentas.Factura import Factura # Importamos la clase Factura para el método de agregarFactura()
+from src.gestorAplicacion.gestionVentas.Factura import Factura # Importamos la clase Factura para el método de agregarFactura()
 
 class Persona:
     personas = []
@@ -22,7 +22,7 @@ class Persona:
     
     # Método abstracto que se hereda a las clases Usuario, Proveedor y Vendedor,
     # que recibe como parámetro un objeto tipo Factura y retorna un void */
-    def agregarFacturaf(): # Método abstracto
+    def agregarFacturaf(self): # Método abstracto
         pass
   	
   	#Método que recorre la lista de personas y las imprime, retornando un String.

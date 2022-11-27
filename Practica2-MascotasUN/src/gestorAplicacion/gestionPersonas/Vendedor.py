@@ -3,7 +3,7 @@
  #obtener usuarios con usuario y contrasena, el segundo (cantidadVentas) muestra el string del usuario y las ventas
  #del mismo
 from src.gestorAplicacion.gestionPersonas.CuentaBancaria import CuentaBancaria
-from src.gestorAplicacion.gestionPersonas.Persona import Persona
+from src.gestorAplicacion.gestionPersonas import Persona
 #from gestorAplicacion.gestionVentas.Factura import Factura
 
 

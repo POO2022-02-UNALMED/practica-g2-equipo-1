@@ -1,7 +1,7 @@
 from tkinter import *
 from excepciones import *
-from interfaz.estilos.styles import *
-from gestionAplicacion.compras.cliente import *
+from src.interfaz.estilos.styles import *
+from src.gestorAplicacion.gestionPersonas.Usuario import *
 
 class ClienteValioso(Frame):
     
@@ -87,9 +87,9 @@ class ClienteValioso(Frame):
         if len(valor) != 0:
             valor = float(valor)
             
-            if valor >=  0:
-                clientes_valiosos = Cliente.clientesValiosos(valor)
-                self.mostrarClientesValiosos(clientes_valiosos)
+            #if valor >=  0:
+            #clientes_valiosos = Cliente.clientesValiosos(valor)
+                #self.mostrarClientesValiosos(clientes_valiosos)
         else:
             try:
                 raise ExcepcionCamposNulos()
