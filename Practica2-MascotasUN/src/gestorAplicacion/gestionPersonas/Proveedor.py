@@ -15,9 +15,12 @@ class Proveedor(Persona):
 
     # Constructor de la clase
     def __init__(self,nombre: str, email: str, telefono: int, stock: bool, nroCuenta:int,saldo:int,pin:int) -> None:
-        self.cuentaBancaria = CuentaBancaria(nroCuenta, saldo, pin)
+        variable= CuentaBancaria.CuentaBancaria()
+        variable.setSaldo(saldo)
+        variable.setPin(pin)
+        variable.setNroCuenta(nroCuenta)
         # Hacemos referencia al construtor de la clase padre
-        super().__init__(self,nombre, email, telefono,self.cuentaBancaria)
+        super().__init__(nombre, email, telefono, variable)
         # Atributos
         producto = None
         pedidos = None
@@ -42,8 +45,8 @@ class Proveedor(Persona):
                + "~ Nombre: " + str(self.nombre) + "\n" \
                + "~ Email: " + str(self.email) + "\n" \
                + "~ Telefono: " + str(self.telefono) + "\n" \
-               + "~ Productos: " + str(len(self.producto)) + "\n" \
-               + "~ Stock: " + str(self.stock) + "\n"
+               + "~ Stock: " + str(self.stock) + "\n" \
+               + "" + str(self.cuenta) + "\n"
 
         # Método que encuentra al proveedor en la lista de proveedores existentes y lo retorna, dado su ID
 

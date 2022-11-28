@@ -3,7 +3,7 @@
  #obtener usuarios con usuario y contrasena, el segundo (cantidadVentas) muestra el string del usuario y las ventas
  #del mismo
 
-from src.gestorAplicacion.gestionPersonas.CuentaBancaria import CuentaBancaria
+from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 from src.gestorAplicacion.gestionPersonas import *
 #from src.gestorAplicacion.gestionPersonas import Persona
 # Clase abstracta Padre de las clases Usuario, Proveedor y Vendedor encarga de darle atributos y metodos basicos
@@ -105,8 +105,12 @@ class Vendedor(Persona):
     
     #Constructor
     def __init__(self,nombre, email, telefono, usuario,contrasena,nroCuenta,saldo,pin):
-        super().__init__(nombre, email, telefono,self.cuentaBancaria)
-        self.cuentaBancaria = CuentaBancaria(nroCuenta, saldo, pin)
+        variable= CuentaBancaria.CuentaBancaria()
+        variable.setSaldo(saldo)
+        variable.setPin(pin)
+        variable.setNroCuenta(nroCuenta)
+        # Hacemos referencia al construtor de la clase padre
+        super().__init__(nombre, email, telefono, variable)
         _ventas=None
         self._usuario = usuario
         self._contrasena = contrasena
@@ -121,16 +125,18 @@ class Vendedor(Persona):
         valores= sorted(cls.cantidadVentas.values())
         return  valores
 
-    #Método sobreescrito toString()  
-    def __str__(self):
-        cadena="~ ID #"+ self.personaId + "\n", 
-        "~ Nombre = " + self.nombre +"\n", 
-        "~ Email = " + self.email + "\n",
-        "~ Telefono = " + self.telefono+ "\n",
-        "~ Usuario = " +self.usuario+ "\n",
-        "~ Ventas = " +self.ventas+ "\n",
-        return cadena
-    
+
+        # Metodo toString() sobreescrito que se encarga de mostrar atributos
+        #   determinados de la clase usuario
+
+    def __str__(self) -> str:
+        return "~ ID # " + str(self.personaId) + "\n" \
+               + "~ Nombre: " + str(self.nombre) + "\n" \
+               + "~ Email: " + str(self.email) + "\n" \
+               + "~ Telefono: " + str(self.telefono) + "\n" \
+               + "~ Usuario: " + str(self._usuario) + "\n" \
+               + "" + str(self.cuenta) + "\n" \
+
     #Método que agrega al vendedor a la lista de vendedores
     @classmethod
     def agregarVendedor(cls, vendedor):
@@ -226,9 +232,12 @@ class Usuario(Persona):
     # Constructor de la clase
 
     def __init__(self, nombre: str, email: str, telefono: int, direccion: str, nroCuenta: int, saldo: int, pin: int) -> None:
-        self.cuentaBancaria = CuentaBancaria(nroCuenta, saldo, pin)
+        variable= CuentaBancaria.CuentaBancaria()
+        variable.setSaldo(saldo)
+        variable.setPin(pin)
+        variable.setNroCuenta(nroCuenta)
         # Hacemos referencia al construtor de la clase padre
-        super().__init__(self, nombre, email, telefono, self.cuentaBancaria)
+        super().__init__(nombre, email, telefono, variable)
         # Atributos
         mascotas = None
         compras = None
@@ -244,15 +253,14 @@ class Usuario(Persona):
 
     # Metodo toString() sobreescrito que se encarga de mostrar atributos
     #   determinados de la clase usuario
+
     def __str__(self) -> str:
         return "~ ID # " + str(self.personaId) + "\n" \
                + "~ Nombre: " + str(self.nombre) + "\n" \
                + "~ Email: " + str(self.email) + "\n" \
                + "~ Telefono: " + str(self.telefono) + "\n" \
                + "~ Direccion: " + str(self.direccion) + "\n" \
-               + "~ Mascotas: " + str(self.mascotas) + "\n" \
-               + "~ Compras: " + str(self.compras) + "\n"
-
+               + "" + str(self.cuenta) + "\n" \
         # Método que encuentra al usuario en la lista de usuarios existentes y lo retorna, dado su ID
 
 
@@ -262,6 +270,7 @@ class Usuario(Persona):
             if u.getPersonaId() == cls.personaId:
                 return u
         return None
+
 
     # Método que agrega una factura al usuario dentro de la lista de compras realizadas
     def agregarFactura(self, factura):
@@ -325,6 +334,12 @@ class Usuario(Persona):
 
     def setMascotas(self, mascotas):
         self.mascotas = mascotas
+
+    def getnroCuenta(self):
+        return self.nroCuenta
+
+    def setnroCuenta(self,nroCuenta):
+        self.nroCuenta =nroCuenta
 
     def getCompras(self):
         return self.compras
