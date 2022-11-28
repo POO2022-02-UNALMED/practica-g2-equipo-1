@@ -41,7 +41,7 @@ class Proveedor(Persona):
         # Metodo toString() que se encarga de mostrar atributos determinados de la clase proveedor
 
     def __str__(self) -> str:
-        return "~ ID # " + str(self.personaId) + "\n" \
+        return "~ ID # " + str(Proveedor.personaId) + "\n" \
                + "~ Nombre: " + str(self.nombre) + "\n" \
                + "~ Email: " + str(self.email) + "\n" \
                + "~ Telefono: " + str(self.telefono) + "\n" \
