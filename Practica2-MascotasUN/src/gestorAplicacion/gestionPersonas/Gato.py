@@ -1,7 +1,7 @@
 
 from src.gestorAplicacion.gestionVentas import Producto
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
-from src.gestorAplicacion.gestionPersonas import Usuario
+from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
 from src.gestorAplicacion.gestionPersonas import Mascota
 
 
@@ -53,7 +53,17 @@ class Gato(Mascota):
         for i in Tienda.getCatalogo():
             if isinstance(i, Producto):
                 if ((i.getEspecie == "Gato") & (i.getEtapa == self.calcularEdad)):
-                    LAux.append(i) 
+                    LAux.append(i)
+
+    @staticmethod
+    def crearObjeto(nombre, edad,idUsuario):
+        try:
+            edad = int(edad)
+            idUsuario=int(idUsuario)
+            Gato(nombre,edad,idUsuario)
+            return True
+        except ValueError:
+            return False
 
     #Getters & Setters
     @classmethod
@@ -89,7 +99,7 @@ class Gato(Mascota):
 
 from src.gestorAplicacion.gestionVentas import Producto
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
-from src.gestorAplicacion.gestionPersonas import Usuario
+from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
 
 
 class Perro(Mascota):
@@ -136,7 +146,15 @@ class Perro(Mascota):
             return Usuario.getUsuarios()[id]
         else:
             return None
-
+    @staticmethod
+    def crearObjeto(nombre,edad,raza,idUsuario):
+        try:
+            edad = int(edad)
+            idUsuario=int(idUsuario)
+            Perro(nombre,edad,raza,idUsuario)
+            return True
+        except ValueError:
+            return False
     #Getters & Setters
     @classmethod
     def getMascotaId(cls):

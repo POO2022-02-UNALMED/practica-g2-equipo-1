@@ -91,7 +91,7 @@ class MenuPrincipal(Menu):
         from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
         self._values["objeto"] = Usuario
         self._values["valores"] = [Usuario.getPersonaId] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
-        self._values["atributos"] = ['personaId','nombre','email','telefono','direccion','nroCuenta','saldo','pin']
+        self._values["atributos"] = ['id','nombre','email','telefono','direccion','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
 
     def _gestionarProveedores(self):
@@ -102,7 +102,7 @@ class MenuPrincipal(Menu):
         from src.gestorAplicacion.gestionPersonas.Proveedor import Proveedor
         self._values["objeto"] = Proveedor
         self._values["valores"] = [Proveedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
-        self._values["atributos"] = ['personaId','nombre','email','telefono','stock','nroCuenta','saldo','pin']
+        self._values["atributos"] = ['id','nombre','email','telefono','stock','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
 
     def _gestionarVendedores(self):
@@ -113,7 +113,7 @@ class MenuPrincipal(Menu):
         from src.gestorAplicacion.gestionPersonas.Vendedor import Vendedor
         self._values["objeto"] = Vendedor
         self._values["valores"] = [Vendedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
-        self._values["atributos"] = ['personaId','nombre','email','telefono','usuario','contrasena','nroCuenta','saldo','pin']
+        self._values["atributos"] = ['id','nombre','email','telefono','usuario','contrasena','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
 
     #Falta
@@ -125,7 +125,7 @@ class MenuPrincipal(Menu):
         from src.gestorAplicacion.gestionVentas.Producto import Producto
         self._values["objeto"] = Producto
         self._values["valores"] = [Producto.getProductoId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
-        self._values["atributos"] = ['productoID','nombre','fechaVencimiento','descripcion','precioCompra','precioVenta','cantidadComprada','raza','etapa','especie']
+        self._values["atributos"] = ['id','nombre','fechaVencimiento','descripcion','precioCompra','precioVenta','cantidadComprada','raza','etapa','especie']
         self._padre.showFieldFrame(self._values)
 
     def _gestionarPerro(self):
@@ -136,7 +136,7 @@ class MenuPrincipal(Menu):
         from src.gestorAplicacion.gestionPersonas.Gato import Perro
         self._values["objeto"] = Perro
         self._values["valores"] = [Perro.getMascotaId()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
-        self._values["atributos"] = ['mascotaID', 'nombre','edad','raza','idUsuario']
+        self._values["atributos"] = ['id', 'nombre','edad','raza','idUsuario']
         self._padre.showFieldFrame(self._values)
 
     def _gestionarGato(self):
@@ -147,7 +147,7 @@ class MenuPrincipal(Menu):
         from src.gestorAplicacion.gestionPersonas.Gato import Gato
         self._values["objeto"] = Gato
         self._values["valores"] = [Gato.getId()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
-        self._values["atributos"] = ['mascotaID', 'nombre','edad','idUsuario']
+        self._values["atributos"] = ['id', 'nombre','edad','idUsuario']
         self._padre.showFieldFrame(self._values)
     
     def _realizarVenta(self):

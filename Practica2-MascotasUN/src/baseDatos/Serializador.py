@@ -1,14 +1,14 @@
 import pickle
-from  src.gestorAplicacion.gestionPersonas import Vendedor
-from  src.gestorAplicacion.gestionPersonas import Usuario
-from  src.gestorAplicacion.gestionPersonas import Proveedor
-from  src.gestorAplicacion.gestionPersonas import Perro
-from  src.gestorAplicacion.gestionPersonas import Gato
-from  src.gestorAplicacion.gestionPersonas import CuentaBancaria
-from src.gestorAplicacion.gestionVentas import Envio
-from src.gestorAplicacion.gestionVentas import Factura
-from src.gestorAplicacion.gestionVentas import Producto
-from src.gestorAplicacion.gestionVentas import Tienda
+from src.gestorAplicacion.gestionPersonas.Gato import Gato
+from src.gestorAplicacion.gestionPersonas.Gato import Perro
+from src.gestorAplicacion.gestionVentas.Producto import Producto
+from src.gestorAplicacion.gestionPersonas.Vendedor import Vendedor
+from src.gestorAplicacion.gestionPersonas.Proveedor import Proveedor
+from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
+from src.gestorAplicacion.gestionVentas.Envio import Envio
+from src.gestorAplicacion.gestionVentas.Factura import Factura
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
+from src.gestorAplicacion.gestionPersonas.CuentaBancaria import CuentaBancaria
 class Serializador:
     @classmethod
     def serializar(cls):
@@ -33,7 +33,7 @@ class Serializador:
         pickle.dump(Gato.getGatos(),gatos)
         gatos.close()
         #Serializador CuentaBancaria
-        cuentasbancarias=open("src/baseDatos/tmp/cuentasbancarias.pkl","wb")
+        cuentasbancarias=open("src/baseDatos/tmp/cuentasbancarias.pkl.pkl","wb")
         pickle.dump(CuentaBancaria.getCuentasBancarias(),cuentasbancarias)
         cuentasbancarias.close()
         #Serializador Envio

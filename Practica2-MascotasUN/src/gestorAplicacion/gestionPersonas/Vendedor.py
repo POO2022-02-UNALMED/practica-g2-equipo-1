@@ -165,6 +165,18 @@ class Vendedor(Persona):
     def setId(cls, personaId):
         cls.personaId = personaId
 
+    @staticmethod
+    def crearObjeto(nombre, email, telefono, usuario,contrasena,nroCuenta,saldo,pin):
+        try:
+            telefono = int(telefono)
+            nroCuenta=int(nroCuenta)
+            saldo = int(saldo)
+            pin=int(pin)
+            Vendedor(nombre, email, telefono, usuario,contrasena,nroCuenta,saldo,pin)
+            return True
+        except ValueError:
+            return False
+
     #Getters y setters
 
     @classmethod
@@ -264,7 +276,17 @@ class Usuario(Persona):
             self.mascotas.append(mascota)
 
     # Método que permite eliminar un usuario desde la gestión de usuarios de la tienda
-
+    @staticmethod
+    def crearObjeto(nombre: str, email: str, telefono: int, direccion: str, nroCuenta: int, saldo: int, pin: int):
+        try:
+            telefono = int(telefono)
+            nroCuenta=int(nroCuenta)
+            saldo = int(saldo)
+            pin=int(pin)
+            Usuario(nombre, email, telefono, direccion, nroCuenta, saldo, pin)
+            return True
+        except ValueError:
+            return False
     @classmethod
     def eliminarUsuario(cls):
         for usuario in cls.usuarios:

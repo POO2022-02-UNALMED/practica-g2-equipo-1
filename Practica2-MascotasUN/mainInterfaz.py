@@ -6,6 +6,6 @@ from src.baseDatos.Serializador import *
 
 if __name__ == "__main__":
     app = Manager()
-    #Deserializador.deserializar()
+    Deserializador.deserializar()
     app.mainloop()
-    #Serializador.serializar()
+    Serializador.serializar()

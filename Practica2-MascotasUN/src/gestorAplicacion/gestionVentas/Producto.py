@@ -34,7 +34,17 @@ class Producto:
         self.nombre = nombre
         self.precioVenta = precioVenta
         self.cantidadComprada = cantidadComprada
-    
+
+    @staticmethod
+    def crearObjeto(nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza="", etapa="", especie=""):
+        try:
+            precioCompra = int(precioCompra)
+            precioVenta=int(precioVenta)
+            cantidadComprada = int(cantidadComprada)
+            Producto(nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza, etapa, especie)
+            return True
+        except ValueError:
+            return False
     # Método que elimina un producto de la lista de productos a comprar
     @classmethod
     def eliminarProducto(cls, productoID):
@@ -61,11 +71,11 @@ class Producto:
     @classmethod
     def getProductos(cls):
         return cls.productos
-    
+
     @classmethod
     def setProductos(cls, productos):
         cls.productos = productos
-    
+
     def getProductoID(self):
         return self.productoID
     

@@ -32,9 +32,8 @@ class Envio():
             + "Destino: "+ str(self.destino) + "\n" \
             + "Estado envio: "+ str(self.estadoEnvio) + "\n" \
             + "Periodicidad: "+ str(self.periodicidad) + "\n" \
-            + "Factura Asociada: "+ str(self.factura) + "\n"       
-            
-    
+            + "Factura Asociada: "+ str(self.factura) + "\n"
+
     #Metodos de clase
     @classmethod
     def getEnvios(cls):

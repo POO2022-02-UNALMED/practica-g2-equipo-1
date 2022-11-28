@@ -94,7 +94,7 @@ class FieldFrame(Frame):
         valores = {k:v.get() for k, v in self.entrys.items()}
 
         for key,entrada in valores.items():
-            if len(entrada) == 0 and key != "id":
+            if len(entrada) == 0 and "id" not in key.lower():
                 try:
                     raise ExcepcionCamposNulos()
                 except ExcepcionCamposNulos as f:
@@ -102,7 +102,7 @@ class FieldFrame(Frame):
                 return
 
         valores.pop("id")
-        creando = self._objeto.crearInterfaz(**valores)
+        creando = self._objeto.crearObjeto(**valores)
         if creando==True:
             self.mensaje.config(text="El registro se realizo correctamente")
         else:

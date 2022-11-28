@@ -61,6 +61,22 @@ class Proveedor(Persona):
                 return cls.proveedores
         return None
 
+    @staticmethod
+    def crearObjeto(nombre: str, email: str, telefono: int, stock: bool, nroCuenta:int,saldo:int,pin:int):
+        try:
+            telefono = int(telefono)
+            nroCuenta = int(nroCuenta)
+            saldo = int(saldo)
+            pin = int(pin)
+            if(stock=="True"):
+                stock=True
+            else:
+                stock=False
+            Proveedor(nombre, email, telefono,stock, nroCuenta, saldo, pin)
+            return True
+        except ValueError:
+            return False
+
         # Metodos de clase
     @classmethod
     def getId(cls):

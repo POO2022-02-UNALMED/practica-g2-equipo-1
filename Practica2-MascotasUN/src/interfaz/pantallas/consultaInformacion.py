@@ -1,15 +1,12 @@
 from tkinter import *
 from src.interfaz.estilos.styles import *
+from src.gestorAplicacion.gestionPersonas.Gato import Gato
+from src.gestorAplicacion.gestionPersonas.Gato import Perro
+from src.gestorAplicacion.gestionVentas.Producto import Producto
+from src.gestorAplicacion.gestionPersonas.Vendedor import Vendedor
+from src.gestorAplicacion.gestionPersonas.Proveedor import Proveedor
+from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
 
-from src.gestorAplicacion.gestionPersonas import Gato
-from src.gestorAplicacion.gestionPersonas import Perro
-from src.gestorAplicacion.gestionPersonas import Proveedor
-from src.gestorAplicacion.gestionPersonas import Usuario
-from src.gestorAplicacion.gestionPersonas import Vendedor
-from src.gestorAplicacion.gestionVentas import Factura
-from src.gestorAplicacion.gestionVentas import Producto
-
-from src.gestorAplicacion.gestionVentas import *
 from excepciones import *
 
 class ConsultaInformacion(Frame):
@@ -45,8 +42,7 @@ class ConsultaInformacion(Frame):
                     + "(3) Proveedores registrados" + "\n" \
                     + "(4) Usuarios registrados" + "\n" \
                     + "(5) Vendedores registrados" + "\n" \
-                    + "(6) Facturas registrados" + "\n" \
-                    + "(7) Productos registrados" + "\n"
+                    + "(6) Productos registrados" + "\n"
                     
         self._labelConsulta = Label(self._frameConsultar, text=texto, bg=BACKGROUND_FRAMES, font=FONT3, fg=FG, justify=CENTER)
         self._labelConsulta.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
@@ -175,18 +171,6 @@ class ConsultaInformacion(Frame):
                 texto += vendedor.__str__() + "\n"
 
         elif entrada == 6:
-
-            if len(Factura.getFacturas().values()) == 0:
-                try:
-                    raise ExcepcionConjuntoVacio()
-                except ExcepcionConjuntoVacio as f:
-                    f.showMessage()
-                return
-
-            for factura in Factura.getFacturas().values():
-                texto += factura.__str__() + "\n"
-
-        elif entrada == 7:
 
             if len(Producto.getProductos().values()) == 0:
                 try:
