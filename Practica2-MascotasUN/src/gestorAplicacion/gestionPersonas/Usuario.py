@@ -1,6 +1,6 @@
 """Clase que crea y gestiona los objetos tipo Usuario, los cuales interactúan
   con la tienda comprando productos. Hereda de la clase Persona"""
-
+"""
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 from src.gestorAplicacion.gestionPersonas.Vendedor import Persona
 
@@ -24,7 +24,7 @@ class Usuario(Persona):
         # Se guarda el objeto en un diccionario con su id como key
         Usuario.usuarios[self.personaId] = self
 
-    """Revisar sobrecarga de constructor"""
+    """"""Revisar sobrecarga de constructor""""""
 
     # Métodos
 
@@ -77,11 +77,11 @@ class Usuario(Persona):
             cls.usuarios = usuarios
 
         @classmethod
-        def getId(cls):
+        def getPersonaId(cls):
             return cls.personaId
 
         @classmethod
-        def setId(cls, personaId):
+        def setPersonaId(cls, personaId):
             cls.personaId = personaId
 
         # Getters y setters
@@ -108,3 +108,4 @@ class Usuario(Persona):
 
         def setFactura(self, factura):
             self.factura = factura
+"""

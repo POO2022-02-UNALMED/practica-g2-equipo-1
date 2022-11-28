@@ -12,7 +12,7 @@ from src.gestorAplicacion.gestionVentas import Producto
 from src.gestorAplicacion.gestionVentas import *
 from excepciones import *
 
-class ConsultaBDD(Frame):
+class ConsultaInformacion(Frame):
 
     # Se crea el contructor de la clase dónde se le pasan como parámetros el padre o frame que lo contiene y la clase controlador que es Principal
     def __init__(self, padre, controlador):

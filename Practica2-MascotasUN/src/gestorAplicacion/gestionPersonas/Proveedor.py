@@ -2,7 +2,7 @@
 vendiéndole el inventario requerido"""
 
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
-from src.gestorAplicacion.gestionPersonas.Persona import Persona
+from src.gestorAplicacion.gestionPersonas.Vendedor import Persona
 
 
 class Proveedor(Persona):

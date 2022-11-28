@@ -3,7 +3,7 @@
 
 from src.gestorAplicacion.gestionVentas.Factura import Factura # Importamos la clase Factura para el método de agregarFactura()
 
-class Persona:
+"""class Persona:
     personas = []
     #Constructor
     def __init__(self,nombre, email, telefono, cuenta):
@@ -90,5 +90,5 @@ class Persona:
     def getPersonas(cls):
         return cls.personas
 
-
+"""
     

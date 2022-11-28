@@ -57,7 +57,7 @@ class Gato(Mascota):
 
     #Getters & Setters
     @classmethod
-    def getMascotaId(cls):
+    def getId(cls):
         return cls.mascotaID
 
     @classmethod

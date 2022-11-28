@@ -3,11 +3,14 @@ from distutils import command
 from tkinter import *
 from tkinter import messagebox
 
+from src.interfaz.pantallas import consultaInformacion
 from src.interfaz.pantallas.clientesValioso import ClienteValioso
 from src.interfaz.pantallas.comision import Comision
-from src.interfaz.pantallas.consultaInformacion import ConsultaBDD
+from src.interfaz.pantallas.consultaInformacion import ConsultaInformacion
 #from src.interfaz.pantallas.devolucion import Devolucion
 from src.interfaz.pantallas.informeTienda import Informe
+
+from src.gestorAplicacion.gestionVentas.Producto import Producto
 
 """from interfaz.pantallas.fieldFrame import *
 from interfaz.pantallas.clientesValioso import ClienteValioso
@@ -43,7 +46,7 @@ class MenuPrincipal(Menu):
         # Para el caso del submenu Archivos
         menuArchivos.add_command(label="Aplicacion", command=self.informacionAplicativo)
         menuArchivos.add_command(label="Salir", command=self.salir)
-        
+
         # Para el caso del submenu Procesos y Consultas
         menuProcesos.add_command(label="Gestionar Productos", command=self._gestionarProductos)
         menuProcesos.add_command(label="Gestionar Proveedores", command = self._gestionarProveedores)
@@ -51,11 +54,13 @@ class MenuPrincipal(Menu):
         menuProcesos.add_command(label="Gestionar Perro", command = self._gestionarPerro)
         menuProcesos.add_command(label="Gestionar Gato", command=self._gestionarGato)
         menuProcesos.add_command(label="Gestionar Vendedores", command = self._gestionarVendedores)
+        menuProcesos.add_command(label="Consultar datos MascotasUN", command=self._consultaInformacion)
+        """
         menuProcesos.add_command(label="Realizar Venta", command=self._realizarVenta)
         menuProcesos.add_command(label="Comprar inventario", command=self._comprarInventario)
         menuProcesos.add_command(label="Cobrar comision", command=self._cobrarComision)
         menuProcesos.add_command(label="Ver estadisticas ventas", command=self._verEstadisticasVentas)
-        menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacionesPersonalizadas)
+        menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacionesPersonalizadas)"""
 
         # Para el caso del submenu Ayuda
         menuAyuda.add_command(label="Acerca de", command=self.quienesSomos)
@@ -83,9 +88,9 @@ class MenuPrincipal(Menu):
         self._values["habilitado"] = ["ID"]
         self._values["nombreProceso"] = "Gestionar usuario"
         self._values["descripcionProceso"] = "Guarda la informacion de un nuevo cliente"
-        from src.gestorAplicacion.gestionPersonas import Usuario
+        from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
         self._values["objeto"] = Usuario
-        self._values["valores"] = [Usuario.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["valores"] = [Usuario.getPersonaId] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['personaId','nombre','email','telefono','direccion','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
 
@@ -94,7 +99,7 @@ class MenuPrincipal(Menu):
         self._values["habilitado"] = ["ID"]
         self._values["nombreProceso"] = "Gestionar Proveedores"
         self._values["descripcionProceso"] = "Guarda la informacion de un nuevo proveedor"
-        from src.gestorAplicacion.gestionPersonas import Proveedor
+        from src.gestorAplicacion.gestionPersonas.Proveedor import Proveedor
         self._values["objeto"] = Proveedor
         self._values["valores"] = [Proveedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['personaId','nombre','email','telefono','stock','nroCuenta','saldo','pin']
@@ -105,7 +110,7 @@ class MenuPrincipal(Menu):
         self._values["habilitado"] = ["ID"]
         self._values["nombreProceso"] = "Gestionar Vendedores"
         self._values["descripcionProceso"] = "Guarda la informacion de un nuevo vendedor"
-        from src.gestorAplicacion.gestionPersonas import Vendedor
+        from src.gestorAplicacion.gestionPersonas.Vendedor import Vendedor
         self._values["objeto"] = Vendedor
         self._values["valores"] = [Vendedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['personaId','nombre','email','telefono','usuario','contrasena','nroCuenta','saldo','pin']
@@ -117,7 +122,7 @@ class MenuPrincipal(Menu):
         self._values["habilitado"] = ["ID"]
         self._values["nombreProceso"] = "Gestionar Productos"
         self._values["descripcionProceso"] = "Registra la informacion de un nuevo producto al sistema"
-        from src.gestorAplicacion.gestionVentas import Producto
+        from src.gestorAplicacion.gestionVentas.Producto import Producto
         self._values["objeto"] = Producto
         self._values["valores"] = [Producto.getProductoId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['productoID','nombre','fechaVencimiento','descripcion','precioCompra','precioVenta','cantidadComprada','raza','etapa','especie']
@@ -128,9 +133,9 @@ class MenuPrincipal(Menu):
         self._values["habilitado"] = ["ID"]
         self._values["nombreProceso"] = "Gestionar Perros"
         self._values["descripcionProceso"] = "Registra la informacion de una nueva mascota de tipo perro"
-        from src.gestorAplicacion.gestionPersonas import Perro
+        from src.gestorAplicacion.gestionPersonas.Gato import Perro
         self._values["objeto"] = Perro
-        self._values["valores"] = [Perro.getMascotaID()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["valores"] = [Perro.getMascotaId()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['mascotaID', 'nombre','edad','raza','idUsuario']
         self._padre.showFieldFrame(self._values)
 
@@ -139,14 +144,16 @@ class MenuPrincipal(Menu):
         self._values["habilitado"] = ["ID"]
         self._values["nombreProceso"] = "Gestionar Gatos"
         self._values["descripcionProceso"] = "Registra la informacion de una nueva mascota de tipo gato"
-        from src.gestorAplicacion.gestionPersonas import Gato
+        from src.gestorAplicacion.gestionPersonas.Gato import Gato
         self._values["objeto"] = Gato
-        self._values["valores"] = [Gato.getMascotaID()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["valores"] = [Gato.getId()] + [None] * (len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['mascotaID', 'nombre','edad','idUsuario']
         self._padre.showFieldFrame(self._values)
     
     def _realizarVenta(self):
         self._padre.mostrarFuncionalidades(ClienteValioso)
+    def _consultaInformacion(self):
+        self._padre.mostrarFuncionalidades(ConsultaInformacion)
 
  #   def _comprarInventario(self):
     #    self._padre.mostrarFuncionalidades(Devolucion)
@@ -157,5 +164,4 @@ class MenuPrincipal(Menu):
     def _verEstadisticasVentas(self):
         self._padre.mostrarFuncionalidades(Informe)
 
-    def _recomendacionesPersonalizadas(self):
-        self._padre.mostrarFuncionalidades(ConsultaBDD)
+

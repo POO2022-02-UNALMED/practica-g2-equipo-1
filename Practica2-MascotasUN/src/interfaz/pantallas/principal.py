@@ -8,7 +8,7 @@ from src.interfaz.pantallas.clientesValioso import ClienteValioso
 #from src.interfaz.pantallas.devolucion import Devolucion
 from src.interfaz.pantallas.comision import Comision
 from src.interfaz.pantallas.informeTienda import Informe
-from src.interfaz.pantallas.consultaInformacion import ConsultaBDD
+from src.interfaz.pantallas.consultaInformacion import ConsultaInformacion
 
 class Principal(Toplevel):
     
@@ -33,7 +33,7 @@ class Principal(Toplevel):
         
         self.frameFuncionalidad = {}
         
-        for F in (Instrucciones, ClienteValioso,  Comision, Informe, ConsultaBDD):
+        for F in (Instrucciones, ClienteValioso,  Comision, Informe, ConsultaInformacion):
             self._frame =F(self._contenedor, self)
             self.frameFuncionalidad[F] = self._frame
             self._frame.grid(row=0, column=0, sticky=NSEW)
