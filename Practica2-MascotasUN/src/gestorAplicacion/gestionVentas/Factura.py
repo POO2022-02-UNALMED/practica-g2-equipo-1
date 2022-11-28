@@ -34,7 +34,12 @@ class Factura:
         Tienda.getCuenta.depositar(total)
         cliente.agregarFactura(cls)
         Tienda.agregarVenta(cls)
-
+    @classmethod
+    def realizarCompraProveedor(cls, proveedor, total, pin):
+        total= cls.calcularTotal();
+        Tienda.aumentarStock(cls)
+        Tienda.getCuenta().transferir(proveedor.getCuenta(),total,pin)
+        return total
     def agregarProducto(self, producto, cantidad):
         self.productos[producto] = cantidad
 
