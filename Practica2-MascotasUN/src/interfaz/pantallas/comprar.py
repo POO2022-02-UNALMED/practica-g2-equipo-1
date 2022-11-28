@@ -1,6 +1,5 @@
 from tkinter import *
 from interfaz.estilos.styles import *
-from gestionAplicacion.compras.cliente import Cliente
 from excepciones import *
 
 class Comprar(Frame):
