@@ -1,5 +1,9 @@
 from tkinter import *
+from gestionAplicacion.productos.producto import Producto
+from gestorAplicacion.gestionVentas.Tienda import Tienda
+from gestorAplicacion.gestionVentas.factura import Factura
 from interfaz.estilos.styles import *
+from gestorAplicacion.gestionPersonas.Proveedor import Proveedor
 from excepciones import *
 
 class Comprar(Frame):
@@ -25,40 +29,40 @@ class Comprar(Frame):
         self._titulo.pack(side=TOP, fill=X, padx=10, pady=10)
         
     def _ConsultarCompras(self):
-        # Frame anidado debajo del título en el cuál se le van a agregar los widgets para hacer la consulta de las compras realizadas por un cliente
-        self._frameBuscarCliente = Frame(self, bg=BACKGROUND_FRAMES)
-        self._frameBuscarCliente.pack(side=TOP, fill=X, padx=100, pady=10)
+        # Frame anidado debajo del título en el cuál se le van a agregar los widgets para hacer la consulta de las compras realizadas por un Proveedor
+        self._frameBuscarProveedor = Frame(self, bg=BACKGROUND_FRAMES)
+        self._frameBuscarProveedor.pack(side=TOP, fill=X, padx=100, pady=10)
         
-        # Label con el título Ingrese Codigo del Cliente
-        self._labelIngreseCodigoCliente = Label(self._frameBuscarCliente, text="Código del Proveedor", bg=BACKGROUND_FRAMES, font=FONT, fg=FG, justify=CENTER)
-        self._labelIngreseCodigoCliente.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
+        # Label con el título Ingrese Codigo del Proveedor
+        self._labelIngreseCodigoProveedor = Label(self._frameBuscarProveedor, text="Código del Proveedor", bg=BACKGROUND_FRAMES, font=FONT, fg=FG, justify=CENTER)
+        self._labelIngreseCodigoProveedor.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
         
-        # Entry para ingresar el codigo por el cuál se quiere consultar las compras asociadas a un cliente
-        self._codigoCliente = Entry(self._frameBuscarCliente, bg="white", font=FONT2, fg=FG2, justify=CENTER)
-        self._codigoCliente.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
+        # Entry para ingresar el codigo por el cuál se quiere consultar las compras asociadas a un Proveedor
+        self._codigoProveedor = Entry(self._frameBuscarProveedor, bg="white", font=FONT2, fg=FG2, justify=CENTER)
+        self._codigoProveedor.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
         
         # Botón de consulta
-        self._botonBuscar = Button(self._frameBuscarCliente, text="Buscar", font=FONT, command=self.buscarCliente)
+        self._botonBuscar = Button(self._frameBuscarProveedor, text="Buscar", font=FONT, command=self.buscarProveedor)
         self._botonBuscar.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
         
         # Expandir los widgets dentro del contenedor
-        self._frameBuscarCliente.columnconfigure(1, weight=0)
+        self._frameBuscarProveedor.columnconfigure(1, weight=0)
         
     def  _mostrarCompras(self):
-        # Frame anidado debajo en el cuál se van a mostrar las compras realizadas por un cliente de acuerdo al codigo pasado en el Entry de arriba
-        self._frameMostrarComprasCliente = Frame(self, bg="white")
-        self._frameMostrarComprasCliente.pack(side=TOP, fill=BOTH, expand=True, padx=100, pady=10)
+        # Frame anidado debajo en el cuál se van a mostrar las compras realizadas por un Proveedor de acuerdo al codigo pasado en el Entry de arriba
+        self._frameMostrarComprasProveedor = Frame(self, bg="white")
+        self._frameMostrarComprasProveedor.pack(side=TOP, fill=BOTH, expand=True, padx=100, pady=10)
         
-        self._mostrarResultadoConsulta = Label(self._frameMostrarComprasCliente, bg="white", font=FONT3, fg=FG2)
+        self._mostrarResultadoConsulta = Label(self._frameMostrarComprasProveedor, bg="white", font=FONT3, fg=FG2)
         self._mostrarResultadoConsulta.pack(side=TOP, fill=BOTH, expand=True, padx=10, pady=10)
         
         # Expandir los widgets dentro del contenedor
-        self._frameMostrarComprasCliente.columnconfigure(2, weight=1)
+        self._frameMostrarComprasProveedor.columnconfigure(2, weight=1)
 
  
         
     def _seleccionCompraADevolver(self):
-         # Frame anidado debajo del todo en el cuál se le van a agregar los widgets para hacer la devolucion de un producto por parte de un cliente
+         # Frame anidado debajo del todo en el cuál se le van a agregar los widgets para hacer la devolucion de un producto por parte de un Proveedor
         self._frameSeleccionarCompraADevolver= Frame(self, bg=BACKGROUND_FRAMES)
         self._frameSeleccionarCompraADevolver.pack(side=TOP, fill=X, padx=100, pady=100)
         #_______________________________________________________
@@ -84,8 +88,8 @@ class Comprar(Frame):
         self._codigoCompra2.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)        
         
 
-        # Botón de aceptar y elimina la compra seleccionada con el código de las compras del cliente
-        self._botonAceptar = Button(self._frameSeleccionarCompraADevolver2, text="Comprar", font=FONT, command=self.eliminarCompraCliente)
+        # Botón de aceptar y elimina la compra seleccionada con el código de las compras del Proveedor
+        self._botonAceptar = Button(self._frameSeleccionarCompraADevolver2, text="Comprar", font=FONT, command=self.realizarCompra)
         self._botonAceptar.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
 
         # Expandir los widgets dentro del contenedor
@@ -94,8 +98,8 @@ class Comprar(Frame):
         self._frameSeleccionarCompraADevolver2.columnconfigure(4, weight=0)
         
     #BUSCAR PROVEEDOR    
-    def buscarCliente(self):
-        valor= self._codigoCliente.get()
+    def buscarProveedor(self):
+        valor= self._codigoProveedor.get()
 
         try:
             val = int(valor)
@@ -113,11 +117,11 @@ class Comprar(Frame):
         if len(valor) != 0:
             valor = int(valor)
             try:
-                self._cliente = Cliente.getClientes()[valor]
+                self._Proveedor = Proveedor.getProveedores()[valor]
             except KeyError:
                 raise ExcepcionCodigoNoExite().showMessage()
                 return
-            self._showCompra(self._cliente)
+            self._showProductos(self._Proveedor)
         else:
             try:
                 raise ExcepcionCamposNulos()
@@ -125,30 +129,36 @@ class Comprar(Frame):
                 f.showMessage()
             return
         
-        self._codigoCliente.delete(0, END)
+        self._codigoProveedor.delete(0, END)
             
             
             
-    #Mostrar productos a comprar    
-    def _showCompra(self, cliente):
+    #Mostrar productos a Productosr    
+    def _showProductos(self, Proveedor):
         texto = ""
 
-        if len(cliente.getCompras().values()) == 0:
+        if len(Proveedor.getProductos()) == 0:
             try:
                 raise ExcepcionConjuntoVacio()
             except ExcepcionConjuntoVacio as f:
                 f.showMessage()
             return
         
-        for compra in cliente.getCompras().values():
-            texto += compra.__str__() + "\n"
+        for producto in Proveedor.getProductos():
+            texto += producto.__str__() + "\n"
             
         self._mostrarResultadoConsulta.config(text=texto)
-        
+     
+     
+ #creo que lo de arriba ya       
         
     #Realizar compra
-    def eliminarCompraCliente(self):
+    def realizarCompra(self):
         valor = self._codigoCompra.get()
+        valor2 = self._codigoCompra2.get()
+        valor3=self._codigoProveedor.get()
+        
+        self._Proveedor = Proveedor.getProveedores()[valor3]
 
         try:
             val = int(valor)
@@ -156,17 +166,31 @@ class Comprar(Frame):
             raise ExcepcionTiposMissMatch().showMessage()
             return
 
-        if int(valor) < 0 :
+        if int(valor) < 0 or int(valor2)<0:
             try:
                 raise ExcepcionNegativos()
             except ExcepcionNegativos as f:
                 f.showMessage()
             return
         
-        if len(valor) != 0:
+        if len(valor) != 0 or len(valor2) != 0:
             valor = int(valor)
+            valor2=int(valor2)
+            
+            #F=crear una factura
+            #total=con el id del producto(valor) buscar el precio y multiplicarlo por la cantidad(valor2)
+            cuentaTienda=Tienda.cuenta
+            self._Producto = Producto.getProductos()[valor]      #hay que ver que se haga el diccionario y que se llame con este
+            precio=self._Producto.getPrecioCompra()
+            total=precio*valor2                                    #ver como funcina el étodo y adecuarlo a lo que necesite
+            F=Factura()      #no sé si toca crearlo con parametros
+
+            pin=self._Proveedor.getPin()
+            
+            # producto en diccionario
+            
             try:
-                del self._cliente.getCompras()[valor]
+                F.realizarCompraProveedor(self._Proveedor,self._Producto, cuentaTienda,total, pin)
             except KeyError:
                 raise ExcepcionCodigoNoExite().showMessage()
                 return
@@ -177,6 +201,6 @@ class Comprar(Frame):
                 f.showMessage()
             return
             
-        messagebox.showinfo("Exito", "La compra se realizó correctamente")
+        messagebox.showinfo("Éxito", "La compra se realizó correctamente")
         
         self._codigoCompra.delete(0, END)
