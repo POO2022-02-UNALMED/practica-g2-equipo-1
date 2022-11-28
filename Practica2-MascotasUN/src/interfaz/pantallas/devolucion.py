@@ -1,6 +1,6 @@
-from tkinter import *
-from interfaz.estilos.styles import *
-from gestionAplicacion.compras.cliente import Cliente
+"""from tkinter import *
+from src.interfaz.estilos.styles import *
+from src.gestionAplicacion.compras.cliente import Cliente
 from excepciones import *
 
 class Devolucion(Frame):
@@ -157,4 +157,4 @@ class Devolucion(Frame):
             
         messagebox.showinfo("Exito", "La devolucion se hizo correctamente")
         
-        self._codigoCompra.delete(0, END)
+        self._codigoCompra.delete(0, END)"""""

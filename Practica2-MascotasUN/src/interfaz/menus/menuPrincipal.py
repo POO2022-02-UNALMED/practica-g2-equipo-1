@@ -6,7 +6,7 @@ from tkinter import messagebox
 from src.interfaz.pantallas.clientesValioso import ClienteValioso
 from src.interfaz.pantallas.comision import Comision
 from src.interfaz.pantallas.consultaInformacion import ConsultaBDD
-from src.interfaz.pantallas.devolucion import Devolucion
+#from src.interfaz.pantallas.devolucion import Devolucion
 from src.interfaz.pantallas.informeTienda import Informe
 
 """from interfaz.pantallas.fieldFrame import *
@@ -148,8 +148,8 @@ class MenuPrincipal(Menu):
     def _realizarVenta(self):
         self._padre.mostrarFuncionalidades(ClienteValioso)
 
-    def _comprarInventario(self):
-        self._padre.mostrarFuncionalidades(Devolucion)
+ #   def _comprarInventario(self):
+    #    self._padre.mostrarFuncionalidades(Devolucion)
 
     def _cobrarComision(self):
         self._padre.mostrarFuncionalidades(Comision)

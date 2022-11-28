@@ -3,7 +3,7 @@ class CuentaBancaria:
     _cuentasBancarias = []
     _credenciales = {}
     
-    def __init__(self, nroCuenta, saldo, pin=None):
+    def __init__(self, nroCuenta, saldo, pin):
         self._nroCuenta = nroCuenta
         self._saldo = saldo
         self._pin = pin

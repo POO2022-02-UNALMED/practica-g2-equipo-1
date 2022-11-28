@@ -1,4 +1,4 @@
-
+"""
 from src.gestorAplicacion.gestionVentas import Producto
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 from src.gestorAplicacion.gestionPersonas import Usuario
@@ -90,4 +90,4 @@ class Perro(Mascota):
         return self._raza
 
     def setRaza(self, raza):
-        self._raza = raza
+        self._raza = raza"""""

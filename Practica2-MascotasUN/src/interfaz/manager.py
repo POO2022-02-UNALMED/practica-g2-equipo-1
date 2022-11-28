@@ -19,7 +19,7 @@ class Manager(Tk):
         self._ventanaInicio = inicio.Inicio(contenedor, self)
         self._ventanaInicio.grid(row = 0, column = 0, sticky = NSEW)
         #Revisar
-        menuInicio = MenuInicio(self,self._ventanaInicio)
+        menuInicio = MenuInicio(self)
         self['menu'] = menuInicio
         
 

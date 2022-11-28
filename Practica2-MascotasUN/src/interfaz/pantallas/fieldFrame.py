@@ -2,14 +2,14 @@ from tkinter import *
 
 #from pytest import Instance
 from src.interfaz.estilos.styles import *
-<<<<<<< Updated upstream
-from excepciones import *
-
-=======
 
 from excepciones import *
 
->>>>>>> Stashed changes
+
+
+from excepciones import *
+
+
 class FieldFrame(Frame):
     
     def __init__(self, padre, controlador, objeto, atributos, tituloCriterios = None, criterios = None, tituloValores = None, valores = None, habilitado = None, nombreProceso = None, descripcionProceso = None):

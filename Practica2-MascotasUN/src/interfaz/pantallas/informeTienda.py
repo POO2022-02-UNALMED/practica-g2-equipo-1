@@ -1,11 +1,11 @@
 from tkinter import *
-from interfaz.estilos.styles import *
-from gestorAplicacion.gestionVentas import Producto
-from gestorAplicacion.gestionVentas import Factura
-from gestorAplicacion.gestionVentas import Tienda
-from gestorAplicacion.gestionPersonas import Usuario
-from gestorAplicacion.gestionPersonas import Vendedor
-from gestorAplicacion.gestionPersonas import CuentaBancaria
+from src.interfaz.estilos.styles import *
+from src.gestorAplicacion.gestionVentas import Producto
+from src.gestorAplicacion.gestionVentas import Factura
+from src.gestorAplicacion.gestionVentas import Tienda
+from src.gestorAplicacion.gestionPersonas import Usuario
+from src.gestorAplicacion.gestionPersonas import Vendedor
+from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 
 class Informe(Frame):
 
