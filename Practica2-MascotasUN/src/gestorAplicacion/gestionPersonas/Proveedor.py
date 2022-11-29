@@ -26,6 +26,7 @@ class Proveedor(Persona):
         pedidos = None
         factura = None
         self.stock = stock
+        Proveedor.personaId+=1
         self.personaId=Proveedor.personaId
         # Se guarda el objeto en un diccionario con su id como key
         Proveedor.proveedores[self.personaId] = self
@@ -41,7 +42,7 @@ class Proveedor(Persona):
         # Metodo toString() que se encarga de mostrar atributos determinados de la clase proveedor
 
     def __str__(self) -> str:
-        return "~ ID # " + str(Proveedor.personaId) + "\n" \
+        return "~ ID # " + str(self.personaId) + "\n" \
                + "~ Nombre: " + str(self.nombre) + "\n" \
                + "~ Email: " + str(self.email) + "\n" \
                + "~ Telefono: " + str(self.telefono) + "\n" \
@@ -82,11 +83,11 @@ class Proveedor(Persona):
 
         # Metodos de clase
     @classmethod
-    def getId(cls):
+    def getPersonaId(cls):
         return cls.personaId
 
     @classmethod
-    def setId(cls, personaId):
+    def setPersonaId(cls, personaId):
         cls.personaId = personaId
 
     @classmethod

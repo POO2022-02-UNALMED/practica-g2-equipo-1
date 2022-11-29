@@ -44,14 +44,19 @@ class Informe(Frame):
         
         # Adaptar 
         self._frameMostrarInforme.columnconfigure(1, weight=1)
-        
+    
+    def lista(self):
+        clientes = Usuario.getUsuarios()
+        clientes = list(clientes.values())
+        return clientes
         
     def generarInforme(self):
         # En este método se generará el informe a modo resumen de la tienda MascotasUN
+        listita=[Vendedor.Usuario.getUsuarios()]
         texto = "*******INFORME MascotasUN*******" + "\n\n\n" \
-                    + "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas(Vendedor.getVentas())) + "\n\n" \
-                    + "Productos más vendidos" +"\n"+ str(self.imprimirProductos()) + "\n\n" \
-                    + "Clientes destacados" +"\n"+ str(self.imprimirClientes()) + "\n" \
+                     + "Clientes destacados" +"\n"+ str(self.imprimirClientes(listita, Vendedor.Usuario.getUsuarios())) + "\n" \
+                    #+ "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas(Vendedor.getValoresOrdenados(),Vendedor.getCantidadVentas())) + "\n\n" \
+                    # + "Productos más vendidos" +"\n"+ str(self.imprimirProductos()) + "\n\n" \
                         
         self._labelMostrarInforme.config(text=texto)
         
@@ -70,6 +75,14 @@ class Informe(Frame):
             for j in productos:
                 if valores[i] == productos[j]:
                     print("El producto",j,"ha sido vendido",productos[j],"veces")
+                    break
+                
+    # Método que muestra en pantalla los clientes que más han comprado en orden descendente
+    def imprimirClientes(valores,clientes):
+        for i in range(len(valores)):
+            for j in clientes:
+                if valores[i] == clientes[j]:
+                    print("El cliente",j,"ha comprado",clientes[j],"productos")
                     break
                 
     # Método que muestra en pantalla los productos más vendidos en orden descendente
@@ -109,11 +122,3 @@ class Informe(Frame):
                 cantidad = productos[i].getCantidad()
                 producto = productos[i]
         return producto
-                        
-    # Método que muestra en pantalla los clientes que más han comprado en orden descendente
-    def imprimirClientes(valores,clientes):
-        for i in range(len(valores)):
-            for j in clientes:
-                if valores[i] == clientes[j]:
-                    print("El cliente",j,"ha comprado",clientes[j],"productos")
-                    break

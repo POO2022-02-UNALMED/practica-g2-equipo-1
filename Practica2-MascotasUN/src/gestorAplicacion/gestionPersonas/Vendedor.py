@@ -116,6 +116,7 @@ class Vendedor(Persona):
         self._contrasena = contrasena
         self.personaId=Vendedor.personaId
         Vendedor.vendedores[self.personaId] = self
+        Vendedor.cantidadVentas[self.personaId]=0
 
     #Métodos
     

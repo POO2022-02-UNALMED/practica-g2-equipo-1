@@ -7,6 +7,7 @@ class Producto:
     # Constructor
     def __init__(self, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza="",
                  etapa="", especie=""):
+        Producto.productoID+=1
         self.productoID=Producto.productoID
         self.nombre = nombre
         self.fechaVencimiento = fechaVencimiento
@@ -23,7 +24,7 @@ class Producto:
 
     # Método sobrecargado toString para imprimir los datos de un producto
     def __str__(self) -> str:
-        return "Código: " + str(Producto.productoID) + "\n" \
+        return "Código: " + str(self.productoID) + "\n" \
                + "Producto: " + str(self.nombre) + "\n" \
                + "Fecha de Vencimiento: " + str(self.fechaVencimiento) + "\n" \
                + "Descripción: " + str(self.descripcion) + "\n" \
@@ -78,12 +79,6 @@ class Producto:
     @classmethod
     def setProductos(cls, productos):
         cls.productos = productos
-
-    def getProductoID(self):
-        return self.productoID
-
-    def setProductoID(self, productoID):
-        self.productoID = productoID
 
     def getNombre(self):
         return self.nombre

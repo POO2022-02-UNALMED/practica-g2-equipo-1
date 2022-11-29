@@ -16,7 +16,7 @@ class Gato(Mascota):
     gatos = {}
     #Constructor
     def __init__(self, nombre, edad,id):
-
+        Gato.mascotaID+=1
         self.mascotaID=Gato.mascotaID
         self._nombre = nombre
         self._edad = edad
