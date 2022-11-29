@@ -78,13 +78,13 @@ class Recomendacion(Frame):
         try:
             val = int(valor)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(valor) < 0 :
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
 
@@ -106,8 +106,8 @@ class Recomendacion(Frame):
             #self.mostrarMascota(self.gua)
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
     def tipoAlimento(self,gato):

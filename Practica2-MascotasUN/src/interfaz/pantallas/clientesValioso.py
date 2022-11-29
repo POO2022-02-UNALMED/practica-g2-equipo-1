@@ -74,13 +74,13 @@ class ClienteValioso(Frame):
         try:
             val = int(valor)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(valor) < 0 :
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
         
@@ -92,8 +92,8 @@ class ClienteValioso(Frame):
                 #self.mostrarClientesValiosos(clientes_valiosos)
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
             

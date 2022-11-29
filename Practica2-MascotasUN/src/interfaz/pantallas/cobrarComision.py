@@ -87,13 +87,13 @@ class CobrarComision(Frame):
         try:
             val = int(valor)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(valor) < 0 :
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
         
@@ -102,8 +102,8 @@ class CobrarComision(Frame):
             self._mostrarConsulta(valor)
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
                 
@@ -113,8 +113,8 @@ class CobrarComision(Frame):
         
         if Vendedor.encontrarPersona(valor)!=None:
             try:
-                raise ExcepcionConjuntoVacio()
-            except ExcepcionConjuntoVacio as f:
+                raise ExcepcionArregloSinDatos()
+            except ExcepcionArregloSinDatos as f:
                 f.showMessage()
             return 
         

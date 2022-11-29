@@ -96,8 +96,8 @@ class FieldFrame(Frame):
         for key,entrada in valores.items():
             if len(entrada) == 0 and "id" not in key.lower():
                 try:
-                    raise ExcepcionCamposNulos()
-                except ExcepcionCamposNulos as f:
+                    raise ExcepcionCamposVacios()
+                except ExcepcionCamposVacios as f:
                     f.showMessage()
                 return
 

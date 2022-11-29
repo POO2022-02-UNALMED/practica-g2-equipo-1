@@ -118,13 +118,13 @@ class RealizarVenta(Frame):
         try:
             val = int(valor)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(valor) < 0:
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
         
@@ -133,13 +133,13 @@ class RealizarVenta(Frame):
             try:
                 self._codigoUsuario = Usuario.getUsuarios()[valor]
             except KeyError:
-                raise ExcepcionCodigoNoExite().showMessage()
+                raise ExcepcionCodigoInexistente().showMessage()
                 return
             self._mostrarUsuario(self._codigoUsuario)
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
         
@@ -153,8 +153,8 @@ class RealizarVenta(Frame):
 
         if len(usuario.getUsuarios().values()) == 0:
             try:
-                raise ExcepcionConjuntoVacio()
-            except ExcepcionConjuntoVacio as f:
+                raise ExcepcionArregloSinDatos()
+            except ExcepcionArregloSinDatos as f:
                 f.showMessage()
             return
         texto=usuario.encontrarPersona(self._codigoUsuario)
@@ -174,13 +174,13 @@ class RealizarVenta(Frame):
        try:
            val = int(valor)
        except ValueError:
-           raise ExcepcionTiposMissMatch().showMessage()
+           raise ExcepcionTiposErrados().showMessage()
            return
 
        if int(valor) < 0:
            try:
-               raise ExcepcionNegativos()
-           except ExcepcionNegativos as f:
+               raise ExcepcionNumNoValido()
+           except ExcepcionNumNoValido as f:
                f.showMessage()
            return
 
@@ -189,13 +189,13 @@ class RealizarVenta(Frame):
            try:
                self._codigoProducto = Producto.getProducto()[valor]
            except KeyError:
-               raise ExcepcionCodigoNoExite().showMessage()
+               raise ExcepcionCodigoInexistente().showMessage()
                return
            self._cantidadComprada
        else:
            try:
-               raise ExcepcionCamposNulos()
-           except ExcepcionCamposNulos as f:
+               raise ExcepcionCamposVacios()
+           except ExcepcionCamposVacios as f:
                f.showMessage()
            return
 
@@ -206,13 +206,13 @@ class RealizarVenta(Frame):
         try:
             val = int(valor)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(valor) < 0 :
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
         
@@ -221,12 +221,12 @@ class RealizarVenta(Frame):
             try:
                 del self._cliente.getCompras()[valor]
             except KeyError:
-                raise ExcepcionCodigoNoExite().showMessage()
+                raise ExcepcionCodigoInexistente().showMessage()
                 return
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
             

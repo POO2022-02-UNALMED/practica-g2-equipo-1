@@ -87,13 +87,13 @@ class ConsultaInformacion(Frame):
         try:
             valor = int(entrada)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(entrada) < 0:
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
         
@@ -102,8 +102,8 @@ class ConsultaInformacion(Frame):
             self._mostrarConsulta(valor)
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
                 
@@ -114,8 +114,8 @@ class ConsultaInformacion(Frame):
 
             if len(Gato.getGatos().values()) == 0:
                 try:
-                    raise ExcepcionConjuntoVacio()
-                except ExcepcionConjuntoVacio as f:
+                    raise ExcepcionArregloSinDatos()
+                except ExcepcionArregloSinDatos as f:
                     f.showMessage()
                 return
 
@@ -126,8 +126,8 @@ class ConsultaInformacion(Frame):
 
             if len(Perro.getPerros().values()) == 0:
                 try:
-                    raise ExcepcionConjuntoVacio()
-                except ExcepcionConjuntoVacio as f:
+                    raise ExcepcionArregloSinDatos()
+                except ExcepcionArregloSinDatos as f:
                     f.showMessage()
                 return
 
@@ -138,8 +138,8 @@ class ConsultaInformacion(Frame):
 
             if len(Proveedor.getProveedores().values()) == 0:
                 try:
-                    raise ExcepcionConjuntoVacio()
-                except ExcepcionConjuntoVacio as f:
+                    raise ExcepcionArregloSinDatos()
+                except ExcepcionArregloSinDatos as f:
                     f.showMessage()
                 return
 
@@ -150,8 +150,8 @@ class ConsultaInformacion(Frame):
 
             if len(Usuario.getUsuarios().values()) == 0:
                 try:
-                    raise ExcepcionConjuntoVacio()
-                except ExcepcionConjuntoVacio as f:
+                    raise ExcepcionArregloSinDatos()
+                except ExcepcionArregloSinDatos as f:
                     f.showMessage()
                 return
 
@@ -162,8 +162,8 @@ class ConsultaInformacion(Frame):
 
             if len(Vendedor.getVendedores().values()) == 0:
                 try:
-                    raise ExcepcionConjuntoVacio()
-                except ExcepcionConjuntoVacio as f:
+                    raise ExcepcionArregloSinDatos()
+                except ExcepcionArregloSinDatos as f:
                     f.showMessage()
                 return
 
@@ -174,8 +174,8 @@ class ConsultaInformacion(Frame):
 
             if len(Producto.getProductos().values()) == 0:
                 try:
-                    raise ExcepcionConjuntoVacio()
-                except ExcepcionConjuntoVacio as f:
+                    raise ExcepcionArregloSinDatos()
+                except ExcepcionArregloSinDatos as f:
                     f.showMessage()
                 return
 
@@ -184,9 +184,22 @@ class ConsultaInformacion(Frame):
                 
         else: 
             try:
-                raise ErrorAplicacion("Numero no valido")
-            except ErrorAplicacion as f:
+                raise ErrorApp("Numero no valido")
+            except ErrorApp as f:
                 f.showMessage()
             return
             
         self._texto.insert(END, texto)
+
+        def mostrarGatos(self):
+            self._mensaje = ""
+            if len(Gato.getGatos().values()) == 0:
+                try:
+                    raise ExcepcionArregloSinDatos()
+                except ExcepcionArregloSinDatos as f:
+                    f.showMessage()
+                    return
+            for gato in Gato.getGatos().values():
+                self._mensaje += gato.__str__() + "\n"
+                self._texto.insert(END, texto)
+

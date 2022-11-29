@@ -104,13 +104,13 @@ class Comprar(Frame):
         try:
             val = int(valor)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(valor) < 0:
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
         
@@ -119,13 +119,13 @@ class Comprar(Frame):
             try:
                 self._Proveedor = Proveedor.getProveedores()[valor]
             except KeyError:
-                raise ExcepcionCodigoNoExite().showMessage()
+                raise ExcepcionCodigoInexistente().showMessage()
                 return
             self._showProductos(self._Proveedor)
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
         
@@ -139,8 +139,8 @@ class Comprar(Frame):
 
         if len(Producto.getProductos()) == 0:
             try:
-                raise ExcepcionConjuntoVacio()
-            except ExcepcionConjuntoVacio as f:
+                raise ExcepcionArregloSinDatos()
+            except ExcepcionArregloSinDatos as f:
                 f.showMessage()
             return
         
@@ -163,13 +163,13 @@ class Comprar(Frame):
         try:
             val = int(valor)
         except ValueError:
-            raise ExcepcionTiposMissMatch().showMessage()
+            raise ExcepcionTiposErrados().showMessage()
             return
 
         if int(valor) < 0 or int(valor2)<0:
             try:
-                raise ExcepcionNegativos()
-            except ExcepcionNegativos as f:
+                raise ExcepcionNumNoValido()
+            except ExcepcionNumNoValido as f:
                 f.showMessage()
             return
         
@@ -192,12 +192,12 @@ class Comprar(Frame):
             try:
                 F.realizarCompraProveedor(self._Proveedor, total, pin)
             except KeyError:
-                raise ExcepcionCodigoNoExite().showMessage()
+                raise ExcepcionCodigoInexistente().showMessage()
                 return
         else:
             try:
-                raise ExcepcionCamposNulos()
-            except ExcepcionCamposNulos as f:
+                raise ExcepcionCamposVacios()
+            except ExcepcionCamposVacios as f:
                 f.showMessage()
             return
             
