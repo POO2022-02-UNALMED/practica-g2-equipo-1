@@ -12,7 +12,7 @@ FONT3 = ("Comic Sans MS", 12)
 FONT4 = ("Comic Sans MS", 10)
 BG1 = "#693C96"
 TEXT1 = "#FDFEFE"
-COPY1 = "¡Bienvenidos a MascotasUN!" 
+COPY1 = "¡Bienvenidos a MascotasUN!"
 
 ESTILOS_LABEL_VENTANA_1 = {
     "font" : FONT,

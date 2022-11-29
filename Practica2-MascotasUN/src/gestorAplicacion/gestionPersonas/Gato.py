@@ -3,20 +3,21 @@ from src.gestorAplicacion.gestionVentas import Producto
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
 from src.gestorAplicacion.gestionPersonas import Mascota
-
+from random import randint
 
 class Mascota:
     _mascotas = []
-
+    mascotaID = randint(1, 1000000)
     # Metodo para identificar una mascota con su id.
 
 
 class Gato(Mascota):
-    mascotaID=300
+    mascotaID=0
     gatos = {}
     #Constructor
     def __init__(self, nombre, edad,id):
-        Gato.mascotaID+=1
+
+        self.mascotaID=Gato.mascotaID
         self._nombre = nombre
         self._edad = edad
         Mascota._mascotas.append(self)
@@ -103,12 +104,12 @@ from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
 
 
 class Perro(Mascota):
-    mascotaID=500
+    mascotaID=randint(1,1000000)
     perros = {}
 
     #Constructor
     def __init__(self, nombre, edad, raza,idUsuario):
-        Perro.mascotaID+=1
+        self.mascotaID=Perro.mascotaID
         self._nombre = nombre
         self._edad = edad
         self._raza = raza

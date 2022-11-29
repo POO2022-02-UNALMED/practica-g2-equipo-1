@@ -1,13 +1,13 @@
 # Clase que crea y gestiona los objetos de tipo Producto, los cuales son los productos que la aplicación vende
-
+from  random import randint
 class Producto:
     productos = {}
-    productoID = 444444
+    productoID = randint(444444,888888)
 
     # Constructor
     def __init__(self, nombre, fechaVencimiento, descripcion, precioCompra, precioVenta, cantidadComprada, raza="",
                  etapa="", especie=""):
-        Producto.productoID += 1
+        self.productoID=Producto.productoID
         self.nombre = nombre
         self.fechaVencimiento = fechaVencimiento
         self.descripcion = descripcion
