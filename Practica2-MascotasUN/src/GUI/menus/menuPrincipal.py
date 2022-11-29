@@ -4,13 +4,11 @@ from tkinter import *
 from tkinter import messagebox
 from src.GUI.GestionInterfaz.cobrarComision import CobrarComision
 
-from src.GUI.GestionInterfaz import consultaInformacion
-from src.GUI.GestionInterfaz.clientesValioso import ClienteValioso
-from src.GUI.GestionInterfaz.comision import Comision
 from src.GUI.GestionInterfaz.comprar import Comprar
 from src.GUI.GestionInterfaz.consultaInformacion import ConsultaInformacion
 #from src.GUI.GestionInterfaz.devolucion import Devolucion
 from src.GUI.GestionInterfaz.informeTienda import Informe
+from src.GUI.GestionInterfaz.realizarVenta import RealizarVenta
 
 from src.gestorAplicacion.gestionVentas.Producto import Producto
 from src.GUI.GestionInterfaz.recomendacion import Recomendacion
@@ -62,13 +60,7 @@ class MenuPrincipal(Menu):
         menuProcesos.add_command(label="Ver estadisticas ventas", command=self._verInforme)
         menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacion)
         menuProcesos.add_command(label="Cobrar comision", command=self._cobrarComision)
-        """
-        
-        menuProcesos.add_command(label="Comprar inventario", command=self._comprarInventario)
-        menuProcesos.add_command(label="Cobrar comision", command=self._cobrarComision)
-        
-        menuProcesos.add_command(label="", command=self._recomendacionesPersonalizadas)"""
-
+        menuProcesos.add_command(label="Realizar Venta", command=self._realizarVenta)
         # Para el caso del submenu Ayuda
         menuAyuda.add_command(label="Acerca de", command=self.quienesSomos)
         
@@ -162,9 +154,6 @@ class MenuPrincipal(Menu):
     def _consultaInformacion(self):
         self._padre.mostrarFuncionalidades(ConsultaInformacion)
 
- #   def _comprarInventario(self):
-    #    self._padre.mostrarFuncionalidades(Devolucion)
-
     def _cobrarComision(self):
         self._padre.mostrarFuncionalidades(CobrarComision)
 
@@ -173,3 +162,5 @@ class MenuPrincipal(Menu):
 
     def _recomendacion(self):
         self._padre.mostrarFuncionalidades(Recomendacion)
+    def _realizarVenta(self):
+        self._padre.mostrarFuncionalidades(RealizarVenta)
