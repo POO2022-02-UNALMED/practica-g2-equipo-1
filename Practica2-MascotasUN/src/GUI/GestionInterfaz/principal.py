@@ -35,7 +35,7 @@ class Principal(Toplevel):
         
         self.frameFuncionalidad = {}
         
-        for F in (Instrucciones, Comprar,  Comision, Informe, ConsultaInformacion,Recomendacion, CobrarComision,RealizarVenta):
+        for F in (Instrucciones, Comprar, Informe, ConsultaInformacion,Recomendacion, CobrarComision,RealizarVenta):
             self._frame =F(self._contenedor, self)
             self.frameFuncionalidad[F] = self._frame
             self._frame.grid(row=0, column=0, sticky=NSEW)
