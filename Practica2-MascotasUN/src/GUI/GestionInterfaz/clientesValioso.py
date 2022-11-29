@@ -1,6 +1,6 @@
 from tkinter import *
 from excepciones import *
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 from src.gestorAplicacion.gestionPersonas.Usuario import *
 
 class ClienteValioso(Frame):
@@ -14,7 +14,7 @@ class ClienteValioso(Frame):
         #Atributos
         self._controlador = controlador
         
-        # Se inicializan los widgets que van en la interfaz
+        # Se inicializan los widgets que van en la GUI
         self._mostrarTitulo()
         self._ConsultarClientesValiosos()
         self._inicializarFrameClientesValiosos()

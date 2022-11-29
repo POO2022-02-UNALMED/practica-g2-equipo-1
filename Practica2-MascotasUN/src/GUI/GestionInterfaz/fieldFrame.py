@@ -1,7 +1,7 @@
 from tkinter import *
 
 #from pytest import Instance
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 
 from excepciones import *
 
@@ -65,12 +65,12 @@ class FieldFrame(Frame):
             if self._criterios[i] in self._habilitado:
                 self.entry = Entry(frameCriterioValor, bg="white", font=FONT2, fg=FG2, justify=CENTER, state=DISABLED)
                 self.entrys[self._atributos[i]] = self.entry
-                self.entry.grid(row=i+1, column=1, sticky=EW, padx=50, pady=10)
+                self.entry.grid(row=i+1, column=1, sticky=EW, padx=5, pady=1)
                 
             else:
                 self.entry = Entry(frameCriterioValor, bg="white", font=FONT2, fg=FG2, justify=CENTER)
                 self.entrys[self._atributos[i]] = self.entry
-                self.entry.grid(row=i+1, column=1, sticky=EW, padx=50, pady=10)
+                self.entry.grid(row=i+1, column=1, sticky=EW, padx=5, pady=1)
         
         # Expandimos los labels dentro del frame anidado 3
         frameCriterioValor.columnconfigure(1, weight=1)

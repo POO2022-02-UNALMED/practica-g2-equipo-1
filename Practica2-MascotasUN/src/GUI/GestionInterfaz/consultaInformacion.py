@@ -1,5 +1,5 @@
 from tkinter import *
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 from src.gestorAplicacion.gestionPersonas.Gato import Gato
 from src.gestorAplicacion.gestionPersonas.Gato import Perro
 from src.gestorAplicacion.gestionVentas.Producto import Producto
@@ -20,7 +20,7 @@ class ConsultaInformacion(Frame):
         #Atributos
         self._controlador = controlador
 
-        # Se inicializan los widgets que van en la interfaz
+        # Se inicializan los widgets que van en la GUI
         self._mostrarTitulo()
         self._Consultar()
         self._inicializarFrameConsulta()

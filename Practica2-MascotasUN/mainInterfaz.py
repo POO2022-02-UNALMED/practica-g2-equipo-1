@@ -1,6 +1,6 @@
-from src.interfaz.manager import Manager
+from src.GUI.manager import Manager
 from tkinter import *
-from src.interfaz.pantallas.principal import Principal
+from src.GUI.GestionInterfaz.principal import Principal
 from src.baseDatos.Deserializador import *
 from src.baseDatos.Serializador import *
 

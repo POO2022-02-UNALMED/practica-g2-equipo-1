@@ -5,7 +5,7 @@ from src.gestorAplicacion.gestionPersonas.Gato import Perro
 from src.gestorAplicacion.gestionPersonas.Gato import Mascota
 from src.gestorAplicacion.gestionVentas.Producto import Producto
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 
 class Recomendacion(Frame):
     
@@ -18,7 +18,7 @@ class Recomendacion(Frame):
         #Atributos
         self._controlador = controlador
         
-        # Se inicializan los widgets que van en la interfaz
+        # Se inicializan los widgets que van en la GUI
         self._mostrarTitulo()
         self._ConsultarMascota()
         self._inicializarFrameMascota()

@@ -2,7 +2,7 @@ from tkinter import *
 from src.gestorAplicacion.gestionVentas.Producto import Producto
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 from src.gestorAplicacion.gestionVentas.Factura import Factura
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 from src.gestorAplicacion.gestionPersonas.Proveedor import Proveedor
 from excepciones import *
 
@@ -17,7 +17,7 @@ class Comprar(Frame):
         #Atributos
         self._controlador = controlador
         
-        # Se inicializan los widgets que van en la interfaz
+        # Se inicializan los widgets que van en la GUI
         self._mostrarTitulo()
         self._ConsultarCompras()
         self._mostrarCompras()

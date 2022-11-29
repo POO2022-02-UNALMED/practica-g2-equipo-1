@@ -1,5 +1,5 @@
 from tkinter import *
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 from src.gestorAplicacion.gestionVentas import Producto
 from src.gestorAplicacion.gestionVentas import Factura
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
@@ -18,7 +18,7 @@ class Informe(Frame):
         # Atributos
         self._controlador = controlador
 
-        # Se inicializan los widgets que van en la interfaz
+        # Se inicializan los widgets que van en la GUI
         self._mostrarTitulo()
         self._mostrarBotonGenerarInfome()
         self._mostrarInforme()

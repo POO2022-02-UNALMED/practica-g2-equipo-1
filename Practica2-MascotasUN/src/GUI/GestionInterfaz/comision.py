@@ -1,5 +1,5 @@
 from tkinter import *
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 from src.gestorAplicacion.gestionPersonas import Vendedor
 
 class Comision(Frame):
@@ -13,7 +13,7 @@ class Comision(Frame):
         #Atributos
         self._controlador = controlador
         
-        # Se inicializan los widgets que van en la interfaz
+        # Se inicializan los widgets que van en la GUI
         self._mostrarTitulo()
         self._mostrarBotonCalcular()
         self._mostrarComisionEmpleado()

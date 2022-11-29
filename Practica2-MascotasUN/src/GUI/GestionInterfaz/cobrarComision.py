@@ -20,7 +20,7 @@ class CobrarComision(Frame):
         #Atributos
         self._controlador = controlador
 
-        # Se inicializan los widgets que van en la interfaz
+        # Se inicializan los widgets que van en la GUI
         self._mostrarTitulo()
         self._Consultar()
         self._inicializarFrameConsulta()

@@ -1,5 +1,5 @@
 from tkinter import *
-from src.interfaz.estilos.styles import *
+from src.GUI.estilos.styles import *
 
 class Instrucciones(Frame):
     

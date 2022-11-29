@@ -3,23 +3,23 @@ from distutils import command
 from tkinter import *
 from tkinter import messagebox
 
-from src.interfaz.pantallas import consultaInformacion
-from src.interfaz.pantallas.clientesValioso import ClienteValioso
-from src.interfaz.pantallas.comision import Comision
-from src.interfaz.pantallas.comprar import Comprar
-from src.interfaz.pantallas.consultaInformacion import ConsultaInformacion
-#from src.interfaz.pantallas.devolucion import Devolucion
-from src.interfaz.pantallas.informeTienda import Informe
+from src.GUI.GestionInterfaz import consultaInformacion
+from src.GUI.GestionInterfaz.clientesValioso import ClienteValioso
+from src.GUI.GestionInterfaz.comision import Comision
+from src.GUI.GestionInterfaz.comprar import Comprar
+from src.GUI.GestionInterfaz.consultaInformacion import ConsultaInformacion
+#from src.GUI.GestionInterfaz.devolucion import Devolucion
+from src.GUI.GestionInterfaz.informeTienda import Informe
 
 from src.gestorAplicacion.gestionVentas.Producto import Producto
-from src.interfaz.pantallas.recomendacion import Recomendacion
+from src.GUI.GestionInterfaz.recomendacion import Recomendacion
 
-"""from interfaz.pantallas.fieldFrame import *
-from interfaz.pantallas.clientesValioso import ClienteValioso
-from interfaz.pantallas.devolucion import Devolucion
-from interfaz.pantallas.comision import Comision
-from interfaz.pantallas.informeTienda import Informe
-from interfaz.pantallas.consultaBDD import ConsultaBDD"""
+"""from GUI.GestionInterfaz.fieldFrame import *
+from GUI.GestionInterfaz.clientesValioso import ClienteValioso
+from GUI.GestionInterfaz.devolucion import Devolucion
+from GUI.GestionInterfaz.comision import Comision
+from GUI.GestionInterfaz.informeTienda import Informe
+from GUI.GestionInterfaz.consultaBDD import ConsultaBDD"""
 
 class MenuPrincipal(Menu):
     
@@ -60,6 +60,7 @@ class MenuPrincipal(Menu):
         menuProcesos.add_command(label="Comprar inventario", command=self._comprar)
         menuProcesos.add_command(label="Ver estadisticas ventas", command=self._verInforme)
         menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacion)
+
         """
         
         menuProcesos.add_command(label="Comprar inventario", command=self._comprarInventario)

@@ -1,16 +1,16 @@
 # Se importan las librerías que vamos a utilizar
 from tkinter import *
-from src.interfaz.menus.menuPrincipal import MenuPrincipal
-from src.interfaz.estilos.styles import *
-from src.interfaz.pantallas.Instrucciones import Instrucciones
-from src.interfaz.pantallas.comprar import Comprar
-from src.interfaz.pantallas.fieldFrame import FieldFrame
-from src.interfaz.pantallas.clientesValioso import ClienteValioso
-#from src.interfaz.pantallas.devolucion import Devolucion
-from src.interfaz.pantallas.comision import Comision
-from src.interfaz.pantallas.informeTienda import Informe
-from src.interfaz.pantallas.consultaInformacion import ConsultaInformacion
-from src.interfaz.pantallas.recomendacion import Recomendacion
+from src.GUI.menus.menuPrincipal import MenuPrincipal
+from src.GUI.estilos.styles import *
+from src.GUI.GestionInterfaz.Instrucciones import Instrucciones
+from src.GUI.GestionInterfaz.comprar import Comprar
+from src.GUI.GestionInterfaz.fieldFrame import FieldFrame
+from src.GUI.GestionInterfaz.clientesValioso import ClienteValioso
+#from src.GUI.GestionInterfaz.devolucion import Devolucion
+from src.GUI.GestionInterfaz.comision import Comision
+from src.GUI.GestionInterfaz.informeTienda import Informe
+from src.GUI.GestionInterfaz.consultaInformacion import ConsultaInformacion
+from src.GUI.GestionInterfaz.recomendacion import Recomendacion
 
 
 class Principal(Toplevel):
@@ -48,7 +48,8 @@ class Principal(Toplevel):
         self._frame = FieldFrame(self._contenedor, self, **values)
         self._frame.grid(row=0, column=0, sticky=NSEW)
         self._frame.tkraise()
-
+        self._frame.place(relheight=1,relwidth=1)
     def mostrarFuncionalidades(self, container):
         self._frame = self.frameFuncionalidad[container]
         self._frame.tkraise()
+        self._frame.place(relheight=1, relwidth=1)

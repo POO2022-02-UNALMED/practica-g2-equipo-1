@@ -5,9 +5,9 @@ path = os.path.join(pathlib.Path(__file__).parent.absolute())
 path = os.path.dirname(path)
 
 
-from src.interfaz.estilos import styles as style
+from src.GUI.estilos import styles as style
 from PIL import Image, Image, ImageTk
-from src.interfaz.pantallas.principal import Principal
+from src.GUI.GestionInterfaz.principal import Principal
 
 class Inicio(Frame, Tk):
     """ Clase encargada de cargar los frames y widgets que utilizará la ventana de inicio
