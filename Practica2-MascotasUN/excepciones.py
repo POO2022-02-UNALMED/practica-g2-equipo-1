@@ -21,6 +21,8 @@ class ExcepcionRepeticion(ErrorApp):
         self._error = "ExcepcionRepetidos " + mensaje
         super().__init__(self._error)
 
+
+#Primer grupo
 class ExcepcionCamposVacios(ExcepcionCampos):
 
     def __init__(self):
@@ -35,7 +37,8 @@ class ExcepcionTiposErrados(ExcepcionCampos):
 
     def __init__(self):
         super().__init__("Los tipos de datos no coinciden")
-
+        
+#Segundo grupo
 class ExcepcionCodigoInexistente(ExcepcionRepeticion):
 
     def __init__(self):
