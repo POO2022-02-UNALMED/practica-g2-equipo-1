@@ -1,11 +1,11 @@
 from tkinter import *
 from src.GUI.estilos.styles import *
-from src.gestorAplicacion.gestionVentas import Producto
-from src.gestorAplicacion.gestionVentas import Factura
+from src.gestorAplicacion.gestionVentas.Producto import Producto
+from src.gestorAplicacion.gestionVentas.Factura import Factura
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
-from src.gestorAplicacion.gestionPersonas import Usuario
+from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
 from src.gestorAplicacion.gestionPersonas.Vendedor import Vendedor
-from src.gestorAplicacion.gestionPersonas import CuentaBancaria
+from src.gestorAplicacion.gestionPersonas.CuentaBancaria import CuentaBancaria
 
 class Informe(Frame):
 
@@ -49,18 +49,8 @@ class Informe(Frame):
         clientes = Usuario.getUsuarios()
         clientes = list(clientes.values())
         return clientes
-        
-    def generarInforme(self):
-        # En este método se generará el informe a modo resumen de la tienda MascotasUN
-        listita=[Vendedor.Usuario.getUsuarios()]
-        texto = "*******INFORME MascotasUN*******" + "\n\n\n" \
-                     + "Clientes destacados" +"\n"+ str(self.imprimirClientes(listita, Vendedor.Usuario.getUsuarios())) + "\n" \
-                    #+ "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas(Vendedor.getValoresOrdenados(),Vendedor.getCantidadVentas())) + "\n\n" \
-                    # + "Productos más vendidos" +"\n"+ str(self.imprimirProductos()) + "\n\n" \
-                        
-        self._labelMostrarInforme.config(text=texto)
-        
-    # Método que muestra en pantalla cada vendedor y el número de ventas que ha realizado en orden descendente
+    
+        # Método que muestra en pantalla cada vendedor y el número de ventas que ha realizado en orden descendente
     # Valores es una lista *** y ventas es un diccionario con el nombre del vendedor y el número de ventas
     def imprimirVentas(valores,ventas):
         for i in range(len(valores)):
@@ -91,9 +81,9 @@ class Informe(Frame):
         for i in facturas:
             for j in i.getDetalle():
                 if j.getProducto().getNombre() in productos:
-                    productos[j.getProducto().getNombre()] += j.getCantidad()
+                    productos[j.getProducto().getNombre()] += j.getCantidadComprada()
                 else:
-                    productos[j.getProducto().getNombre()] = j.getCantidad()
+                    productos[j.getProducto().getNombre()] = j.getCantidadComprada()
         valores = list(productos.values())
         valores.sort(reverse=True)
         self.imprimirProductos(valores,productos)
@@ -118,7 +108,17 @@ class Informe(Frame):
         productos = Producto.getProductos()
         cantidad = 0
         for i in productos:
-            if productos[i].getCantidad() > cantidad:
-                cantidad = productos[i].getCantidad()
+            if productos[i].getCantidadComprada() > cantidad:
+                cantidad = productos[i].getCantidadComprada()
                 producto = productos[i]
         return producto
+        
+    def generarInforme(self):
+        # En este método se generará el informe a modo resumen de la tienda MascotasUN
+        listita=[Usuario.getUsuarios()]
+        texto = "*******INFORME MascotasUN*******" + "\n\n\n" \
+                     + "Productos más vendidos" +"\n"+ str(self.calcularProductoMasVendido()) + "\n\n" \
+                    # + "Clientes destacados" +"\n"+ str(self.imprimirClientes(Usuario.getUsuarios())) + "\n" \
+                    #+ "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas(Vendedor.getValoresOrdenados(),Vendedor.getCantidadVentas())) + "\n\n" \
+                        
+        self._labelMostrarInforme.config(text=texto)

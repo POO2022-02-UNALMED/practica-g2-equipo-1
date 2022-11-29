@@ -101,8 +101,8 @@ class Recomendacion(Frame):
             except KeyError:
                 #raise ExcepcionCodigoNoExite().showMessage()
                 return"""
-            tipoAlimento=self.tipoAlimento(self.michi)
-            self.mostrarMascota(tipoAlimento)
+            #tipoAlimento=self.tipoAlimento(self.michi)
+            self.mostrarMascota()
             #self.mostrarMascota(self.gua)
         else:
             try:
@@ -122,8 +122,11 @@ class Recomendacion(Frame):
             return "Cachorro"
         else:
             return "Adulto"
-    def mostrarMascota(self, lista):
-        texto = lista
+    def mostrarMascota(self):
+        texto=""
+        for producto in Producto.getProductos().values():
+            if producto.getEspecie() == "Gato":
+                texto += producto.__str__() + "\n"
         self._texto.insert(END, texto)
 """
         for val in lista:

@@ -183,7 +183,7 @@ class Comprar(Frame):
             self._Producto = Producto.getProductos()[valor]      #hay que ver que se haga el diccionario y que se llame con este
             precio=self._Producto.getPrecioCompra()
             total=precio*valor2                                    #ver como funcina el étodo y adecuarlo a lo que necesite
-            F=Factura()      #no sé si toca crearlo con parametros
+            """ F=Factura()      no sé si toca crearlo con parametros
             F.setProductos(self._Producto)
             pin=self._Proveedor.getCuenta().getPin()
             
@@ -193,7 +193,7 @@ class Comprar(Frame):
                 F.realizarCompraProveedor(self._Proveedor, total, pin)
             except KeyError:
                 raise ExcepcionCodigoInexistente().showMessage()
-                return
+                return"""
         else:
             try:
                 raise ExcepcionCamposVacios()
