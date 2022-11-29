@@ -102,7 +102,7 @@ class CobrarComision(Frame):
 #TRADUCIR FUNCIONALIDAD
     def _mostrarConsulta(self, valor):
         texto = ""
-        
+
         if Vendedor.encontrarPersona(valor)!=None:
             try:
                 raise ExcepcionArregloSinDatos()

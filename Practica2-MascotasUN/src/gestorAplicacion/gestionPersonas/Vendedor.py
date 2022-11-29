@@ -50,7 +50,7 @@ class Persona:
     @classmethod
     def encontrarPersona(cls, personaId):
         for p in cls.personas:
-            if (p.getPersonaId() == personaId):
+            if (p.getId() == personaId):
                 return p
         return None
 
@@ -159,10 +159,16 @@ class Vendedor(Persona):
     #Método que encuentra al vendedor en la lista de vendedores existentes y lo retorna, dado su ID
     @classmethod
     def encontrarPersona(cls, personaId):
-        for p in cls.vendedores:
-            if(p.getPersonaId()== personaId):
-                return p
+        for vendedor in Vendedor.getVendedores():
+            if vendedor.getId() == personaId:
+                return vendedor
         return None
+    
+    def encontrarPersona(cls, vendedorID):
+     for vendedor in Vendedor.getVendedores():
+        if cls.personaID == vendedorID:
+            return vendedor
+     return False
 
     @classmethod
     def getId(cls):
@@ -268,7 +274,7 @@ class Usuario(Persona):
     @classmethod
     def encontrarPersona(cls):
         for u in cls.usuarios:
-            if u.getPersonaId() == cls.personaId:
+            if u.getId() == cls.personaId:
                 return u
         return None
 
@@ -300,7 +306,7 @@ class Usuario(Persona):
     @classmethod
     def eliminarUsuario(cls):
         for usuario in cls.usuarios:
-            if usuario.getPersonaId() == cls.personaId:
+            if usuario.getId() == cls.personaId:
                 cls.usuarios.pop(cls.personaId)
                 return cls.usuarios
         return None
@@ -316,7 +322,7 @@ class Usuario(Persona):
 
 
     @classmethod
-    def getPersonaId(cls):
+    def getId(cls):
         return cls.personaId
 
     @classmethod
