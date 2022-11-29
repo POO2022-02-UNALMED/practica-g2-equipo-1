@@ -16,6 +16,7 @@ class Factura:
         self.fechaFactura = fechaFactura
         self.vendedor= vendedor
         self.productos = {}
+        Vendedor.cantidadVentas[vendedor.getId()] += 1
 
     def __str__(self):
         str = "~ Factura #"+ self.facturaID + "\n"+ "~ Fecha = " + self.fechaFactura +"\n"+ "~ Cliente = " + self.cliente.getNombre() + '\n' +"~ Cantidad a pagar = " +self.total+ "\n";
