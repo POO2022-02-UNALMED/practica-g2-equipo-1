@@ -100,7 +100,7 @@ class MenuPrincipal(Menu):
         self._values["descripcionProceso"] = "Guarda la informacion de un nuevo proveedor"
         from src.gestorAplicacion.gestionPersonas.Proveedor import Proveedor
         self._values["objeto"] = Proveedor
-        self._values["valores"] = [Proveedor.getId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["valores"] = [Proveedor.getPersonaId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['id','nombre','email','telefono','stock','nroCuenta','saldo','pin']
         self._padre.showFieldFrame(self._values)
 
@@ -123,7 +123,7 @@ class MenuPrincipal(Menu):
         self._values["descripcionProceso"] = "Registra la informacion de un nuevo producto al sistema"
         from src.gestorAplicacion.gestionVentas.Producto import Producto
         self._values["objeto"] = Producto
-        self._values["valores"] = [Producto.getProductoId()] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
+        self._values["valores"] = [Producto.getProductoId] + [None]*(len(self._values["criterios"]) - len(self._values['habilitado']))
         self._values["atributos"] = ['id','nombre','fechaVencimiento','descripcion','precioCompra','precioVenta','cantidadComprada','raza','etapa','especie']
         self._padre.showFieldFrame(self._values)
 
