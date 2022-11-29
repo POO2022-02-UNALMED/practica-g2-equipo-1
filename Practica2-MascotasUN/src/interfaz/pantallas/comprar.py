@@ -1,9 +1,9 @@
 from tkinter import *
-from gestionAplicacion.productos.producto import Producto
-from gestorAplicacion.gestionVentas.Tienda import Tienda
-from gestorAplicacion.gestionVentas.factura import Factura
-from interfaz.estilos.styles import *
-from gestorAplicacion.gestionPersonas.Proveedor import Proveedor
+from src.gestorAplicacion.gestionVentas.Producto import Producto
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
+from src.gestorAplicacion.gestionVentas.Factura import Factura
+from src.interfaz.estilos.styles import *
+from src.gestorAplicacion.gestionPersonas.Proveedor import Proveedor
 from excepciones import *
 
 class Comprar(Frame):
@@ -107,7 +107,7 @@ class Comprar(Frame):
             raise ExcepcionTiposMissMatch().showMessage()
             return
 
-        if int(valor) < 0 :
+        if int(valor) < 0:
             try:
                 raise ExcepcionNegativos()
             except ExcepcionNegativos as f:
@@ -129,7 +129,7 @@ class Comprar(Frame):
                 f.showMessage()
             return
         
-        self._codigoProveedor.delete(0, END)
+       # self._codigoProveedor.delete(0, END)
             
             
             
@@ -137,14 +137,14 @@ class Comprar(Frame):
     def _showProductos(self, Proveedor):
         texto = ""
 
-        if len(Proveedor.getProductos()) == 0:
+        if len(Producto.getProductos()) == 0:
             try:
                 raise ExcepcionConjuntoVacio()
             except ExcepcionConjuntoVacio as f:
                 f.showMessage()
             return
         
-        for producto in Proveedor.getProductos():
+        for producto in Producto.getProductos():
             texto += producto.__str__() + "\n"
             
         self._mostrarResultadoConsulta.config(text=texto)
@@ -158,7 +158,7 @@ class Comprar(Frame):
         valor2 = self._codigoCompra2.get()
         valor3=self._codigoProveedor.get()
         
-        self._Proveedor = Proveedor.getProveedores()[valor3]
+        self._Proveedor = Proveedor.getProveedores()[int(valor3)]
 
         try:
             val = int(valor)
@@ -184,13 +184,13 @@ class Comprar(Frame):
             precio=self._Producto.getPrecioCompra()
             total=precio*valor2                                    #ver como funcina el étodo y adecuarlo a lo que necesite
             F=Factura()      #no sé si toca crearlo con parametros
-
-            pin=self._Proveedor.getPin()
+            F.setProductos(self._Producto)
+            pin=self._Proveedor.getCuenta().getPin()
             
             # producto en diccionario
             
             try:
-                F.realizarCompraProveedor(self._Proveedor,self._Producto, cuentaTienda,total, pin)
+                F.realizarCompraProveedor(self._Proveedor, total, pin)
             except KeyError:
                 raise ExcepcionCodigoNoExite().showMessage()
                 return

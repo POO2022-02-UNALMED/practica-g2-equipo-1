@@ -9,23 +9,18 @@ class Mascota:
     _mascotas = []
 
     # Metodo para identificar una mascota con su id.
-    def encontrarMascota(cls, id):
-        for i in cls._mascotas:
-            if isinstance(i, Mascota):
-                if (i.getMascotaID == id):
-                    return i
 
 
 class Gato(Mascota):
     mascotaID=0
     gatos = {}
     #Constructor
-    def __init__(self, nombre, edad,idUsuario):
+    def __init__(self, nombre, edad,id):
         Gato.mascotaID+=1
         self._nombre = nombre
         self._edad = edad
         Mascota._mascotas.append(self)
-        self.usuario=self.encontrarUsuario(idUsuario)
+        self.usuario=self.encontrarUsuario(id)
         Gato.gatos[self.mascotaID] = self
 
     #Metodos
@@ -40,8 +35,12 @@ class Gato(Mascota):
         return "~ ID # " + str(self.mascotaID) + "\n" \
                + "~ Nombre: " + str(self._nombre) + "\n" \
                + "~ Edad: " + str(self._edad) + "\n" \
-               + "~ Dueño: " + str(self._idUsuario) + "\n"
-
+               + "~ Dueño: " + str(self.usuario) + "\n"
+    def encontrarMascota(cls, id):
+        if id in Gato.getGatos().keys():
+            return Gato.getGatos().values()
+        else:
+            return None
     def encontrarUsuario(self,id):
         if id in Usuario.getUsuarios():
             return Usuario.getUsuarios()[id]
@@ -130,7 +129,7 @@ class Perro(Mascota):
                + "~ Nombre: " + str(self._nombre) + "\n" \
                + "~ Edad: " + str(self._edad) + "\n" \
                + "~ Raza: " + str(self._raza) + "\n" \
-               + "~ Dueño: " + str(self._idUsuario) + "\n"
+               + "~ Dueño: " + str(self.usuario) + "\n"
 
 
     # Metodo que dependiendo de la edad del gato, retornara una lista de productos recomendados
@@ -142,7 +141,7 @@ class Perro(Mascota):
                     LAux.append(i)
 
     def encontrarUsuario(self,id):
-        if id in Usuario.getUsuarios():
+        if id in Usuario.getUsuarios().keys():
             return Usuario.getUsuarios()[id]
         else:
             return None

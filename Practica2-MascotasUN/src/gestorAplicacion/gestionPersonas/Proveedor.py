@@ -3,6 +3,7 @@ vendiéndole el inventario requerido"""
 
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 from src.gestorAplicacion.gestionPersonas.Vendedor import Persona
+from src.gestorAplicacion.gestionVentas.Producto import Producto
 
 
 class Proveedor(Persona):
@@ -22,7 +23,6 @@ class Proveedor(Persona):
         # Hacemos referencia al construtor de la clase padre
         super().__init__(nombre, email, telefono, variable)
         # Atributos
-        producto = None
         pedidos = None
         factura = None
         self.stock = stock
@@ -103,12 +103,6 @@ class Proveedor(Persona):
 
     def setFactura(self, factura):
         self.factura = factura
-
-    def getProductos(self):
-        return self.producto
-
-    def setProductos(self, producto):
-        self.producto = producto
 
     def getPedidos(self):
         return self.pedidos

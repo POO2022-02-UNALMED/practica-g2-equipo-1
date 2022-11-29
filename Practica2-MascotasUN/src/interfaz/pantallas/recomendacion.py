@@ -1,9 +1,9 @@
 from tkinter import *
 from excepciones import *
-from gestorAplicacion.gestionPersonas.Gato import Gato
-from gestorAplicacion.gestionPersonas.Mascota import Mascota
-from interfaz.estilos.styles import *
-from gestionAplicacion.compras.cliente import *
+from src.gestorAplicacion.gestionPersonas.Gato import Gato
+from src.gestorAplicacion.gestionPersonas.Gato import Perro
+from src.gestorAplicacion.gestionPersonas.Gato import Mascota
+from src.interfaz.estilos.styles import *
 
 class Recomendacion(Frame):
     
@@ -91,7 +91,7 @@ class Recomendacion(Frame):
             
             if valor >=  0:
                 
-                self._Mascota = Mascota.encontrarMascota(valor)
+                self._Mascota = Gato.encontrarMascota(valor)
                 alimento=self._Mascota.tipoAlimento()
                 self.mostrarMascota(alimento)
                 

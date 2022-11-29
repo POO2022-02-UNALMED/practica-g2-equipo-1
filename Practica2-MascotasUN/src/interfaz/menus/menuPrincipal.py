@@ -6,11 +6,13 @@ from tkinter import messagebox
 from src.interfaz.pantallas import consultaInformacion
 from src.interfaz.pantallas.clientesValioso import ClienteValioso
 from src.interfaz.pantallas.comision import Comision
+from src.interfaz.pantallas.comprar import Comprar
 from src.interfaz.pantallas.consultaInformacion import ConsultaInformacion
 #from src.interfaz.pantallas.devolucion import Devolucion
 from src.interfaz.pantallas.informeTienda import Informe
 
 from src.gestorAplicacion.gestionVentas.Producto import Producto
+from src.interfaz.pantallas.recomendacion import Recomendacion
 
 """from interfaz.pantallas.fieldFrame import *
 from interfaz.pantallas.clientesValioso import ClienteValioso
@@ -55,12 +57,15 @@ class MenuPrincipal(Menu):
         menuProcesos.add_command(label="Gestionar Gato", command=self._gestionarGato)
         menuProcesos.add_command(label="Gestionar Vendedores", command = self._gestionarVendedores)
         menuProcesos.add_command(label="Consultar datos MascotasUN", command=self._consultaInformacion)
+        menuProcesos.add_command(label="Comprar inventario", command=self._comprar)
+        menuProcesos.add_command(label="Ver estadisticas ventas", command=self._verInforme)
+        menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacion)
         """
-        menuProcesos.add_command(label="Realizar Venta", command=self._realizarVenta)
+        
         menuProcesos.add_command(label="Comprar inventario", command=self._comprarInventario)
         menuProcesos.add_command(label="Cobrar comision", command=self._cobrarComision)
-        menuProcesos.add_command(label="Ver estadisticas ventas", command=self._verEstadisticasVentas)
-        menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacionesPersonalizadas)"""
+        
+        menuProcesos.add_command(label="", command=self._recomendacionesPersonalizadas)"""
 
         # Para el caso del submenu Ayuda
         menuAyuda.add_command(label="Acerca de", command=self.quienesSomos)
@@ -150,8 +155,8 @@ class MenuPrincipal(Menu):
         self._values["atributos"] = ['id', 'nombre','edad','idUsuario']
         self._padre.showFieldFrame(self._values)
     
-    def _realizarVenta(self):
-        self._padre.mostrarFuncionalidades(ClienteValioso)
+    def _comprar(self):
+        self._padre.mostrarFuncionalidades(Comprar)
     def _consultaInformacion(self):
         self._padre.mostrarFuncionalidades(ConsultaInformacion)
 
@@ -161,7 +166,8 @@ class MenuPrincipal(Menu):
     def _cobrarComision(self):
         self._padre.mostrarFuncionalidades(Comision)
 
-    def _verEstadisticasVentas(self):
+    def _verInforme(self):
         self._padre.mostrarFuncionalidades(Informe)
 
-
+    def _recomendacion(self):
+        self._padre.mostrarFuncionalidades(Recomendacion)

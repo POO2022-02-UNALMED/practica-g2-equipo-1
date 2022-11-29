@@ -112,7 +112,7 @@ class ConsultaInformacion(Frame):
         
         if entrada == 1:
 
-            if len(Gato.getGatos.values()) == 0:
+            if len(Gato.getGatos().values()) == 0:
                 try:
                     raise ExcepcionConjuntoVacio()
                 except ExcepcionConjuntoVacio as f:

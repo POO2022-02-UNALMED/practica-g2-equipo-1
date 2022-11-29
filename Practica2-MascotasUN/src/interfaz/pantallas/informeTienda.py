@@ -2,9 +2,9 @@ from tkinter import *
 from src.interfaz.estilos.styles import *
 from src.gestorAplicacion.gestionVentas import Producto
 from src.gestorAplicacion.gestionVentas import Factura
-from src.gestorAplicacion.gestionVentas import Tienda
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 from src.gestorAplicacion.gestionPersonas import Usuario
-from src.gestorAplicacion.gestionPersonas import Vendedor
+from src.gestorAplicacion.gestionPersonas.Vendedor import Vendedor
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 
 class Informe(Frame):
@@ -49,7 +49,7 @@ class Informe(Frame):
     def generarInforme(self):
         # En este método se generará el informe a modo resumen de la tienda MascotasUN
         texto = "*******INFORME MascotasUN*******" + "\n\n\n" \
-                    + "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas()) + "\n\n" \
+                    + "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas(Vendedor.getVentas())) + "\n\n" \
                     + "Productos más vendidos" +"\n"+ str(self.imprimirProductos()) + "\n\n" \
                     + "Clientes destacados" +"\n"+ str(self.imprimirClientes()) + "\n" \
                         

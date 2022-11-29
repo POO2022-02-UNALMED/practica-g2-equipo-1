@@ -1,6 +1,5 @@
 # Clase desde la cual se gestiona la inteligencia de negocio de la tienda, desde la parte económica y de inventario, 
 # hasta las estadísticas relacionadas con ello
-
 class Tienda:
     
     tienda = []
@@ -9,6 +8,7 @@ class Tienda:
     inventario = {}
     inventarioProductos = {}
     usuarios = {}
+    cuenta =120000
     # Falta agregar cuenta bancaria como atributo de clase
     
     # Métodos
@@ -28,7 +28,7 @@ class Tienda:
     # Método que aumenta la cantidad de productos de un producto de la tienda según una factura realizada
     @classmethod
     def aumentarStock(cls, factura):
-        for producto in factura.productos:
+        for producto in factura.getProductos():
             if producto.productoID in cls.inventario:
                 cls.inventario[producto.productoID] += producto.cantidad
             else:
@@ -110,3 +110,11 @@ class Tienda:
     @classmethod
     def setUsuarios(cls, usuarios):
         cls.usuarios = usuarios
+
+    @classmethod
+    def getCuenta(cls):
+        return cls.cuenta
+
+    @classmethod
+    def setCuenta(cls, cuenta):
+        cls.cuenta = cuenta

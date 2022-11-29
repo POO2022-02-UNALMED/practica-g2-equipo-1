@@ -3,12 +3,15 @@ from tkinter import *
 from src.interfaz.menus.menuPrincipal import MenuPrincipal
 from src.interfaz.estilos.styles import *
 from src.interfaz.pantallas.Instrucciones import Instrucciones
+from src.interfaz.pantallas.comprar import Comprar
 from src.interfaz.pantallas.fieldFrame import FieldFrame
 from src.interfaz.pantallas.clientesValioso import ClienteValioso
 #from src.interfaz.pantallas.devolucion import Devolucion
 from src.interfaz.pantallas.comision import Comision
 from src.interfaz.pantallas.informeTienda import Informe
 from src.interfaz.pantallas.consultaInformacion import ConsultaInformacion
+from src.interfaz.pantallas.recomendacion import Recomendacion
+
 
 class Principal(Toplevel):
     
@@ -33,7 +36,7 @@ class Principal(Toplevel):
         
         self.frameFuncionalidad = {}
         
-        for F in (Instrucciones, ClienteValioso,  Comision, Informe, ConsultaInformacion):
+        for F in (Instrucciones, Comprar,  Comision, Informe, ConsultaInformacion,Recomendacion):
             self._frame =F(self._contenedor, self)
             self.frameFuncionalidad[F] = self._frame
             self._frame.grid(row=0, column=0, sticky=NSEW)

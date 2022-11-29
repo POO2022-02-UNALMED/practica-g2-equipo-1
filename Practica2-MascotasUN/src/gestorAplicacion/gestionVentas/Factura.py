@@ -1,6 +1,6 @@
 from src.gestorAplicacion.gestionPersonas import Vendedor
 from src.gestorAplicacion.gestionPersonas import Usuario
-from src.gestorAplicacion.gestionVentas import  Tienda
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 class Factura:
     facturas= {}
     facturaID = 38040000
@@ -36,7 +36,6 @@ class Factura:
         Tienda.agregarVenta(cls)
     @classmethod
     def realizarCompraProveedor(cls, proveedor, total, pin):
-        total= cls.calcularTotal();
         Tienda.aumentarStock(cls)
         Tienda.getCuenta().transferir(proveedor.getCuenta(),total,pin)
         return total
