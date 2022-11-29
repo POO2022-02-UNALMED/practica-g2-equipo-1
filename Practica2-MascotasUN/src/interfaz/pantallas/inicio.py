@@ -15,11 +15,11 @@ class Inicio(Frame, Tk):
 
     # Acá guardamos los datos de los desarrolladores para utilizarlos en la implementación
     VALUES  = [
-        {"name": "Hinara Pastora Sánchez Mata", "description":"Amante del fútbol", "email":"hisanchezm@unal.edu.co"},
+        {"name": "Hinara Pastora Sánchez Mata", "description":"Amante del fútbol y el arte", "email":"hisanchezm@unal.edu.co"},
         {"name": "Alejandra Uribe Sierra", "description":"Amante de la ciencia de datos", "email":"aluribes@unal.edu.co" },
-        {"name":"Anna Ospina Bedoya", "description":"Amante del baile", "email":"anospina@unal.edu.co"},
+        {"name":"Anna Ospina Bedoya", "description":"Apasionada por el baile", "email":"anospina@unal.edu.co"},
         {"name": "Juan Felipe Lopez Ramirez", "description":"Amante de la comida", "email":"jualopezra@unal.edu.co" },
-        {"name":"Juán José Tobón Zapata", "description":"Amante de la lectura", "email":"jtobonz@unal.edu.co"}
+        {"name":"Juán José Tobón Zapata", "description":"Apasionado por la lectura", "email":"jtobonz@unal.edu.co"}
     ]
 
     def __init__(self, padre, controlador):
@@ -69,7 +69,7 @@ class Inicio(Frame, Tk):
 
         # Se cambian los label con los datos del respectivo desarrollador
         self._nombre.config(text= nuevos_valores["name"])
-        self._numeroPhone.config(text=nuevos_valores["description"])
+        self._descripcioncita.config(text=nuevos_valores["description"])
         self._correo.config(text=nuevos_valores["email"])
 
         # Condicionales para configurar las 4 imagenes de cada desarrollador
@@ -230,8 +230,8 @@ class Inicio(Frame, Tk):
         contacto = Label(labelgeneral, text = "Descripción", justify=CENTER)
         contacto.grid(row = 1, column = 0, sticky=EW)
 
-        self._numeroPhone = Label(labelgeneral, text =self.VALUES[self._numeroInicio]["description"], justify=LEFT)
-        self._numeroPhone.grid(row=1, column=1, sticky=EW)
+        self._descripcioncita = Label(labelgeneral, text =self.VALUES[self._numeroInicio]["description"], justify=LEFT)
+        self._descripcioncita.grid(row=1, column=1, sticky=EW)
 
         email = Label(labelgeneral, text="Email", justify=CENTER)
         email.grid(row=2, column=0, sticky=EW)
@@ -247,12 +247,12 @@ class Inicio(Frame, Tk):
 
         unal = Label(labelgeneral, text="Universidad", justify=CENTER)
         unal.grid(row=4, column=0, sticky=EW)
-        universidad = Label(labelgeneral, text="Unal", justify=LEFT)
+        universidad = Label(labelgeneral, text="Universidad Nacional de Colombia", justify=LEFT)
         universidad.grid(row=4, column=1, sticky=EW)
         # Expandimos los labels dentro del frame anidado 3
         labelgeneral.columnconfigure(0, weight=1)
 
-        self._numeroPhone.bind('<ButtonPress-1>', self.cambiarInfoDesarrolladores)
+        self._descripcioncita.bind('<ButtonPress-1>', self.cambiarInfoDesarrolladores)
         self._correo.bind('<ButtonPress-1>', self.cambiarInfoDesarrolladores)
         self._ocupacion.bind('<ButtonPress-1>', self.cambiarInfoDesarrolladores)
         self._nombre.bind('<ButtonPress-1>', self.cambiarInfoDesarrolladores)
