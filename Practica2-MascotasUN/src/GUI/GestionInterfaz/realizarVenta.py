@@ -25,7 +25,7 @@ class RealizarVenta(Frame):
         
     def _mostrarTitulo(self):
         # Label superior con el título de la pantalla
-        self._titulo = Label(self, justify=CENTER, text="Compra de inventario", bg=BACKGROUND_FRAMES, font=FONT, fg=FG)
+        self._titulo = Label(self, justify=CENTER, text="Realizar venta", bg=BACKGROUND_FRAMES, font=FONT, fg=FG)
         self._titulo.pack(side=TOP, fill=X, padx=10, pady=10)
         
     def _ConsultarCompras(self):
@@ -34,7 +34,7 @@ class RealizarVenta(Frame):
         self._frameBuscarProveedor.pack(side=TOP, fill=X, padx=100, pady=10)
         
         # Label con el título Ingrese Codigo del Proveedor
-        self._labelIngreseCodigoProveedor = Label(self._frameBuscarProveedor, text="Código del Proveedor", bg=BACKGROUND_FRAMES, font=FONT, fg=FG, justify=CENTER)
+        self._labelIngreseCodigoProveedor = Label(self._frameBuscarProveedor, text="Código del Usuario", bg=BACKGROUND_FRAMES, font=FONT, fg=FG, justify=CENTER)
         self._labelIngreseCodigoProveedor.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
         
         # Entry para ingresar el codigo por el cuál se quiere consultar las compras asociadas a un Proveedor
@@ -89,7 +89,7 @@ class RealizarVenta(Frame):
         
 
         # Botón de aceptar y elimina la compra seleccionada con el código de las compras del Proveedor
-        self._botonAceptar = Button(self._frameSeleccionarCompraADevolver2, text="Comprar", font=FONT, command=self.realizarCompra)
+        self._botonAceptar = Button(self._frameSeleccionarCompraADevolver2, text="Vender", font=FONT, command=self.realizarCompra)
         self._botonAceptar.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
 
         # Expandir los widgets dentro del contenedor
