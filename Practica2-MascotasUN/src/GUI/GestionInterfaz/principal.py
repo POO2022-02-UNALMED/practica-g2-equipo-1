@@ -1,5 +1,6 @@
 # Se importan las librerías que vamos a utilizar
 from tkinter import *
+from src.GUI.GestionInterfaz.cobrarComision import CobrarComision
 from src.GUI.menus.menuPrincipal import MenuPrincipal
 from src.GUI.estilos.styles import *
 from src.GUI.GestionInterfaz.Instrucciones import Instrucciones
@@ -36,7 +37,7 @@ class Principal(Toplevel):
         
         self.frameFuncionalidad = {}
         
-        for F in (Instrucciones, Comprar,  Comision, Informe, ConsultaInformacion,Recomendacion):
+        for F in (Instrucciones, Comprar,  Comision, Informe, ConsultaInformacion,Recomendacion, CobrarComision):
             self._frame =F(self._contenedor, self)
             self.frameFuncionalidad[F] = self._frame
             self._frame.grid(row=0, column=0, sticky=NSEW)

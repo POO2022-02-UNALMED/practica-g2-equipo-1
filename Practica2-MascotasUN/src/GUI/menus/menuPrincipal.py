@@ -2,6 +2,7 @@
 from distutils import command
 from tkinter import *
 from tkinter import messagebox
+from src.GUI.GestionInterfaz.cobrarComision import CobrarComision
 
 from src.GUI.GestionInterfaz import consultaInformacion
 from src.GUI.GestionInterfaz.clientesValioso import ClienteValioso
@@ -60,7 +61,7 @@ class MenuPrincipal(Menu):
         menuProcesos.add_command(label="Comprar inventario", command=self._comprar)
         menuProcesos.add_command(label="Ver estadisticas ventas", command=self._verInforme)
         menuProcesos.add_command(label="Recomendaciones Personalizadas", command=self._recomendacion)
-
+        menuProcesos.add_command(label="Cobrar comision", command=self._cobrarComision)
         """
         
         menuProcesos.add_command(label="Comprar inventario", command=self._comprarInventario)
@@ -165,7 +166,7 @@ class MenuPrincipal(Menu):
     #    self._padre.mostrarFuncionalidades(Devolucion)
 
     def _cobrarComision(self):
-        self._padre.mostrarFuncionalidades(Comision)
+        self._padre.mostrarFuncionalidades(CobrarComision)
 
     def _verInforme(self):
         self._padre.mostrarFuncionalidades(Informe)

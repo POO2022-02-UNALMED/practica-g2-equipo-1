@@ -1,12 +1,8 @@
 from tkinter import *
-from gestorAplicacion.gestionPersonas.vendedor import Vendedor
-from interfaz.estilos.styles import *
-from gestionAplicacion.compras.cliente import Cliente
-from gestionAplicacion.productos.producto import Producto
-from gestionAplicacion.compras.compra import Compra
-from gestionAplicacion.servicios.servicio import Servicio
-from gestionAplicacion.empleados.empleado import Empleado
-from gestionAplicacion.empleados.cajero import Cajero
+from src.gestorAplicacion.gestionPersonas.Vendedor import Vendedor
+from src.GUI.estilos.styles import *
+from src.gestorAplicacion.gestionVentas.Producto import Producto
+from src.gestorAplicacion.gestionVentas.Factura import Factura
 from excepciones import *
 
 class CobrarComision(Frame):
@@ -27,7 +23,7 @@ class CobrarComision(Frame):
 
     def _mostrarTitulo(self):
         # Label superior con el título de la pantalla
-        self._titulo = Label(self, justify=CENTER, text="Consulta Base de Datos", bg=BACKGROUND_FRAMES, font=FONT, fg=FG)
+        self._titulo = Label(self, justify=CENTER, text="Calcular Comisiones", bg=BACKGROUND_FRAMES, font=FONT, fg=FG)
         self._titulo.pack(side=TOP, fill=X, padx=100, pady=10)
 
     def _Consultar(self):
@@ -36,12 +32,8 @@ class CobrarComision(Frame):
         self._frameSolicitarConsulta.pack(side=TOP, fill=X, padx=50, pady=10)
 
         # Label con el título Ingrese los datos a consultar
-        texto = "Ingrese un número para seleccionar la tabla a buscar" + "\n" \
-                    + "1. Productos" + "\n" \
-                    + "2. Servicios" + "\n" \
-                    + "3. Empleados" + "\n" \
-                    + "4. Clientes" + "\n" \
-                    + "5. Compras" + "\n"
+        texto = "Ingrese el id del vendedor" + "\n" \
+                
                     
         self._labelConsulta = Label(self._frameSolicitarConsulta, text=texto, bg=BACKGROUND_FRAMES, font=FONT3, fg=FG, justify=CENTER)
         self._labelConsulta.pack(side=LEFT, fill=BOTH, expand=True, padx=10, pady=10)
