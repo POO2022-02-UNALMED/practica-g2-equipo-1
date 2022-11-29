@@ -3,6 +3,8 @@ from excepciones import *
 from src.gestorAplicacion.gestionPersonas.Gato import Gato
 from src.gestorAplicacion.gestionPersonas.Gato import Perro
 from src.gestorAplicacion.gestionPersonas.Gato import Mascota
+from src.gestorAplicacion.gestionVentas.Producto import Producto
+from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 from src.interfaz.estilos.styles import *
 
 class Recomendacion(Frame):
@@ -85,31 +87,45 @@ class Recomendacion(Frame):
             except ExcepcionNegativos as f:
                 f.showMessage()
             return
-        
+
         if len(valor) != 0:
             valor = int(valor)
-            
-            if valor >=  0:
-                
-                self._Mascota = Gato.encontrarMascota(valor)
-                alimento=self._Mascota.tipoAlimento()
-                self.mostrarMascota(alimento)
-                
-                
-                
+
+            self.michi = Gato.getGatos()[valor]
+             #self.gua=Perro.getPerros()[valor]
+
+            """
+            try:
+                self.michi = Gato.getGatos()[valor]
+                self.gua=Perro.getPerros()[valor]
+            except KeyError:
+                #raise ExcepcionCodigoNoExite().showMessage()
+                return"""
+            tipoAlimento=self.tipoAlimento(self.michi)
+            self.mostrarMascota(tipoAlimento)
+            #self.mostrarMascota(self.gua)
         else:
             try:
                 raise ExcepcionCamposNulos()
             except ExcepcionCamposNulos as f:
                 f.showMessage()
             return
-            
-            
+    def tipoAlimento(self,gato):
+        LAux = []
+        for i in Producto.getProductos().values():
+            if isinstance(i, Producto):
+                if ((i.getEspecie() == "Gato") & (i.getEtapa == self.calcularEdad(gato))):
+                    LAux.append(i)
+        return LAux
+    def calcularEdad(self,gato):
+        if (gato.getEdad() <= 1):
+            return "Cachorro"
+        else:
+            return "Adulto"
     def mostrarMascota(self, lista):
-        texto = ""
-        
-        for val in lista:
-            texto += "Producto: "+ val + "\n"
-            
+        texto = lista
         self._texto.insert(END, texto)
-        
+"""
+        for val in lista:
+            texto += "Producto: "+ val + "\n"""
+

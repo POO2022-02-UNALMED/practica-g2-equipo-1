@@ -12,7 +12,7 @@ class Mascota:
 
 
 class Gato(Mascota):
-    mascotaID=0
+    mascotaID=300
     gatos = {}
     #Constructor
     def __init__(self, nombre, edad,id):
@@ -36,9 +36,10 @@ class Gato(Mascota):
                + "~ Nombre: " + str(self._nombre) + "\n" \
                + "~ Edad: " + str(self._edad) + "\n" \
                + "~ Dueño: " + str(self.usuario) + "\n"
-    def encontrarMascota(cls, id):
+    @classmethod
+    def encontrarMascota(cls, id:str):
         if id in Gato.getGatos().keys():
-            return Gato.getGatos().values()
+            return Gato.getGatos()[str(id)]
         else:
             return None
     def encontrarUsuario(self,id):
@@ -102,7 +103,7 @@ from src.gestorAplicacion.gestionPersonas.Vendedor import Usuario
 
 
 class Perro(Mascota):
-    mascotaID=0
+    mascotaID=500
     perros = {}
 
     #Constructor

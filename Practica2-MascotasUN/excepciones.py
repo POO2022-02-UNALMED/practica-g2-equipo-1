@@ -14,13 +14,13 @@ class ExcepcionCampos(ErrorAplicacion):
     def __init__(self, mensaje):
         self._error = "ExcepcionCampos " + mensaje
         super().__init__(self._error)
-
+"""
 class ExcepcionRepetidos(ErrorAplicacion):
 
     def __init__(self, mensaje):
         self._error = "ExcepcionRepetidos " + mensaje
         super().__init__(self._error)
-
+"""
 class ExcepcionCamposNulos(ExcepcionCampos):
 
     def __init__(self):
@@ -35,7 +35,7 @@ class ExcepcionTiposMissMatch(ExcepcionCampos):
 
     def __init__(self):
         super().__init__("Los tipos de datos no coinciden")
-
+"""
 class ExcepcionCodigoNoExite(ExcepcionRepetidos):
 
     def __init__(self):
@@ -45,3 +45,4 @@ class ExcepcionConjuntoVacio(ExcepcionRepetidos):
 
     def __init__(self):
         super().__init__("No existen valores para la busqueda solicitada")
+"""
