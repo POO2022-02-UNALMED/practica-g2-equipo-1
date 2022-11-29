@@ -2,7 +2,7 @@
  #de la aplicación. Hereda de la clase abstracta Persona. Existen dos diccionarios, el primero (usuarios) se encarga de
  #obtener usuarios con usuario y contrasena, el segundo (cantidadVentas) muestra el string del usuario y las ventas
  #del mismo
-
+from random import randint
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 from src.gestorAplicacion.gestionPersonas import *
 #from src.gestorAplicacion.gestionPersonas import Persona
@@ -101,7 +101,7 @@ class Vendedor(Persona):
     vendedores={}
     usuarios={}
     cantidadVentas={}
-    personaId=0
+    personaId=randint(1,1000000)
     
     #Constructor
     def __init__(self,nombre, email, telefono, usuario,contrasena,nroCuenta,saldo,pin):
@@ -114,7 +114,7 @@ class Vendedor(Persona):
         _ventas=None
         self._usuario = usuario
         self._contrasena = contrasena
-        Vendedor.personaId+=1
+        self.personaId=Vendedor.personaId
         Vendedor.vendedores[self.personaId] = self
 
     #Métodos
@@ -228,7 +228,7 @@ class Vendedor(Persona):
 
 class Usuario(Persona):
     usuarios = {}
-    personaId = 0
+    personaId = randint(1,100000)
     # Constructor de la clase
 
     def __init__(self, nombre: str, email: str, telefono: int, direccion: str, nroCuenta: int, saldo: int, pin: int) -> None:
@@ -242,7 +242,7 @@ class Usuario(Persona):
         mascotas = None
         compras = None
         factura = None
-        Usuario.personaId += 1
+        self.personaId=Usuario.personaId
         self.direccion = direccion
         # Se guarda el objeto en un diccionario con su id como key
         Usuario.usuarios[self.personaId] = self

@@ -2,15 +2,15 @@
        Clase que permite la gestión de la 
        funcionalidad de los envíos programados periódicos a un cliente
     """
-    
+from random import  randint
 class Envio():
     #Identificador unico de cada instancia
-    idEnvio=0
+    idEnvio=randint(1,1000)
     #Diccionario para guardar los envios registrados en el sistema
     envios={}
     #Constructor para la clase
     def __init__(self,destino:str,estadoEnvio:str,periodicidad:int)->None:
-        Envio.idEnvio+=1
+        self.idEnvio=Envio.idEnvio
         self.destino=destino
         self.estadoEnvio=estadoEnvio
         self.periodicidad =periodicidad

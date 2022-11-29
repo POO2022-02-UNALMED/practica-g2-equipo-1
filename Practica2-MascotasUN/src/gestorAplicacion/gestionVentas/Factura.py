@@ -1,15 +1,16 @@
 from src.gestorAplicacion.gestionPersonas import Vendedor
 from src.gestorAplicacion.gestionPersonas import Usuario
+from random import randint
 from src.gestorAplicacion.gestionVentas.Tienda import Tienda
 class Factura:
     facturas= {}
-    facturaID = 38040000
+    facturaID = randint(3424242,7654564)
     total = 0.0
     IVA = 1.16
 
 
     def __init__(self, cliente=None, fechaFactura="", vendedor=None):
-        self.facturaID+=1
+        self.facturaID= Factura.facturaID
         Factura.facturas[self.facturaID] = self
         self.cliente=cliente
         self.fechaFactura = fechaFactura

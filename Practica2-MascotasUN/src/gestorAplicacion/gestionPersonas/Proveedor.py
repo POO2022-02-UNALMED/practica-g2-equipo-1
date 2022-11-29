@@ -4,12 +4,12 @@ vendiéndole el inventario requerido"""
 from src.gestorAplicacion.gestionPersonas import CuentaBancaria
 from src.gestorAplicacion.gestionPersonas.Vendedor import Persona
 from src.gestorAplicacion.gestionVentas.Producto import Producto
-
+from random import randint
 
 class Proveedor(Persona):
     # Diccionario para almacenar las instancias de tipo proveedor
     proveedores = {}
-    personaId = 0
+    personaId = randint(1,1000000)
     """
        public Proveedor() {
     }"""
@@ -26,7 +26,7 @@ class Proveedor(Persona):
         pedidos = None
         factura = None
         self.stock = stock
-        Proveedor.personaId+=1
+        self.personaId=Proveedor.personaId
         # Se guarda el objeto en un diccionario con su id como key
         Proveedor.proveedores[self.personaId] = self
 

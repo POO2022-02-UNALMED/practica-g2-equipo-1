@@ -1,18 +1,18 @@
 # Estilos ventana de inicio
 
 # Estilos frames
-BACKGROUND_CONTENEDOR = "#212F3D"
-BACKGROUND_FRAMES = "#2C3E50"
-BACKGROUND_P = "#ABB2B9"
+BACKGROUND_CONTENEDOR = "#693C96"
+BACKGROUND_FRAMES = "#8F51CC"
+BACKGROUND_P = "#8149B8"
 
-# Estilos de la ventana 1 
-FONT = ("Arial", 20)
-FONT2 = ("Arial", 16)
-FONT3 = ("Arial", 12)
-FONT4 = ("Arial", 10)
-BG1 = "#2C3E50"
+# Estilos de la ventana 1
+FONT = ("Comic Sans MS", 20)
+FONT2 = ("Comic Sans MS", 16)
+FONT3 = ("Comic Sans MS", 12)
+FONT4 = ("Comic Sans MS", 10)
+BG1 = "#693C96"
 TEXT1 = "#FDFEFE"
-COPY1 = "¡Bienvenidos a MascotasUN!" 
+COPY1 = "¡Bienvenidos a MascotasUN!"
 
 ESTILOS_LABEL_VENTANA_1 = {
     "font" : FONT,
