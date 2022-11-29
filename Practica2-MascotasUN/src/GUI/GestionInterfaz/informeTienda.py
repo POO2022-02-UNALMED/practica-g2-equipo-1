@@ -44,14 +44,19 @@ class Informe(Frame):
         
         # Adaptar 
         self._frameMostrarInforme.columnconfigure(1, weight=1)
-        
+    
+    def lista(self):
+        clientes = Usuario.getUsuarios()
+        clientes = list(clientes.values())
+        return clientes
         
     def generarInforme(self):
         # En este método se generará el informe a modo resumen de la tienda MascotasUN
+        listita=[Vendedor.Usuario.getUsuarios()]
         texto = "*******INFORME MascotasUN*******" + "\n\n\n" \
-                    + "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas(Vendedor.getValoresOrdenados(),Vendedor.getCantidadVentas())) + "\n\n" \
+                     + "Clientes destacados" +"\n"+ str(self.imprimirClientes(listita, Vendedor.Usuario.getUsuarios())) + "\n" \
+                    #+ "Número de ventas por vendedor"+"\n"+ str(self.imprimirVentas(Vendedor.getValoresOrdenados(),Vendedor.getCantidadVentas())) + "\n\n" \
                     # + "Productos más vendidos" +"\n"+ str(self.imprimirProductos()) + "\n\n" \
-                    # + "Clientes destacados" +"\n"+ str(self.imprimirClientes()) + "\n" \
                         
         self._labelMostrarInforme.config(text=texto)
         
